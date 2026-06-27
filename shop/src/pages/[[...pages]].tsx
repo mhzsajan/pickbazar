@@ -57,7 +57,7 @@ const ShopsHome = () => {
 
   return (
     <div className="bg-gray-100">
-      <div className="mx-auto w-full max-w-6xl px-5 py-10 lg:px-6 2xl:px-8">
+      <div className="mx-auto w-full max-w-6xl px-5 pt-24 pb-10 lg:px-6 2xl:px-8">
         <div className="mb-10 text-center">
           <h1 className="mb-3 text-3xl font-bold text-heading">
             {t('text-all-shops')}

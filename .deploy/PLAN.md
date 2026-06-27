@@ -105,10 +105,10 @@
 
 | # | Task | Status | Files |
 |---|------|--------|-------|
-| 5.1 | Clean up header links (11 links is too many — prioritize) | `[ ]` | `config/site.ts` lines 109-127 |
+| 5.1 | Clean up header links (11 links is too many — prioritize) | `[x]` | `config/site.ts` lines 109-127 |
 | 5.2 | Add breadcrumbs for deep pages (product, shop, category) | `[ ]` | New component + pages |
 | 5.3 | Add "back to top" button on long pages | `[ ]` | New component |
-| 5.4 | Fix footer — ensure all links work, no dead ends | `[ ]` | `footer.tsx` |
+| 5.4 | Fix footer — ensure all links work, no dead ends | `[x]` | `footer.tsx` |
 | 5.5 | Add loading skeletons instead of blank screens | `[ ]` | Existing loaders |
 
 ### Notes
@@ -162,12 +162,12 @@
 | 2 — SEO | Google-Friendly | 6 | 0 | 6 |
 | 3 — Security | Hacker-Proof | 5 | 0 | 5 |
 | 4 — Mobile | Mobile-Friendly | 5 | 0 | 5 |
-| 5 — Navigation | UI Navigation | 5 | 0 | 5 |
+| 5 — Navigation | UI Navigation | 5 | 2 | 3 |
 | 6 — Bugs | Bug Fixes | 5 | 0 | 5 |
 | 7 — Performance | Speed | 3 | 0 | 3 |
-| **Total** | | **37** | **0** | **37** |
+| **Total** | | **37** | **2** | **35** |
 
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 8 — June 27, 2026 (reordered: customization first)*
+*Last updated: Session 9 — June 27, 2026 (footer fixes, header cleanup)*

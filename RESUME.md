@@ -3,10 +3,10 @@
 <!-- !! FOR AI: Update this file after EVERY step completed. Move "Last completed" forward, update status table, and refresh "Next action". This is your memory — keep it current. !! -->
 
 ## Where We Stopped
-- **Last completed:** Step 5 (Cloudflare Tunnel)
-- **Current step:** Done! All services deployed and running.
-- **Next action:** Start the master plan at `.deploy/PLAN.md` (Phase 1 — Customization)
-- **Master plan:** `.deploy/PLAN.md` — 37 tasks across 7 phases (Customization, SEO, Security, Mobile, Navigation, Bugs, Performance)
+- **Last completed:** Session 9 — Footer visual fixes, homepage layout fixes
+- **Current step:** Customization in progress
+- **Next action:** Continue Phase 1 — Customization (logos, colors, branding) at `.deploy/PLAN.md`
+- **Master plan:** `.deploy/PLAN.md` — 37 tasks across 7 phases
 
 ## What Works Now
 | Service | Port | PM2 Name | Status | Domain |
@@ -28,6 +28,8 @@
 - Cloudflare Tunnel: ✅ Running (switchgod-tunnel)
 - Public URLs: ✅ switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np
 - Font: ✅ Google Sans Code (SIL Open Font License — free for commercial use)
+- Footer: ✅ Fixed — visual spacing audit completed, all 8 issues resolved
+- Homepage: ✅ Footer shows, shops section positioned correctly, header cleaned up
 
 ## PM2 Commands
 ```bash

@@ -107,7 +107,6 @@ export const siteSettings = {
     app_store_link: '/',
   },
   headerLinks: [
-    { href: Routes.shops, icon: null, label: 'nav-menu-shops' },
     { href: Routes.coupons, icon: null, label: 'nav-menu-offer' },
     { href: Routes.contactUs, label: 'nav-menu-contact' },
     {

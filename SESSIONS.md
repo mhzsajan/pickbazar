@@ -179,3 +179,24 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 3. Updated `RESUME.md` with plan reference
 4. Updated `deployment/README.md` with link to `.deploy/`
 5. Pushed all changes to GitHub for backup
+
+---
+
+## Session 9 (This Conversation)
+1. Fixed homepage footer — was not showing (changed `min-h-screen` to `flex-grow` in `_home.tsx`)
+2. Fixed Footer import bug in `layout.tsx` (was importing checkmark icon instead of real footer)
+3. Removed "Shops" link from header nav (homepage IS the shops page)
+4. Added top padding to homepage shops section (`pt-24`) so it's not stuck at the top
+5. Reduced footer top spacing from `pt-16 lg:pt-24` to `pt-8 lg:pt-10`
+6. Full footer visual audit — fixed 8 issues:
+   - Conflicting border colors (`border-gray-800` + `border-t-border-100`)
+   - Removed thick bottom border (`lg:border-b-8`)
+   - Fixed uneven contact column spacing (used `space-y-3`)
+   - Fixed menu heading spacing (`mb-5` consistent)
+   - Fixed subscription widget spacing (matched `mb-5`)
+   - Fixed bottom section padding (was `pb-20 mt-8`, now `py-6`)
+   - Fixed payment icon sizing (removed `text-5xl`)
+   - Removed ~30 lines of commented-out dead code
+   - Simplified grid from 3 conflicting strategies to clean responsive columns
+7. Updated SESSIONS.md, PLAN.md, RESUME.md with all changes
+8. Pushed to GitHub
