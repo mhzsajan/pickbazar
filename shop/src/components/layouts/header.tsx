@@ -167,7 +167,7 @@ const Header = ({ layout }: { layout?: string }) => {
         <div>
           <div
             className={cn(
-              'flex w-full transform-gpu items-center justify-between bg-light px-5 transition-transform duration-300 lg:h-22 lg:px-6 2xl:px-8',
+              'flex w-full items-center justify-between bg-light px-5 transition-transform duration-300 lg:h-22 lg:px-6 2xl:px-8',
               {
                 'lg:absolute lg:border-0 lg:bg-transparent lg:shadow-none':
                   isFlattenHeader,
@@ -189,17 +189,10 @@ const Header = ({ layout }: { layout?: string }) => {
             <div className="flex shrink-0 grow-0 basis-auto flex-wrap items-center ltr:mr-auto rtl:ml-auto lg:w-auto lg:flex-nowrap">
               <Logo
                 className={cn(
-                  'py-3',
+                  'py-3 overflow-hidden',
                   !isMultiLangEnable ? 'mx-auto lg:mx-0' : 'ltr:ml-0 rtl:mr-0 ',
                 )}
               />
-
-              {/* {isMultiLangEnable ? (
-              <div className="ltr:pr-4 rtl:pl-4 lg:hidden">
-                <LanguageSwitcher />
-              </div>
-            ) : null} */}
-
               <div className="hidden ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto xl:block">
                 <GroupsDropdownMenu />
               </div>
@@ -229,21 +222,15 @@ const Header = ({ layout }: { layout?: string }) => {
                 ) : null}
               </>
             ) : null}
-            {/* <button
-          className="px-10 ltr:ml-auto rtl:mr-auto"
-          onClick={() => openModal('LOCATION_BASED_SHOP')}
-        >
-          Map
-        </button> */}
-            <div className="flex shrink-0 items-center space-x-7 rtl:space-x-reverse 2xl:space-x-10">
-              <ul className="hidden shrink-0 items-center space-x-7 rtl:space-x-reverse xl:flex 2xl:space-x-10">
+            <div className="flex shrink-0 items-center space-x-5 rtl:space-x-reverse 2xl:space-x-7">
+              <ul className="hidden shrink-0 items-center space-x-5 rtl:space-x-reverse xl:flex 2xl:space-x-7">
                 <StaticMenu />
               </ul>
               <div className="flex items-center space-x-4 rtl:space-x-reverse">
                 {(isHomePage && show) || (isHomePage && layout === 'modern') ? (
                   <Button
                     variant="custom"
-                    className="hidden h-[38px] w-[38px] items-center  gap-2 rounded-full border border-border-200 bg-light !p-1 text-sm !font-normal focus:!shadow-none focus:!ring-0 md:text-base lg:!flex"
+                    className="hidden h-[38px] w-[38px] items-center gap-2 rounded-full border border-border-200 bg-light !p-1 text-sm !font-normal focus:!shadow-none focus:!ring-0 md:text-base lg:!flex"
                     onClick={() =>
                       setDisplayMobileHeaderSearch((prev) => !prev)
                     }
@@ -256,11 +243,6 @@ const Header = ({ layout }: { layout?: string }) => {
                     className={cn(
                       'relative flex justify-center lg:w-auto lg:border-none',
                       isFlattenHeader || (isHomePage && 'flex'),
-                      // isFlattenHeader || (isHomePage && 'lg:hidden 2xl:flex')
-                      // {
-                      //   'lg:hidden xl:flex': !isFlattenHeader,
-                      //   'lg:flex': !isHomePage,
-                      // }
                     )}
                   >
                     <Button
@@ -305,56 +287,6 @@ const Header = ({ layout }: { layout?: string }) => {
               </div>
             </div>
           </div>
-          {/* <div
-          className={cn(
-            'w-full border-b border-t border-border-200 bg-light shadow-sm 2xl:border-t-0',
-            isHomePage ? 'hidden lg:block' : 'hidden'
-          )}
-        >
-          {settings?.useGoogleMap && (
-            <div
-              className={cn(
-                'relative flex w-full justify-center border-t before:absolute before:inset-y-0 before:my-auto before:h-8 before:w-[1px] lg:w-auto lg:border-none lg:before:w-0 lg:before:bg-[#E5E7EB] 2xl:ltr:pl-8 2xl:rtl:pr-8',
-                isFlattenHeader ? 'hidden' : 'lg:flex 2xl:hidden'
-              )}
-            >
-              <Button
-                variant="custom"
-                className="flex items-center gap-2 focus:!shadow-none focus:!ring-0"
-                onClick={() => setOpenDropdown(!openDropdown)}
-              >
-                <span className="flex items-center gap-1 text-base text-accent">
-                  <MapPin className="w-4 h-4 " />
-                  <span className="hidden md:block">Find Locations :</span>
-                </span>
-                {getLocation ? (
-                  <span className="flex items-center gap-2 pl-1">
-                    {' '}
-                    {getLocation}
-                  </span>
-                ) : (
-                  <span className="flex items-center gap-2 pl-1">
-                    {' '}
-                    Enter your address
-                  </span>
-                )}
-                <ArrowDownIcon
-                  className={cn(
-                    'mt-1 h-2.5 w-2.5 text-accent transition-all',
-                    openDropdown ? 'rotate-180' : ''
-                  )}
-                />
-              </Button>
-              <LocationBasedShopForm
-                className={cn(
-                  'fixed inset-x-0 top-14 mx-auto bg-white md:top-[109px] lg:top-[128px]',
-                  openDropdown === true ? '' : 'hidden'
-                )}
-                closeLocation={closeLocation}
-              />
-            </div>
-          )}
-        </div> */}
         </div>
       </header>
     </>

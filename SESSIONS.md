@@ -209,3 +209,15 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 3. Final header layout: Contact, Flash Sale, Help (direct) + Pages dropdown (Manufacturers, Authors, Terms, Refund Policies)
 4. Updated SESSIONS.md and RESUME.md
 5. Pushed to GitHub
+
+---
+
+## Session 11 (This Conversation)
+1. Full header visual audit — identified 8 issues
+2. Removed ~50 lines of dead commented-out code (old language switcher, map button, second row, responsive logic)
+3. Standardized spacing: `space-x-5` / `2xl:space-x-7` across menu and icons
+4. Added `overflow-hidden` to logo container to prevent overflow
+5. Removed `transform-gpu` (potential rendering issues)
+6. Cleared cache, rebuilt shop, restarted PM2
+7. Updated SESSIONS.md and RESUME.md
+8. Pushed to GitHub

@@ -3,7 +3,7 @@
 <!-- !! FOR AI: Update this file after EVERY step completed. Move "Last completed" forward, update status table, and refresh "Next action". This is your memory — keep it current. !! -->
 
 ## Where We Stopped
-- **Last completed:** Session 10 — Header links cleanup (Offers/ Become a Seller removed, Manufacturers/Authors moved to Pages dropdown)
+- **Last completed:** Session 11 — Header visual audit and cleanup (dead code removed, spacing standardized)
 - **Current step:** Customization in progress
 - **Next action:** Continue Phase 1 — Customization (logos, colors, branding) at `.deploy/PLAN.md`
 - **Master plan:** `.deploy/PLAN.md` — 37 tasks across 7 phases
