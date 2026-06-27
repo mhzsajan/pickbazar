@@ -140,18 +140,20 @@ NEXT_PUBLIC_VERSION=11.10.2
 
 **File:** `.deploy/PLAN.md`
 
-The master plan has 6 phases, 29 tasks total:
+The master plan has 7 phases, 37 tasks total:
 
 | Phase | Focus | Tasks |
 |---|---|---|
-| 1 — SEO | Google-friendly (sitemap, meta tags, structured data) | 6 |
-| 2 — Security | Hacker-proof (headers, CORS, rate limiting) | 5 |
-| 3 — Mobile | Mobile-friendly (navigation, forms, PWA) | 5 |
-| 4 — Navigation | UI navigation (breadcrumbs, clean header, footer) | 5 |
-| 5 — Bugs | Fix known bugs (error boundaries, unused fonts) | 5 |
-| 6 — Performance | Speed optimization (lazy loading, bundle size) | 3 |
+| 1 — Customization | Branding & Visual (logos, colors, content) | 8 |
+| 2 — SEO | Google-friendly (sitemap, meta tags, structured data) | 6 |
+| 3 — Security | Hacker-proof (headers, CORS, rate limiting) | 5 |
+| 4 — Mobile | Mobile-friendly (navigation, forms, PWA) | 5 |
+| 5 — Navigation | UI navigation (breadcrumbs, clean header, footer) | 5 |
+| 6 — Bugs | Fix known bugs (error boundaries, unused fonts) | 5 |
+| 7 — Performance | Speed optimization (lazy loading, bundle size) | 3 |
 
-**Work through phases in order (1 → 6). Do NOT skip ahead.**
+**Work through phases in order (1 → 7). Do NOT skip ahead.**
+**Customization comes FIRST — make the site look like YOUR brand before doing anything else.**
 
 ---
 
