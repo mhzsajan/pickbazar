@@ -5,6 +5,7 @@ import type {
   SettingsQueryOptions,
   TypeQueryOptions,
   BestSellingProductQueryOptions,
+  ShopQueryOptions,
 } from '@/types';
 import type { GetStaticPaths, GetStaticProps } from 'next';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -17,6 +18,7 @@ import {
   CATEGORIES_PER_PAGE,
   PRODUCTS_PER_PAGE,
   TYPES_PER_PAGE,
+  SHOPS_PER_PAGE,
 } from './client/variables';
 
 type ParsedQueryParams = {
@@ -50,24 +52,40 @@ export const getStaticProps: GetStaticProps<
     [API_ENDPOINTS.SETTINGS, { language: locale }],
     ({ queryKey }) => client.settings.all(queryKey[1] as SettingsQueryOptions)
   );
+
+  const { pages } = params!;
+
+  // Root "/" — show shops homepage
+  if (!pages) {
+    await queryClient.prefetchInfiniteQuery(
+      [API_ENDPOINTS.SHOPS, { limit: SHOPS_PER_PAGE, is_active: 1 }],
+      ({ queryKey }) => client.shops.all(queryKey[1] as ShopQueryOptions)
+    );
+    return {
+      props: {
+        variables: {
+          shops: { limit: SHOPS_PER_PAGE, is_active: 1 },
+        },
+        layout: 'shops',
+        ...(await serverSideTranslations(locale!, ['common', 'banner'])),
+        dehydratedState: JSON.parse(JSON.stringify(dehydrate(queryClient))),
+      },
+      revalidate: 120,
+    };
+  }
+
+  // Type pages — show product-based homepage
   const types = await queryClient.fetchQuery(
     [API_ENDPOINTS.TYPES, { limit: TYPES_PER_PAGE, language: locale }],
     ({ queryKey }) => client.types.all(queryKey[1] as TypeQueryOptions)
   );
 
-  const { pages } = params!;
   let pageType: string | undefined;
-  if (!pages) {
-    pageType =
-      types.find((type) => type?.settings?.isHome)?.slug ?? types?.[0]?.slug;
-  } else {
-    pageType = pages[0];
-  }
+  pageType = pages[0];
 
   if (!types?.some((t) => t.slug === pageType)) {
     return {
       notFound: true,
-      // This is require to regenerate the page
       revalidate: 120,
     };
   }
@@ -95,7 +113,6 @@ export const getStaticProps: GetStaticProps<
     language: locale,
   };
 
-  // Only prefetch popular products for `book` demo
   if (pageType === 'book') {
     await queryClient.prefetchQuery(
       [API_ENDPOINTS.PRODUCTS_POPULAR, popularProductVariables],
@@ -149,15 +166,3 @@ export const getStaticProps: GetStaticProps<
     revalidate: 120,
   };
 };
-
-/* Fix : locales: 14kB,
-popularProducts: 30kB,
-category: 22kB,
-groups: 8kB,
-group: 2kB,
-settings: 2kB,
-perProduct: 4.2 * 30 = 120kB,
-total = 14 + 30 + 22 + 8 + 2 + 2 + 120 = 198kB
-others: 225 - 198 = 27kB
-
- */
