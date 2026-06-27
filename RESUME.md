@@ -21,6 +21,7 @@
 - .env files: ✅ All 3 created with public domain URLs
 - Build: ✅ All 3 services built successfully (rebuilt with domain URLs)
 - PM2: ✅ All 4 running (api, shop, admin, tunnel)
+- PM2 auto-start on boot: ✅ Configured (systemd)
 - LAN access: ✅ Working from other PCs on same network
 - Git repo: ✅ Initialized + pushed to GitHub (mhzsajan/pickbazar)
 - Cloudflare Tunnel: ✅ Running (switchgod-tunnel)
@@ -49,6 +50,8 @@ pm2 startup             # Auto-start on boot (requires sudo)
 - **LAN access:** Use `http://192.168.254.251:PORT` from other PCs on same network
 - **Public access:** Use `https://switchgod.com.np`, `https://admin.switchgod.com.np`, `https://api.switchgod.com.np`
 - **After .env changes:** Must rebuild affected service and restart PM2
+- **VS Code / terminal:** Can be closed — PM2 runs as background daemon
+- **Reboots:** PM2 auto-starts all services via systemd (`pm2 save` after any PM2 changes)
 
 ## Quick Reference
 ```bash

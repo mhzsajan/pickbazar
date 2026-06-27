@@ -72,9 +72,8 @@ pm2 restart shop
 pm2 stop shop
 pm2 start shop
 
-# Save process list + auto-start on reboot
+# Save process list + auto-start on reboot (already configured via systemd)
 pm2 save
-pm2 startup  # requires sudo — follow the command it outputs
 ```
 
 ---

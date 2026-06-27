@@ -145,6 +145,7 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 5. Verified no new errors in logs
 6. Verified all 3 tunnel URLs still working (200, 307, 200)
 7. Fixed documentation inconsistencies across RESUME.md, SESSIONS.md, COMMANDS.md
+8. Configured PM2 auto-start on boot via systemd (`pm2 startup` + `pm2 save`)
 
 ### Issues Found & Fixed
 | Issue | Fix |
