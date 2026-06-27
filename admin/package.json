@@ -1,0 +1,17 @@
+{
+  "name": "marvel-admin",
+  "version": "11.10.2",
+  "private": true,
+  "author": "RedQ",
+  "scripts": {
+    "clean": "rimraf -g \"{.next,node_modules,__generated__,.cache,src/graphql/*.d.ts,src/framework/graphql/**/*.d.ts}\"",
+    "dev": "next dev -p 3002",
+    "build": "next build",
+    "start": "next start -p 3002",
+    "lint": "next lint"
+  },
+  "devDependencies": {
+    "prettier": "3.3.3",
+    "rimraf": "3.0.2"
+  }
+}

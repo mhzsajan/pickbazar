@@ -1,0 +1,6 @@
+{
+  "name": "ls",
+  "arguments": {
+    "dirPath": "."
+  }
+}
