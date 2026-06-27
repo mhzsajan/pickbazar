@@ -1,4 +1,5 @@
 # switchgod.com.np — PickBazar Deployment Project
+
 > **AI CONTEXT FILE** — Read this first before doing anything. It contains the full picture of the project, what was done, what is pending, and where every file lives. Designed to minimize token usage on re-entry.
 
 ---
@@ -33,7 +34,8 @@ pickbazar/
 ├── COMMANDS.md         # Working commands reference
 ├── SESSIONS.md         # What happened each session
 └── .deploy/            # Scripts + full reference (hidden folder)
-    ├── README.md       # Full project context
+    ├── README.md       # This file — full project context
+    ├── PLAN.md         # Master plan for UI/SEO/Mobile/Security/Bugs
     └── scripts/        # Deployment scripts
 ```
 
@@ -45,260 +47,172 @@ pickbazar/
 
 ## 3. SERVICES & PORTS
 
-| Service | Folder | Port | Public URL |
-|---|---|---|---|
-| REST API | `api/rest` | 9000 | `api.switchgod.com.np` |
-| Shop (storefront) | `shop` | 3003 | `switchgod.com.np` |
-| Admin dashboard | `admin/rest` | 3002 | `admin.switchgod.com.np` |
+| Service | Folder | Port | PM2 Name | Public URL |
+|---|---|---|---|---|
+| REST API | `api/rest` | 9000 | `api` | `api.switchgod.com.np` |
+| Shop (storefront) | `shop` | 3003 | `shop` | `switchgod.com.np` |
+| Admin dashboard | `admin/rest` | 3002 | `admin` | `admin.switchgod.com.np` |
+| Cloudflare Tunnel | - | - | `tunnel` | - |
 
-All three must run simultaneously. They will be managed by **PM2**.
-
----
-
-## 4. ARCHITECTURE DIAGRAM
-
-```
-You (VS Code) ──git push──> GitHub repo
-                                │
-                          GitHub Webhook
-                                │
-                    switchserver pulls + rebuilds
-                                │
-              ┌─────────────────┼─────────────────┐
-              │                 │                 │
-         shop :3003       admin :3002        api :9000
-              │                 │                 │
-              └─────────────────┴────── Cloudflare Tunnel ──> Internet
-                                                  │
-                                        switchgod.com.np
-                                        admin.switchgod.com.np
-                                        api.switchgod.com.np
-```
-
-**Local edit → push to GitHub → webhook fires on server → auto pull + rebuild → live on domain.**
+All four run under **PM2** with auto-start on boot via systemd.
 
 ---
 
-## 5. SYSTEM STATE
+## 4. CURRENT STATUS — ALL DONE ✅
 
-### Machine specs
-- OS: Ubuntu 24.04 LTS (kernel 6.17.0-35-generic)
-- RAM: 11 GB total, ~7 GB available
-- Disk: 81 GB free on `/home`
-- Swap: 8 GB
-
-### Prerequisites installed ✅
-- Node.js 18.20.8
-- npm 10.8.2
-- yarn 1.22.22 (installed but **not used** — see yarn bug note below)
-- git 2.43.0
-- PM2 7.0.1
-- cloudflared 2026.6.1
-- GitHub CLI (gh) 2.45.0
-
-### Dependencies installed ✅
-- `api/rest/node_modules` — 483 packages, 350MB
-- `shop/node_modules` — 777 packages, 644MB
-- `admin/rest/node_modules` — 656 packages, 794MB
-- Total project size on disk: ~1.9GB
-
-### .env files created ✅
-- `api/rest/.env` — PORT=9000, localhost URLs
-- `shop/.env.local` — points to localhost:9000 (API) and localhost:3002 (admin)
-- `admin/rest/.env.local` — points to localhost:9000 (API) and localhost:3003 (shop)
-
-### API built & tested ✅
-- `api/rest/dist/` exists — NestJS build successful
-- API starts on port 9000, responds to requests
-
-### NOT done yet
-- Shop and Admin Next.js builds (`.next` folder missing for both)
-- Git init — no `.git` folder yet
-- GitHub repo — not created yet
-- Cloudflare Tunnel — not created yet
-- PM2 setup — installed but no processes configured
-- Auto-deploy webhook — not created yet
-
----
-
-## 6. STEP-BY-STEP PLAN (full roadmap)
-
-| # | Step | Status | Notes |
-|---|---|---|---|
-| 1 | Install prerequisites (Node 18, npm, git, PM2, cloudflared, gh CLI) | **DONE** ✅ | All installed |
-| 2 | Install project dependencies & set up `.env` files | **DONE** ✅ | Used npm with `--legacy-peer-deps`. Yarn hangs due to bug. |
-| 3 | Build & run all 3 services locally, verify on localhost | **IN PROGRESS** ⚠️ | API works. Shop & Admin need `next build` then `next start`. |
-| 4 | Git init + create GitHub repo + push code | **PENDING** | |
-| 5 | Set up Cloudflare Tunnel with 3 subdomains | **PENDING** | See Section 9 |
-| 6 | Switch `.env` to public URLs & rebuild | **PENDING** | Must do AFTER tunnel is live |
-| 7 | PM2 process management + auto-start on reboot | **PENDING** | See Section 10 |
-| 8 | Auto-deploy: GitHub webhook → pull → rebuild → restart | **PENDING** | |
-
----
-
-## 7. SCRIPTS IN THIS FOLDER
-
-| File | Purpose | Status |
+| Step | Status | Notes |
 |---|---|---|
-| `scripts/setup-prereqs.sh` | Installs Node 18, yarn, git, PM2, cloudflared, gh CLI | READY (already used) |
-| `scripts/setup-env.sh` | Writes `.env` files for all 3 services | NOT NEEDED — created manually |
-| `scripts/install-deps.sh` | Installs npm dependencies | NOT NEEDED — done manually |
-| `scripts/build-all.sh` | Builds shop, admin, api | TO BE CREATED in Step 3 |
-| `scripts/pm2-start.sh` | Starts all 3 services under PM2 | TO BE CREATED in Step 7 |
-| `scripts/cloudflare-tunnel.sh` | Creates tunnel + DNS routes | TO BE CREATED in Step 5 |
-| `scripts/webhook-server.js` | Auto-deploy listener for GitHub webhooks | TO BE CREATED in Step 8 |
+| Prerequisites installed | ✅ Done | Node 18, npm, git, PM2, cloudflared, gh CLI |
+| Dependencies installed | ✅ Done | All 3 services (npm with --legacy-peer-deps) |
+| .env files created | ✅ Done | All 3 with public domain URLs |
+| Services built | ✅ Done | API, Shop, Admin all built |
+| PM2 processes running | ✅ Done | api, shop, admin, tunnel — all online |
+| PM2 auto-start on boot | ✅ Done | systemd + pm2 save |
+| Git repo pushed | ✅ Done | mhzsajan/pickbazar (private) |
+| Cloudflare Tunnel | ✅ Done | switchgod-tunnel, 3 DNS routes |
+| Public URLs working | ✅ Done | switchgod.com.np, admin.*, api.* |
+| Google Auth fixed | ✅ Done | GoogleProvider commented out (not configured) |
+| API SHOP_URL fixed | ✅ Done | Set to https://switchgod.com.np |
+| Font changed | ✅ Done | Google Sans Code (SIL Open Font License) |
+| Dark mode | ❌ Reverted | Attempted, broke site, fully reverted (commit ed44c2b) |
+| Documentation | ✅ Done | RESUME.md, SESSIONS.md, COMMANDS.md, .deploy/ |
+| Master plan created | ✅ Done | .deploy/PLAN.md — 29 tasks across 6 phases |
 
 ---
 
-## 8. ENVIRONMENT VARIABLES (current values — localhost)
+## 5. ARCHITECTURE DIAGRAM
+
+```
+You (VS Code) ──git push──> GitHub repo (mhzsajan/pickbazar)
+                                    │
+                              GitHub Webhook (not yet set up)
+                                    │
+                        switchserver pulls + rebuilds
+                                    │
+                  ┌─────────────────┼─────────────────┐
+                  │                 │                 │
+             shop :3003       admin :3002        api :9000
+                  │                 │                 │
+                  └─────────────────┴────── Cloudflare Tunnel ──> Internet
+                                                          │
+                                                switchgod.com.np
+                                                admin.switchgod.com.np
+                                                api.switchgod.com.np
+```
+
+---
+
+## 6. ENVIRONMENT VARIABLES (current — public URLs)
 
 ### api/rest/.env
 ```env
 APP_NAME=PickBazar
 PORT=9000
 DEFAULT_CURRENCY=USD
-SHOP_URL=http://localhost:3003
-STRIPE_API_KEY=
-PAYPAL_MODE=sandbox
-PAYPAL_SANDBOX_CLIENT_ID=
-PAYPAL_SANDBOX_CLIENT_SECRET=
-PAYPAL_LIVE_CLIENT_ID=
-PAYPAL_LIVE_CLIENT_SECRET=
-PAYPAL_WEBHOOK_ID=
+SHOP_URL=https://switchgod.com.np
 ```
 
 ### shop/.env.local
 ```env
 FRAMEWORK_PROVIDER="rest"
-NEXT_PUBLIC_REST_API_ENDPOINT="http://localhost:9000/api"
+NEXT_PUBLIC_REST_API_ENDPOINT="https://api.switchgod.com.np/api"
 APPLICATION_MODE=production
-NEXT_PUBLIC_ADMIN_URL="http://localhost:3002"
-NEXT_PUBLIC_DEFAULT_LANGUAGE=en
-NEXT_PUBLIC_ENABLE_MULTI_LANG=false
-NEXT_PUBLIC_AVAILABLE_LANGUAGES=en
-NEXTAUTH_URL=http://localhost:3003
+NEXT_PUBLIC_ADMIN_URL="https://admin.switchgod.com.np"
+NEXTAUTH_URL=https://switchgod.com.np
 SECRET=your-secret-key-change-this
+NEXT_PUBLIC_SITE_URL=https://switchgod.com.np
 NEXT_PUBLIC_VERSION=11.10.2
 ```
 
 ### admin/rest/.env.local
 ```env
-NEXT_PUBLIC_REST_API_ENDPOINT="http://localhost:9000/api"
-NEXT_PUBLIC_SHOP_URL="http://localhost:3003"
+NEXT_PUBLIC_REST_API_ENDPOINT="https://api.switchgod.com.np/api"
+NEXT_PUBLIC_SHOP_URL="https://switchgod.com.np"
 APPLICATION_MODE=production
-NEXT_PUBLIC_AUTH_TOKEN_KEY=AUTH_CRED
-NEXT_PUBLIC_DEFAULT_LANGUAGE=en
-NEXT_PUBLIC_ENABLE_MULTI_LANG=false
-NEXT_PUBLIC_AVAILABLE_LANGUAGES=en
-NEXT_PUBLIC_API_BROADCAST_DRIVER=log
 NEXT_PUBLIC_VERSION=11.10.2
 ```
 
-**Important:** These are localhost URLs for Step 3 (local testing). In Step 6, switch to public URLs.
+**Note:** These are baked in at build time. If you change these, you must rebuild and restart.
 
 ---
 
-## 9. CLOUDFLARE TUNNEL PLAN
+## 7. THE PLAN
 
-Domain `switchgod.com.np` is already on Cloudflare. The tunnel routes public traffic to local ports without opening router ports.
+**File:** `.deploy/PLAN.md`
 
-```
-switchgod.com.np        → localhost:3003   (shop)
-admin.switchgod.com.np  → localhost:3002   (admin)
-api.switchgod.com.np    → localhost:9000   (api)
-```
+The master plan has 6 phases, 29 tasks total:
 
-Steps (to be done in Step 5):
-1. `cloudflared tunnel login` — opens browser, authenticate with Cloudflare account
-2. `cloudflared tunnel create switchgod-tunnel`
-3. Write `~/.cloudflared/config.yml` with the 3 ingress rules
-4. `cloudflared tunnel route dns switchgod-tunnel switchgod.com.np`
-5. Repeat for admin and api subdomains
-6. `cloudflared tunnel run switchgod-tunnel` (then hand off to PM2)
+| Phase | Focus | Tasks |
+|---|---|---|
+| 1 — SEO | Google-friendly (sitemap, meta tags, structured data) | 6 |
+| 2 — Security | Hacker-proof (headers, CORS, rate limiting) | 5 |
+| 3 — Mobile | Mobile-friendly (navigation, forms, PWA) | 5 |
+| 4 — Navigation | UI navigation (breadcrumbs, clean header, footer) | 5 |
+| 5 — Bugs | Fix known bugs (error boundaries, unused fonts) | 5 |
+| 6 — Performance | Speed optimization (lazy loading, bundle size) | 3 |
 
----
-
-## 10. PM2 PROCESS NAMES
-
-When PM2 is set up, processes will be named:
-- `pickbazar-api` — api/rest (port 9000)
-- `pickbazar-shop` — shop (port 3003)
-- `pickbazar-admin` — admin/rest (port 3002)
-- `cloudflare-tunnel` — cloudflared tunnel run
+**Work through phases in order (1 → 6). Do NOT skip ahead.**
 
 ---
 
-## 11. HOW TO RESUME THIS PROJECT (AI INSTRUCTIONS)
+## 8. AI INSTRUCTIONS — HOW TO RESUME THIS PROJECT
 
 When a user re-opens this project with an AI assistant:
 
-1. **Read this README fully first.** Do not ask redundant questions already answered here.
-2. Check Section 5 "System State" — understand what is already installed/done.
-3. Check Section 6 "Step-by-Step Plan" — find the first PENDING step and continue from there.
-4. Check `scripts/` folder for existing scripts before writing new ones.
-5. The project folder on disk is `/home/switchgod/Desktop/pickbazar/`.
-6. Always prefer writing scripts to `/home/switchgod/Desktop/pickbazar/.deploy/scripts/` so the user can keep them.
-7. The user is a **beginner** — explain each command before running it. Do not assume knowledge of Node, git, Linux, or Cloudflare.
-8. Ask for `sudo` password via a script the user runs manually — do not try to pipe it.
-9. **Use npm, not yarn.** Yarn v1 has a bulk-fetching bug on this machine that causes indefinite hangs during "Fetching packages..." step. Always use `npm install --legacy-peer-deps` instead of `yarn install`.
-10. Installing npm packages is SLOW (~17 minutes per service). Run in background and check periodically.
+1. **Read this file fully first.** Do not ask redundant questions already answered here.
+2. **Read `.deploy/PLAN.md`** — this is the active work plan with 29 tasks.
+3. **Read `RESUME.md`** — quick status of what's running.
+4. Check Section 4 "Current Status" above — everything is deployed and running.
+5. Find the first incomplete task in PLAN.md and continue from there.
+6. The project folder on disk is `/home/switchgod/Desktop/pickbazar/`.
+7. The user is a **beginner** — explain each command before running it.
+8. **Use npm, not yarn.** Always use `npm install --legacy-peer-deps`.
+9. After code changes: always `rm -rf .next` before rebuild to avoid stale cache.
+10. **Do NOT push to GitHub until user sees changes on localhost and approves.**
 
 ---
 
-## 12. KEY DECISIONS MADE
-
-| Decision | Reason |
-|---|---|
-| REST variant only (not GraphQL) | Simpler for first deployment |
-| No database needed | api/rest uses in-memory mock data |
-| Node.js 18 LTS | Compatible with Next.js 13.5 in this project |
-| Cloudflare Tunnel (not port forwarding) | Cleaner, no router config, free, secure |
-| PM2 for process management | Auto-restart on crash + startup on reboot |
-| GitHub webhook for auto-deploy | Edit in VS Code → push → live on domain automatically |
-| **npm (not yarn)** | Yarn v1 has bulk-fetching bug on this machine — hangs indefinitely |
-| `--legacy-peer-deps` flag | Required because some packages have peer dep conflicts with React 18 |
-
----
-
-## 13. USEFUL COMMANDS (quick reference)
+## 9. PM2 COMMANDS
 
 ```bash
-# Check service status
-pm2 status
-
-# View logs
-pm2 logs pickbazar-shop
-pm2 logs pickbazar-api
-pm2 logs pickbazar-admin
-
-# Restart a service
-pm2 restart pickbazar-shop
-
-# Check cloudflared tunnel
-pm2 logs cloudflare-tunnel
-
-# Manual git pull + rebuild (before webhook is set up)
-cd /home/switchgod/Desktop/pickbazar
-git pull
-cd api/rest && npm run build && pm2 restart pickbazar-api
-cd ../../shop && npm run build && pm2 restart pickbazar-shop
-cd ../admin/rest && npm run build && pm2 restart pickbazar-admin
+pm2 status              # Check all services
+pm2 logs                # View all logs
+pm2 logs shop           # View shop logs only
+pm2 restart shop        # Restart shop
+pm2 stop all            # Stop all
+pm2 save                # Save process list (run after changes)
+pm2 startup             # Auto-start on boot (requires sudo)
 ```
 
 ---
 
-## 14. KNOWN ISSUES & TROUBLESHOOTING
+## 10. REBUILD COMMANDS
 
-### Yarn hangs on "Fetching packages..."
-Yarn v1 has a known bug where bulk package downloading gets stuck indefinitely on this machine, even though individual downloads work fine (0.14s per package). The resolution phase (step 1/4) completes, but fetching (step 2/4) never finishes.
-**Solution:** Use npm instead: `npm install --legacy-peer-deps`
+```bash
+# Clear cache + rebuild shop (API must be running)
+cd /home/switchgod/Desktop/pickbazar/shop && rm -rf .next && npx next build && pm2 restart shop
 
-### admin/rest has no lockfile
-`admin/rest/node_modules` was installed at `admin/` level (because `admin/package.json` had workspaces), then copied to `admin/rest/`. The `admin/package.json` workspaces section was removed to prevent this from happening again. If you need to reinstall admin/rest, run `npm install --legacy-peer-deps` inside `admin/rest/`.
+# Rebuild admin
+cd /home/switchgod/Desktop/pickbazar/admin/rest && rm -rf .next && npx next build && pm2 restart admin
 
-### npm install is very slow (~17 min)
-This is normal for this project. The shop has 80+ direct dependencies with hundreds of transitive deps. Use `--maxsockets=2` to limit connections if needed. Run in background with `nohup`.
+# Rebuild API
+cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart api
+```
 
 ---
 
-*Last updated: Session 2 — Steps 1-2 complete, Step 3 in progress.*
+## 11. KNOWN ISSUES
+
+| Issue | Status | Notes |
+|---|---|---|
+| Yarn hangs on "Fetching packages..." | Known | Use npm instead |
+| Google OAuth not configured | By design | GoogleProvider commented out in [...nextauth].ts |
+| Dark mode broken | Reverted | Tried and fully reverted (commit ed44c2b) |
+| ESLint/TS errors ignored in build | TODO | See PLAN.md Phase 5 |
+| Sitemap has localhost URLs | TODO | See PLAN.md Phase 1 |
+| No security headers | TODO | See PLAN.md Phase 2 |
+
+---
+
+*Created: Session 2 — Steps 1-2 complete*
+*Last updated: Session 7 — All services deployed, plan created*

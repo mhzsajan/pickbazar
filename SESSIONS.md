@@ -155,3 +155,27 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 | RESUME.md referenced old LAN IP | Updated to domain URLs |
 | COMMANDS.md had wrong GitHub URL | Fixed to mhzsajan/pickbazar |
 | SESSIONS.md had duplicate "Session 3" header | Removed duplicate |
+
+---
+
+## Session 7 (This Conversation)
+1. Added Google Sans Code font via Fontsource CDN
+2. Updated `_document.tsx` with Fontsource link tag
+3. Updated `tailwind.config.js` font family to `'Google Sans Code Variable', 'monospace'`
+4. Cleared .next cache and rebuilt shop
+5. Restarted PM2 shop service
+
+### Font Info
+- **Font:** Google Sans Code (monospace variant of Google Sans)
+- **License:** SIL Open Font License (OFL) — free for personal and commercial use
+- **CDN:** Fontsource (`@fontsource/google-sans-code`)
+- **Files changed:** `shop/src/pages/_document.tsx`, `shop/tailwind.config.js`
+
+---
+
+## Session 8 (This Conversation)
+1. Created master plan at `.deploy/PLAN.md` — 29 tasks across 6 phases
+2. Updated `.deploy/README.md` to reflect current state (all services deployed)
+3. Updated `RESUME.md` with plan reference
+4. Updated `deployment/README.md` with link to `.deploy/`
+5. Pushed all changes to GitHub for backup

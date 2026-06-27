@@ -4,8 +4,9 @@
 
 ## Where We Stopped
 - **Last completed:** Step 5 (Cloudflare Tunnel)
-- **Current step:** Done!
-- **Next action:** Deploy updates, maintain, or add features
+- **Current step:** Done! All services deployed and running.
+- **Next action:** Start the master plan at `.deploy/PLAN.md` (Phase 1 — SEO)
+- **Master plan:** `.deploy/PLAN.md` — 29 tasks across 6 phases (SEO, Security, Mobile, Navigation, Bugs, Performance)
 
 ## What Works Now
 | Service | Port | PM2 Name | Status | Domain |
@@ -26,6 +27,7 @@
 - Git repo: ✅ Initialized + pushed to GitHub (mhzsajan/pickbazar)
 - Cloudflare Tunnel: ✅ Running (switchgod-tunnel)
 - Public URLs: ✅ switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np
+- Font: ✅ Google Sans Code (SIL Open Font License — free for commercial use)
 
 ## PM2 Commands
 ```bash
@@ -41,6 +43,7 @@ pm2 startup             # Auto-start on boot (requires sudo)
 ## Important Rules
 - **Package manager:** npm (NOT yarn — yarn hangs on this machine)
 - **Install command:** `npm install --legacy-peer-deps`
+- **Font:** Google Sans Code via Fontsource CDN (SIL Open Font License — free for commercial use)
 - **Project path:** `/home/switchgod/Desktop/pickbazar/`
 - **User level:** Beginner — explain commands before running
 - **Shop start:** `next start` (NOT `start:rest`) on port 3003

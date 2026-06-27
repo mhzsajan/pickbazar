@@ -17,10 +17,10 @@ export default class CustomDocument extends Document {
       // <Html dir={dir}>
       <Html>
         <Head>
-          {/* <link
-            href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=optional"
+          <link
+            href="https://cdn.jsdelivr.net/npm/@fontsource/google-sans-code@latest"
             rel="stylesheet"
-          /> */}
+          />
         </Head>
         <body>
           <Main />

@@ -1,5 +1,7 @@
 # Automation scripts for Pickbazar React
 
+> **For the full project context, deployment status, and improvement plan, see `.deploy/README.md` and `.deploy/PLAN.md` in the project root.**
+
 #### At first login your server from terminal
 
 ```bash

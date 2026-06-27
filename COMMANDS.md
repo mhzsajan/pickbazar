@@ -120,6 +120,15 @@ curl -s -o /dev/null -w "%{http_code}" https://admin.switchgod.com.np
 
 ---
 
+## Rebuild Shop (After Font/Config Changes)
+
+```bash
+# Clear .next cache + rebuild + restart
+cd /home/switchgod/Desktop/pickbazar/shop && rm -rf .next && npx next build && pm2 restart shop
+```
+
+---
+
 ## .env.local IP Addresses (Current)
 
 ```bash

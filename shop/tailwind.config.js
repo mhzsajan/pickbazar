@@ -32,8 +32,8 @@ module.exports = {
         '-1': '-1',
       },
       fontFamily: {
-        body: ['system-ui', 'sans-serif'],
-        heading: ['system-ui', 'sans-serif'],
+        body: ['Google Sans Code Variable', 'monospace'],
+        heading: ['Google Sans Code Variable', 'monospace'],
       },
       fontSize: {
         '10px': '0.625rem',
