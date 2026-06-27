@@ -22,7 +22,7 @@ export default function HomeLayout({
     displayMobileHeaderSearchAtom,
   );
   return (
-    <div className="flex min-h-screen flex-col bg-gray-100 transition-colors duration-150 dark:bg-gray-900">
+    <div className="flex min-h-screen flex-col bg-gray-100 transition-colors duration-150">
       {['minimal', 'compact'].includes(layout) ? (
         <HeaderMinimal layout={layout} />
       ) : (

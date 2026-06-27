@@ -49,14 +49,14 @@ const ShopsHome = () => {
   if (error) return <ErrorMessage message={error.message} />;
   if (!isLoading && !shops.length) {
     return (
-      <div className="min-h-full bg-gray-100 px-4 pt-6 pb-8 lg:p-8 dark:bg-gray-900">
+      <div className="min-h-full bg-gray-100 px-4 pt-6 pb-8 lg:p-8">
         <NotFound text="text-no-shops" />
       </div>
     );
   }
 
   return (
-    <div className="bg-gray-100 dark:bg-gray-900">
+    <div className="bg-gray-100">
       <div className="mx-auto w-full max-w-6xl px-5 py-10 lg:px-6 2xl:px-8">
         <div className="mb-10 text-center">
           <h1 className="mb-3 text-3xl font-bold text-heading">

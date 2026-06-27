@@ -315,34 +315,6 @@
     --h6 : 1rem;
   }
 
-  .dark {
-    --color-light: 17, 24, 39;
-    --color-dark: 255, 255, 255;
-    --color-muted-black: 243, 244, 246;
-    --text-base: 209, 213, 219;
-    --text-base-dark: 209, 213, 219;
-    --text-muted: 107, 114, 128;
-    --text-muted-light: 75, 85, 99;
-    --text-sub-heading: 209, 213, 219;
-    --text-heading: 243, 244, 246;
-    --text-bolder: 255, 255, 255;
-    --color-border-50: 31, 41, 55;
-    --color-border-100: 55, 65, 81;
-    --color-border-200: 75, 85, 99;
-    --color-border-base: 107, 114, 128;
-    --color-border-400: 156, 163, 175;
-    --color-gray-50: 31, 41, 55;
-    --color-gray-100: 55, 65, 81;
-    --color-gray-200: 75, 85, 99;
-    --color-gray-300: 107, 114, 128;
-    --color-gray-400: 156, 163, 175;
-    --color-gray-500: 209, 213, 219;
-    --color-gray-600: 243, 244, 246;
-    --color-gray-700: 243, 244, 246;
-    --color-gray-800: 249, 250, 251;
-    --color-gray-900: 255, 255, 255;
-  }
-
   html {
     -webkit-tap-highlight-color: transparent;
     -webkit-font-smoothing: antialiased;
