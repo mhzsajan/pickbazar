@@ -200,3 +200,12 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
    - Simplified grid from 3 conflicting strategies to clean responsive columns
 7. Updated SESSIONS.md, PLAN.md, RESUME.md with all changes
 8. Pushed to GitHub
+
+---
+
+## Session 10 (This Conversation)
+1. Removed "Offers" and "Become a Seller" from header links (green button stays — it's hardcoded in header component)
+2. Reordered header links so Manufacturers and Authors appear in "Pages" dropdown
+3. Final header layout: Contact, Flash Sale, Help (direct) + Pages dropdown (Manufacturers, Authors, Terms, Refund Policies)
+4. Updated SESSIONS.md and RESUME.md
+5. Pushed to GitHub

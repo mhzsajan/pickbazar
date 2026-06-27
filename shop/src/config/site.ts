@@ -107,16 +107,11 @@ export const siteSettings = {
     app_store_link: '/',
   },
   headerLinks: [
-    { href: Routes.coupons, icon: null, label: 'nav-menu-offer' },
     { href: Routes.contactUs, label: 'nav-menu-contact' },
-    {
-      href: Routes.becomeSeller,
-      label: 'Become a seller',
-    },
     { href: Routes.flashSale, label: 'nav-menu-flash-sale' },
+    { href: Routes.help, label: 'nav-menu-faq' },
     { href: Routes.manufacturers, label: 'text-manufacturers' },
     { href: Routes.authors, label: 'text-authors' },
-    { href: Routes.help, label: 'nav-menu-faq' },
     { href: Routes.terms, label: 'nav-menu-terms' },
     { href: Routes.customerRefundPolicies, label: 'nav-menu-refund-policy' },
     {
