@@ -3,27 +3,28 @@
 <!-- !! FOR AI: Update this file after EVERY step completed. Move "Last completed" forward, update status table, and refresh "Next action". This is your memory — keep it current. !! -->
 
 ## Where We Stopped
-- **Last completed:** Step 3 (all services built and running via PM2)
-- **Current step:** Step 4 (Git init + GitHub repo + push code)
-- **Next action:** Initialize git, create .gitignore, push to GitHub
+- **Last completed:** Step 5 (Cloudflare Tunnel)
+- **Current step:** Done!
+- **Next action:** Deploy updates, maintain, or add features
 
 ## What Works Now
-| Service | Port | PM2 Name | Status |
-|---------|------|----------|--------|
-| API (api/rest) | 9000 | api | ✅ Running via PM2 |
-| Shop | 3003 | shop | ✅ Running via PM2 |
-| Admin (admin/rest) | 3002 | admin | ✅ Running via PM2 |
+| Service | Port | PM2 Name | Status | Domain |
+|---------|------|----------|--------|--------|
+| API (api/rest) | 9000 | api | ✅ Running via PM2 | api.switchgod.com.np |
+| Shop | 3003 | shop | ✅ Running via PM2 | switchgod.com.np |
+| Admin (admin/rest) | 3002 | admin | ✅ Running via PM2 | admin.switchgod.com.np |
+| Cloudflare Tunnel | - | tunnel | ✅ Running via PM2 | - |
 
 ## Quick Status
 - Prerequisites: ✅ All installed (Node 18, npm, git, PM2, cloudflared, gh)
 - Dependencies: ✅ All 3 services have node_modules
-- .env files: ✅ All 3 created with LAN IP (192.168.254.251) for network access
-- Build: ✅ All 3 services built successfully (rebuilt with IP for LAN access)
-- PM2: ✅ All 3 running (api, shop, admin)
+- .env files: ✅ All 3 created with public domain URLs
+- Build: ✅ All 3 services built successfully (rebuilt with domain URLs)
+- PM2: ✅ All 4 running (api, shop, admin, tunnel)
 - LAN access: ✅ Working from other PCs on same network
-- Git repo: ❌ Not initialized
-- Cloudflare Tunnel: ❌ Not created
-- Auto-deploy: ❌ Not created
+- Git repo: ✅ Initialized + pushed to GitHub (mhzsajan/pickbazar)
+- Cloudflare Tunnel: ✅ Running (switchgod-tunnel)
+- Public URLs: ✅ switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np
 
 ## PM2 Commands
 ```bash
@@ -32,8 +33,8 @@ pm2 logs                # View all logs
 pm2 logs shop           # View shop logs only
 pm2 restart shop        # Restart shop
 pm2 stop all            # Stop all
-pm2 save                # Save process list
-pm2 startup             # Auto-start on boot
+pm2 save                # Save process list (run after changes)
+pm2 startup             # Auto-start on boot (requires sudo)
 ```
 
 ## Important Rules
@@ -45,16 +46,24 @@ pm2 startup             # Auto-start on boot
 - **Admin start:** `next start -p 3002`
 - **API start:** `node dist/main.js` on port 9000
 - **Shop build must have API running** (Next.js fetches from API at build time)
-- **LAN access:** Use `http://192.168.254.251:PORT` from other PCs (not localhost)
-- **After Cloudflare Tunnel:** URLs will change to `switchgod.com.np`, `admin.switchgod.com.np`, `api.switchgod.com.np`
+- **LAN access:** Use `http://192.168.254.251:PORT` from other PCs on same network
+- **Public access:** Use `https://switchgod.com.np`, `https://admin.switchgod.com.np`, `https://api.switchgod.com.np`
+- **After .env changes:** Must rebuild affected service and restart PM2
 
-## Next Commands to Run
+## Quick Reference
 ```bash
-# Step 4: Git + GitHub
-cd /home/switchgod/Desktop/pickbazar
-git init
-# Create .gitignore, then:
-git add .
-git commit -m "Initial commit: PickBazar e-commerce"
-gh repo create pickbazar --private --source=. --push
+# Check all services
+pm2 status
+
+# Restart a service (after code changes)
+pm2 restart shop
+
+# Rebuild shop (API must be running)
+cd /home/switchgod/Desktop/pickbazar/shop && npm run build:rest && pm2 restart shop
+
+# Rebuild admin
+cd /home/switchgod/Desktop/pickbazar/admin/rest && npm run build && pm2 restart admin
+
+# Save PM2 process list (after changes)
+pm2 save
 ```

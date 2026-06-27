@@ -72,11 +72,6 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 
 ---
 
-## Session 3 (Next)
-**Goal:** Build shop & admin, verify all 3 services run on localhost
-
----
-
 ## Session 3 (This Conversation)
 1. Fixed API start script: `dev:rest` doesn't exist, correct script is `start:dev` or run `node dist/main.js` directly
 2. Started API via `node dist/main.js` — it kept dying when bash session ended
@@ -112,5 +107,50 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 
 ---
 
-## Session 4 (Next)
-**Goal:** Initialize git, create GitHub repo, push code
+## Session 4 (This Conversation)
+1. Logged in to GitHub CLI (user: mhzsajan)
+2. Created .gitignore fix (/.next/ → .next/)
+3. Committed all files: "Initial commit: PickBazar e-commerce"
+4. Created private GitHub repo: https://github.com/mhzsajan/pickbazar
+5. Pushed code to main branch
+6. Restarted all 3 PM2 services (daemon was fresh)
+
+---
+
+## Session 5 (This Conversation)
+1. Authenticated with Cloudflare via `cloudflared tunnel login`
+2. Created tunnel `switchgod-tunnel` (fcdc4b48-24b7-4d03-a570-d1c148c94bfb)
+3. Deleted old tunnels (`pickbazar`, `switchgod`) that had stale DNS records
+4. User deleted old DNS CNAME records in Cloudflare dashboard
+5. Routed DNS: switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np → tunnel
+6. Created tunnel config at ~/.cloudflared/config.yml
+7. Started tunnel via PM2
+8. Updated .env.local files to use domain URLs
+9. Rebuilt shop and admin with domain URLs
+10. Verified all 3 domains return 200/307
+11. Saved PM2 process list
+
+### Lesson Learned
+- Old DNS CNAME records block new tunnel routing — must delete them first
+- Build must happen AFTER tunnel DNS is working (Next.js fetches API at build time)
+- Deleted old Cloudflare tunnels don't auto-delete their DNS records
+
+---
+
+## Session 6 (This Conversation)
+1. Audited PM2 logs — found `GOOGLE_CLIENT_ID` error in shop logs
+2. Commented out GoogleProvider in `shop/src/pages/api/auth/[...nextauth].ts` (not configured)
+3. Updated API `SHOP_URL` to public domain in `api/rest/.env`
+4. Rebuilt shop, restarted shop and API
+5. Verified no new errors in logs
+6. Verified all 3 tunnel URLs still working (200, 307, 200)
+7. Fixed documentation inconsistencies across RESUME.md, SESSIONS.md, COMMANDS.md
+
+### Issues Found & Fixed
+| Issue | Fix |
+|-------|-----|
+| `GOOGLE_CLIENT_ID` error in shop logs | Commented out GoogleProvider (not configured) |
+| API `SHOP_URL` was localhost | Changed to `https://switchgod.com.np` |
+| RESUME.md referenced old LAN IP | Updated to domain URLs |
+| COMMANDS.md had wrong GitHub URL | Fixed to mhzsajan/pickbazar |
+| SESSIONS.md had duplicate "Session 3" header | Removed duplicate |

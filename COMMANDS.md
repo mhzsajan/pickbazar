@@ -74,39 +74,34 @@ pm2 start shop
 
 # Save process list + auto-start on reboot
 pm2 save
-pm2 startup
+pm2 startup  # requires sudo — follow the command it outputs
 ```
 
 ---
 
-## Cloudflare Tunnel (After Step 5)
+## Cloudflare Tunnel
 
 ```bash
-# Login (opens browser)
-cloudflared tunnel login
+# Start tunnel via PM2 (already running as 'tunnel')
+pm2 start cloudflared --name tunnel -- tunnel run switchgod-tunnel
 
-# Create tunnel
-cloudflared tunnel create switchgod-tunnel
+# Restart tunnel
+pm2 restart tunnel
 
-# Route DNS
-cloudflared tunnel route dns switchgod-tunnel switchgod.com.np
-cloudflared tunnel route dns switchgod-tunnel admin.switchgod.com.np
-cloudflared tunnel route dns switchgod-tunnel api.switchgod.com.np
-
-# Run tunnel
-cloudflared tunnel run switchgod-tunnel
+# Tunnel config location
+cat /home/switchgod/.cloudflared/config.yml
 ```
 
 ---
 
-## Git (After Step 4)
+## Git
 
 ```bash
 cd /home/switchgod/Desktop/pickbazar
 git init
 git add .
 git commit -m "Initial commit"
-git remote add origin https://github.com/switchgod/pickbazar.git
+git remote add origin https://github.com/mhzsajan/pickbazar.git
 git push -u origin main
 ```
 
@@ -117,6 +112,11 @@ git push -u origin main
 ```bash
 # Quick test — should return products JSON
 curl http://localhost:9000/api/products | head -c 200
+
+# Test via tunnel
+curl -s -o /dev/null -w "%{http_code}" https://api.switchgod.com.np/api/products?limit=1
+curl -s -o /dev/null -w "%{http_code}" https://switchgod.com.np
+curl -s -o /dev/null -w "%{http_code}" https://admin.switchgod.com.np
 ```
 
 ---
@@ -125,17 +125,16 @@ curl http://localhost:9000/api/products | head -c 200
 
 ```bash
 # Shop: /home/switchgod/Desktop/pickbazar/shop/.env.local
-NEXT_PUBLIC_REST_API_ENDPOINT="http://192.168.254.251:9000/api"
-NEXT_PUBLIC_ADMIN_URL="http://192.168.254.251:3002"
-NEXTAUTH_URL=http://192.168.254.251:3003
+NEXT_PUBLIC_REST_API_ENDPOINT="https://api.switchgod.com.np/api"
+NEXT_PUBLIC_ADMIN_URL="https://admin.switchgod.com.np"
+NEXTAUTH_URL=https://switchgod.com.np
 
 # Admin: /home/switchgod/Desktop/pickbazar/admin/rest/.env.local
-NEXT_PUBLIC_REST_API_ENDPOINT="http://192.168.254.251:9000/api"
-NEXT_PUBLIC_SHOP_URL="http://192.168.254.251:3003"
+NEXT_PUBLIC_REST_API_ENDPOINT="https://api.switchgod.com.np/api"
+NEXT_PUBLIC_SHOP_URL="https://switchgod.com.np"
 ```
 
-**Note:** After Cloudflare Tunnel is set up, these will change to domain names.
-If you change these, you must rebuild and restart:
+**Note:** These are baked in at build time. If you change these, you must rebuild and restart.
 ```bash
 # Rebuild shop (API must be running)
 cd /home/switchgod/Desktop/pickbazar/shop && npm run build:rest && pm2 restart shop
