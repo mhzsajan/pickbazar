@@ -73,13 +73,13 @@ export default function Modal({
                 ref={cancelButtonRef}
                 className={twMerge(
                   classNames(
-                    'absolute top-4 z-50 inline-block outline-none focus:outline-0 ltr:right-4 rtl:left-4 lg:hidden',
+                    'absolute top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:right-4 rtl:left-4',
                     closeButtonClass,
                   ),
                 )}
               >
                 <span className="sr-only">{t('text-close')}</span>
-                <CloseIcon className="h-4 w-4" />
+                <CloseIcon className="h-5 w-5" />
               </button>
               {children}
             </Dialog.Panel>
