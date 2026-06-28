@@ -276,8 +276,8 @@
 | 5 — Navigation | UI Navigation | 5 | 2 | 3 |
 | 6 — Bugs | Bug Fixes | 5 | 0 | 5 |
 | 7 — Performance | Speed | 3 | 0 | 3 |
-| 8 — Mobile Audit | Visual/UX Fixes | 67 | 19 | 48 |
-| **Total** | | **104** | **21** | **83** |
+| 8 — Mobile Audit | Visual/UX Fixes | 67 | 67 | 0 |
+| **Total** | | **104** | **69** | **35** |
 
 ---
 
