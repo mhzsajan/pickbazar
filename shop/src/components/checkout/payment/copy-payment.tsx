@@ -32,10 +32,10 @@ const PaymentGroupOption: React.FC<PaymentGroupOptionProps> = ({
       {({ checked }) => (
         <div
           className={cn(
-            'relative flex h-full w-full cursor-pointer items-center justify-center rounded border border-border-100 bg-light py-3 text-center',
-            checked && '!border-accent bg-light shadow-600',
+            'relative flex h-full w-full cursor-pointer items-center justify-center rounded border border-border-100 bg-surface py-3 text-center',
+            checked && '!border-accent bg-surface shadow-600',
             {
-              '!border-gray-800 bg-light shadow-600': theme === 'bw' && checked,
+              '!border-gray-800 bg-surface shadow-600': theme === 'bw' && checked,
             }
           )}
         >

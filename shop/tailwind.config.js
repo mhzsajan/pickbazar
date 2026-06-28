@@ -45,6 +45,7 @@ module.exports = {
       colors: {
         light: withOpacity('--color-light'),
         dark: withOpacity('--color-dark'),
+        surface: withOpacity('--color-surface'),
         accent: withOpacity('--color-accent'),
         'muted-black': withOpacity('--color-muted-black'),
         'base-dark': withOpacity('--text-base-dark'),

@@ -3,7 +3,7 @@ import NotFound from '@/components/ui/not-found';
 import { useTermsAndConditions } from '@/framework/terms-and-conditions';
 import { LIMIT_HUNDRED } from '@/lib/constants';
 import { useTranslation } from 'next-i18next';
-import PageBanner from '@/components/banners/page-banner';
+
 import Terms from '@/components/terms/terms';
 import { getStaticProps } from '@/framework/terms-and-conditions-ssr';
 import { getLayoutWithFooter } from '@/components/layouts/layout-with-footer';
@@ -26,11 +26,10 @@ export default function TermsPage() {
   return (
     <>
       <Seo title="Terms" url="terms" />
-      <section className="mx-auto w-full max-w-1920 bg-light pb-8 lg:pb-10 xl:pb-14">
-        <PageBanner
-          title={t('text-terms-condition')}
-          breadcrumbTitle={t('text-home')}
-        />
+      <section className="mx-auto w-full max-w-1920 bg-surface pb-8 lg:pb-10 xl:pb-14">
+        <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+          <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('text-terms-condition')}</h1>
+        </div>
         {/* End of page header */}
         <div className="mx-auto w-full max-w-screen-lg px-4 py-10">
           {!isLoading && !termsAndConditions.length ? (

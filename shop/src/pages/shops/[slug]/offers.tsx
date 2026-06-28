@@ -9,7 +9,7 @@ import ErrorMessage from '@/components/ui/error-message';
 import CouponCard from '@/components/ui/cards/coupon';
 import dynamic from 'next/dynamic';
 import { getLayoutWithFooter } from '@/components/layouts/layout-with-footer';
-import PageBanner from '@/components/banners/page-banner';
+
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { useRouter } from 'next/router';
 import { useShop } from '@/framework/shop';
@@ -52,10 +52,9 @@ export default function ShopOffersPage() {
   return (
     <>
       <Seo title="Offers" url="offers" />
-      <PageBanner
-        title={t('text-offers-title')}
-        breadcrumbTitle={t('text-home')}
-      />
+      <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+        <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('text-offers-title')}</h1>
+      </div>
       <div className="w-full px-4 py-12 mx-auto bg-gray-100 max-w-1920 lg:py-14 lg:px-8 xl:py-24 xl:px-16 2xl:px-20">
         <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:gap-8 2xl:grid-cols-6">
           {isLoading && !isValidCoupon.length ? (

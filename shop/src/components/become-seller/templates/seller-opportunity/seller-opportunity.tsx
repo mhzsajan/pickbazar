@@ -24,7 +24,7 @@ function SellerOpportunity({
   className,
 }: SellerOpportunityProps) {
   return (
-    <section className={cn('py-20 bg-[#092635]', className)}>
+    <section className={cn('py-20 bg-accent', className)}>
       <div className="mx-auto max-w-[94.75rem] px-4">
         <div className="flex items-center flex-col-reverse justify-between lg:flex-row gap-x-10 gap-y-8 xl:pl-20">
           <div className="[&>*]:text-white max-w-[605px] mx-auto text-center lg:text-left lg:mx-0 rtl:lg:text-right">

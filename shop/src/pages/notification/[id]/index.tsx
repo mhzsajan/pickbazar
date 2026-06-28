@@ -61,7 +61,7 @@ const NotifyLogPage = () => {
           </div>
           {notification ? (
             <>
-              <ul className="group mb-7 flex flex-col space-y-3 text-xs capitalize text-[#666] md:flex-row md:space-y-0 md:space-x-4 md:divide-x md:divide-[#E7E7E7] md:[&>li:not(li:first-child)]:pl-4 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
+              <ul className="group mb-7 flex flex-col space-y-3 text-xs capitalize text-heading md:flex-row md:space-y-0 md:space-x-4 md:divide-x md:divide-border-100 md:[&>li:not(li:first-child)]:pl-4 [&>li]:flex [&>li]:items-center [&>li]:gap-2">
                 <li>
                   <CalendarGhostIcon className="text-base" />
                   <div>

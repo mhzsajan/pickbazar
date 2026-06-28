@@ -48,7 +48,7 @@ const ShopsPage: NextPageWithLayout = () => {
         <div className="min-h-full px-4 pt-6 pb-8 bg-gray-100 lg:p-8">
           <NotFound className="max-w-lg mx-auto" text="No Shops Nearby Found" />
         </div>
-        <div className="bg-light">
+        <div className="bg-surface">
           <div className="mx-auto flex w-full max-w-[1492px] flex-col p-8 pt-14">
             <h3 className="mb-8 text-2xl font-bold text-heading">
               {t('text-all-shops')}
@@ -79,7 +79,7 @@ const ShopsPage: NextPageWithLayout = () => {
   if (error) return <ErrorMessage message={error.message} />;
 
   return (
-    <div className="min-h-screen bg-light">
+    <div className="min-h-screen bg-surface">
       <div className="mx-auto flex w-full max-w-[1492px] flex-col p-8 pt-14">
         <h3 className="mb-8 text-2xl font-bold text-heading">
           {t('text-near-shops')}

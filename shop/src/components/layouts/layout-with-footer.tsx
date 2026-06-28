@@ -13,7 +13,7 @@ const MobileNavigation = dynamic(() => import('./mobile-navigation'), {
 const SiteLayoutWithFooter = ({ children }: { children?: React.ReactNode }) => {
   const { layout } = useLayout();
   return (
-    <div className="flex flex-col min-h-screen transition-colors duration-150 bg-gray-100 pb-14 lg:pb-0">
+    <div className="flex flex-col min-h-screen transition-colors duration-150 bg-surface pb-14 lg:pb-0">
       {layout === 'minimal' ? (
         <HeaderMinimal layout={layout} />
       ) : (
@@ -21,6 +21,7 @@ const SiteLayoutWithFooter = ({ children }: { children?: React.ReactNode }) => {
       )}
       {children}
       <MobileNavigation />
+      <div className="w-full border-t border-border-200" />
       <Footer />
     </div>
   );

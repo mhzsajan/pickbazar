@@ -21,7 +21,7 @@ export default function FilterBar({
     <div
       className={twMerge(
         classNames(
-          'sticky z-20 flex h-14 items-center justify-between border-t border-b border-border-200 bg-light py-3 px-5 md:h-16 lg:px-6 xl:hidden',
+          'sticky z-20 flex h-14 items-center justify-between border-t border-b border-border-200 bg-surface py-3 px-5 md:h-16 lg:px-6 xl:hidden',
           className,
           underMaintenanceIsComing
             ? 'top-[6.875rem]'

@@ -11,7 +11,7 @@ const BecomeSellerPage: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ data }) => {
   return (
-    <div className="bg-[#F9FAFB]">
+    <div className="bg-surface">
       <Seo title="Become seller" url={Routes.becomeSeller} />
       <BecomeSeller data={data} />
     </div>

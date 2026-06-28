@@ -11,6 +11,7 @@
 | 1.1 | Replace PickBazar logo with your own logo | `[ ]` |
 | 1.2 | Replace favicon | `[ ]` |
 | 1.3 | Change accent/theme colors to match your brand | `[x]` |
+| 1.3b | Dark mode toggle + surface color + removed PageBanner from info pages | `[x]` |
 | 1.4 | Update site title and subtitle | `[ ]` |
 | 1.5 | Update footer content (contact info, social links, copyright) | `[ ]` |
 | 1.6 | Add/replace homepage banner images | `[ ]` |
@@ -55,7 +56,7 @@
 | # | Task | Status |
 |---|------|--------|
 | 4.1 | Test mobile navigation flow — fix any touch/click issues | `[ ]` |
-| 4.2 | Fix mobile search UX (full-width, easy close) | `[ ]` |
+| 4.2 | Fix mobile search UX (full-width, easy close) | `[x]` |
 | 4.3 | Optimize mobile page load (reduce JS bundle, lazy load offscreen) | `[ ]` |
 | 4.4 | Test all forms on mobile (login, register, contact, checkout) | `[ ]` |
 | 4.5 | Verify PWA manifest is correct (icons, theme color, start_url) | `[ ]` |
@@ -127,18 +128,18 @@
 
 | Phase | Focus | Tasks | Done | Remaining |
 |-------|-------|-------|------|-----------|
-| 1 — Customization | Branding | 8 | 0 | 8 |
+| 1 — Customization | Branding | 8 | 1 | 7 |
 | 2 — SEO | Google-friendly | 6 | 0 | 6 |
 | 3 — Security | Hacker-proof | 5 | 0 | 5 |
-| 4 — Mobile | Mobile-friendly | 5 | 0 | 5 |
+| 4 — Mobile | Mobile-friendly | 5 | 1 | 4 |
 | 5 — Navigation | UI navigation | 5 | 2 | 3 |
 | 6 — Bugs | Bug fixes | 5 | 0 | 5 |
 | 7 — Performance | Speed | 3 | 0 | 3 |
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
-| **Total** | | **112** | **69** | **43** |
+| **Total** | | **112** | **71** | **41** |
 
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 17 — June 28, 2026*
+*Last updated: Session 19 — June 28, 2026*

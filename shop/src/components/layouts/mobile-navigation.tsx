@@ -33,7 +33,7 @@ export default function MobileNavigation({
   }
 
   return (
-    <nav className="visible fixed bottom-0 z-10 flex h-14 w-full justify-between bg-light py-1.5 px-2 pb-[calc(0.375rem+env(safe-area-inset-bottom))] shadow-400 ltr:left-0 rtl:right-0 lg:hidden">
+    <nav className="visible fixed bottom-0 z-10 flex h-14 w-full justify-between bg-surface py-1.5 px-2 pb-[calc(0.375rem+env(safe-area-inset-bottom))] shadow-400 ltr:left-0 rtl:right-0 lg:hidden">
       <motion.button
         whileTap={{ scale: 0.88 }}
         onClick={() => handleSidebar('MAIN_MENU_VIEW')}

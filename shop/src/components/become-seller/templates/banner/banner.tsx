@@ -39,7 +39,7 @@ const Banner = ({ banner, className }: BannerProps) => {
             {banner?.newsTickerTitle ? (
               <Link
                 {...fixDynamicLink(banner?.newsTickerURL)}
-                className="bg-gray-100 inline-flex p-1 mb-7 text-heading text-sm shadow-newsTicker rounded-full items-center text-left"
+                className="bg-surface inline-flex p-1 mb-7 text-heading text-sm shadow-newsTicker rounded-full items-center text-left"
               >
                 <Badge
                   text={t('text-news')}
@@ -51,7 +51,7 @@ const Banner = ({ banner, className }: BannerProps) => {
                 {banner?.newsTickerTitle}
                 <ChevronRightNew
                   className={cn(
-                    'text-[#9CA3AF] mr-3 ml-2',
+                    'text-muted mr-3 ml-2',
                     isRTL && 'mr-2 ml-3 transform rotate-180',
                   )}
                 />

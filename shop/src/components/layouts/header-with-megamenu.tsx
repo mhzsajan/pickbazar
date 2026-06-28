@@ -57,7 +57,7 @@ const HeaderWithMegaMenu: React.FC<MenuProps> = ({ data, className }) => {
       >
         <div
           className={cn(
-            'flex justify-between items-center w-full h-14 md:h-16 lg:h-22 px-4 ltr:lg:pl-16 rtl:lg:pr-16 ltr:lg:pr-16 rtl:lg:pl-16 py-5 bg-light transition-transform duration-300 relative z-10'
+            'flex justify-between items-center w-full h-14 md:h-16 lg:h-22 px-4 ltr:lg:pl-16 rtl:lg:pr-16 ltr:lg:pr-16 rtl:lg:pl-16 py-5 bg-surface transition-transform duration-300 relative z-10'
           )}
         >
           <div className="flex items-center w-full">
@@ -71,7 +71,7 @@ const HeaderWithMegaMenu: React.FC<MenuProps> = ({ data, className }) => {
           {isHomePage ? (
             <>
               {displayMobileHeaderSearch && (
-                <div className="block lg:hidden w-full absolute top-0 ltr:left-0 rtl:right-0 h-full bg-light pt-1.5 md:pt-2 px-5">
+                <div className="block lg:hidden w-full absolute top-0 ltr:left-0 rtl:right-0 h-full bg-surface pt-1.5 md:pt-2 px-5">
                   <SearchWithSuggestion
                     label={t('text-search-label')}
                     variant="minimal"

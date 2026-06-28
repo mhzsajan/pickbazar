@@ -41,7 +41,7 @@ const NotificationLists: React.FC<NotificationListsProps> = ({
               "relative py-3.5 px-4 text-sm font-semibold capitalize transition duration-200 hover:text-accent group hover:bg-gray-100/70 overflow-hidden block border-b border-dashed border-gray-200 before:absolute before:top-5 before:h-2 before:w-2 before:rounded-full before:bg-accent before:opacity-0 before:content-[''] before:start-4",
               !Boolean(notification?.is_read)
                 ? 'before:opacity-100 pl-8'
-                : 'bg-[#F9FAFB]',
+                : 'bg-surface',
               className,
             ),
           )}

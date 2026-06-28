@@ -10,7 +10,7 @@ import ErrorMessage from '@/components/ui/error-message';
 import CouponCard from '@/components/ui/cards/coupon';
 import dynamic from 'next/dynamic';
 import { getLayoutWithFooter } from '@/components/layouts/layout-with-footer';
-import PageBanner from '@/components/banners/page-banner';
+
 import { isEmpty } from 'lodash';
 export { getStaticProps } from '@/framework/coupon.ssr';
 const CartCounterButton = dynamic(
@@ -32,10 +32,9 @@ const OffersPage: NextPageWithLayout = () => {
   return (
     <>
       <Seo title="Offers" url="offers" />
-      <PageBanner
-        title={t('text-offers-title')}
-        breadcrumbTitle={t('text-home')}
-      />
+      <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+        <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('text-offers-title')}</h1>
+      </div>
       {!isLoading && isEmpty(coupons) ? (
         <div className="max-w-lg px-4 pt-6 pb-8 mx-auto bg-gray-100 lg:p-8">
           <NotFound text="text-no-coupon" />

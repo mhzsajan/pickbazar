@@ -26,7 +26,7 @@ export default function FaqSection({
   className,
 }: FaqSectionProps) {
   return (
-    <section className={cn('pt-20 pb-[70px] bg-gray-100', className)}>
+    <section className={cn('pt-20 pb-[70px] bg-surface', className)}>
       <div className="mx-auto max-w-[94.75rem] px-4">
         <SectionHeading title={faqTitle} subtitle={faqDescription} />
         <div className="max-w-[1000px] mx-auto">

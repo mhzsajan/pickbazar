@@ -25,7 +25,7 @@ export const ContactPage = () => {
       <div className="w-full bg-gray-100">
         <div className="mx-auto flex w-full max-w-7xl flex-col px-5 py-10 pb-20 md:flex-row md:pb-10 xl:py-14 xl:px-8 xl:pb-14 2xl:px-14">
           {/* sidebar */}
-          <div className="order-2 w-full shrink-0 rounded-lg bg-light p-5 md:order-1 md:w-72 lg:w-96">
+          <div className="order-2 w-full shrink-0 rounded-lg bg-surface p-5 md:order-1 md:w-72 lg:w-96">
             <div className="mb-8 flex w-full items-center justify-center overflow-hidden">
               <Image
                 src={contactIllustration}
@@ -128,7 +128,7 @@ export const ContactPage = () => {
           </div>
 
           {/* Contact form */}
-          <div className="order-1 mb-8 w-full rounded-lg bg-light p-5 md:order-2 md:mb-0 md:p-8 ltr:md:ml-7 rtl:md:mr-7 ltr:lg:ml-9 rtl:lg:mr-9">
+          <div className="order-1 mb-8 w-full rounded-lg bg-surface p-5 md:order-2 md:mb-0 md:p-8 ltr:md:ml-7 rtl:md:mr-7 ltr:lg:ml-9 rtl:lg:mr-9">
             <h1 className="mb-7 font-body text-xl font-bold text-heading md:text-2xl">
               {t('text-questions-comments')}
             </h1>

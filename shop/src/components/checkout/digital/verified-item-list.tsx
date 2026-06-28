@@ -140,7 +140,7 @@ const VerifiedItemList: React.FC<Props> = ({ className }) => {
       {use_wallet && !Boolean(payableAmount) ? null : (
         <PaymentGrid
           theme="bw"
-          className="mt-10 rounded-md border border-border-100 bg-light p-5"
+          className="mt-10 rounded-md border border-border-100 bg-surface p-5"
         />
       )}
       <PlaceOrderAction className="mt-8 h-[50px] w-full font-normal transition-colors">

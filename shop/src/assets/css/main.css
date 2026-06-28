@@ -5,10 +5,7 @@
 @layer base {
   :root {
     /*
-    *
-    * This all are the rgb values which are used inside the
-    * tailwind config file and custom plugins css file
-    *
+    * ===== LIGHT THEME (Original) =====
     */
 
     /*
@@ -52,19 +49,24 @@
     --color-accent-700: 0, 119, 95;
 
     /*
-    * light color (background on dark theme - Midjourney #06051d)
+    * light color (white background)
     */
-    --color-light: 6, 5, 29;
+    --color-light: 255, 255, 255;
 
     /*
-    * dark color (text on dark theme)
+    * dark color (black text)
     */
-    --color-dark: 255, 255, 255;
+    --color-dark: 0, 0, 0;
+
+    /*
+    * surface color (cards/containers - slightly off-white)
+    */
+    --color-surface: 243, 244, 246;
 
     /*
     * Black muted color
     */
-    --color-muted-black: 10, 12, 35;
+    --color-muted-black: 17, 17, 17;
 
     /*
     * Current color
@@ -72,242 +74,125 @@
     --color-current: currentColor;
 
     /*
-    *
-    * TEXT colors (dark blue theme)
-    *
+    * TEXT colors (light theme)
     */
 
-    /*
-    * text color used for body/base text (light blue-gray on dark)
-    */
-    --text-base: 170, 180, 210;
+    --text-base: 107, 114, 128;
+    --text-base-dark: 75, 85, 99;
+    --text-muted: 156, 163, 175;
+    --text-muted-light: 209, 213, 219;
+    --text-sub-heading: 55, 65, 81;
+    --text-heading: 31, 41, 55;
+    --text-bolder: 31, 41, 55;
 
     /*
-    * dark base text color (lighter on dark)
-    */
-    --text-base-dark: 200, 210, 235;
-
-    /*
-    * muted text color (lighter on dark)
-    */
-    --text-muted: 150, 165, 200;
-
-    /*
-    * light muted text color
-    */
-    --text-muted-light: 120, 135, 170;
-
-    /*
-    * text color used for heading text (light on dark)
-    */
-    --text-sub-heading: 190, 200, 225;
-
-    /*
-    * text color used for heading text (white)
-    */
-    --text-heading: 240, 245, 255;
-
-    /*
-    * text color used for heading text (white)
-    */
-    --text-bolder: 240, 245, 255;
-
-    /*
-    *
-    * border colors (dark theme - dark blue)
-    *
+    * border colors (light theme)
     */
 
-    /*
-    * border color 50 (very subtle)
-    */
-    --color-border-50: 15, 20, 45;
+    --color-border-50: 249, 250, 251;
+    --color-border-100: 243, 244, 246;
+    --color-border-200: 229, 231, 235;
+    --color-border-base: 209, 213, 219;
+    --color-border-400: 156, 163, 175;
 
     /*
-    * border color 100
-    */
-    --color-border-100: 20, 28, 55;
-
-    /*
-    * border color 200
-    */
-    --color-border-200: 30, 40, 70;
-
-    /*
-    * border base color which is 300
-    */
-    --color-border-base: 40, 55, 85;
-
-    /*
-    * border color 400
-    */
-    --color-border-400: 60, 75, 105;
-
-    /*
-    *
-    * Tailwind default gray color override (dark blue theme)
-    *
+    * Tailwind gray colors (light theme)
     */
 
-    /*
-    * gray-50 (darkest on dark theme)
-    */
-    --color-gray-50: 8, 8, 30;
+    --color-gray-50: 249, 250, 251;
+    --color-gray-100: 243, 244, 246;
+    --color-gray-200: 229, 231, 235;
+    --color-gray-300: 209, 213, 219;
+    --color-gray-400: 156, 163, 175;
+    --color-gray-500: 107, 114, 128;
+    --color-gray-600: 75, 85, 99;
+    --color-gray-700: 55, 65, 81;
+    --color-gray-800: 31, 41, 55;
+    --color-gray-900: 31, 41, 55;
 
     /*
-    * gray-100
+    * orange colors (light theme)
     */
-    --color-gray-100: 12, 14, 38;
 
-    /*
-    * gray-200
-    */
-    --color-gray-200: 18, 22, 48;
-
-    /*
-    * gray-300
-    */
-    --color-gray-300: 25, 32, 60;
-
-    /*
-    * gray-400
-    */
-    --color-gray-400: 35, 45, 75;
-
-    /*
-    * gray-500
-    */
-    --color-gray-500: 50, 65, 100;
-
-    /*
-    * gray-600
-    */
-    --color-gray-600: 70, 90, 130;
-
-    /*
-    * gray-700
-    */
-    --color-gray-700: 100, 120, 160;
-
-    /*
-    * gray-800
-    */
-    --color-gray-800: 150, 165, 200;
-
-    /*
-    * gray-900 (lightest on dark theme)
-    */
-    --color-gray-900: 220, 225, 240;
-
-    /*
-    * orange-50 (dark theme)
-    */
-    --color-orange-50: 40, 25, 10;
-
-    /*
-    * orange-100
-    */
-    --color-orange-100: 60, 35, 15;
-
-    /*
-    * orange-200
-    */
-    --color-orange-200: 80, 45, 20;
-
-    /*
-    * orange-300
-    */
-    --color-orange-300: 120, 65, 25;
-
-    /*
-    * orange-400
-    */
-    --color-orange-400: 180, 90, 30;
-
-    /*
-    * orange-500
-    */
+    --color-orange-50: 255, 247, 237;
+    --color-orange-100: 255, 237, 213;
+    --color-orange-200: 254, 215, 170;
+    --color-orange-300: 253, 186, 116;
+    --color-orange-400: 251, 146, 60;
     --color-orange-500: 249, 115, 22;
-
-    /*
-    * orange-600
-    */
     --color-orange-600: 234, 88, 12;
-
-    /*
-    * orange-700
-    */
     --color-orange-700: 194, 65, 12;
-
-    /*
-    * orange-800
-    */
     --color-orange-800: 154, 52, 18;
-
-    /*
-    * orange-900
-    */
     --color-orange-900: 124, 45, 18;
 
     /*
-    Pending
+    * Status colors
     */
+
     --color-pending: 201, 161, 22;
-
-    /*
-    Processing
-    */
     --color-processing: 158, 117, 0;
-
-    /*
-    Complete
-    */
     --color-complete: 0, 161, 127;
-
-    /*
-    Canceled
-    */
     --color-canceled: 227, 110, 1;
-
-    /*
-    Failed
-    */
     --color-failed: 238, 43, 0;
-
-    /*
-    Out for delivery
-    */
     --color-out-for-delivery: 126, 173, 66;
 
     /*
-    40px base 16px
+    * Font sizes
     */
+
     --h1 : 2.5rem;
-
-    /*
-    32px base 16px
-    */
     --h2 : 2rem;
-
-    /*
-    24px base 16px
-    */
     --h3 : 1.5rem;
-
-    /*
-    20px base 16px
-    */
     --h4 : 1.25rem;
-
-    /*
-    18px base 16px
-    */
     --h5 : 1.125rem;
-
-    /*
-    16px base 16px
-    */
     --h6 : 1rem;
+  }
+
+  /*
+  * ===== DARK THEME (Midjourney-style) =====
+  */
+
+  body.dark {
+    --color-light: 6, 5, 29;
+    --color-dark: 255, 255, 255;
+    --color-surface: 16, 18, 45;
+    --color-muted-black: 10, 12, 35;
+
+    --text-base: 170, 180, 210;
+    --text-base-dark: 200, 210, 235;
+    --text-muted: 150, 165, 200;
+    --text-muted-light: 120, 135, 170;
+    --text-sub-heading: 190, 200, 225;
+    --text-heading: 240, 245, 255;
+    --text-bolder: 240, 245, 255;
+
+    --color-border-50: 15, 20, 45;
+    --color-border-100: 20, 28, 55;
+    --color-border-200: 30, 40, 70;
+    --color-border-base: 40, 55, 85;
+    --color-border-400: 60, 75, 105;
+
+    --color-gray-50: 8, 8, 30;
+    --color-gray-100: 12, 14, 38;
+    --color-gray-200: 18, 22, 48;
+    --color-gray-300: 25, 32, 60;
+    --color-gray-400: 35, 45, 75;
+    --color-gray-500: 50, 65, 100;
+    --color-gray-600: 70, 90, 130;
+    --color-gray-700: 100, 120, 160;
+    --color-gray-800: 150, 165, 200;
+    --color-gray-900: 220, 225, 240;
+
+    --color-orange-50: 40, 25, 10;
+    --color-orange-100: 60, 35, 15;
+    --color-orange-200: 80, 45, 20;
+    --color-orange-300: 120, 65, 25;
+    --color-orange-400: 180, 90, 30;
+    --color-orange-500: 249, 115, 22;
+    --color-orange-600: 234, 88, 12;
+    --color-orange-700: 194, 65, 12;
+    --color-orange-800: 154, 52, 18;
+    --color-orange-900: 124, 45, 18;
   }
 
   html {
@@ -318,6 +203,9 @@
 
   body {
     @apply font-body;
+    background-color: rgb(var(--color-light));
+    color: rgb(var(--text-base));
+    transition: background-color 0.3s, color 0.3s;
   }
 
   h1,
@@ -331,6 +219,15 @@
 
   a {
     @apply no-underline;
+  }
+
+  body.dark ::placeholder {
+    color: rgb(var(--color-gray-400));
+  }
+
+  body.dark input,
+  body.dark textarea {
+    color: rgb(var(--text-heading));
   }
 }
 @import './custom-plugins.css';

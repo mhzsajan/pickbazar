@@ -7,7 +7,7 @@ import { useShop } from '@/framework/shop';
 import NotFound from '@/components/ui/not-found';
 import { LIMIT_HUNDRED } from '@/lib/constants';
 import { getLayoutWithFooter } from '@/components/layouts/layout-with-footer';
-import PageBanner from '@/components/banners/page-banner';
+
 import FAQ from '@/components/faq/faq';
 import ErrorMessage from '@/components/ui/error-message';
 
@@ -35,11 +35,10 @@ export default function ShopFaqPage() {
   return (
     <>
       <Seo title="Help" url="help" />
-      <section className="w-full min-h-screen pb-16 mx-auto max-w-1920 bg-light lg:pb-10 xl:pb-14">
-        <PageBanner
-          title={t('text-faq-title')}
-          breadcrumbTitle={t('text-home')}
-        />
+      <section className="w-full min-h-screen pb-16 mx-auto max-w-1920 bg-surface lg:pb-10 xl:pb-14">
+        <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+          <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('text-faq-title')}</h1>
+        </div>
         <div className="w-full max-w-screen-lg px-4 py-10 mx-auto">
           {!isLoading && !faqs.length ? (
             <div className="min-h-full p-5 md:p-8 lg:p-12 2xl:p-16">

@@ -34,7 +34,7 @@ export default function VendorContactPage() {
       <div className="w-full bg-gray-100">
         <div className="flex flex-col w-full px-5 py-10 pb-20 mx-auto max-w-7xl md:flex-row md:pb-10 xl:py-14 xl:px-8 xl:pb-14 2xl:px-14">
           {/* sidebar */}
-          <div className="order-2 w-full p-5 rounded-lg shrink-0 bg-light md:order-1 md:w-72 lg:w-96">
+          <div className="order-2 w-full p-5 rounded-lg shrink-0 bg-surface md:order-1 md:w-72 lg:w-96">
             <div className="flex items-center justify-center w-full mb-8 overflow-hidden">
               <Image
                 src={contactIllustration}
@@ -125,7 +125,7 @@ export default function VendorContactPage() {
           </div>
 
           {/* Contact form */}
-          <div className="order-1 w-full p-5 mb-8 rounded-lg bg-light md:order-2 md:mb-0 md:p-8 ltr:md:ml-7 rtl:md:mr-7 ltr:lg:ml-9 rtl:lg:mr-9">
+          <div className="order-1 w-full p-5 mb-8 rounded-lg bg-surface md:order-2 md:mb-0 md:p-8 ltr:md:ml-7 rtl:md:mr-7 ltr:lg:ml-9 rtl:lg:mr-9">
             <h1 className="mb-2.5 font-body text-xl font-bold text-heading md:text-2xl">
               {t('text-vendor-comments')}
             </h1>

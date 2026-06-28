@@ -2,7 +2,7 @@ import Seo from '@/components/seo/seo';
 import { useTermsAndConditions } from '@/framework/terms-and-conditions';
 import { LIMIT_HUNDRED } from '@/lib/constants';
 import { useTranslation } from 'next-i18next';
-import PageBanner from '@/components/banners/page-banner';
+
 import Terms from '@/components/terms/terms';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 import { getLayoutWithFooter } from '@/components/layouts/layout-with-footer';
@@ -46,11 +46,10 @@ export default function ShopTermsPage() {
   return (
     <>
       <Seo title="Terms" url="terms" />
-      <section className="w-full pb-8 mx-auto max-w-1920 bg-light lg:pb-10 xl:pb-14">
-        <PageBanner
-          title={t('terms-main-title')}
-          breadcrumbTitle={t('terms-text-home')}
-        />
+      <section className="w-full pb-8 mx-auto max-w-1920 bg-surface lg:pb-10 xl:pb-14">
+        <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+          <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('terms-main-title')}</h1>
+        </div>
         {/* End of page header */}
         <div className="container px-4 py-8 mx-auto 3xl:py-18 md:py-10 xl:py-12 2xl:py-14">
           {isEmpty(termsAndConditions) ? (

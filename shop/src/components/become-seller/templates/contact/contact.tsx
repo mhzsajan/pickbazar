@@ -13,7 +13,7 @@ type ContactProps = {
 
 export default function Contact({ className, data }: ContactProps) {
   return (
-    <section className={cn('pb-20 bg-gray-100', className)}>
+    <section className={cn('pb-20 bg-surface', className)}>
       <div className="mx-auto max-w-[94.75rem] px-4">
         {data?.title ? (
           <SectionHeading title={data?.title} subtitle={data?.description} />

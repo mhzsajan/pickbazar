@@ -4,7 +4,7 @@ import NotFound from '@/components/ui/not-found';
 import { useRefundPolicies } from '@/framework/refund-policies';
 import { LIMIT } from '@/lib/constants';
 import { useTranslation } from 'next-i18next';
-import PageBanner from '@/components/banners/page-banner';
+
 import Terms from '@/components/terms/terms';
 import ErrorMessage from '@/components/ui/error-message';
 import { getVendorStaticProps as getStaticProps } from '@/framework/refund-policies.ssr';
@@ -25,11 +25,10 @@ export default function RefundPolicyPage() {
   return (
     <>
       <Seo title="Customer Refund Policies" url="refund-policies" />
-      <section className="mx-auto min-h-screen bg-light w-full max-w-1920 pb-8 lg:pb-10 xl:pb-14">
-        <PageBanner
-          title={t('nav-menu-vendor-refund-policy')}
-          breadcrumbTitle={t('text-home')}
-        />
+      <section className="mx-auto min-h-screen bg-surface w-full max-w-1920 pb-8 lg:pb-10 xl:pb-14">
+        <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+          <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('nav-menu-vendor-refund-policy')}</h1>
+        </div>
         {/* End of page header */}
         <div className="mx-auto w-full max-w-screen-lg px-4 py-10">
           {!isLoading && !refundPolicies.length ? (

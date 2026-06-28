@@ -40,7 +40,7 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
           {
             'rounded-lg border border-border-200 bg-gray-200 px-3':
               variant === 'minimal',
-            'rounded border-border-200 bg-light xl:min-w-150 xl:border xl:text-accent':
+            'rounded border-border-200 bg-surface xl:min-w-150 xl:border xl:text-accent':
               variant === 'colored',
           },
           className,
@@ -89,7 +89,7 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
         <Menu.Items
           as="div"
           className={cn(
-            'absolute mt-2 h-56 max-h-56 min-h-40 w-48 overflow-hidden rounded bg-light py-2 shadow-700 focus:outline-none focus-visible:outline-0 sm:max-h-72 lg:h-72 2xl:h-auto 2xl:max-h-screen',
+            'absolute mt-2 h-56 max-h-56 min-h-40 w-48 overflow-hidden rounded bg-surface py-2 shadow-700 focus:outline-none focus-visible:outline-0 sm:max-h-72 lg:h-72 2xl:h-auto 2xl:max-h-screen',
             {
               'border border-border-200 ltr:right-0 ltr:origin-top-right rtl:left-0 rtl:origin-top-left':
                 variant === 'minimal',

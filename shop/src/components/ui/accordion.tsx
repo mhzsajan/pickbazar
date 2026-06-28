@@ -50,7 +50,7 @@ const Collapse: React.FC<CollapseProps> = ({
   return (
     <div
       className={cn(
-        'bg-light rounded mb-2.5 transition-all ',
+        'bg-surface rounded mb-2.5 transition-all ',
         variantClasses,
         activeClass,
       )}

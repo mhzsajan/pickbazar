@@ -37,7 +37,7 @@ const ShopsPage: NextPageWithLayout = () => {
   }
 
   return (
-    <div className="min-h-screen bg-light ">
+    <div className="min-h-screen bg-surface ">
       <div className="mx-auto flex w-full max-w-6xl flex-col p-8 px-5 pt-14 lg:px-6 2xl:px-8">
         <h3 className="mb-8 text-2xl font-bold text-heading">
           {t('text-all-shops')}

@@ -17,7 +17,7 @@ export default function PrivacyPage() {
   return (
     <>
       <Seo title="Privacy" url="privacy" />
-      <section className="mx-auto w-full max-w-1920 bg-light px-4 py-8 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20">
+      <section className="mx-auto w-full max-w-1920 bg-surface px-4 py-8 lg:py-10 lg:px-8 xl:py-14 xl:px-16 2xl:px-20">
         <header className="mb-10 sm:mt-2 lg:mb-14 xl:mt-4">
           <h1 className="mb-4 text-xl font-bold text-heading sm:mb-5 sm:text-3xl md:text-2xl 2xl:mb-7 2xl:text-4xl">
             {t(title)}

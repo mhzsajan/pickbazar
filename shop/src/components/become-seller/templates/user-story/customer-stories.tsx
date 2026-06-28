@@ -23,7 +23,7 @@ const swiperPaginationClassName = `
   [&_.swiper-pagination_.swiper-pagination-bullet]:!w-2 
   [&_.swiper-pagination_.swiper-pagination-bullet]:!h-2 
   [&_.swiper-pagination_.swiper-pagination-bullet]:!cursor-pointer
-  [&_.swiper-pagination_.swiper-pagination-bullet]:!bg-gray-100 
+  [&_.swiper-pagination_.swiper-pagination-bullet]:!bg-surface 
   [&_.swiper-pagination_.swiper-pagination-bullet]:!bg-opacity-40 
   [&_.swiper-pagination_.swiper-pagination-bullet]:!rounded
   [&_.swiper-pagination_.swiper-pagination-bullet]:!w-[60px] 
@@ -38,7 +38,7 @@ export default function CustomerStories({
   className,
 }: CustomerStoriesProps) {
   return (
-    <section className={cn('py-20 bg-[#092635]', className)}>
+    <section className={cn('py-20 bg-accent', className)}>
       <div className="mx-auto max-w-[94.75rem] px-4">
         <SectionHeading
           title={userStoryTitle}

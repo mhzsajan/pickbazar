@@ -34,7 +34,7 @@ const VerifyEmail = () => {
     useResendVerificationEmail();
 
   return (
-    <section className="relative flex min-h-screen w-full items-center justify-center bg-[#F4F6F7] py-5 px-4 md:py-8">
+    <section className="relative flex min-h-screen w-full items-center justify-center bg-surface py-5 px-4 md:py-8">
       <div className="max-w-[36rem]">
         <Card className="text-center !shadow-900 md:px-[4.375rem] md:py-[2.875rem]">
           <Logo />
@@ -43,7 +43,7 @@ const VerifyEmail = () => {
             {t('common:email-not-verified')}
           </h2>
 
-          <p className="mb-16 text-lg text-[#969FAF]">
+          <p className="mb-16 text-lg text-muted">
             {t('email-not-description')}
           </p>
 

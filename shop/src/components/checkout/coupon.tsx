@@ -67,7 +67,7 @@ const Coupon = ({ theme, subtotal }: { theme?: 'dark'; subtotal: number }) => {
         disabled={loading}
         size="small"
         className={classNames('w-full sm:w-40 lg:w-auto', {
-          'bg-gray-800 transition-colors hover:bg-gray-900': theme === 'dark',
+          'bg-accent transition-colors hover:bg-accent-hover': theme === 'dark',
         })}
       >
         {t('text-apply')}

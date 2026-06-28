@@ -37,7 +37,7 @@ const ProductPage: NextPageWithLayout<
         images={!isEmpty(product?.image) ? [product.image] : []}
       />
       <AttributesProvider>
-        <div className="min-h-screen bg-light">
+        <div className="min-h-screen bg-surface">
           {product.type?.slug === 'books' ? (
             <BookDetails product={product} />
           ) : (

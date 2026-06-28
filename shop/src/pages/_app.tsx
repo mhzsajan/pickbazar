@@ -22,6 +22,7 @@ const ToastContainer = dynamic(
 );
 import Maintenance from '@/components/maintenance/layout';
 import { NotificationProvider } from '@/context/notify-content';
+import { ThemeProvider } from '@/context/theme-context';
 
 type AppPropsWithLayout = AppProps & {
   Component: NextPageWithLayout;
@@ -43,34 +44,36 @@ function CustomApp({
   return (
     <>
       <div dir={dir}>
-        <SessionProvider session={session}>
-          <QueryProvider pageProps={pageProps}>
-            <SearchProvider>
-              <ModalProvider>
-                <CartProvider>
-                  <>
-                    <DefaultSeo />
-                    <Maintenance>
-                      <NotificationProvider>
-                        {authenticationRequired ? (
-                          <PrivateRoute>
-                            {getLayout(<Component {...pageProps} />)}
-                          </PrivateRoute>
-                        ) : (
-                          getLayout(<Component {...pageProps} />)
-                        )}
-                      </NotificationProvider>
-                    </Maintenance>
-                    <ManagedModal />
-                    <ManagedDrawer />
-                    <ToastContainer autoClose={2000} theme="colored" />
-                    <SocialLogin />
-                  </>
-                </CartProvider>
-              </ModalProvider>
-            </SearchProvider>
-          </QueryProvider>
-        </SessionProvider>
+        <ThemeProvider>
+          <SessionProvider session={session}>
+            <QueryProvider pageProps={pageProps}>
+              <SearchProvider>
+                <ModalProvider>
+                  <CartProvider>
+                    <>
+                      <DefaultSeo />
+                      <Maintenance>
+                        <NotificationProvider>
+                          {authenticationRequired ? (
+                            <PrivateRoute>
+                              {getLayout(<Component {...pageProps} />)}
+                            </PrivateRoute>
+                          ) : (
+                            getLayout(<Component {...pageProps} />)
+                          )}
+                        </NotificationProvider>
+                      </Maintenance>
+                      <ManagedModal />
+                      <ManagedDrawer />
+                      <ToastContainer autoClose={2000} theme="colored" />
+                      <SocialLogin />
+                    </>
+                  </CartProvider>
+                </ModalProvider>
+              </SearchProvider>
+            </QueryProvider>
+          </SessionProvider>
+        </ThemeProvider>
       </div>
     </>
   );

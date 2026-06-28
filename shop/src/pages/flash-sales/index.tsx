@@ -1,4 +1,4 @@
-import PageBanner from '@/components/banners/page-banner';
+
 import FlashSaleCard from '@/components/flash-sale/flash-sale';
 import { getLayoutWithFooter } from '@/components/layouts/layout-with-footer';
 import Button from '@/components/ui/button';
@@ -30,11 +30,10 @@ const FlashDealsPage: NextPageWithLayout = () => {
   if (error) return <ErrorMessage message={error.message} />;
 
   return (
-    <div className="grow bg-[#F9F9F9] pb-8 lg:pb-10 xl:pb-14">
-      <PageBanner
-        title={t('text-available-flash-sale')}
-        breadcrumbTitle={t('text-home')}
-      />
+    <div className="grow bg-surface pb-8 lg:pb-10 xl:pb-14">
+      <div className="w-full max-w-screen-lg px-4 pt-10 mx-auto">
+        <h1 className="text-xl font-bold text-heading md:text-2xl lg:text-3xl">{t('text-available-flash-sale')}</h1>
+      </div>
       <div className="mx-auto max-w-[94.75rem]">
         <div className="px-4 py-10 pt-20">
           {!isEmpty(flashSales) ? (

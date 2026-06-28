@@ -18,7 +18,7 @@ export default function AddOrUpdateContact() {
     closeModal();
   }
   return (
-    <div className="flex flex-col justify-center min-h-0 p-5 bg-light sm:p-8 md:min-h-0 md:rounded-xl">
+    <div className="flex flex-col justify-center min-h-0 p-5 bg-surface sm:p-8 md:min-h-0 md:rounded-xl">
       <h1 className="mb-5 text-sm font-semibold text-center text-heading sm:mb-6">
         {contactNumber ? t('text-update') : t('text-add-new')}{' '}
         {t('text-contact-number')}

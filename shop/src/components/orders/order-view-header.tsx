@@ -35,7 +35,7 @@ export default function OrderViewHeader({
   );
   const paymentGateway = settings?.paymentGateway;
   return (
-    <div className={cn(`bg-[#F7F8FA] ${wrapperClassName}`)}>
+    <div className={cn(`bg-surface ${wrapperClassName}`)}>
       <div className="flex flex-col flex-wrap items-center justify-between mb-0 text-base font-bold gap-x-8 text-heading sm:flex-row lg:flex-nowrap">
         <div
           className={`order-2 grid w-full grid-cols-1 gap-6 xs:flex-nowrap sm:order-1 ${

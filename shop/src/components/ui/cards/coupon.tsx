@@ -35,7 +35,7 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon, className }) => {
 
   return (
     <div className={cn('coupon-card', className)}>
-      <div className="relative flex overflow-hidden bg-gray-200 h-[12.5rem] rounded">
+      <div className="relative flex overflow-hidden bg-surface h-[12.5rem] rounded">
         {image?.thumbnail ? (
           <div
             className="blur- absolute top-0 left-0 h-full w-full bg-cover bg-center bg-no-repeat blur-sm"
@@ -55,7 +55,7 @@ const CouponCard: React.FC<CouponCardProps> = ({ coupon, className }) => {
           }}
         />
       </div>
-      <div className="grid items-center w-11/12 grid-flow-col px-5 py-4 mx-auto rounded-bl shadow-sm rounded-be auto-cols-fr bg-light">
+      <div className="grid items-center w-11/12 grid-flow-col px-5 py-4 mx-auto rounded-bl shadow-sm rounded-be auto-cols-fr bg-surface">
         <>
           <span className="flex items-center font-semibold uppercase text-heading focus:outline-none gap-1.5">
             {copyText.value}{' '}

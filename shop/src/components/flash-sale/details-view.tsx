@@ -123,7 +123,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
       </div>
       <div
         className={twMerge(
-          classNames('relative bg-[#F9F9F9] py-16 sm:py-20', containerClass),
+          classNames('relative bg-surface py-16 sm:py-20', containerClass),
         )}
       >
         {!isEmpty(products) ? (

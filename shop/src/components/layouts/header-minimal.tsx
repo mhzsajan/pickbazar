@@ -131,7 +131,7 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
         <div
           ref={siteHeaderRef}
           className={cn(
-            'fixed z-50 flex w-full items-center justify-between border-b border-border-200 bg-light px-5 py-3 shadow-sm transition-transform duration-300 lg:h-22 lg:py-5 lg:px-6 xl:px-8',
+            'fixed z-50 flex w-full items-center justify-between border-b border-border-200 bg-surface px-5 py-3 shadow-sm transition-transform duration-300 lg:h-22 lg:py-5 lg:px-6 xl:px-8',
             {
               'px-5 lg:!px-7 xl:!px-10': layout === 'compact',
             },
@@ -163,7 +163,7 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
           </div>
 
           {displayMobileHeaderSearch && (
-            <div className="absolute top-0 z-20 flex h-full w-full items-center justify-center space-x-4 border-b-accent-300 bg-light px-5 py-1.5 backdrop-blur ltr:left-0 rtl:right-0 rtl:space-x-reverse lg:border lg:bg-opacity-30">
+            <div className="absolute top-0 z-20 flex h-full w-full items-center justify-center space-x-4 border-b-accent-300 bg-surface px-5 py-1.5 backdrop-blur ltr:left-0 rtl:right-0 rtl:space-x-reverse lg:border lg:bg-opacity-30">
               <SearchWithSuggestion
                 label={t('text-search-label')}
                 variant="minimal"
@@ -200,7 +200,7 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
             {layout === 'compact' ? (
               <Button
                 variant="custom"
-                className="hidden h-[38px] w-[38px] items-center  gap-2 rounded-full border border-border-200 bg-light !p-1 text-sm !font-normal focus:!shadow-none focus:!ring-0 md:text-base lg:!flex"
+                className="hidden h-[38px] w-[38px] items-center  gap-2 rounded-full border border-border-200 bg-surface !p-1 text-sm !font-normal focus:!shadow-none focus:!ring-0 md:text-base lg:!flex"
                 onClick={() => setDisplayMobileHeaderSearch((prev) => !prev)}
               >
                 <SearchIcon className="h-4 w-4" />

@@ -27,7 +27,7 @@ export default function CustomerStory({
   thumbnail,
 }: CustomerStoryProps) {
   return (
-    <div className="testimonial bg-[#115750] rounded-xl overflow-hidden">
+    <div className="testimonial bg-accent-700 rounded-xl overflow-hidden">
       <div className="flex flex-wrap lg:flex-nowrap items-center pt-5 lg:pt-0">
         <div className="max-w-[500px] lg:max-w-[800px] mx-auto lg:mx-0 relative w-full h-auto rounded-xl p-5">
           {link ? (

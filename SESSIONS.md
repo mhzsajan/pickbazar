@@ -22,6 +22,7 @@
 | 16 | Jun 28 | Attempted add-to-cart redesign (quantity popup), NOT pushed |
 | 17 | Jun 28 | Reverted add-to-cart changes, documented root causes in KNOWN_ISSUES.md |
 | 18 | Jun 28 | Applied dark blue theme (Midjourney-style), fixed 200+ hardcoded colors in 100+ files, fixed text visibility |
+| 19 | Jun 28 | Dark mode toggle, surface color, removed PageBanner from 9 pages, fixed search boxes for dark mode |
 
 ---
 
@@ -35,3 +36,4 @@
 - **Add-to-cart:** Intersection observer `threshold: 1` triggers sticky bar on mobile (content taller than viewport)
 - **Dark theme:** CSS variables in `main.css` control colors. Gray scale is inverted (gray-50=darkest, gray-900=lightest). Use higher gray numbers for text on dark backgrounds.
 - **Revert dark theme:** Restore original CSS variables from git history: `git show HEAD~2:shop/src/assets/css/main.css`
+- **PageBanner:** Was hardcoded in code, not configurable from admin. Removed from info pages.
