@@ -85,7 +85,7 @@ const Xenon: React.FC<XenonProps> = ({ product, className }) => {
 
       <header className="p-3 md:p-6">
         <h3
-          className="cursor-pointer truncate text-xs text-body md:text-sm"
+          className="cursor-pointer truncate text-sm text-body md:text-base"
           onClick={handleProductQuickView}
         >
           {name}

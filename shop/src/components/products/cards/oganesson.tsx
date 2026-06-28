@@ -69,7 +69,7 @@ const Oganesson: React.FC<OganessonProps> = ({ product, className }) => {
         </div>
         {/* End of product price */}
 
-        <h3 className="truncate text-xs text-body md:text-sm">{name}</h3>
+        <h3 className="truncate text-sm text-body md:text-base">{name}</h3>
         {/* End of product title */}
       </header>
     </article>

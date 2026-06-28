@@ -12,11 +12,6 @@ export default function MobileMainMenu() {
   const [_, closeSidebar] = useAtom(drawerAtom);
   const { headerLinks } = siteSettings;
 
-  // function handleClick(path: string) {
-  //   router.push(path);
-  //   closeSidebar({ display: false, view: '' });
-  // }
-
   return (
     <DrawerWrapper>
       <ul className="grow">

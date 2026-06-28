@@ -41,15 +41,6 @@ interface PaymentGroupOptionProps {
   theme?: string;
 }
 
-// const PAYMENT_GATEWAYS = [
-//   { name: 'stripe', title: 'Stripe' },
-//   { name: 'paypal', title: 'Paypal' },
-//   { name: 'razorpay', title: 'RazorPay' },
-//   { name: 'mollie', title: 'Mollie' },
-//   { name: 'paystack', title: 'Paystack' },
-//   { name: 'sslcommerz', title: 'SslCommerz' },
-// ];
-
 const PaymentGroupOption: React.FC<PaymentGroupOptionProps> = ({
   payment: { name, value, icon },
   theme,
@@ -185,36 +176,6 @@ const PaymentGrid: React.FC<{ className?: string; theme?: 'bw' }> = ({
       component: CashOnDelivery,
     },
   };
-
-  // this is the actual useEffect hooks
-  // useEffect(() => {
-  //   if (settings && availableGateway) {
-  //     // At first, team up the selected gateways.
-  //     let selectedGateways = [];
-  //     for (let i = 0; i < availableGateway.length; i++) {
-  //       selectedGateways.push(availableGateway[i].name.toUpperCase());
-  //     }
-
-  //     // if default payment-gateway did not present in the selected gateways, then this will attach default with selected
-  //     if (!selectedGateways.includes(defaultGateway)) {
-  //       const pluckedGateway = PAYMENT_GATEWAYS.filter((obj) => {
-  //         return obj.name.toUpperCase() === defaultGateway;
-  //       });
-  //       Array.prototype.push.apply(availableGateway, pluckedGateway);
-  //     }
-
-  //     availableGateway.forEach((gateway: any) => {
-  //       setGateway(gateway?.name.toUpperCase() as PaymentGateway);
-  //     });
-
-  //     // TODO : Did not understand properly the planning here. about state
-  //     // setGateway(
-  //     //   settings?.paymentGateway[0]?.name.toUpperCase() as PaymentGateway
-  //     // );
-  //   } else {
-  //     setGateway(PaymentGateway.COD);
-  //   }
-  // }, [isLoading, cashOnDelivery, defaultGateway, availableGateway]);
 
   useEffect(() => {
     if (settings && availableGateway) {

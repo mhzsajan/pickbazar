@@ -19,12 +19,6 @@
 .rc-pagination.rc-pagination-simple .rc-pagination-next {
   @apply mt-3 flex items-center text-sm capitalize text-accent;
 }
-/* .rc-pagination .rc-pagination-prev {
-  @apply ltr:mr-8 rtl:ml-8;
-}
-.rc-pagination .rc-pagination-next {
-  @apply ltr:ml-6 rtl:mr-6;
-} */
 
 .rc-pagination .rc-pagination-prev.rc-pagination-disabled,
 .rc-pagination .rc-pagination-next.rc-pagination-disabled {
@@ -496,9 +490,6 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
 }
 
 /* Header Menu */
-/* #siteHeader.is-scrolling .innerSticky {
-  @apply shadow-header;
-} */
 .headerMenu .menuItem > a::before {
   @apply absolute -bottom-7 w-0 bg-white ltr:right-0 rtl:left-0;
   content: '';
@@ -642,19 +633,6 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   background: rgb(var(--color-gray-300));
   border: 1px solid rgb(var(--color-gray-500));
 }
-
-/* .radio-input:checked + label:after {
-  content: '';
-  position: absolute;
-  left: 4px;
-  top: 9px;
-  background: #ffffff;
-  width: 2px;
-  height: 2px;
-  box-shadow: 2px 0 0 #ffffff, 4px 0 0 #ffffff, 4px -2px 0 #ffffff,
-    4px -4px 0 #ffffff, 4px -6px 0 #ffffff, 4px -8px 0 #ffffff;
-  transform: rotate(45deg);
-} */
 
 /* Checkbox */
 .checkbox {

@@ -71,10 +71,9 @@ const CartItem = ({ item }: CartItemProps) => {
         />
       </div>
       <div>
-        {/* <h3 className="font-bold text-heading">{item.name}</h3> */}
-        <h3 className="font-bold text-heading">{item.name} </h3>
+        <h3 className="font-bold text-heading">{item.name}</h3>
         <p className="my-2.5 font-semibold text-accent">{price}</p>
-        <span className="text-xs text-body">
+        <span className="text-sm text-body">
           {item.quantity} X {item.unit}
         </span>
       </div>

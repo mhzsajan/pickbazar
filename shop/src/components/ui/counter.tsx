@@ -32,10 +32,10 @@ type CounterProps = {
 
 const variantClasses = {
   helium:
-    'w-7 h-18 sm:w-20 sm:h-7 md:h-9 md:w-24 bg-accent flex-col-reverse sm:flex-row absolute sm:static bottom-3 ltr:right-3 rtl:left-3 sm:bottom-0 ltr:sm:right-0 ltr:sm:left-0 text-light rounded',
-  neon: 'w-full h-7 md:h-9 bg-accent text-light rounded',
+    'w-full h-11 sm:w-20 sm:h-7 md:h-9 md:w-24 bg-accent flex-col-reverse sm:flex-row absolute sm:static bottom-3 ltr:right-3 rtl:left-3 sm:bottom-0 ltr:sm:right-0 ltr:sm:left-0 text-light rounded',
+  neon: 'w-full h-11 md:h-9 bg-accent text-light rounded',
   argon:
-    'w-7 h-18 sm:w-20 sm:h-7 md:h-9 md:w-24 bg-accent flex-col-reverse sm:flex-row text-light rounded',
+    'w-full h-11 sm:w-20 sm:h-7 md:h-9 md:w-24 bg-accent flex-col-reverse sm:flex-row text-light rounded',
   oganesson:
     'w-20 h-8 md:w-24 md:h-10 bg-accent text-light rounded-full shadow-500',
   single:

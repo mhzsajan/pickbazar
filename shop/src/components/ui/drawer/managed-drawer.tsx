@@ -2,6 +2,7 @@ import MobileCategoryMenu from '@/components/layouts/mobile-menu/mobile-category
 import { drawerAtom } from '@/store/drawer-atom';
 import { useAtom } from 'jotai';
 import dynamic from 'next/dynamic';
+import React from 'react';
 import Drawer from './drawer';
 const CartSidebarView = dynamic(
   () => import('@/components/cart/cart-sidebar-view'),
@@ -21,10 +22,45 @@ const MaintenanceMoreInfo = dynamic(
 
 export default function ManagedDrawer() {
   const [{ display, view, data }, setDrawerState] = useAtom(drawerAtom);
+  const isOpenRef = React.useRef(false);
+  const isHandlingPopState = React.useRef(false);
+
+  React.useEffect(() => {
+    function handlePopState(e: PopStateEvent) {
+      if (isOpenRef.current && e.state?.__drawer) {
+        isHandlingPopState.current = true;
+        setDrawerState({ display: false, view: '' });
+        isOpenRef.current = false;
+        setTimeout(() => {
+          isHandlingPopState.current = false;
+        }, 0);
+      }
+    }
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, [setDrawerState]);
+
+  React.useEffect(() => {
+    if (display && !isOpenRef.current) {
+      isOpenRef.current = true;
+      window.history.pushState({ __drawer: true }, '');
+    }
+  }, [display]);
+
+  function handleClose() {
+    if (isOpenRef.current && !isHandlingPopState.current) {
+      isOpenRef.current = false;
+      window.history.back();
+    } else if (isHandlingPopState.current) {
+      isOpenRef.current = false;
+    }
+    setDrawerState({ display: false, view: '' });
+  }
+
   return (
     <Drawer
       open={display}
-      onClose={() => setDrawerState({ display: false, view: '' })}
+      onClose={handleClose}
       variant={
         [
           'FILTER_VIEW',

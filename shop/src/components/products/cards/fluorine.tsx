@@ -11,8 +11,6 @@ import dayjs from 'dayjs';
 import { useTranslation } from 'next-i18next';
 import { useModalAction } from '@/components/ui/modal/modal.context';
 import { ExternalIconNew } from '@/components/icons/external-icon';
-// import { PlusIcon } from '@/components/icons/plus-icon';
-// import Badge from '@/components/ui/badge';
 import { StarIcon } from '@/components/icons/star-icon';
 import { EyeIcon } from '@/components/icons/eye';
 import dynamic from 'next/dynamic';
@@ -244,8 +242,7 @@ const Fluorine: React.FC<FluorineProps> = ({
                   {Number(product?.quantity) > 0 && (
                     <button
                       onClick={handleProductQuickView}
-                      // className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-accent text-lg text-white transition-colors hover:bg-accent-hover hover:text-white focus:bg-accent-hover focus:text-white focus:outline-0"
-                      className="text-xl text-accent"
+                      className="flex h-11 w-11 items-center justify-center text-accent"
                     >
                       <EyeIcon />
                     </button>
@@ -263,8 +260,7 @@ const Fluorine: React.FC<FluorineProps> = ({
           ) : (
             <button
               onClick={handleProductQuickView}
-              // className="flex h-[2.125rem] w-[2.125rem] items-center justify-center rounded-full bg-accent text-lg text-white transition-colors hover:bg-accent-hover hover:text-white focus:bg-accent-hover focus:text-white focus:outline-0"
-              className="text-xl text-accent"
+              className="flex h-11 w-11 items-center justify-center text-accent"
             >
               <EyeIcon />
             </button>

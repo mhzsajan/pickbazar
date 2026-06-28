@@ -149,20 +149,11 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
             </div>
           </motion.button>
           <div className="flex w-full items-center ltr:mr-auto rtl:ml-auto lg:w-auto">
-            {/* <Logo className="mx-auto lg:mx-0" /> */}
             <Logo
               className={`${
                 !isMultiLangEnable ? 'mx-auto lg:mx-0' : 'ltr:ml-0 rtl:mr-0'
               }`}
             />
-
-            {/* {isMultiLangEnable ? (
-            <div className="ltr:ml-auto rtl:mr-auto lg:hidden">
-              <LanguageSwitcher />
-            </div>
-          ) : (
-            ''
-          )} */}
 
             <div className="hidden shrink-0 items-center space-x-7 ltr:ml-10 ltr:mr-auto rtl:mr-10 rtl:ml-auto rtl:space-x-reverse lg:flex 2xl:space-x-10">
               <ul className="hidden shrink-0 items-center space-x-7 rtl:space-x-reverse xl:flex 2xl:space-x-10">
@@ -189,16 +180,6 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
               </Button>
             </div>
           )}
-
-          {/* {layout === 'compact' && (
-          <div className="hidden w-full px-8 mx-auto xl:flex xl:w-6/12 xl:px-10 xl:rtl:w-4/12 2xl:rtl:w-5/12">
-            <SearchWithSuggestion
-              label={t('text-search-label')}
-              variant="minimal"
-              seeMore={true}
-            />
-          </div>
-        )} */}
 
           <div className="flex shrink-0 items-center space-x-4 rtl:space-x-reverse sm:space-x-6">
             <div

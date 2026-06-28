@@ -59,19 +59,19 @@
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| M1 | `[ ]` | `shop/src/components/layouts/mobile-navigation.tsx` | 65 | Cart badge uses `text-10px` (10px) — barely legible. |
-| M2 | `[ ]` | `shop/src/components/cart/cart-counter-icon-button.tsx` | 29 | Badge uses `text-[10px]` for count. |
-| M3 | `[ ]` | `shop/src/components/products/cards/argon.tsx` | 146 | Product name is `text-xs` (12px) on mobile. |
-| M4 | `[ ]` | `shop/src/components/products/cards/oganesson.tsx` | 72 | Product name is `text-xs` (12px) on mobile. |
-| M5 | `[ ]` | `shop/src/components/products/cards/neon.tsx` | 105 | Product name is `text-xs` (12px) on mobile. |
-| M6 | `[ ]` | `shop/src/components/products/cards/xenon.tsx` | 88 | Product name is `text-xs` (12px) on mobile. |
-| M7 | `[ ]` | `shop/src/components/cart/cart-item.tsx` | 77-79 | Item unit/quantity text is `text-xs` (12px) in small cart row. |
+| M1 | `[x]` | `shop/src/components/layouts/mobile-navigation.tsx` | 65 | Cart badge uses `text-10px` (10px) — barely legible. |
+| M2 | `[x]` | `shop/src/components/cart/cart-counter-icon-button.tsx` | 29 | Badge uses `text-[10px]` for count. |
+| M3 | `[x]` | `shop/src/components/products/cards/argon.tsx` | 146 | Product name is `text-xs` (12px) on mobile. |
+| M4 | `[x]` | `shop/src/components/products/cards/oganesson.tsx` | 72 | Product name is `text-xs` (12px) on mobile. |
+| M5 | `[x]` | `shop/src/components/products/cards/neon.tsx` | 105 | Product name is `text-xs` (12px) on mobile. |
+| M6 | `[x]` | `shop/src/components/products/cards/xenon.tsx` | 88 | Product name is `text-xs` (12px) on mobile. |
+| M7 | `[x]` | `shop/src/components/cart/cart-item.tsx` | 77-79 | Item unit/quantity text is `text-xs` (12px) in small cart row. |
 
 ### Z-Index Conflicts
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| M8 | `[ ]` | `shop/src/components/ui/drawer/drawer-portal.tsx` | 46 | Uses `z-[999]` — significantly higher than `z-50` used everywhere else. Creates stacking mismatch. |
+| M8 | `[x]` | `shop/src/components/ui/drawer/drawer-portal.tsx` | 46 | Uses `z-[999]` — significantly higher than `z-50` used everywhere else. Creates stacking mismatch. |
 | M9 | `[ ]` | `shop/src/components/ui/modal/modal.tsx` | 28, 76 | Modal is `z-50`, close button is `z-[60]`. Drawer is also `z-50`. Layering issues when both open. |
 | M10 | `[ ]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 41 | Cart header is `fixed top-0 z-10` inside drawer that is `z-50` — won't layer correctly. |
 | M11 | `[ ]` | `shop/src/components/review-popup/index.tsx` | 29 | Review popup is `fixed bottom-16 z-50` but mobile bottom nav is `z-10` — overlap possible. |
@@ -81,8 +81,8 @@
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| M13 | `[ ]` | `shop/src/components/ui/counter.tsx` | 35-48 | Helium variant counter uses `w-7 h-18` on mobile — tall/narrow (72px tall, 28px wide), ergonomically poor. |
-| M14 | `[ ]` | `shop/src/components/checkout/item/item-card.tsx` | 29 | Checkout item `{quantity} x {name} | {unit}` has no `truncate` — long names push unit off-screen. |
+| M13 | `[x]` | `shop/src/components/ui/counter.tsx` | 35-48 | Helium variant counter uses `w-7 h-18` on mobile — tall/narrow (72px tall, 28px wide), ergonomically poor. |
+| M14 | `[x]` | `shop/src/components/checkout/item/item-card.tsx` | 29 | Checkout item `{quantity} x {name} | {unit}` has no `truncate` — long names push unit off-screen. |
 | M15 | `[ ]` | `shop/src/components/checkout/item/unverified-item-list.tsx` | 20-24 | "Your Order" heading uses `flex flex-col items-center space-x-4` but `space-x-4` is useless in flex-col. |
 | M16 | `[ ]` | `shop/src/components/checkout/item/verified-item-list.tsx` | 161 | Payment grid has `p-5 mt-10 border` — `mt-10` (40px) wastes vertical space on mobile. |
 | M17 | `[ ]` | `shop/src/components/products/cards/helium.tsx` | 93 | Card header padding `p-3 md:p-5 md:py-6` — 12px is tight for product card on mobile. |
@@ -96,8 +96,8 @@
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
 | M22 | `[ ]` | `shop/src/components/ui/search/search-box.tsx` | 85 | "Normal" variant search button has `min-w-[143px]` with `px-8` — can overflow on 320px screens. |
-| M23 | `[ ]` | `shop/src/components/checkout/address-grid.tsx` | 64 | Uses `sm:grid-cols-2` but skips `xs` (490px) breakpoint — single-column when room for two. |
-| M24 | `[ ]` | `shop/src/components/checkout/schedule/schedule-grid.tsx` | 48 | Same issue: `sm:grid-cols-2` skips `xs` breakpoint. |
+| M23 | `[x]` | `shop/src/components/checkout/address-grid.tsx` | 64 | Uses `sm:grid-cols-2` but skips `xs` (490px) breakpoint — single-column when room for two. |
+| M24 | `[x]` | `shop/src/components/checkout/schedule/schedule-grid.tsx` | 48 | Same issue: `sm:grid-cols-2` skips `xs` breakpoint. |
 
 ### Conflicting Click Handlers
 
@@ -105,13 +105,13 @@
 |---|--------|------|------|-------|
 | M25 | `[ ]` | `shop/src/components/products/cards/argon.tsx` | 60 | Entire card has `onClick={handleProductQuickView}` with `role="button"` — conflicts with add-to-cart button inside. |
 | M26 | `[ ]` | `shop/src/components/products/cards/fluorine.tsx` | 175-181 | Favorite button uses `absolute top-5 right-5` — overlaps product image on small mobile cards. |
-| M27 | `[ ]` | `shop/src/components/products/cards/fluorine.tsx` | 264-271 | Eye icon button has no explicit sizing — relies on `text-xl` font size for tap area, likely below 44px. |
+| M27 | `[x]` | `shop/src/components/products/cards/fluorine.tsx` | 264-271 | Eye icon button has no explicit sizing — relies on `text-xl` font size for tap area, likely below 44px. |
 
 ### Touch Target Borderline
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| M28 | `[ ]` | `shop/src/components/layouts/mobile-navigation.tsx` | 37-89 | All four bottom nav buttons use `p-2` (8px) padding — total targets ~36-40px, borderline insufficient. |
+| M28 | `[x]` | `shop/src/components/layouts/mobile-navigation.tsx` | 37-89 | All four bottom nav buttons use `p-2` (8px) padding — total targets ~36-40px, borderline insufficient. |
 | M29 | `[ ]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 49-54 | Cart close button is `h-11 w-11` (44px) but CloseIcon inside is only `h-3 w-3` (12px) — visual touch target looks smaller than actual tappable area. |
 
 ---

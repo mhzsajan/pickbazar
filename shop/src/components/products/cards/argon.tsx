@@ -143,7 +143,7 @@ const Argon: React.FC<ArgonProps> = ({ product, className }) => {
         )}
         {/* End of product price */}
 
-        <h3 className="text-xs text-body md:text-sm">{name}</h3>
+        <h3 className="text-sm text-body md:text-base">{name}</h3>
         {/* End of product title */}
       </header>
     </article>

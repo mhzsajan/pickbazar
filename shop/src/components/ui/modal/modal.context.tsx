@@ -78,9 +78,47 @@ export const ModalProvider: React.FC<{ children?: React.ReactNode }> = ({
   children,
 }) => {
   const [state, dispatch] = React.useReducer(modalReducer, initialState);
+  const isOpenRef = React.useRef(false);
+  const isHandlingPopState = React.useRef(false);
+
+  React.useEffect(() => {
+    function handlePopState(e: PopStateEvent) {
+      if (isOpenRef.current && e.state?.__modal) {
+        isHandlingPopState.current = true;
+        dispatch({ type: 'close' });
+        isOpenRef.current = false;
+        setTimeout(() => {
+          isHandlingPopState.current = false;
+        }, 0);
+      }
+    }
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
+  }, []);
+
+  const wrappedDispatch = React.useCallback(
+    (action: Action) => {
+      if (action.type === 'open') {
+        if (!isOpenRef.current) {
+          isOpenRef.current = true;
+          window.history.pushState({ __modal: true }, '');
+        }
+      } else if (action.type === 'close') {
+        if (isOpenRef.current && !isHandlingPopState.current) {
+          isOpenRef.current = false;
+          window.history.back();
+        } else if (isHandlingPopState.current) {
+          isOpenRef.current = false;
+        }
+      }
+      dispatch(action);
+    },
+    [dispatch],
+  );
+
   return (
     <ModalStateContext.Provider value={state}>
-      <ModalActionContext.Provider value={dispatch}>
+      <ModalActionContext.Provider value={wrappedDispatch}>
         {children}
       </ModalActionContext.Provider>
     </ModalStateContext.Provider>

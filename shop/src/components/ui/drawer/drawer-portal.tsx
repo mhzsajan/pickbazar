@@ -43,7 +43,7 @@ export function DrawerPortal({
       <Dialog
         as="aside"
         onClose={onClose}
-        className={cn('fixed inset-0 z-[999] overflow-hidden', className)}
+        className={cn('fixed inset-0 z-50 overflow-hidden', className)}
       >
         <TransitionChild
           as={Fragment}

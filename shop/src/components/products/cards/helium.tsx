@@ -72,7 +72,6 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
               : ''
             : ''
         )}
-        // role="button"
       >
         <span className="sr-only">{t('text-product-image')}</span>
         <Image

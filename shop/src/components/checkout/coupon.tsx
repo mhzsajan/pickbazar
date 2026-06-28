@@ -41,24 +41,6 @@ const Coupon = ({ theme, subtotal }: { theme?: 'dark'; subtotal: number }) => {
     );
   }
   function onSubmit(code: FormTypes) {
-    // verifyCoupon(
-    //   {
-    //     code,
-    //   }
-    //   // {
-    //   //   onSuccess: (data) => {
-    //   //     if (data.is_valid) {
-    //   //       applyCoupon(data.coupon);
-    //   //       setHasCoupon(false);
-    //   //     } else {
-    //   //       setError('code', {
-    //   //         type: 'manual',
-    //   //         message: 'error-invalid-coupon',
-    //   //       });
-    //   //     }
-    //   //   },
-    //   // }
-    // );
     const data = verifyCoupon({
       code: code?.code,
       sub_total: subtotal,

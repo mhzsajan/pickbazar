@@ -1,7 +1,6 @@
 import { Image } from '@/components/ui/image';
 import cn from 'classnames';
 import usePrice from '@/lib/use-price';
-//  import { AddToCart } from '@/components/products/add-to-cart/add-to-cart';
 import { useTranslation } from 'next-i18next';
 import { useModalAction } from '@/components/ui/modal/modal.context';
 import { productPlaceholder } from '@/lib/placeholders';
@@ -102,7 +101,7 @@ const Neon: React.FC<NeonProps> = ({ product, className }) => {
         {/* End of product price */}
 
         <h3
-          className="mb-4 cursor-pointer truncate text-xs text-body md:text-sm"
+          className="mb-4 cursor-pointer truncate text-sm text-body md:text-base"
           onClick={handleProductQuickView}
         >
           {name}

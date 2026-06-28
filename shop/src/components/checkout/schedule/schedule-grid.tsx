@@ -45,7 +45,7 @@ export const ScheduleGrid: React.FC<ScheduleProps> = ({
       {schedules && schedules?.length ? (
         <RadioGroup value={selectedSchedule} onChange={setSchedule}>
           <RadioGroup.Label className="sr-only">{label}</RadioGroup.Label>
-          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-4 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3">
             {schedules?.map((schedule: any, idx: number) => (
               <RadioGroup.Option value={schedule} key={idx}>
                 {({ checked }) => (
