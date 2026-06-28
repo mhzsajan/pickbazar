@@ -221,3 +221,40 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 6. Cleared cache, rebuilt shop, restarted PM2
 7. Updated SESSIONS.md and RESUME.md
 8. Pushed to GitHub
+
+---
+
+## Session 12 (This Conversation)
+1. Verified header and footer fixes from Sessions 9-11 — confirmed all changes are in place
+2. Full mobile visual/UX audit — found 67 issues across the shop frontend
+3. Created `.deploy/AUDIT.md` — comprehensive audit document with all findings, file paths, and line numbers
+4. Updated `.deploy/PLAN.md` — added Phase 8 with 67 tasks organized by category (touch targets, overlaps, broken features, text size, z-index, spacing, responsive, dead code)
+5. Updated RESUME.md with current status
+6. Updated SESSIONS.md with Session 12
+
+### Audit Findings Summary
+| Priority | Category | Count |
+|----------|----------|-------|
+| HIGH | Touch targets < 44px | 10 |
+| HIGH | Fixed elements overlapping | 4 |
+| HIGH | Mobile broken features | 5 |
+| MEDIUM | Small text | 7 |
+| MEDIUM | Z-index conflicts | 5 |
+| MEDIUM | Spacing/layout issues | 9 |
+| MEDIUM | Missing responsive classes | 3 |
+| MEDIUM | Conflicting click handlers | 3 |
+| MEDIUM | Touch target borderline | 2 |
+| LOW | Dead/commented-out code | 14 |
+| LOW | Deprecated/minor | 5 |
+| **TOTAL** | | **67** |
+
+### Key Files Created/Updated
+- `.deploy/AUDIT.md` — Full audit with 67 findings (file paths + line numbers)
+- `.deploy/PLAN.md` — Added Phase 8 (67 mobile fix tasks)
+- `RESUME.md` — Updated current status
+- `SESSIONS.md` — Session 12 record
+
+### Next Steps
+- Fix HIGH priority issues first (touch targets, overlaps, broken mobile features)
+- Then MEDIUM priority (text size, z-index, spacing)
+- Then LOW priority (dead code cleanup)

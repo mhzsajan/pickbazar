@@ -154,6 +154,117 @@
 
 ---
 
+## Phase 8 — Mobile Visual/UX Fixes (From Audit)
+
+> Goal: Fix all 67 issues found in the mobile visual/UX audit. See `.deploy/AUDIT.md` for full details with file paths and line numbers.
+
+### 8A — Touch Targets (10 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8A.1 | Increase add-to-cart button touch targets to 44px min | `[ ]` | H1-H4 |
+| 8A.2 | Increase cart remove button touch target to 44px | `[ ]` | H5 |
+| 8A.3 | Increase address card edit/delete button touch targets | `[ ]` | H6 |
+| 8A.4 | Increase coupon remove button touch target | `[ ]` | H9 |
+| 8A.5 | Increase filter bar button touch target to 44px | `[ ]` | H10 |
+| 8A.6 | Increase bottom nav button touch targets to 44px min | `[ ]` | M28 |
+| 8A.7 | Fix cart close button visual vs actual touch target mismatch | `[ ]` | M29 |
+| 8A.8 | Increase eye icon button touch target (fluorine card) | `[ ]` | M27 |
+| 8A.9 | Increase "Have a coupon?" touch target | `[ ]` | H8 |
+| 8A.10 | Increase variable product "Cart" button min height | `[ ]` | H7 |
+
+### 8B — Fixed Element Overlaps (4 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8B.1 | Add `pb-14` to home page and layout to clear mobile bottom nav | `[ ]` | H11, H12 |
+| 8B.2 | Fix cart footer overlapping mobile bottom nav | `[ ]` | H13 |
+| 8B.3 | Fix cart header z-index mismatch | `[ ]` | H14 |
+| 8B.4 | Fix review popup overlapping mobile bottom nav | `[ ]` | M11 |
+
+### 8C — Mobile Broken Features (5 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8C.1 | Make hero banner visible on mobile (remove `hidden lg:block`) | `[ ]` | H15, H16 |
+| 8C.2 | Add close button to mobile search overlay | `[ ]` | H17 |
+| 8C.3 | Add mobile padding to modal content | `[ ]` | H18 |
+| 8C.4 | Add safe-area-inset for iPhone notch to bottom nav | `[ ]` | H19 |
+| 8C.5 | Fix location dropdown hardcoded top offset for mobile | `[ ]` | L18 |
+
+### 8D — Text Size Fixes (7 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8D.1 | Increase cart badge text size from 10px to 12px min | `[ ]` | M1, M2 |
+| 8D.2 | Increase product name text size on mobile to 14px min | `[ ]` | M3-M6 |
+| 8D.3 | Increase cart item unit/quantity text size | `[ ]` | M7 |
+
+### 8E — Z-Index Fixes (5 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8E.1 | Normalize drawer portal z-index from 999 to consistent value | `[ ]` | M8 |
+| 8E.2 | Fix modal z-index stacking conflicts | `[ ]` | M9 |
+| 8E.3 | Fix cart header z-index in drawer context | `[ ]` | M10 |
+| 8E.4 | Fix cart floating button z-index inconsistency | `[ ]` | M12 |
+
+### 8F — Spacing & Layout Fixes (9 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8F.1 | Fix helium counter tall/narrow shape on mobile | `[ ]` | M13 |
+| 8F.2 | Add text truncation to checkout item names | `[ ]` | M14 |
+| 8F.3 | Fix "Your Order" heading useless space-x-4 | `[ ]` | M15 |
+| 8F.4 | Reduce payment grid mt-10 margin on mobile | `[ ]` | M16 |
+| 8F.5 | Adjust helium card header padding for mobile | `[ ]` | M17 |
+| 8F.6 | Fix helium strikethrough price overlap | `[ ]` | M18 |
+| 8F.7 | Reduce flash sale card image height on mobile | `[ ]` | M19 |
+| 8F.8 | Add mobile height constraint to fluorine card image | `[ ]` | M20 |
+| 8F.9 | Fix filter bar hardcoded sticky offsets | `[ ]` | M21 |
+
+### 8G — Responsive & Click Handler Fixes (6 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8G.1 | Fix search button overflow on small screens | `[ ]` | M22 |
+| 8G.2 | Add xs breakpoint to address grid | `[ ]` | M23 |
+| 8G.3 | Add xs breakpoint to schedule grid | `[ ]` | M24 |
+| 8G.4 | Fix argon card conflicting click handlers | `[ ]` | M25 |
+| 8G.5 | Fix fluorine favorite button overlap on small cards | `[ ]` | M26 |
+| 8G.6 | Fix search overlay close button visibility on mobile | `[ ]` | H17 |
+
+### 8H — Dead Code Cleanup (14 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8H.1 | Remove commented-out imports in neon.tsx | `[ ]` | L1 |
+| 8H.2 | Remove commented-out imports in fluorine.tsx | `[ ]` | L2 |
+| 8H.3 | Remove commented-out className in fluorine.tsx | `[ ]` | L3 |
+| 8H.4 | Remove commented-out h3 in cart-item.tsx | `[ ]` | L4 |
+| 8H.5 | Remove commented-out PAYMENT_GATEWAYS in payment-grid.tsx | `[ ]` | L5 |
+| 8H.6 | Remove commented-out useEffect in payment-grid.tsx | `[ ]` | L6 |
+| 8H.7 | Remove commented-out PaymentGroupOption in payment-grid.tsx | `[ ]` | L7 |
+| 8H.8 | Remove commented-out verifyCoupon in coupon.tsx | `[ ]` | L8 |
+| 8H.9 | Remove commented-out loading in social-login.tsx | `[ ]` | L9 |
+| 8H.10 | Remove commented-out defaultPaymentGateway in header.tsx | `[ ]` | L10 |
+| 8H.11 | Remove commented-out role="button" in helium.tsx | `[ ]` | L11 |
+| 8H.12 | Remove commented-out rc-pagination rules in custom-plugins.css | `[ ]` | L12 |
+| 8H.13 | Remove commented-out #siteHeader rule in custom-plugins.css | `[ ]` | L13 |
+| 8H.14 | Remove commented-out radio-input rule in custom-plugins.css | `[ ]` | L14 |
+
+### 8I — Minor Fixes (5 tasks)
+
+| # | Task | Status | Audit # |
+|---|------|--------|---------|
+| 8I.1 | Remove deprecated `-webkit-overflow-scrolling: touch` | `[ ]` | L15 |
+| 8I.2 | Fix double viewport height in add-or-update.tsx | `[ ]` | L16 |
+| 8I.3 | Add label to guest name input | `[ ]` | L17 |
+| 8I.4 | Use xs breakpoint consistently across components | `[ ]` | L19 |
+| 8I.5 | Fix search button overflow on 320px screens | `[ ]` | M22 |
+
+---
+
 ## Summary
 
 | Phase | Focus | Tasks | Completed | Remaining |
@@ -165,9 +276,10 @@
 | 5 — Navigation | UI Navigation | 5 | 2 | 3 |
 | 6 — Bugs | Bug Fixes | 5 | 0 | 5 |
 | 7 — Performance | Speed | 3 | 0 | 3 |
-| **Total** | | **37** | **2** | **35** |
+| 8 — Mobile Audit | Visual/UX Fixes | 67 | 0 | 67 |
+| **Total** | | **104** | **2** | **102** |
 
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 9 — June 27, 2026 (footer fixes, header cleanup)*
+*Last updated: Session 12 — June 28, 2026 (mobile audit completed, 67 issues found and documented)*

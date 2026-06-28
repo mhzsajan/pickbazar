@@ -183,7 +183,7 @@ const HeaderMinimal = ({ layout }: { layout: string }) => {
               <Button
                 variant="custom"
                 onClick={() => setDisplayMobileHeaderSearch((prev) => !prev)}
-                className="hidden border border-accent-400 bg-gray-100 !px-4 text-accent lg:inline-flex"
+                className="inline-flex h-11 w-11 items-center justify-center border border-accent-400 bg-gray-100 text-accent"
               >
                 <CloseIcon className="h-5 w-5" />
               </Button>

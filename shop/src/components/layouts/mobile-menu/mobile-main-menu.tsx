@@ -24,7 +24,7 @@ export default function MobileMainMenu() {
           <li key={`${href}${label}`}>
             <Link
               href={href}
-              className="flex items-center px-5 py-3 text-sm font-semibold capitalize transition duration-200 cursor-pointer text-heading hover:text-accent md:px-6"
+              className="flex items-center px-5 py-4 text-sm font-semibold capitalize transition duration-200 cursor-pointer text-heading hover:text-accent md:px-8"
               title={t(label)}
               onClick={() => closeSidebar({ display: false, view: '' })}
             >

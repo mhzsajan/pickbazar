@@ -35,7 +35,8 @@ pickbazar/
 ├── SESSIONS.md         # What happened each session
 └── .deploy/            # Scripts + full reference (hidden folder)
     ├── README.md       # This file — full project context
-    ├── PLAN.md         # Master plan for UI/SEO/Mobile/Security/Bugs
+    ├── PLAN.md         # Master plan for UI/SEO/Mobile/Security/Bugs (8 phases, 104 tasks)
+    ├── AUDIT.md        # Mobile visual/UX audit — 67 issues with file paths and line numbers
     └── scripts/        # Deployment scripts
 ```
 
@@ -76,7 +77,9 @@ All four run under **PM2** with auto-start on boot via systemd.
 | Font changed | ✅ Done | Google Sans Code (SIL Open Font License) |
 | Dark mode | ❌ Reverted | Attempted, broke site, fully reverted (commit ed44c2b) |
 | Documentation | ✅ Done | RESUME.md, SESSIONS.md, COMMANDS.md, .deploy/ |
-| Master plan created | ✅ Done | .deploy/PLAN.md — 29 tasks across 6 phases |
+| Master plan created | ✅ Done | .deploy/PLAN.md — 104 tasks across 8 phases |
+| Mobile audit completed | ✅ Done | .deploy/AUDIT.md — 67 issues documented |
+| Header/footer fixes | ✅ Done | Sessions 9-11, verified Session 12 |
 
 ---
 
@@ -140,7 +143,7 @@ NEXT_PUBLIC_VERSION=11.10.2
 
 **File:** `.deploy/PLAN.md`
 
-The master plan has 7 phases, 37 tasks total:
+The master plan has 8 phases, 104 tasks total:
 
 | Phase | Focus | Tasks |
 |---|---|---|
@@ -151,8 +154,10 @@ The master plan has 7 phases, 37 tasks total:
 | 5 — Navigation | UI navigation (breadcrumbs, clean header, footer) | 5 |
 | 6 — Bugs | Fix known bugs (error boundaries, unused fonts) | 5 |
 | 7 — Performance | Speed optimization (lazy loading, bundle size) | 3 |
+| 8 — Mobile Audit | Visual/UX fixes from audit (67 issues) | 67 |
 
-**Work through phases in order (1 → 7). Do NOT skip ahead.**
+**Work through phases in order (1 → 7), then Phase 8 (audit fixes).**
+**Phase 8 has HIGH, MEDIUM, LOW priority sections — do HIGH first.**
 **Customization comes FIRST — make the site look like YOUR brand before doing anything else.**
 
 ---
@@ -162,15 +167,16 @@ The master plan has 7 phases, 37 tasks total:
 When a user re-opens this project with an AI assistant:
 
 1. **Read this file fully first.** Do not ask redundant questions already answered here.
-2. **Read `.deploy/PLAN.md`** — this is the active work plan with 29 tasks.
-3. **Read `RESUME.md`** — quick status of what's running.
-4. Check Section 4 "Current Status" above — everything is deployed and running.
-5. Find the first incomplete task in PLAN.md and continue from there.
-6. The project folder on disk is `/home/switchgod/Desktop/pickbazar/`.
-7. The user is a **beginner** — explain each command before running it.
-8. **Use npm, not yarn.** Always use `npm install --legacy-peer-deps`.
-9. After code changes: always `rm -rf .next` before rebuild to avoid stale cache.
-10. **Do NOT push to GitHub until user sees changes on localhost and approves.**
+2. **Read `.deploy/PLAN.md`** — this is the active work plan with 104 tasks across 8 phases.
+3. **Read `.deploy/AUDIT.md`** — this has all 67 mobile audit findings with exact file paths and line numbers.
+4. **Read `RESUME.md`** — quick status of what's running.
+5. Check Section 4 "Current Status" above — everything is deployed and running.
+6. Find the first incomplete task in PLAN.md and continue from there.
+7. The project folder on disk is `/home/switchgod/Desktop/pickbazar/`.
+8. The user is a **beginner** — explain each command before running it.
+9. **Use npm, not yarn.** Always use `npm install --legacy-peer-deps`.
+10. After code changes: always `rm -rf .next` before rebuild to avoid stale cache.
+11. **Do NOT push to GitHub until user sees changes on localhost and approves.**
 
 ---
 

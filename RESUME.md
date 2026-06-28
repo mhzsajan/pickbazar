@@ -3,10 +3,10 @@
 <!-- !! FOR AI: Update this file after EVERY step completed. Move "Last completed" forward, update status table, and refresh "Next action". This is your memory — keep it current. !! -->
 
 ## Where We Stopped
-- **Last completed:** Session 11 — Header visual audit and cleanup (dead code removed, spacing standardized)
-- **Current step:** Customization in progress
-- **Next action:** Continue Phase 1 — Customization (logos, colors, branding) at `.deploy/PLAN.md`
-- **Master plan:** `.deploy/PLAN.md` — 37 tasks across 7 phases
+- **Last completed:** Session 12 — Full mobile visual/UX audit (67 issues documented in `.deploy/AUDIT.md`)
+- **Current step:** Mobile audit findings stored, ready to fix HIGH priority issues
+- **Next action:** Fix HIGH priority mobile issues (touch targets, overlaps, broken features) at `.deploy/PLAN.md` Phase 8
+- **Master plan:** `.deploy/PLAN.md` — 104 tasks across 8 phases (Phase 8 = 67 mobile audit tasks)
 
 ## What Works Now
 | Service | Port | PM2 Name | Status | Domain |

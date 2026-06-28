@@ -19,13 +19,11 @@ module.exports = {
   ],
   theme: {
     screens: {
-      xs: '480px',
       ...defaultTheme.screens,
     },
     extend: {
       screens: {
         xs: '490px',
-        ...defaultTheme.screens,
         '3xl': '2100px',
       },
       zIndex: {
@@ -107,7 +105,7 @@ module.exports = {
         'muted-light': withOpacity('--text-muted-light'),
         heading: withOpacity('--text-heading'),
         'sub-heading': withOpacity('--text-sub-heading'),
-        bolder: withOpacity('--text-text-bolder'),
+        bolder: withOpacity('--text-bolder'),
       },
       minHeight: {
         580: '580px',
@@ -142,6 +140,7 @@ module.exports = {
         2.5: '2.5',
       },
       boxShadow: {
+        header: '0 2px 10px -3px rgba(0, 0, 0, 0.15)',
         200: 'rgba(0, 0, 0, 0.16) 0px 3px 6px',
         300: 'rgba(0, 0, 0, 0.16) 0px 0px 6px',
         350: 'rgba(0, 0, 0, 0.16) 0px 3px 6px',

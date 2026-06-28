@@ -63,7 +63,7 @@ export default function ChangePasswordForm() {
           <Button
             loading={loading}
             disabled={loading}
-            className="ltr:ml-auto rtl:mr-auto"
+            className="w-full sm:w-auto"
           >
             {t('text-submit')}
           </Button>

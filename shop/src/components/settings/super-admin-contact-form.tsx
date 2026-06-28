@@ -101,12 +101,12 @@ const SuperAdminContactForm: React.FC<SuperAdminContactFormProps> = ({
         error={t(errors.isChecked?.message)}
       />
 
-      <div className="text-center mt-8">
+      <div className="mt-8">
         <Button
           loading={isLoading}
           disabled={isLoading}
           size="big"
-          className="text-sm font-bold uppercase"
+          className="w-full text-sm font-bold uppercase sm:w-auto"
         >
           {t('text-send-message')}
         </Button>

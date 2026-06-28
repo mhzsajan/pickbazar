@@ -78,7 +78,7 @@ const PasswordInput = React.forwardRef<HTMLInputElement, Props>(
             type={show ? 'text' : 'password'}
             ref={ref}
             className={cn(
-              'w-full appearance-none rounded py-3 text-sm text-heading transition duration-300 ease-in-out focus:outline-0 focus:ring-0 ltr:pl-4 ltr:pr-11 rtl:pr-4 rtl:pl-11',
+              'h-12 w-full appearance-none rounded py-3 text-sm text-heading transition duration-300 ease-in-out focus:outline-0 focus:ring-0 ltr:pl-4 ltr:pr-11 rtl:pr-4 rtl:pl-11',
               shadow && 'focus:shadow',
               variantClasses[variant],
               inputClassName
@@ -89,17 +89,18 @@ const PasswordInput = React.forwardRef<HTMLInputElement, Props>(
             spellCheck="false"
             {...rest}
           />
-          <label
-            htmlFor={name}
-            className="absolute top-5 -mt-2 cursor-pointer text-body ltr:right-4 rtl:left-4"
+          <button
+            type="button"
+            className="absolute top-0 right-0 flex h-12 w-12 cursor-pointer items-center justify-center text-body"
             onClick={() => setShow((prev) => !prev)}
+            aria-label={show ? 'Hide password' : 'Show password'}
           >
             {show ? (
               <EyeOff className="h-6 w-6" />
             ) : (
               <Eye className="h-6 w-6" />
             )}
-          </label>
+          </button>
         </div>
         {error && <p className="my-2 text-xs text-red-500">{error}</p>}
       </div>

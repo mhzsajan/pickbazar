@@ -36,22 +36,22 @@ export default function MobileAuthorizedMenu() {
 
         {siteSettings.authorizedLinksMobile.map(({ href, label }) => (
           <li key={`${href}${label}`}>
-            <span
-              className="block cursor-pointer px-5 py-3 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
+            <button
+              className="block w-full px-5 py-4 text-left text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
               onClick={() => handleClick(href)}
             >
               {t(label)}
-            </span>
+            </button>
           </li>
         ))}
 
         <li>
-          <span
-            className="block cursor-pointer px-5 py-3 text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
+          <button
+            className="block w-full px-5 py-4 text-left text-sm font-semibold capitalize text-heading transition duration-200 hover:text-accent md:px-8"
             onClick={() => logout()}
           >
             {t('auth-menu-logout')}
-          </span>
+          </button>
         </li>
       </ul>
     </DrawerWrapper>

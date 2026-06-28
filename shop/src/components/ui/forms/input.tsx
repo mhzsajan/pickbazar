@@ -24,7 +24,7 @@ const variantClasses = {
 };
 
 const sizeClasses = {
-  small: 'text-sm h-9',
+  small: 'text-sm h-11',
   medium: 'h-12',
   big: 'h-14',
 };

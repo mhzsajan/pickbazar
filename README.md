@@ -33,7 +33,7 @@ pickbazar/
 ├── shop/           # Storefront (Next.js) → port 3003
 ├── admin/rest/     # Admin dashboard (Next.js) → port 3002
 ├── api/rest/       # Backend API (NestJS) → port 9000
-├── .deploy/        # Deployment scripts and project context
+├── .deploy/        # Deployment scripts, project context, and audit findings
 └── deployment/     # Original deployment docs
 ```
 
@@ -66,4 +66,4 @@ MIT — Based on [PickBazar by RedQ](https://redq.io)
 
 ---
 
-> **For AI agents:** Read `.deploy/README.md` first for full project context, then `.deploy/PLAN.md` for the active improvement plan.
+> **For AI agents:** Read `.deploy/README.md` first for full project context, then `.deploy/PLAN.md` for the active improvement plan. Read `.deploy/AUDIT.md` for mobile visual/UX audit findings.
