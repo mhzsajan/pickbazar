@@ -1,6 +1,6 @@
 import { CloseIcon } from '@/components/icons/close-icon';
 import { Dialog, Transition } from '@headlessui/react';
-import { Fragment, useRef } from 'react';
+import { Fragment, useCallback, useEffect, useRef } from 'react';
 import { useTranslation } from 'next-i18next';
 import { useRouter } from 'next/router';
 import { getDirection } from '@/lib/constants';
@@ -20,12 +20,29 @@ export default function Modal({
 
   const { locale } = useRouter();
   const dir = getDirection(locale);
+
+  const handleKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape' && open) {
+        onClose();
+      }
+    },
+    [open, onClose],
+  );
+
+  useEffect(() => {
+    if (open) {
+      document.addEventListener('keydown', handleKeyDown);
+      return () => document.removeEventListener('keydown', handleKeyDown);
+    }
+  }, [open, handleKeyDown]);
+
   return (
     <Transition appear show={open} as={Fragment}>
       <Dialog
         as="div"
         className={twMerge(
-          classNames('fixed inset-0 z-50 overflow-y-auto', className),
+          classNames('fixed inset-0 z-[70] overflow-y-auto', className),
         )}
         initialFocus={cancelButtonRef}
         static
@@ -44,7 +61,10 @@ export default function Modal({
               leaveFrom="opacity-100"
               leaveTo="opacity-0"
             >
-              <div className="fixed inset-0 h-full w-full bg-gray-900 bg-opacity-50" />
+              <div
+                className="fixed inset-0 h-full w-full bg-gray-900 bg-opacity-50"
+                onClick={onClose}
+              />
             </Transition.Child>
           ) : (
             ''
@@ -73,7 +93,7 @@ export default function Modal({
                 ref={cancelButtonRef}
                 className={twMerge(
                   classNames(
-                    'absolute top-4 z-50 flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:right-4 rtl:left-4',
+                    'fixed top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted shadow-lg transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:right-4 rtl:left-4',
                     closeButtonClass,
                   ),
                 )}
