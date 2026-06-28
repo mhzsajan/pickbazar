@@ -1,96 +1,80 @@
 # switchgod.com.np — PickBazar Deployment Project
 
-> **AI CONTEXT FILE** — Read this first before doing anything. It contains the full picture of the project, what was done, what is pending, and where every file lives. Designed to minimize token usage on re-entry.
+> **AI CONTEXT FILE** — Read this first. Full project context, services, architecture, and instructions.
 
 ---
 
-## 1. PROJECT IDENTITY
+## 1. Project Identity
 
 | Field | Value |
-|---|---|
+|-------|-------|
 | **Project** | PickBazar e-commerce monorepo (v11.10.2 by RedQ) |
 | **Owner** | switchgod |
-| **Domain** | switchgod.com.np (on Cloudflare) |
-| **Host machine** | Ubuntu 24.04 desktop, hostname `switchserver` |
-| **Host user** | `switchgod` |
-| **Project path on disk** | `/home/switchgod/Desktop/pickbazar/` |
-| **Goal** | Self-hosted on local Ubuntu PC, exposed via Cloudflare Tunnel, CI/CD via GitHub |
+| **Domain** | switchgod.com.np (Cloudflare) |
+| **Host** | Ubuntu 24.04 desktop, hostname `switchserver` |
+| **Path** | `/home/switchgod/Desktop/pickbazar/` |
+| **Goal** | Self-hosted, exposed via Cloudflare Tunnel |
 
 ---
 
-## 2. REPO / MONOREPO STRUCTURE
+## 2. Monorepo Structure
 
 ```
 pickbazar/
-├── shop/          # Next.js 13.5 storefront (React 18, Tailwind, i18next)
-├── admin/
-│   └── rest/      # Admin dashboard — REST variant (Next.js 13.5)
-├── api/
-│   └── rest/      # Backend API — REST (NestJS, in-memory mock data, NO real DB)
-├── admin/graphql/ # IGNORED — not used
-├── api/graphql/   # IGNORED — not used
-├── deployment/    # Original deployment docs (reference only)
-├── RESUME.md           # AI reads this first — where we stopped
-├── COMMANDS.md         # Working commands reference
-├── SESSIONS.md         # What happened each session
-└── .deploy/            # Scripts + full reference (hidden folder)
-    ├── README.md       # This file — full project context
-    ├── PLAN.md         # Master plan for UI/SEO/Mobile/Security/Bugs (8 phases, 104 tasks)
-    ├── AUDIT.md        # Mobile visual/UX audit — 67 issues with file paths and line numbers
-    └── scripts/        # Deployment scripts
+├── shop/           # Next.js 13.5 storefront (React 18, Tailwind) → port 3003
+├── admin/rest/     # Admin dashboard (Next.js 13.5) → port 3002
+├── api/rest/       # Backend API (NestJS, in-memory mock data) → port 9000
+├── .deploy/        # This folder — scripts, plan, audit, context
+│   ├── README.md   # This file
+│   ├── PLAN.md     # Master plan (112 tasks across 9 phases)
+│   ├── AUDIT.md    # Mobile audit (67 issues, all fixed)
+│   └── KNOWN_ISSUES.md  # Bugs, root causes, what NOT to try
+└── deployment/     # Original deployment docs (reference only)
 ```
 
-**We are using the REST variant only** (shop + admin/rest + api/rest). GraphQL variants are ignored.
-
-**IMPORTANT:** We use **npm** (not yarn) for installing dependencies. Yarn v1 has a bulk-fetching bug that causes it to hang indefinitely on this machine. npm works but is slow (~17 min per service). Use `--legacy-peer-deps` flag.
+**We use REST only** (shop + admin/rest + api/rest). GraphQL variants ignored.
 
 ---
 
-## 3. SERVICES & PORTS
+## 3. Services
 
-| Service | Folder | Port | PM2 Name | Public URL |
-|---|---|---|---|---|
-| REST API | `api/rest` | 9000 | `api` | `api.switchgod.com.np` |
-| Shop (storefront) | `shop` | 3003 | `shop` | `switchgod.com.np` |
-| Admin dashboard | `admin/rest` | 3002 | `admin` | `admin.switchgod.com.np` |
-| Cloudflare Tunnel | - | - | `tunnel` | - |
+| Service | Folder | Port | PM2 | Public URL |
+|---------|--------|------|-----|------------|
+| API | `api/rest` | 9000 | `api` | api.switchgod.com.np |
+| Shop | `shop` | 3003 | `shop` | switchgod.com.np |
+| Admin | `admin/rest` | 3002 | `admin` | admin.switchgod.com.np |
+| Tunnel | — | — | `tunnel` | — |
 
-All four run under **PM2** with auto-start on boot via systemd.
-
----
-
-## 4. CURRENT STATUS — ALL DONE ✅
-
-| Step | Status | Notes |
-|---|---|---|
-| Prerequisites installed | ✅ Done | Node 18, npm, git, PM2, cloudflared, gh CLI |
-| Dependencies installed | ✅ Done | All 3 services (npm with --legacy-peer-deps) |
-| .env files created | ✅ Done | All 3 with public domain URLs |
-| Services built | ✅ Done | API, Shop, Admin all built |
-| PM2 processes running | ✅ Done | api, shop, admin, tunnel — all online |
-| PM2 auto-start on boot | ✅ Done | systemd + pm2 save |
-| Git repo pushed | ✅ Done | mhzsajan/pickbazar (private) |
-| Cloudflare Tunnel | ✅ Done | switchgod-tunnel, 3 DNS routes |
-| Public URLs working | ✅ Done | switchgod.com.np, admin.*, api.* |
-| Google Auth fixed | ✅ Done | GoogleProvider commented out (not configured) |
-| API SHOP_URL fixed | ✅ Done | Set to https://switchgod.com.np |
-| Font changed | ✅ Done | Google Sans Code (SIL Open Font License) |
-| Dark mode | ❌ Reverted | Attempted, broke site, fully reverted (commit ed44c2b) |
-| Documentation | ✅ Done | RESUME.md, SESSIONS.md, COMMANDS.md, .deploy/ |
-| Master plan created | ✅ Done | .deploy/PLAN.md — 104 tasks across 8 phases |
-| Mobile audit completed | ✅ Done | .deploy/AUDIT.md — 67 issues documented |
-| Header/footer fixes | ✅ Done | Sessions 9-11, verified Session 12 |
-| Mobile audit fixes | ✅ Done | Phase 8 complete — all 67 issues fixed (Sessions 13-14) |
-| Modal UX fixes | ✅ Done | Close button visible all screens, back button/swipe works (Session 15) |
+All run under PM2 with auto-start on boot (systemd).
 
 ---
 
-## 5. ARCHITECTURE DIAGRAM
+## 4. Current Status
+
+| Step | Status |
+|------|--------|
+| Prerequisites installed | ✅ Node 18, npm, git, PM2, cloudflared, gh |
+| Dependencies installed | ✅ All 3 (npm + --legacy-peer-deps) |
+| .env files created | ✅ All 3 with public domain URLs |
+| Services built | ✅ API, Shop, Admin |
+| PM2 running | ✅ api, shop, admin, tunnel |
+| PM2 auto-start | ✅ systemd + pm2 save |
+| Git pushed | ✅ mhzsajan/pickbazar (private) |
+| Cloudflare Tunnel | ✅ switchgod-tunnel, 3 DNS routes |
+| Public URLs | ✅ switchgod.com.np, admin.*, api.* |
+| Font | ✅ Google Sans Code (SIL Open Font License) |
+| Mobile audit | ✅ 67/67 issues fixed (Phase 8) |
+| Modal UX | ✅ Close button, back button, swipe-to-go-back |
+| Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
+
+---
+
+## 5. Architecture
 
 ```
-You (VS Code) ──git push──> GitHub repo (mhzsajan/pickbazar)
+You (VS Code) ──git push──> GitHub (mhzsajan/pickbazar)
                                     │
-                              GitHub Webhook (not yet set up)
+                              GitHub Webhook (not set up)
                                     │
                         switchserver pulls + rebuilds
                                     │
@@ -98,16 +82,16 @@ You (VS Code) ──git push──> GitHub repo (mhzsajan/pickbazar)
                   │                 │                 │
              shop :3003       admin :3002        api :9000
                   │                 │                 │
-                  └─────────────────┴────── Cloudflare Tunnel ──> Internet
-                                                          │
-                                                switchgod.com.np
-                                                admin.switchgod.com.np
-                                                api.switchgod.com.np
+                  └─────────────────┴── Cloudflare Tunnel ──> Internet
+                                                         │
+                                               switchgod.com.np
+                                               admin.switchgod.com.np
+                                               api.switchgod.com.np
 ```
 
 ---
 
-## 6. ENVIRONMENT VARIABLES (current — public URLs)
+## 6. Environment Variables
 
 ### api/rest/.env
 ```env
@@ -137,70 +121,34 @@ APPLICATION_MODE=production
 NEXT_PUBLIC_VERSION=11.10.2
 ```
 
-**Note:** These are baked in at build time. If you change these, you must rebuild and restart.
+**Note:** These are baked in at build time. Change = rebuild + restart.
 
 ---
 
-## 7. THE PLAN
+## 7. AI Instructions — How to Resume
 
-**File:** `.deploy/PLAN.md`
-
-The master plan has 8 phases, 104 tasks total:
-
-| Phase | Focus | Tasks |
-|---|---|---|
-| 1 — Customization | Branding & Visual (logos, colors, content) | 8 |
-| 2 — SEO | Google-friendly (sitemap, meta tags, structured data) | 6 |
-| 3 — Security | Hacker-proof (headers, CORS, rate limiting) | 5 |
-| 4 — Mobile | Mobile-friendly (navigation, forms, PWA) | 5 |
-| 5 — Navigation | UI navigation (breadcrumbs, clean header, footer) | 5 |
-| 6 — Bugs | Fix known bugs (error boundaries, unused fonts) | 5 |
-| 7 — Performance | Speed optimization (lazy loading, bundle size) | 3 |
-| 8 — Mobile Audit | Visual/UX fixes from audit (67 issues) | 67 |
-
-**Work through phases in order (1 → 7), then Phase 8 (audit fixes).**
-**Phase 8 has HIGH, MEDIUM, LOW priority sections — do HIGH first.**
-**Customization comes FIRST — make the site look like YOUR brand before doing anything else.**
+1. Read `RESUME.md` first — where we stopped, rules, commands
+2. Read this file — full project context
+3. Read `.deploy/PLAN.md` — active work plan (112 tasks)
+4. Read `.deploy/KNOWN_ISSUES.md` — bugs and root causes
+5. Find first incomplete task in PLAN.md and continue
+6. **npm, not yarn** — always `npm install --legacy-peer-deps`
+7. After changes: `rm -rf .next` before rebuild
+8. Don't push until user approves on localhost
+9. User is beginner — explain commands before running
 
 ---
 
-## 8. AI INSTRUCTIONS — HOW TO RESUME THIS PROJECT
-
-When a user re-opens this project with an AI assistant:
-
-1. **Read this file fully first.** Do not ask redundant questions already answered here.
-2. **Read `.deploy/PLAN.md`** — this is the active work plan with 104 tasks across 8 phases.
-3. **Read `.deploy/AUDIT.md`** — this has all 67 mobile audit findings with exact file paths and line numbers.
-4. **Read `RESUME.md`** — quick status of what's running.
-5. Check Section 4 "Current Status" above — everything is deployed and running.
-6. Find the first incomplete task in PLAN.md and continue from there.
-7. The project folder on disk is `/home/switchgod/Desktop/pickbazar/`.
-8. The user is a **beginner** — explain each command before running it.
-9. **Use npm, not yarn.** Always use `npm install --legacy-peer-deps`.
-10. After code changes: always `rm -rf .next` before rebuild to avoid stale cache.
-11. **Do NOT push to GitHub until user sees changes on localhost and approves.**
-
----
-
-## 9. PM2 COMMANDS
+## 8. Commands
 
 ```bash
-pm2 status              # Check all services
-pm2 logs                # View all logs
-pm2 logs shop           # View shop logs only
-pm2 restart shop        # Restart shop
-pm2 stop all            # Stop all
-pm2 save                # Save process list (run after changes)
-pm2 startup             # Auto-start on boot (requires sudo)
-```
+# PM2
+pm2 status
+pm2 restart shop
+pm2 save
 
----
-
-## 10. REBUILD COMMANDS
-
-```bash
-# Clear cache + rebuild shop (API must be running)
-cd /home/switchgod/Desktop/pickbazar/shop && rm -rf .next && npx next build && pm2 restart shop
+# Rebuild shop (API must be running)
+cd /home/switchgod/Desktop/pickbazar/shop && rm -rf .next && npm run build:rest && pm2 restart shop
 
 # Rebuild admin
 cd /home/switchgod/Desktop/pickbazar/admin/rest && rm -rf .next && npx next build && pm2 restart admin
@@ -211,18 +159,5 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 
 ---
 
-## 11. KNOWN ISSUES
-
-| Issue | Status | Notes |
-|---|---|---|
-| Yarn hangs on "Fetching packages..." | Known | Use npm instead |
-| Google OAuth not configured | By design | GoogleProvider commented out in [...nextauth].ts |
-| Dark mode broken | Reverted | Tried and fully reverted (commit ed44c2b) |
-| ESLint/TS errors ignored in build | TODO | See PLAN.md Phase 5 |
-| Sitemap has localhost URLs | TODO | See PLAN.md Phase 1 |
-| No security headers | TODO | See PLAN.md Phase 2 |
-
----
-
-*Created: Session 2 — Steps 1-2 complete*
-*Last updated: Session 7 — All services deployed, plan created*
+*Created: Session 2 — June 27, 2026*
+*Last updated: Session 17 — June 28, 2026*
