@@ -50,7 +50,7 @@ export default function Modal({
         onClose={onClose}
         dir={dir}
       >
-        <div className="min-h-full text-center p-4 md:p-5">
+        <div className="min-h-full text-center px-4 pb-4 pt-16 md:px-5 md:pb-5 md:pt-20">
           {showBackDrop ? (
             <Transition.Child
               as={Fragment}
