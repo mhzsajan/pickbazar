@@ -14,9 +14,9 @@ export interface Props extends TextareaHTMLAttributes<HTMLTextAreaElement> {
 
 const variantClasses = {
   normal:
-    'bg-gray-100 border border-border-base focus:shadow focus:bg-light focus:border-accent',
+    'bg-gray-200 border border-border-base focus:shadow focus:bg-light focus:border-accent',
   solid:
-    'bg-gray-100 border border-border-100 focus:bg-light focus:border-accent',
+    'bg-gray-200 border border-border-100 focus:bg-light focus:border-accent',
   outline: 'border border-border-base focus:border-accent',
 };
 
@@ -50,7 +50,7 @@ const TextArea = React.forwardRef<HTMLTextAreaElement, Props>((props, ref) => {
             'flex w-full appearance-none items-center rounded px-4 py-3 text-sm text-heading transition duration-300 ease-in-out focus:outline-0 focus:ring-0',
             shadow && 'focus:shadow',
             variantClasses[variant],
-            disabled && 'cursor-not-allowed bg-gray-100',
+            disabled && 'cursor-not-allowed bg-gray-200',
             inputClassName,
           ),
         )}

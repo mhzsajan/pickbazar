@@ -63,8 +63,10 @@ All run under PM2 with auto-start on boot (systemd).
 | Cloudflare Tunnel | ✅ switchgod-tunnel, 3 DNS routes |
 | Public URLs | ✅ switchgod.com.np, admin.*, api.* |
 | Font | ✅ Google Sans Code (SIL Open Font License) |
+| Theme | ✅ Dark blue (Midjourney-style #06051d), green accent |
 | Mobile audit | ✅ 67/67 issues fixed (Phase 8) |
 | Modal UX | ✅ Close button, back button, swipe-to-go-back |
+| Dark theme | ✅ Applied across 100+ files, text visibility fixed |
 | Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
 
 ---

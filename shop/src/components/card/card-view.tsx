@@ -94,7 +94,7 @@ const CardsView = ({
       width: 200,
       render: (last4: number) => {
         return (
-          <p className="truncate text-base text-black">{`**** **** **** ${last4}`}</p>
+          <p className="truncate text-base text-heading">{`**** **** **** ${last4}`}</p>
         );
       },
     },
@@ -109,7 +109,7 @@ const CardsView = ({
       align: alignLeft,
       width: 250,
       render: (owner_name: string) => {
-        return <p className="truncate text-base text-black">{owner_name}</p>;
+        return <p className="truncate text-base text-heading">{owner_name}</p>;
       },
     },
     {
@@ -121,7 +121,7 @@ const CardsView = ({
       align: alignLeft,
       width: 200,
       render: (expires: string) => {
-        return <p className="text-base text-black">{expires}</p>;
+        return <p className="text-base text-heading">{expires}</p>;
       },
     },
     {

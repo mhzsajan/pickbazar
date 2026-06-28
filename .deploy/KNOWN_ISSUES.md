@@ -41,11 +41,75 @@ All add-to-cart code was reverted to original. Here are the root causes found:
 |-------|--------|-------|
 | Yarn hangs on "Fetching packages..." | Known | Use npm instead |
 | Google OAuth not configured | By design | GoogleProvider commented out in [...nextauth].ts |
-| Dark mode broken | Reverted | Tried and fully reverted (commit ed44c2b) |
 | ESLint/TS errors ignored in build | TODO | See PLAN.md Phase 6 |
 | Sitemap has localhost URLs | TODO | See PLAN.md Phase 2 |
 | No security headers | TODO | See PLAN.md Phase 3 |
 
 ---
 
+## Dark Theme — How to Revert
+
+### What Changed (Session 18)
+The shop uses a dark blue theme (Midjourney-style #06051d). To revert to original light theme:
+
+### Step 1: Restore CSS Variables
+```bash
+cd /home/switchgod/Desktop/pickbazar
+git show HEAD~2:shop/src/assets/css/main.css > shop/src/assets/css/main.css
+```
+
+### Step 2: Revert Component Colors
+```bash
+# Revert all bg-gray-100 back to bg-white
+cd shop
+find src -name "*.tsx" -exec sed -i 's/bg-gray-100/bg-white/g' {} +
+
+# Revert all border-border-100 back to border-gray-200
+find src -name "*.tsx" -exec sed -i 's/border-border-100/border-gray-200/g' {} +
+
+# Revert all border-border-200 back to border-gray-300
+find src -name "*.tsx" -exec sed -i 's/border-border-200/border-gray-300/g' {} +
+```
+
+### Step 3: Revert Text Colors
+```bash
+# Revert text-gray-700 back to text-gray-400
+find src -name "*.tsx" -exec sed -i 's/text-gray-700/text-gray-400/g' {} +
+
+# Revert text-gray-800 back to text-gray-600
+find src -name "*.tsx" -exec sed -i 's/text-gray-800/text-gray-600/g' {} +
+
+# Revert placeholder-gray-400 back to placeholder-gray-500
+find src -name "*.tsx" -exec sed -i 's/placeholder-gray-400/placeholder-gray-500/g' {} +
+```
+
+### Step 4: Rebuild
+```bash
+cd /home/switchgod/Desktop/pickbazar/shop && rm -rf .next && npm run build:rest && pm2 restart shop
+```
+
+### Files Changed in Dark Theme
+- `shop/src/assets/css/main.css` — CSS variables (backgrounds, text, borders, grays)
+- 100+ component files — `bg-white` → `bg-gray-100`, `border-gray-*` → `border-border-*`, `text-gray-*` → lighter versions
+
+### Gray Scale Inversion (Important!)
+The dark theme inverts the gray scale:
+- `gray-50` = darkest (was lightest)
+- `gray-900` = lightest (was darkest)
+- For **text** on dark backgrounds, use higher numbers (gray-700, gray-800)
+- For **backgrounds**, use lower numbers (gray-50, gray-100)
+
+### Original Light Theme Colors
+```css
+--color-light: 255, 255, 255;    /* white */
+--color-dark: 0, 0, 0;           /* black */
+--text-base: 107, 114, 128;      /* gray-500 */
+--text-muted: 156, 163, 175;     /* gray-400 */
+--text-heading: 31, 41, 55;      /* gray-800 */
+--color-border-base: 209, 213, 219; /* gray-300 */
+```
+
+---
+
 *Created: Session 17 — June 28, 2026*
+*Last updated: Session 18 — June 28, 2026*

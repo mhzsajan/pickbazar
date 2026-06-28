@@ -40,7 +40,7 @@ function QuestionItem({ question }: { question: Question }) {
   return (
     <div className="border-t border-border-200 border-opacity-70 py-7 first:border-t-0">
       <div className="mb-5 flex items-center space-x-4">
-        <div className="relative h-10 w-10 overflow-hidden rounded border border-gray-200">
+          <div className="relative h-10 w-10 overflow-hidden rounded border border-border-100">
           <Image
             src={product.image?.original ?? productPlaceholder}
             fill
@@ -81,7 +81,7 @@ function QuestionItem({ question }: { question: Question }) {
         </div>
       </div>
 
-      <div className="rounded-md bg-gray-50 px-4 py-3">
+      <div className="rounded-md bg-gray-200 px-4 py-3">
         <p className="mb-2.5 text-base font-semibold text-heading">
           <span
             className="inline-block uppercase ltr:mr-1 rtl:ml-1"
@@ -104,16 +104,16 @@ function QuestionItem({ question }: { question: Question }) {
         )}
 
         <div className="flex items-center justify-between">
-          <div className="mt-5 text-xs text-gray-400">
+          <div className="mt-5 text-xs text-gray-700">
             {t('text-date')}: {dayjs(created_at).format('D MMMM, YYYY')}
           </div>
 
           <div className="flex items-center space-x-6 rtl:space-x-reverse">
-            <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
+            <span className="flex items-center text-xs tracking-wider text-gray-700 transition">
               <LikeIcon className="h-4 w-4 ltr:mr-1.5 rtl:ml-1.5" />
               {positive_feedbacks_count}
             </span>
-            <span className="flex items-center text-xs tracking-wider text-gray-400 transition">
+            <span className="flex items-center text-xs tracking-wider text-gray-700 transition">
               <DislikeIcon className="h-4 w-4 ltr:mr-1.5 rtl:ml-1.5" />
               {negative_feedbacks_count}
             </span>

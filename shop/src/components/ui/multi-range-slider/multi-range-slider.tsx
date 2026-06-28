@@ -94,12 +94,12 @@ const MultiRangeSlider: React.FC<Props> = ({ min, max, onChange }) => {
       </div>
 
       <div className="grid grid-cols-2 gap-3 mt-4">
-        <div className="flex flex-col items-start p-2 border border-gray-200 rounded">
-          <label className="text-sm font-semibold text-gray-400">Min</label>
+        <div className="flex flex-col items-start p-2 border border-border-100 rounded">
+          <label className="text-sm font-semibold text-gray-700">Min</label>
           <span className="text-sm font-bold text-heading">{minVal}</span>
         </div>
-        <div className="flex flex-col items-end p-2 border border-gray-200 rounded">
-          <label className="text-sm font-semibold text-gray-400">Max</label>
+        <div className="flex flex-col items-end p-2 border border-border-100 rounded">
+          <label className="text-sm font-semibold text-gray-700">Max</label>
           <span className="text-sm font-bold text-heading">{maxVal}</span>
         </div>
       </div>

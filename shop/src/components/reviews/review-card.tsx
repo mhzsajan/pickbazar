@@ -67,10 +67,10 @@ export default function ReviewCard({ review }: ReviewCardProps) {
   return (
     <div className="border-t border-border-200 border-opacity-70 py-7 first:border-t-0">
       <Rating rating={rating} className="mb-2.5" />
-      <div className="mb-4 flex items-center text-xs text-gray-500">
+      <div className="mb-4 flex items-center text-xs text-gray-700">
         {t('text-by')}{' '}
         <span className="capitalize ltr:ml-1 rtl:mr-1">{user?.name}</span>
-        <CheckedIcon className="h-[13px] w-[13px] text-gray-700 ltr:ml-1 rtl:mr-1" />
+        <CheckedIcon className="h-[13px] w-[13px] text-gray-800 ltr:ml-1 rtl:mr-1" />
       </div>
       <p className="text-base leading-7 text-heading">{comment}</p>
 
@@ -93,12 +93,12 @@ export default function ReviewCard({ review }: ReviewCardProps) {
       </div>
 
       <div className="flex items-center justify-between">
-        <div className="mt-3.5 text-xs text-gray-400">
+        <div className="mt-3.5 text-xs text-gray-700">
           {t('text-date')}: {dayjs(created_at).format('MMMM D, YYYY')}
         </div>
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <button
-            className="flex items-center text-xs tracking-wider text-gray-400 transition"
+            className="flex items-center text-xs tracking-wider text-gray-700 transition"
             disabled={my_feedback?.positive}
             onClick={() => feedback({ positive: true })}
           >
@@ -110,7 +110,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
             {positive_feedbacks_count}
           </button>
           <button
-            className="flex items-center text-xs tracking-wider text-gray-400 transition"
+            className="flex items-center text-xs tracking-wider text-gray-700 transition"
             onClick={() => feedback({ negative: true })}
             disabled={my_feedback?.negative}
           >
@@ -127,7 +127,7 @@ export default function ReviewCard({ review }: ReviewCardProps) {
             className="relative inline-block ltr:text-left rtl:text-right"
           >
             <Menu.Button className="group p-2">
-              <MenuIcon className="text-gray-400 transition-colors group-hover:text-accent" />
+              <MenuIcon className="text-gray-700 transition-colors group-hover:text-accent" />
             </Menu.Button>
             <Transition
               as={Fragment}

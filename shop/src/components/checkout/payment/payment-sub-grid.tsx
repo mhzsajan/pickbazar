@@ -33,7 +33,7 @@ const PaymentSubGridComponent: React.FC<AvailableMethodOptionProps> = ({
       {({ checked }) => (
         <div
           className={cn(
-            'relative flex h-full w-full cursor-pointer items-center justify-center rounded border border-gray-200 bg-light py-3 text-center',
+            'relative flex h-full w-full cursor-pointer items-center justify-center rounded border border-border-100 bg-light py-3 text-center',
             checked && '!border-accent bg-light shadow-600',
             {
               '!border-gray-800 bg-light shadow-600': theme === 'bw' && checked,

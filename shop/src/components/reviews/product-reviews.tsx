@@ -96,7 +96,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
 
             {paginatorInfo && (
               <div className="flex items-center justify-between py-4 border-t border-border-200 border-opacity-70">
-                <div className="text-xs text-gray-400">
+                <div className="text-xs text-gray-700">
                   {t('text-page')}{' '}
                   {
                     //@ts-ignore
@@ -132,7 +132,7 @@ const ProductReviews: React.FC<ProductReviewsProps> = ({
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center px-5 py-16 border-b border-border-200 border-opacity-70">
-          <h3 className="text-lg font-semibold text-gray-400">
+          <h3 className="text-lg font-semibold text-gray-700">
             {t('text-no-reviews-found')}
           </h3>
         </div>

@@ -75,7 +75,7 @@ function RefundView({
         <RenderStatusBadge status={status} />
       ) : (
         <button
-          className="flex items-center text-sm font-semibold text-body transition-colors hover:text-accent disabled:cursor-not-allowed disabled:text-gray-400 disabled:hover:text-gray-400 ltr:mr-4 rtl:ml-4"
+          className="flex items-center text-sm font-semibold text-body transition-colors hover:text-accent disabled:cursor-not-allowed           disabled:text-gray-700 disabled:hover:text-gray-700 ltr:mr-4 rtl:ml-4"
           onClick={() => openModal('REFUND_REQUEST', orderId)}
           disabled={Boolean(status)}
         >
@@ -116,7 +116,7 @@ const OrderDetails = ({ order, loadingStatus }: Props) => {
     amount: order?.sales_tax,
   });
   return (
-    <div className="flex w-full flex-col border border-border-200 bg-white lg:w-2/3">
+    <div className="flex w-full flex-col border border-border-200 bg-gray-100 lg:w-2/3">
       <div className="flex flex-col items-center p-5 md:flex-row md:justify-between">
         <h2 className="mb-2 flex text-sm font-semibold text-heading md:text-lg">
           {t('text-order-details')} <span className="px-2">-</span>{' '}

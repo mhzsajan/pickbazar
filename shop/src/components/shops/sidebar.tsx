@@ -42,7 +42,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
     <>
       <div
         className={cn(
-          'sticky lg:top-14 top-0 z-10 flex w-full items-center border-b border-gray-300 bg-light py-4 px-6 lg:hidden',
+          'sticky lg:top-14 top-0 z-10 flex w-full items-center border-b border-border-200 bg-light py-4 px-6 lg:hidden',
           cardClassName,
         )}
       >
@@ -77,9 +77,9 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
         <div className="max-h-full overflow-hidden">
           <Scrollbar className={cn('w-full', 'scrollbar_height')}>
             <div className="flex flex-col h-full">
-              <div className="flex flex-col w-full p-6 border-b border-gray-200">
+              <div className="flex flex-col w-full p-6 border-b border-border-100">
                 <div className="flex items-center justify-start mb-4">
-                  <div className="flex items-center justify-center w-24 h-24 border border-gray-200 rounded-full shrink-0">
+                  <div className="flex items-center justify-center w-24 h-24 border border-border-100 rounded-full shrink-0">
                     <div className="relative w-[calc(100%-8px)] h-[calc(100%-8px)] overflow-hidden bg-gray-200 rounded-full">
                       <Image
                         alt={t('logo')}
@@ -92,7 +92,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                   </div>
 
                   <div className="ltr:pl-2.5 rtl:pr-2.5 ">
-                    <div className="text-sm text-gray-400">
+                    <div className="text-sm text-gray-700">
                       Since {dayjs(shop?.created_at).format('YYYY')}
                     </div>
                     <h3 className="mb-2 overflow-hidden text-lg font-semibold truncate text-heading">
@@ -100,7 +100,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                     </h3>
 
                     <div className="flex flex-wrap text-sm rounded gap-x-4">
-                      <div className="flex justify-center gap-1.5 text-gray-500">
+                      <div className="flex justify-center gap-1.5 text-gray-700">
                         <div className="font-medium text-heading">
                           {shop.products_count}
                         </div>
@@ -124,7 +124,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
               <div className="grid grid-cols-[repeat(auto-fill,minmax(70px,1fr))] text-sm gap-1.5 p-6">
                 {settings?.enableCoupons ? (
                   <Link
-                    className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-500 rounded bg-gray-50 group hover:text-accent hover:bg-accent/10 transition-all"
+                    className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-700 rounded bg-gray-200 group hover:text-accent hover:bg-accent/10 transition-all"
                     href={`/shops/${shop?.slug}${Routes.coupons}`}
                   >
                     <ShopCouponIcon className="w-7 h-7" />
@@ -134,7 +134,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
 
                 <Link
                   href={`/shops/${shop?.slug}${Routes.contactUs}`}
-                  className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-500 rounded bg-gray-50 group hover:text-accent hover:bg-accent/10 transition-all"
+                  className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-700 rounded bg-gray-200 group hover:text-accent hover:bg-accent/10 transition-all"
                 >
                   <ShopContactIcon className="w-6 h-6" />
                   <span className="pt-2 text-sm">Contact</span>
@@ -143,7 +143,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                   <a
                     href={shop.settings.website}
                     target="_blank"
-                    className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-500 rounded bg-gray-50 group hover:text-accent hover:bg-accent/10 transition-all"
+                    className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-700 rounded bg-gray-200 group hover:text-accent hover:bg-accent/10 transition-all"
                     rel="noreferrer"
                   >
                     <ShopWebIcon className="w-6 h-6" />
@@ -154,7 +154,7 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
                 {settings?.enableTerms ? (
                   <Link
                     href={`/shops/${shop?.slug}${Routes.terms}`}
-                    className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-500 rounded bg-gray-50 group hover:text-accent hover:bg-accent/10 transition-all"
+                    className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-700 rounded bg-gray-200 group hover:text-accent hover:bg-accent/10 transition-all"
                   >
                     <ShopTermsIcon className="w-[26px] h-[26px]" />
                     <span className="pt-2 text-sm">Terms</span>
@@ -163,14 +163,14 @@ const ShopSidebar: React.FC<ShopSidebarProps> = ({
 
                 <Link
                   href={`/shops/${shop?.slug}/faqs`}
-                  className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-500 rounded bg-gray-50 group hover:text-accent hover:bg-accent/10 transition-all"
+                  className="flex flex-col items-center justify-center p-2 pt-3.5 pb-3 text-gray-700 rounded bg-gray-200 group hover:text-accent hover:bg-accent/10 transition-all"
                 >
                   <ShopFaqIcon className="w-7 h-7" />
                   <span className="pt-2 text-sm">FAQs</span>
                 </Link>
               </div>
 
-              <div className="p-6 border-t border-gray-200">
+              <div className="p-6 border-t border-border-100">
                 <div className="flex flex-col mb-5 last:mb-0">
                   <span className="mb-1.5 text-sm font-semibold text-heading">
                     {t('text-address')}

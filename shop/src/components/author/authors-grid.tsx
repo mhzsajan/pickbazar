@@ -23,7 +23,7 @@ const AuthorsGrid: React.FC<AuthorsGridProps> = ({
 
   if (!isLoading && !authors.length) {
     return (
-      <div className="min-h-full bg-white px-4 pt-6 pb-8 lg:p-8">
+      <div className="min-h-full bg-gray-100 px-4 pt-6 pb-8 lg:p-8">
         <NotFound text="text-no-authors" />
       </div>
     );

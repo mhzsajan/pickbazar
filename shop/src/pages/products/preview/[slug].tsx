@@ -84,7 +84,7 @@ const ProductPage: NextPageWithLayout<
               )}
           </div>
           {width > 1023 && <CartCounterButton />}
-          <div className="sticky bottom-0 z-30 bg-white py-5 text-end backdrop-blur">
+          <div className="sticky bottom-0 z-30 bg-gray-100 py-5 text-end backdrop-blur">
             <button
               className={cn(
                 'inline-flex rounded  px-5 py-2.5 text-center font-semibold capitalize text-white',

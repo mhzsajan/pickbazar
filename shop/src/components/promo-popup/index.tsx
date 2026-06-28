@@ -39,7 +39,7 @@ const PromoPopup = () => {
       open={isOpen}
       onClose={closeModalAction}
     >
-      <div className="w-full overflow-hidden max-w-4xl rounded-xl bg-white">
+      <div className="w-full overflow-hidden max-w-4xl rounded-xl bg-gray-100">
         {isLoading ? (
           <div className="p-6 md:p-12">
             <Spinner className="!h-auto" />
@@ -79,7 +79,7 @@ const PromoPopup = () => {
 
             <div
               className={classNames(
-                'md:col-span-1 order-1 relative md:order-2 col-span-full bg-gray-50 h-72 md:h-[28.125rem]',
+                'md:col-span-1 order-1 relative md:order-2 col-span-full bg-gray-200 h-72 md:h-[28.125rem]',
               )}
             >
               <Image

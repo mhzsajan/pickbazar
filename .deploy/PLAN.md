@@ -10,7 +10,7 @@
 |---|------|--------|
 | 1.1 | Replace PickBazar logo with your own logo | `[ ]` |
 | 1.2 | Replace favicon | `[ ]` |
-| 1.3 | Change accent/theme colors to match your brand | `[ ]` |
+| 1.3 | Change accent/theme colors to match your brand | `[x]` |
 | 1.4 | Update site title and subtitle | `[ ]` |
 | 1.5 | Update footer content (contact info, social links, copyright) | `[ ]` |
 | 1.6 | Add/replace homepage banner images | `[ ]` |

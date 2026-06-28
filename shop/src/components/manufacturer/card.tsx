@@ -21,7 +21,7 @@ const ManufacturerCard: React.FC<ManufacturerProps> = ({ item, className }) => {
   return (
     <div
       className={cn(
-        'relative flex cursor-pointer items-center rounded border border-gray-200 bg-white p-5 shadow-md',
+        'relative flex cursor-pointer items-center rounded border border-border-100 bg-gray-100 p-5 shadow-md',
         className
       )}
       title={item?.name}

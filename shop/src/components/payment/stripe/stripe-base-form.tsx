@@ -79,20 +79,20 @@ const StripeBaseForm: React.FC<Props> = ({
         <form onSubmit={handleSubmit} className="flex flex-col gap-5">
           <div>
             <label>
-              <span className="mb-2 block text-sm font-semibold text-black">
+              <span className="mb-2 block text-sm font-semibold text-heading">
                 {t('text-name')}
               </span>
               <Input
                 name="owner_name"
                 placeholder={t('text-name')}
                 required
-                inputClassName="h-auto rounded border border-solid border-[#D4D8DD] bg-white py-[14px] px-4 text-black transition-all duration-300 focus:shadow-none"
+                inputClassName="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300 focus:shadow-none"
               />
             </label>
           </div>
           <div>
             <Label className="mb-0 block">
-              <span className="mb-2 block text-sm font-semibold text-black">
+              <span className="mb-2 block text-sm font-semibold text-heading">
                 {t('text-card-number')}
               </span>
               <CardNumberElement
@@ -101,14 +101,14 @@ const StripeBaseForm: React.FC<Props> = ({
                   style: cardInputStyle,
                   placeholder: t('text-card-number'),
                 }}
-                className="h-auto rounded border border-solid border-[#D4D8DD] bg-white py-[14px] px-4 text-black transition-all duration-300"
+                className="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300"
               />
             </Label>
           </div>
 
           <div className="flex flex-wrap gap-5 lg:flex-nowrap">
             <Label className="mb-0 max-w-full basis-full lg:max-w-[50%] lg:basis-1/2">
-              <span className="mb-2 block text-sm font-semibold text-black">
+              <span className="mb-2 block text-sm font-semibold text-heading">
                 {t('text-card-expiry')}
               </span>
               <CardExpiryElement
@@ -116,12 +116,12 @@ const StripeBaseForm: React.FC<Props> = ({
                   style: cardInputStyle,
                   placeholder: t('text-expire-date-placeholder'),
                 }}
-                className="h-auto rounded border border-solid border-[#D4D8DD] bg-white py-[14px] px-4 text-black transition-all duration-300"
+                className="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300"
               />
             </Label>
 
             <Label className="mb-0 max-w-full basis-full lg:max-w-[50%] lg:basis-1/2">
-              <span className="mb-2 block text-sm font-semibold text-black">
+              <span className="mb-2 block text-sm font-semibold text-heading">
                 {t('text-card-cvc')}
               </span>
               <CardCvcElement
@@ -129,7 +129,7 @@ const StripeBaseForm: React.FC<Props> = ({
                   style: cardInputStyle,
                   placeholder: t('text-card-cvc'),
                 }}
-                className="h-auto rounded border border-solid border-[#D4D8DD] bg-white py-[14px] px-4 text-black transition-all duration-300"
+                className="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300"
               />
             </Label>
           </div>

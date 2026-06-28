@@ -37,7 +37,7 @@ const CartItem = ({ item, notAvailable }: Props) => {
           <span
             className={cn(
               'mt-1.5 text-xs font-semibold',
-              notAvailable ? 'text-red-500' : 'text-gray-500'
+              notAvailable ? 'text-red-500' : 'text-gray-700'
             )}
           >
             X {item.quantity}

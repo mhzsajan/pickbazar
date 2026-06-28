@@ -44,7 +44,7 @@ const MoreInfo = ({
   const [_, closeSidebar] = useAtom(drawerAtom);
   return (
     <>
-      <div className="sticky top-0 left-0 flex w-full items-center justify-between border-b border-b-border-200 bg-white p-4">
+      <div className="sticky top-0 left-0 flex w-full items-center justify-between border-b border-b-border-200 bg-gray-100 p-4">
         <JoinButton />
         <button
           onClick={() => closeSidebar({ display: false, view: '' })}
@@ -63,7 +63,7 @@ const MoreInfo = ({
             ''
           )}
           {aboutUsDescription ? (
-            <p className="mb-6 leading-8 text-black text-opacity-80">
+            <p className="mb-6 leading-8 text-heading text-opacity-80">
               {aboutUsDescription}
             </p>
           ) : (

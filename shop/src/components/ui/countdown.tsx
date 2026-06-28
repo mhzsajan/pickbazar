@@ -18,15 +18,15 @@ const renderer = ({ days, hours, minutes, seconds, completed }: any) => {
           </div>
         ) : (
           <div className="flex items-center">
-            <div className="mx-1 inline-flex min-h-[30px] min-w-[30px] shrink-0 items-center justify-center rounded bg-white p-1 font-medium text-black md:mx-1.5 md:min-w-[36px]">
+            <div className="mx-1 inline-flex min-h-[30px] min-w-[30px] shrink-0 items-center justify-center rounded bg-gray-100 p-1 font-medium text-heading md:mx-1.5 md:min-w-[36px]">
               {zeroPad(hours)}
             </div>
             :
-            <div className="mx-1 inline-flex min-h-[30px] min-w-[30px] shrink-0 items-center justify-center rounded bg-white p-1 font-medium text-black md:mx-1.5 md:min-w-[36px]">
+            <div className="mx-1 inline-flex min-h-[30px] min-w-[30px] shrink-0 items-center justify-center rounded bg-gray-100 p-1 font-medium text-heading md:mx-1.5 md:min-w-[36px]">
               {zeroPad(minutes)}
             </div>
             :
-            <div className="mx-1 inline-flex min-h-[30px] min-w-[30px] shrink-0 items-center justify-center rounded bg-white p-1 font-medium text-black md:mx-1.5 md:min-w-[36px]">
+            <div className="mx-1 inline-flex min-h-[30px] min-w-[30px] shrink-0 items-center justify-center rounded bg-gray-100 p-1 font-medium text-heading md:mx-1.5 md:min-w-[36px]">
               {zeroPad(seconds)}
             </div>
           </div>

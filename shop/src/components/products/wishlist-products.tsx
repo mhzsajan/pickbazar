@@ -50,8 +50,8 @@ function WishlistItem({ product }: { product: Product }) {
     return openModal('SELECT_PRODUCT_VARIATION', product?.slug);
   }
   return (
-    <div className="flex w-full items-start space-x-4 border-b border-gray-200 py-5 first:pt-0 last:border-0 last:pb-0 rtl:space-x-reverse sm:space-x-5 xl:items-center">
-      <div className="relative flex h-16 w-16 shrink-0 items-center justify-center border border-gray-200 sm:h-[74px] sm:w-[74px]">
+    <div className="flex w-full items-start space-x-4 border-b border-border-100 py-5 first:pt-0 last:border-0 last:pb-0 rtl:space-x-reverse sm:space-x-5 xl:items-center">
+      <div className="relative flex h-16 w-16 shrink-0 items-center justify-center border border-border-100 sm:h-[74px] sm:w-[74px]">
         <Image
           src={product?.image?.thumbnail ?? productPlaceholder}
           alt="text"
@@ -124,7 +124,7 @@ function WishlistItem({ product }: { product: Product }) {
                 {t('text-out-stock')}
               </span>
             )}
-            <span className="flex h-7 w-px border-r border-dashed border-gray-300" />
+            <span className="flex h-7 w-px border-r border-dashed border-border-200" />
             <button
               className="whitespace-nowrap text-sm font-semibold text-red-500 hover:underline sm:mt-0"
               onClick={() => removeFromWishlist(product?.id)}

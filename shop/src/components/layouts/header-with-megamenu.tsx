@@ -91,7 +91,7 @@ const HeaderWithMegaMenu: React.FC<MenuProps> = ({ data, className }) => {
         {/* Mega menu */}
         <nav
           className={cn(
-            `headerMenu flex w-full bg-white relative border-t border-b border-border-200 px-4 lg:px-12`,
+            `headerMenu flex w-full bg-gray-100 relative border-t border-b border-border-200 px-4 lg:px-12`,
             className
           )}
         >
@@ -119,7 +119,7 @@ const HeaderWithMegaMenu: React.FC<MenuProps> = ({ data, className }) => {
               )}
 
               {item?.subMenu && Array.isArray(item.subMenu) && (
-                <div className="subMenu shadow-md border border-gray-200 bg-white absolute ltr:left-0 rtl:right-0 opacity-0 group-hover:opacity-100">
+                <div className="subMenu shadow-md border border-border-100 bg-gray-100 absolute ltr:left-0 rtl:right-0 opacity-0 group-hover:opacity-100">
                   <ul className="text-body text-sm py-5">
                     {item.subMenu.map((menu: any, index: number) => {
                       const dept: number = 1;

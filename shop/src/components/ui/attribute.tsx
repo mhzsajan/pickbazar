@@ -48,7 +48,7 @@ function Attribute({
           role="button"
           onClick={onClick}
           className={cn(
-            'cursor-pointer whitespace-nowrap rounded border-border-200 bg-gray-50 px-4 py-3 text-sm text-heading transition-colors',
+            'cursor-pointer whitespace-nowrap rounded border-border-200 bg-gray-200 px-4 py-3 text-sm text-heading transition-colors',
             {
               '!border-accent !bg-accent !text-light':
                 isActive && variant === 'normal',

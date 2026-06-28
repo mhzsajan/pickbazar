@@ -57,13 +57,13 @@ export default function QuestionCard({ question }: QuestionCardProps) {
       )}
 
       <div className="flex items-center justify-between">
-        <div className="mt-5 text-xs text-gray-400">
+        <div className="mt-5 text-xs text-gray-700">
           {t('text-date')}: {dayjs(created_at).format('D MMMM, YYYY')}
         </div>
 
         <div className="flex items-center space-x-6 rtl:space-x-reverse">
           <button
-            className="flex items-center text-xs tracking-wider text-gray-400 transition"
+            className="flex items-center text-xs tracking-wider text-gray-700 transition"
             disabled={my_feedback?.positive}
             onClick={() => feedback({ positive: true })}
           >
@@ -75,7 +75,7 @@ export default function QuestionCard({ question }: QuestionCardProps) {
             {positive_feedbacks_count}
           </button>
           <button
-            className="flex items-center text-xs tracking-wider text-gray-400 transition"
+            className="flex items-center text-xs tracking-wider text-gray-700 transition"
             onClick={() => feedback({ negative: true })}
             disabled={my_feedback?.negative}
           >

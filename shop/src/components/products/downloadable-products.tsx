@@ -76,7 +76,7 @@ const DownloadableProducts: React.FC = () => {
         return (
           <div
             key={item.purchase_key}
-            className="flex w-full space-x-4 border-b border-gray-200 py-5 first:pt-0 last:border-0 last:pb-0 rtl:space-x-reverse sm:space-x-5"
+            className="flex w-full space-x-4 border-b border-border-100 py-5 first:pt-0 last:border-0 last:pb-0 rtl:space-x-reverse sm:space-x-5"
           >
             <div className="relative flex h-16 w-16 shrink-0 items-center justify-center sm:h-20 sm:w-20">
               <Image
@@ -155,7 +155,7 @@ const DownloadableProducts: React.FC = () => {
                 // If Cash on Delivery and order is not completed, show alternative text
                 isCashOnDelivery(item?.order?.payment_gateway) &&
                 !isOrderCompleted(item?.order?.order_status) && (
-                  <span className="mt-2 text-sm font-semibold text-gray-500 sm:mt-0">
+                  <span className="mt-2 text-sm font-semibold text-gray-700 sm:mt-0">
                     {t('text-download-unavailable')}
                   </span>
                 )

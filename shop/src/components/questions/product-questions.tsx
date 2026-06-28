@@ -155,7 +155,7 @@ const ProductQuestions: React.FC<ProductQuestionsProps> = ({
         </div>
       ) : (
         <div className="flex flex-col items-center justify-center px-5 py-16 border-b border-border-200 border-opacity-70">
-          <h3 className="text-lg font-semibold text-gray-400">
+          <h3 className="text-lg font-semibold text-gray-700">
             {t('text-no-question-found')}
           </h3>
         </div>

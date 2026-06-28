@@ -28,7 +28,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
   const currency = settings?.currency;
   const content = useSanitizeContent({ description: flashSale?.description });
   return (
-    <div className={twMerge(classNames('bg-white', className))}>
+    <div className={twMerge(classNames('bg-gray-100', className))}>
       <>
         <div className="relative h-80 overflow-hidden md:h-[31.25rem] lg:h-[43.75rem]">
           <Image
@@ -60,7 +60,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
           </div>
         </div>
       </>
-      <div className={twMerge(classNames('bg-white py-10', containerClass))}>
+      <div className={twMerge(classNames('bg-gray-100 py-10', containerClass))}>
         {flashSale?.title ? (
           <h3 className="mb-4 text-xl font-semibold text-muted-black lg:text-2xl">
             {flashSale?.title}

@@ -28,7 +28,7 @@ export default function OtpCodeForm({
   const { closeModal } = useModalAction();
 
   return (
-    <div className="p-5 space-y-5 border border-gray-200 rounded">
+    <div className="p-5 space-y-5 border border-border-100 rounded">
       <Form<OptCodeFormProps>
         onSubmit={onSubmit}
         validationSchema={otpLoginFormSchemaForExistingUser}

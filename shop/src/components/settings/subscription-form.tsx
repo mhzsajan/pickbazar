@@ -35,7 +35,7 @@ export default function SubscriptionForm({
       >
         {({ register, formState: { errors } }) => (
           <>
-            <div className="relative w-full rounded border border-gray-200 bg-gray-50 ltr:pr-11 rtl:pl-11">
+            <div className="relative w-full rounded border border-border-100 bg-gray-200 ltr:pr-11 rtl:pl-11">
               <input
                 type="email"
                 id="email_subscribe"
@@ -46,13 +46,13 @@ export default function SubscriptionForm({
               <button className="absolute top-1/2 -mt-2 ltr:right-3 rtl:left-3">
                 {loading ? (
                   <span
-                    className="flex h-5 w-5 shrink-0 animate-spin rounded-full border-[3px] border-t-[3px] border-gray-300 text-accent ltr:ml-2 rtl:mr-2"
+                    className="flex h-5 w-5 shrink-0 animate-spin rounded-full border-[3px] border-t-[3px] border-border-200 text-accent ltr:ml-2 rtl:mr-2"
                     style={{
                       borderTopColor: 'currentcolor',
                     }}
                   />
                 ) : (
-                  <SendIcon className="text-gray-500 transition-colors hover:text-accent" />
+                  <SendIcon className="text-gray-700 transition-colors hover:text-accent" />
                 )}
               </button>
             </div>

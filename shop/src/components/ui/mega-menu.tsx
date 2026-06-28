@@ -18,11 +18,11 @@ type MegaMenuProps = {
 const MegaMenu: React.FC<MegaMenuProps> = ({ columns }) => {
   const { t } = useTranslation('menu');
   return (
-    <div className="megaMenu shadow-header bg-white absolute border border-gray-200 ltr:left-0 rtl:right-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-md">
+    <div className="megaMenu shadow-header bg-gray-100 absolute border border-border-100 ltr:left-0 rtl:right-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible shadow-md">
       <div className="grid grid-cols-5">
         {columns?.map((column) => (
           <ul
-            className="even:bg-gray-50 pb-7 2xl:pb-8 pt-6 2xl:pt-7"
+            className="even:bg-gray-200 pb-7 2xl:pb-8 pt-6 2xl:pt-7"
             key={column.id}
           >
             {column?.columnItems?.map((columnItem) => (
@@ -40,7 +40,7 @@ const MegaMenu: React.FC<MegaMenuProps> = ({ columns }) => {
                     key={item.id}
                     className={
                       columnItem?.columnItemItems?.length === item.id
-                        ? 'border-b border-gray-200 pb-3.5 mb-3'
+                        ? 'border-b border-border-100 pb-3.5 mb-3'
                         : ''
                     }
                   >

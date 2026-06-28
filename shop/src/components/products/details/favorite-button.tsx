@@ -38,7 +38,7 @@ function FavoriteButton({
       <div
         className={twMerge(
           classNames(
-            'mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-300',
+            'mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-200',
             variant === 'minimal' ? "bg-black bg-opacity-20" : '',
             className
           )
@@ -56,8 +56,8 @@ function FavoriteButton({
       type="button"
       className={twMerge(
         classNames(
-          'mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-gray-300 text-xl text-accent transition-colors',
-          inWishlist ? 'border-accent' : 'border-gray-300',
+          'mt-0.5 flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-border-200 text-xl text-accent transition-colors',
+          inWishlist ? 'border-accent' : 'border-border-200',
           variant === 'minimal' &&
             (inWishlist
               ? 'bg-accent text-white'

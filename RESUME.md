@@ -1,9 +1,9 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 17 — Add-to-cart issues found, all changes reverted, root causes documented
-- **Current step:** Add-to-cart code reverted to original. Root causes documented in `.deploy/KNOWN_ISSUES.md`
-- **Next action:** Phase 1 — Customization (logos, colors, branding) at `.deploy/PLAN.md`, OR fix add-to-cart with proper approach
+- **Last completed:** Session 18 — Dark blue theme applied (Midjourney-style), text colors fixed
+- **Current step:** Dark theme active. Logo, favicon, content, banners still need customization
+- **Next action:** Phase 1 remaining — replace logo, favicon, banner images, footer content at `.deploy/PLAN.md`
 - **Master plan:** `.deploy/PLAN.md` — 112 tasks across 9 phases (Phase 8 = 67 mobile audit tasks done)
 
 ## What Works Now
@@ -21,6 +21,7 @@
 - Git: mhzsajan/pickbazar (private)
 - Public URLs: switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np
 - Font: Google Sans Code (SIL Open Font License)
+- Theme: Dark blue (Midjourney-style #06051d), green accent
 - Mobile: All 67 audit issues fixed (Phase 8)
 - Modal UX: Close button, back button, swipe-to-go-back — all working
 - Add-to-cart: ⚠️ Issues found, code reverted, root causes documented

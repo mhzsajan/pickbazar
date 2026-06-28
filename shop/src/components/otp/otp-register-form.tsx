@@ -36,7 +36,7 @@ export default function OtpRegisterForm({
   const { closeModal } = useModalAction();
 
   return (
-    <div className="p-5 space-y-5 border border-gray-200 rounded">
+    <div className="p-5 space-y-5 border border-border-100 rounded">
       <Form<OtpRegisterFormValues>
         onSubmit={onSubmit}
         validationSchema={otpLoginFormSchemaForNewUser}

@@ -153,7 +153,7 @@ const RefundView: React.FC = () => {
         columns={refundTableColumns}
         data={refunds as any}
         rowKey={(record: any) => record.created_at}
-        className="w-full border border-gray-200 orderDetailsTable"
+        className="w-full border border-border-100 orderDetailsTable"
         scroll={{ x: 500, y: 700 }}
       />
     </Card>

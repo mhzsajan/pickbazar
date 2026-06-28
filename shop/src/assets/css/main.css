@@ -12,7 +12,7 @@
     */
 
     /*
-    * primary color
+    * primary color (green accent)
     */
     --color-accent: 0, 159, 127;
 
@@ -52,19 +52,19 @@
     --color-accent-700: 0, 119, 95;
 
     /*
-    * light color
+    * light color (background on dark theme - Midjourney #06051d)
     */
-    --color-light: 255, 255, 255;
+    --color-light: 6, 5, 29;
 
     /*
-    * dark color
+    * dark color (text on dark theme)
     */
-    --color-dark: 0, 0, 0;
+    --color-dark: 255, 255, 255;
 
     /*
     * Black muted color
     */
-    --color-muted-black: 17, 17, 17;
+    --color-muted-black: 10, 12, 35;
 
     /*
     * Current color
@@ -73,156 +73,156 @@
 
     /*
     *
-    * TEXT colors
+    * TEXT colors (dark blue theme)
     *
     */
 
     /*
-    * text color used for body/base text -> gray-500
+    * text color used for body/base text (light blue-gray on dark)
     */
-    --text-base: 107, 114, 128;
+    --text-base: 170, 180, 210;
 
     /*
-    * dark base text color  -> gray-600
+    * dark base text color (lighter on dark)
     */
-    --text-base-dark: 75, 85, 99;
+    --text-base-dark: 200, 210, 235;
 
     /*
-    * muted text color -> gray-400
+    * muted text color (lighter on dark)
     */
-    --text-muted: 156, 163, 175;
+    --text-muted: 150, 165, 200;
 
     /*
-    * light muted text color - gray-300
+    * light muted text color
     */
-    --text-muted-light: 209, 213, 219;
+    --text-muted-light: 120, 135, 170;
 
     /*
-    * text color used for heading text -> gray-700
+    * text color used for heading text (light on dark)
     */
-    --text-sub-heading: 55, 65, 81;
+    --text-sub-heading: 190, 200, 225;
 
     /*
-    * text color used for heading text -> gray-800
+    * text color used for heading text (white)
     */
-    --text-heading: 31, 41, 55;
+    --text-heading: 240, 245, 255;
 
     /*
-    * text color used for heading text -> gray-900
+    * text color used for heading text (white)
     */
-    --text-bolder: 31, 41, 55;
+    --text-bolder: 240, 245, 255;
 
     /*
     *
-    * border colors
+    * border colors (dark theme - dark blue)
     *
     */
 
     /*
-    * border color 50
+    * border color 50 (very subtle)
     */
-    --color-border-50: 249, 250, 251;
+    --color-border-50: 15, 20, 45;
 
     /*
     * border color 100
     */
-    --color-border-100: 243, 244, 246;
+    --color-border-100: 20, 28, 55;
 
     /*
     * border color 200
     */
-    --color-border-200: 229, 231, 235;
+    --color-border-200: 30, 40, 70;
 
     /*
     * border base color which is 300
     */
-    --color-border-base: 209, 213, 219;
+    --color-border-base: 40, 55, 85;
 
     /*
     * border color 400
     */
-    --color-border-400: 156, 163, 175;
+    --color-border-400: 60, 75, 105;
 
     /*
     *
-    * Tailwind default gray color override
+    * Tailwind default gray color override (dark blue theme)
     *
     */
 
     /*
-    * gray-50
+    * gray-50 (darkest on dark theme)
     */
-    --color-gray-50: 249, 250, 251;
+    --color-gray-50: 8, 8, 30;
 
     /*
     * gray-100
     */
-    --color-gray-100: 243, 244, 246;
+    --color-gray-100: 12, 14, 38;
 
     /*
     * gray-200
     */
-    --color-gray-200: 229, 231, 235;
+    --color-gray-200: 18, 22, 48;
 
     /*
     * gray-300
     */
-    --color-gray-300: 209, 213, 219;
+    --color-gray-300: 25, 32, 60;
 
     /*
     * gray-400
     */
-    --color-gray-400: 156, 163, 175;
+    --color-gray-400: 35, 45, 75;
 
     /*
     * gray-500
     */
-    --color-gray-500: 107, 114, 128;
+    --color-gray-500: 50, 65, 100;
 
     /*
     * gray-600
     */
-    --color-gray-600: 75, 85, 99;
+    --color-gray-600: 70, 90, 130;
 
     /*
     * gray-700
     */
-    --color-gray-700: 55, 65, 81;
+    --color-gray-700: 100, 120, 160;
 
     /*
     * gray-800
     */
-    --color-gray-800: 31, 41, 55;
+    --color-gray-800: 150, 165, 200;
 
     /*
-    * gray-900
+    * gray-900 (lightest on dark theme)
     */
-    --color-gray-900: 31, 41, 55;
+    --color-gray-900: 220, 225, 240;
 
     /*
-    * orange-50
+    * orange-50 (dark theme)
     */
-    --color-orange-50: 255, 247, 237;
+    --color-orange-50: 40, 25, 10;
 
     /*
     * orange-100
     */
-    --color-orange-100: 255, 237, 213;
+    --color-orange-100: 60, 35, 15;
 
     /*
     * orange-200
     */
-    --color-orange-200: 254, 215, 170;
+    --color-orange-200: 80, 45, 20;
 
     /*
     * orange-300
     */
-    --color-orange-300: 253, 186, 116;
+    --color-orange-300: 120, 65, 25;
 
     /*
     * orange-400
     */
-    --color-orange-400: 251, 146, 60;
+    --color-orange-400: 180, 90, 30;
 
     /*
     * orange-500

@@ -15,7 +15,7 @@ import BestSellingProductsGrid from '@/components/products/best-selling-products
 export default function CompactLayout({ variables }: HomePageProps) {
   const { t } = useTranslation('common');
   return (
-    <div className="flex flex-col flex-1 bg-white">
+    <div className="flex flex-col flex-1 bg-gray-100">
       <FilterBar
         className="top-16 lg:hidden"
         variables={variables.categories}

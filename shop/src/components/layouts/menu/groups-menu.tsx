@@ -38,7 +38,7 @@ const GroupsMenu: React.FC<GroupsMenuProps> = ({
         className={cn(
           'flex h-11 shrink-0 items-center text-sm font-semibold text-heading focus:outline-0 md:text-[15px] xl:px-4',
           {
-            'rounded-lg border border-border-200 bg-gray-50 px-3':
+            'rounded-lg border border-border-200 bg-gray-200 px-3':
               variant === 'minimal',
             'rounded border-border-200 bg-light xl:min-w-150 xl:border xl:text-accent':
               variant === 'colored',

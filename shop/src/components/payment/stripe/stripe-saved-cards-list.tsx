@@ -145,7 +145,7 @@ const StripeSavedCardsList = ({
       width: 150,
       render: (last4: number) => {
         return (
-          <p className="text-base text-black truncate">{`**** **** **** ${last4}`}</p>
+          <p className="text-base text-heading truncate">{`**** **** **** ${last4}`}</p>
         );
       },
     },
@@ -160,7 +160,7 @@ const StripeSavedCardsList = ({
       align: alignLeft,
       width: 180,
       render: (owner_name: string) => {
-        return <p className="text-base text-black truncate">{owner_name}</p>;
+        return <p className="text-base text-heading truncate">{owner_name}</p>;
       },
     },
     {
@@ -172,7 +172,7 @@ const StripeSavedCardsList = ({
       align: alignLeft,
       width: 130,
       render: (expires: string) => {
-        return <p className="text-base text-black">{expires}</p>;
+        return <p className="text-base text-heading">{expires}</p>;
       },
     },
   ];

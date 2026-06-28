@@ -97,7 +97,7 @@ const Sorting: React.FC<Props> = ({ variant = 'radio' }) => {
                     <>
                       <div className="flex w-full cursor-pointer items-center">
                         <span
-                          className={`h-[18px] w-[18px] rounded-full bg-white ltr:mr-3 rtl:ml-3 ${
+                          className={`h-[18px] w-[18px] rounded-full bg-gray-100 ltr:mr-3 rtl:ml-3 ${
                             checked
                               ? 'border-[5px] border-gray-800'
                               : 'border border-gray-600'

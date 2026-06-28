@@ -181,9 +181,9 @@ const Header = ({ layout }: { layout?: string }) => {
             >
               <span className="sr-only">{t('text-burger-menu')}</span>
               <div className="flex w-full flex-col space-y-1.5">
-                <span className="h-0.5 w-1/2 rounded bg-gray-600 transition-all group-hover:w-full" />
-                <span className="h-0.5 w-full rounded bg-gray-600 transition-all group-hover:w-3/4" />
-                <span className="h-0.5 w-3/4 rounded bg-gray-600 transition-all group-hover:w-full" />
+                <span className="h-0.5 w-1/2 rounded bg-gray-800 transition-all group-hover:w-full" />
+                <span className="h-0.5 w-full rounded bg-gray-800 transition-all group-hover:w-3/4" />
+                <span className="h-0.5 w-3/4 rounded bg-gray-800 transition-all group-hover:w-full" />
               </div>
             </motion.button>
             <div className="flex shrink-0 grow-0 basis-auto flex-wrap items-center ltr:mr-auto rtl:ml-auto lg:w-auto lg:flex-nowrap">
@@ -250,13 +250,13 @@ const Header = ({ layout }: { layout?: string }) => {
                       className="!flex h-[38px] w-[38px] max-w-full items-center gap-2 rounded-full border border-border-200 bg-light !p-1 text-sm !font-normal focus:!shadow-none focus:!ring-0 md:text-base"
                       onClick={() => setOpenDropdown(!openDropdown)}
                     >
-                      <span className="flex shrink-0 grow-0 basis-auto items-center gap-1 text-base text-gray-700">
+                      <span className="flex shrink-0 grow-0 basis-auto items-center gap-1 text-base text-gray-800">
                         <MapPin className="h-5 w-5 " />
                       </span>
                     </Button>
                     <LocationBasedShopForm
                       className={cn(
-                        'fixed inset-x-0 top-14 mx-auto bg-white lg:top-22',
+                        'fixed inset-x-0 top-14 mx-auto bg-gray-100 lg:top-22',
                         openDropdown === true ? '' : 'hidden',
                       )}
                       closeLocation={closeLocation}

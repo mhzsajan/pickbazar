@@ -30,7 +30,7 @@ const AverageRatings: React.FC<AverageRatingsProps> = ({
       <div className="flex w-full flex-col divide-y divide-gray-200 divide-opacity-70 sm:flex-row sm:items-center sm:space-x-8 sm:divide-y-0 sm:divide-x rtl:sm:space-x-reverse rtl:sm:divide-x-reverse">
         <div className="w-full pb-4 sm:w-auto sm:pb-0">
           <RatingsBadge rating={ratings} className="mb-4" variant="large" />
-          <p className="text-base text-gray-400">
+          <p className="text-base text-gray-700">
             <span>
               {totalReviews} {t('text-ratings')}
             </span>

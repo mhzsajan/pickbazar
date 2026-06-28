@@ -51,7 +51,7 @@ const Footer = () => {
   const date = new Date();
 
   return (
-    <div className="flex w-full flex-col border-t border-t-border-100 bg-white px-5 md:px-10 lg:px-[50px] xl:px-16">
+    <div className="flex w-full flex-col border-t border-t-border-100 bg-gray-100 px-5 md:px-10 lg:px-[50px] xl:px-16">
       {/* Top */}
       <div className="grid w-full grid-cols-1 gap-8 pt-10 pb-12 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5">
         <div className="flex flex-col">
@@ -151,7 +151,7 @@ const Footer = () => {
       </div>
 
       {/* Bottom */}
-      <div className="flex flex-col items-center w-full gap-3 py-6 border-t border-gray-200 md:flex-row md:justify-between">
+      <div className="flex flex-col items-center w-full gap-3 py-6 border-t border-border-100 md:flex-row md:justify-between">
         {settingsLoading ? (
           <SVGLoaderIcon className="text-xl" />
         ) : (

@@ -25,7 +25,7 @@ const CheckoutDigitalPage = () => {
             contact={me?.profile?.contact}
             label={t('text-contact-number')}
           />
-          <div className="mt-3 w-full bg-white">
+          <div className="mt-3 w-full bg-gray-100">
             <span className="mb-[1px] block w-full border-b border-gray-100 py-6 px-8 text-lg font-semibold capitalize text-gray-800 lg:text-xl">
               {t('text-your-order')}
             </span>

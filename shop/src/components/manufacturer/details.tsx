@@ -13,9 +13,9 @@ const Details: React.FC<ManufacturerProps> = ({ manufacturer }) => {
     manufacturer ?? {};
 
   return (
-    <div className="mb-12 flex w-full flex-col border border-gray-200 md:flex-row xl:mb-20">
+    <div className="mb-12 flex w-full flex-col border border-border-100 md:flex-row xl:mb-20">
       <div className="flex w-full flex-col items-center overflow-hidden p-5 md:w-1/3 lg:p-8 2xl:p-10">
-        <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-gray-300 2xl:h-40 2xl:w-40">
+        <div className="flex h-32 w-32 shrink-0 items-center justify-center overflow-hidden rounded-full border-2 border-border-200 2xl:h-40 2xl:w-40">
           <Image
             src={image?.original ?? avatarPlaceholder}
             alt={name}
@@ -62,7 +62,7 @@ const Details: React.FC<ManufacturerProps> = ({ manufacturer }) => {
         )}
       </div>
 
-      <div className="relative hidden w-full items-center justify-center overflow-hidden bg-gray-50 md:flex md:w-2/3">
+      <div className="relative hidden w-full items-center justify-center overflow-hidden bg-gray-200 md:flex md:w-2/3">
         <Image
           src={cover_image?.original ?? productPlaceholder}
           alt="cover image"

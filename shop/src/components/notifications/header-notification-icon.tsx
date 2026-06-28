@@ -73,7 +73,7 @@ const HeaderNotification: React.FC<HeaderNotificationProps> = ({
           <div className="rounded-tl-lg rounded-tr-lg">
             <div
               className={classNames(
-                'font-medium px-4 py-4 border-b border-gray-200/80 text-sm',
+                'font-medium px-4 py-4 border-b border-border-100/80 text-sm',
                 !isEmpty(notifications)
                   ? 'flex items-center justify-between'
                   : '',
@@ -96,7 +96,7 @@ const HeaderNotification: React.FC<HeaderNotificationProps> = ({
               <div className="flex flex-col gap-3">
                 {rangeMap(3, (i) => (
                   <div
-                    className="border-b border-dashed border-gray-200 px-4 py-5"
+                    className="border-b border-dashed border-border-100 px-4 py-5"
                     key={i}
                   >
                     <NotifyHeaderContentLoader
@@ -106,7 +106,7 @@ const HeaderNotification: React.FC<HeaderNotificationProps> = ({
                   </div>
                 ))}
                 <div
-                  className="px-4 py-5 border-t border-gray-200/80"
+                  className="px-4 py-5 border-t border-border-100/80"
                   title={t('text-see-all-notifications')}
                 >
                   <NotifyHeaderContentLoader className="w-full h-[1.125rem]" />
@@ -130,14 +130,14 @@ const HeaderNotification: React.FC<HeaderNotificationProps> = ({
                 </div>
                 <Link
                   href={Routes?.notifyLogs}
-                  className="block border-t border-gray-200/80 p-3 text-center text-sm font-medium text-accent hover:text-accent-hover"
+                  className="block border-t border-border-100/80 p-3 text-center text-sm font-medium text-accent hover:text-accent-hover"
                   title={t('text-see-all-notifications')}
                 >
                   {t('text-see-all-notifications')}
                 </Link>
               </>
             ) : (
-              <p className="mb-2 pt-5 pb-4 text-center text-sm font-medium text-gray-500">
+              <p className="mb-2 pt-5 pb-4 text-center text-sm font-medium text-gray-700">
                 {t('text-notification-not-found')}
               </p>
             )}

@@ -90,7 +90,7 @@ const AddToCartBtn: React.FC<Props> = ({ variant, onClick, disabled }) => {
           className={cn(
             'whitespace-nowrap text-sm font-semibold text-accent hover:text-accent-hover hover:underline',
             {
-              'text-gray-300 hover:text-gray-300': disabled,
+              'text-gray-700 hover:text-gray-700': disabled,
             }
           )}
         >

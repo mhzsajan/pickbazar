@@ -51,10 +51,10 @@ const AutoSuggestion: React.FC<Props> = ({
           className
         )}
       >
-        <div className="h-full w-full rounded-lg bg-white py-2 shadow-downfall-lg">
+        <div className="h-full w-full rounded-lg bg-gray-100 py-2 shadow-downfall-lg">
           <Scrollbar className="h-full w-full">
             {notFound && (
-              <h3 className="flex h-full w-full items-center justify-center py-10 font-semibold text-gray-400">
+              <h3 className="flex h-full w-full items-center justify-center py-10 font-semibold text-gray-700">
                 {t('text-no-products')}
               </h3>
             )}

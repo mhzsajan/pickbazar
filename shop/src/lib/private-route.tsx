@@ -44,7 +44,7 @@ const PrivateRoute: React.FC<{ children?: React.ReactNode }> = ({
     return (
       <div className="relative flex min-h-screen w-full justify-center py-5 md:py-8">
         <button
-          className="absolute top-5 flex h-8 w-8 items-center justify-center text-gray-200 transition-colors hover:text-gray-400 ltr:left-5 rtl:right-5 md:top-1/2 md:-mt-8 md:h-16 md:w-16 md:text-gray-300 ltr:md:left-10 rtl:md:right-10"
+          className="absolute top-5 flex h-8 w-8 items-center justify-center text-gray-700 transition-colors hover:text-gray-400 ltr:left-5 rtl:right-5 md:top-1/2 md:-mt-8 md:h-16 md:w-16 md:text-gray-700 ltr:md:left-10 rtl:md:right-10"
           onClick={router.back}
         >
           <BackArrowRound />

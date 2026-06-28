@@ -41,7 +41,7 @@ export default function QuestionForm() {
             />
 
             <div className="flex items-center justify-between">
-              <span className="text-xs font-semibold leading-relaxed text-gray-500 ltr:pr-5 rtl:pl-5">
+              <span className="text-xs font-semibold leading-relaxed text-gray-700 ltr:pr-5 rtl:pl-5">
                 {t('text-question-additional-info')}
               </span>
               <Button

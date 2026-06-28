@@ -2,7 +2,7 @@ import React from 'react'
 
 function NearShopLoader() {
   return (
-    <div className="relative bg-white rounded-lg">
+    <div className="relative bg-gray-100 rounded-lg">
       <div className='relative z-10'>
         <div className="animate-pulse relative flex w-full h-[170px] max-w-full shrink-0 items-center justify-center overflow-hidden bg-slate-200"></div>
       </div>

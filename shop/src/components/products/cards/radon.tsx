@@ -48,7 +48,7 @@ const Radon: React.FC<RadonProps> = ({ product, className }) => {
     >
       <Link
         href={Routes.product(slug)}
-        className={`cursor-pointer relative rounded-lg flex bg-white w-full justify-center items-center overflow-hidden ${
+        className={`cursor-pointer relative rounded-lg flex bg-gray-100 w-full justify-center items-center overflow-hidden ${
           product?.type?.settings?.layoutType === 'compact'
             ? 'aspect-[2/3]'
             : 'aspect-square'
@@ -78,7 +78,7 @@ const Radon: React.FC<RadonProps> = ({ product, className }) => {
           )}
 
           {author && (
-            <span className="text-xs text-gray-400 md:text-sm">
+            <span className="text-xs text-gray-700 md:text-sm">
               {t('text-by')}
               <Link
                 href={Routes.author(author?.slug!)}
@@ -104,7 +104,7 @@ const Radon: React.FC<RadonProps> = ({ product, className }) => {
                   {price}
                 </span>
                 {basePrice && (
-                  <del className="text-xs font-semibold text-gray-400 ltr:mr-2 rtl:ml-2">
+                  <del className="text-xs font-semibold text-gray-700 ltr:mr-2 rtl:ml-2">
                     {basePrice}
                   </del>
                 )}
