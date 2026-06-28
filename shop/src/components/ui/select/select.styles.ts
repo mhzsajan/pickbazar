@@ -13,14 +13,14 @@ export const selectStyles = {
       ? '#efefef'
       : state.isFocused
       ? '#F9FAFB'
-      : '#ffffff',
+      : '#0c0e26',
   }),
   control: (_: any, state: any) => ({
     width: state.selectProps.width,
     display: 'flex',
     alignItems: 'center',
     minHeight: !state.selectProps.isMinimal ? 50 : 0,
-    backgroundColor: '#ffffff',
+    backgroundColor: '#0c0e26',
     borderRadius: 5,
     border: !state.selectProps.isMinimal ? '1px solid #F1F1F1' : 'none',
     borderColor: state.isFocused ? 'rgb(var(--color-gray-500))' : '#F1F1F1',

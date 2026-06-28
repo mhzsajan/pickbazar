@@ -71,7 +71,7 @@ const TreeMenuItem: React.FC<TreeMenuItemProps> = ({
     <>
       <motion.li
         initial={false}
-        animate={{ backgroundColor: '#ffffff' }}
+        animate={{ backgroundColor: '#0c0e26' }}
         onClick={onClick}
         className="rounded-md py-1"
       >

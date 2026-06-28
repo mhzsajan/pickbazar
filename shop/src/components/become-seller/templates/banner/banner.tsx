@@ -39,7 +39,7 @@ const Banner = ({ banner, className }: BannerProps) => {
             {banner?.newsTickerTitle ? (
               <Link
                 {...fixDynamicLink(banner?.newsTickerURL)}
-                className="bg-white inline-flex p-1 mb-7 text-heading text-sm shadow-newsTicker rounded-full items-center text-left"
+                className="bg-gray-100 inline-flex p-1 mb-7 text-heading text-sm shadow-newsTicker rounded-full items-center text-left"
               >
                 <Badge
                   text={t('text-news')}

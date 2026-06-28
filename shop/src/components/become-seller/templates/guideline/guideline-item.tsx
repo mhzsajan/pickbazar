@@ -10,7 +10,7 @@ type GuidelineItemProps = {
 
 export default function GuidelineItem({ title, link }: GuidelineItemProps) {
   return (
-    <div className="rounded-[10px] shadow-guideline p-[30px] bg-white space-y-3">
+    <div className="rounded-[10px] shadow-guideline p-[30px] bg-gray-100 space-y-3">
       {title ? (
         <h5 className="text-base lg:text-lg font-semibold text-heading">
           {title}
