@@ -28,7 +28,7 @@ export default function HomeLayout({
       ) : (
         <Header layout={layout} />
       )}
-      <div className="flex-grow">{children}</div>
+      <div className="flex-grow pb-14 lg:pb-0">{children}</div>
       <Footer />
       <MobileNavigation>
         <motion.button

@@ -258,3 +258,26 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 - Fix HIGH priority issues first (touch targets, overlaps, broken mobile features)
 - Then MEDIUM priority (text size, z-index, spacing)
 - Then LOW priority (dead code cleanup)
+
+---
+
+## Session 13 (This Conversation)
+1. Fixed all 19 HIGH priority mobile issues from audit:
+   - **Touch targets (H1-H10):** Changed `h-7 w-7` (28px) to `h-11 w-11` (44px) in:
+     - Product cards: argon.tsx, xenon.tsx, neon.tsx
+     - Add-to-cart button: add-to-cart-btn.tsx (neon, argon, oganesson, default variants)
+     - Cart remove button: cart-item.tsx
+     - Address card edit/delete: address-card.tsx
+     - Coupon remove: verified-item-list.tsx
+     - Filter button: filter-bar.tsx
+   - **Mobile nav overlap (H11-H14):** Added `pb-14 lg:pb-0` to _home.tsx, layout.tsx, layout-with-footer.tsx
+   - **Broken mobile features (H15-H19):**
+     - Made hero banners visible on mobile (removed `hidden lg:block`)
+     - Added close button to mobile search overlay
+     - Added mobile padding to modal (`p-4 md:p-5`)
+     - Added safe-area-inset for iPhone notch to bottom nav
+2. Rebuilt shop successfully
+3. Restarted shop PM2 process
+4. Updated AUDIT.md — marked 19 HIGH issues as fixed
+5. Updated PLAN.md — marked Phase 8A, 8B, 8C tasks as completed
+6. Updated SESSIONS.md with Session 13

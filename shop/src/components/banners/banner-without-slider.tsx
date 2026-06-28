@@ -12,7 +12,7 @@ interface BannerProps {
 const BannerWithoutSlider: React.FC<BannerProps> = ({ banners, layout }) => {
   return (
     <div
-      className={cn('relative hidden lg:block', {
+      className={cn('relative block', {
         '!block': layout === 'minimal',
       })}
     >

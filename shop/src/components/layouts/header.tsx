@@ -214,7 +214,7 @@ const Header = ({ layout }: { layout?: string }) => {
                       onClick={() =>
                         setDisplayMobileHeaderSearch((prev) => !prev)
                       }
-                      className="hidden border border-accent-400 bg-gray-100 !px-4 text-accent lg:inline-flex"
+                      className="inline-flex border border-accent-400 bg-gray-100 !px-4 text-accent lg:inline-flex"
                     >
                       <CloseIcon className="h-5 w-5" />
                     </Button>

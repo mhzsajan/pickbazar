@@ -91,7 +91,7 @@ const Argon: React.FC<ArgonProps> = ({ product, className }) => {
               {Number(quantity) > 0 && (
                 <button
                   onClick={handleProductQuickView}
-                  className="flex h-7 w-7 items-center justify-center rounded border border-border-200 bg-light text-sm text-heading transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9"
+                  className="flex h-11 w-11 items-center justify-center rounded border border-border-200 bg-light text-sm text-heading transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9"
                 >
                   {is_external ? (
                     <ExternalIcon className="h-5 w-5 stroke-2" />

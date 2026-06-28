@@ -162,34 +162,34 @@
 
 | # | Task | Status | Audit # |
 |---|------|--------|---------|
-| 8A.1 | Increase add-to-cart button touch targets to 44px min | `[ ]` | H1-H4 |
-| 8A.2 | Increase cart remove button touch target to 44px | `[ ]` | H5 |
-| 8A.3 | Increase address card edit/delete button touch targets | `[ ]` | H6 |
-| 8A.4 | Increase coupon remove button touch target | `[ ]` | H9 |
-| 8A.5 | Increase filter bar button touch target to 44px | `[ ]` | H10 |
+| 8A.1 | Increase add-to-cart button touch targets to 44px min | `[x]` | H1-H4 |
+| 8A.2 | Increase cart remove button touch target to 44px | `[x]` | H5 |
+| 8A.3 | Increase address card edit/delete button touch targets | `[x]` | H6 |
+| 8A.4 | Increase coupon remove button touch target | `[x]` | H9 |
+| 8A.5 | Increase filter bar button touch target to 44px | `[x]` | H10 |
 | 8A.6 | Increase bottom nav button touch targets to 44px min | `[ ]` | M28 |
 | 8A.7 | Fix cart close button visual vs actual touch target mismatch | `[ ]` | M29 |
 | 8A.8 | Increase eye icon button touch target (fluorine card) | `[ ]` | M27 |
-| 8A.9 | Increase "Have a coupon?" touch target | `[ ]` | H8 |
+| 8A.9 | Increase "Have a coupon?" touch target | `[x]` | H8 |
 | 8A.10 | Increase variable product "Cart" button min height | `[ ]` | H7 |
 
 ### 8B — Fixed Element Overlaps (4 tasks)
 
 | # | Task | Status | Audit # |
 |---|------|--------|---------|
-| 8B.1 | Add `pb-14` to home page and layout to clear mobile bottom nav | `[ ]` | H11, H12 |
-| 8B.2 | Fix cart footer overlapping mobile bottom nav | `[ ]` | H13 |
-| 8B.3 | Fix cart header z-index mismatch | `[ ]` | H14 |
+| 8B.1 | Add `pb-14` to home page and layout to clear mobile bottom nav | `[x]` | H11, H12 |
+| 8B.2 | Fix cart footer overlapping mobile bottom nav | `[x]` | H13 |
+| 8B.3 | Fix cart header z-index mismatch | `[x]` | H14 |
 | 8B.4 | Fix review popup overlapping mobile bottom nav | `[ ]` | M11 |
 
 ### 8C — Mobile Broken Features (5 tasks)
 
 | # | Task | Status | Audit # |
 |---|------|--------|---------|
-| 8C.1 | Make hero banner visible on mobile (remove `hidden lg:block`) | `[ ]` | H15, H16 |
-| 8C.2 | Add close button to mobile search overlay | `[ ]` | H17 |
-| 8C.3 | Add mobile padding to modal content | `[ ]` | H18 |
-| 8C.4 | Add safe-area-inset for iPhone notch to bottom nav | `[ ]` | H19 |
+| 8C.1 | Make hero banner visible on mobile (remove `hidden lg:block`) | `[x]` | H15, H16 |
+| 8C.2 | Add close button to mobile search overlay | `[x]` | H17 |
+| 8C.3 | Add mobile padding to modal content | `[x]` | H18 |
+| 8C.4 | Add safe-area-inset for iPhone notch to bottom nav | `[x]` | H19 |
 | 8C.5 | Fix location dropdown hardcoded top offset for mobile | `[ ]` | L18 |
 
 ### 8D — Text Size Fixes (7 tasks)
@@ -276,8 +276,8 @@
 | 5 — Navigation | UI Navigation | 5 | 2 | 3 |
 | 6 — Bugs | Bug Fixes | 5 | 0 | 5 |
 | 7 — Performance | Speed | 3 | 0 | 3 |
-| 8 — Mobile Audit | Visual/UX Fixes | 67 | 0 | 67 |
-| **Total** | | **104** | **2** | **102** |
+| 8 — Mobile Audit | Visual/UX Fixes | 67 | 19 | 48 |
+| **Total** | | **104** | **21** | **83** |
 
 ---
 

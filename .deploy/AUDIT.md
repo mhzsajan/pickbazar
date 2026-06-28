@@ -21,35 +21,35 @@
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| H1 | `[ ]` | `shop/src/components/products/cards/argon.tsx` | 94 | Add-to-cart/plus button is `h-7 w-7` (28px) on mobile, `md:h-9 md:w-9` (36px) at desktop. Both below 44px minimum. |
-| H2 | `[ ]` | `shop/src/components/products/cards/xenon.tsx` | 112 | Same `h-7 w-7` (28px) plus/external button on mobile. |
-| H3 | `[ ]` | `shop/src/components/products/cards/neon.tsx` | 120 | Plus icon cell is `h-7 w-7` (28px). |
-| H4 | `[ ]` | `shop/src/components/products/add-to-cart/add-to-cart-btn.tsx` | 32, 42, 106 | Multiple add-to-cart button variants use `h-7 w-7` (28px) as default mobile size. |
-| H5 | `[ ]` | `shop/src/components/cart/cart-item.tsx` | 85 | Remove-item (X) button is `h-7 w-7` (28px) — too small for destructive action on mobile. |
-| H6 | `[ ]` | `shop/src/components/address/address-card.tsx` | 41, 50 | Edit and Delete buttons on address cards are `h-5 w-5` (20px) — nearly impossible to tap. |
-| H7 | `[ ]` | `shop/src/components/products/cards/helium.tsx` | 118-124 | Variable product "Cart" button has no explicit min height, only `px-3 py-2` padding. |
-| H8 | `[ ]` | `shop/src/components/checkout/verified-item-list.tsx` | 34-41 | "Have a coupon?" text is `<p role="button">` with no padding/touch sizing — just `text-xs font-bold`. |
-| H9 | `[ ]` | `shop/src/components/checkout/verified-item-list.tsx` | 135-137 | Coupon remove button (CloseIcon) is `w-3 h-3` (12px) — extremely small for mobile. |
-| H10 | `[ ]` | `shop/src/components/layouts/filter-bar.tsx` | 36 | Filter button uses `h-8` (32px) on mobile — below 44px minimum. |
+| H1 | `[x]` | `shop/src/components/products/cards/argon.tsx` | 94 | Add-to-cart/plus button is `h-7 w-7` (28px) on mobile, `md:h-9 md:w-9` (36px) at desktop. Both below 44px minimum. |
+| H2 | `[x]` | `shop/src/components/products/cards/xenon.tsx` | 112 | Same `h-7 w-7` (28px) plus/external button on mobile. |
+| H3 | `[x]` | `shop/src/components/products/cards/neon.tsx` | 120 | Plus icon cell is `h-7 w-7` (28px). |
+| H4 | `[x]` | `shop/src/components/products/add-to-cart/add-to-cart-btn.tsx` | 32, 42, 106 | Multiple add-to-cart button variants use `h-7 w-7` (28px) as default mobile size. |
+| H5 | `[x]` | `shop/src/components/cart/cart-item.tsx` | 85 | Remove-item (X) button is `h-7 w-7` (28px) — too small for destructive action on mobile. |
+| H6 | `[x]` | `shop/src/components/address/address-card.tsx` | 41, 50 | Edit and Delete buttons on address cards are `h-5 w-5` (20px) — nearly impossible to tap. |
+| H7 | `[x]` | `shop/src/components/products/cards/helium.tsx` | 118-124 | Variable product "Cart" button has no explicit min height, only `px-3 py-2` padding. |
+| H8 | `[x]` | `shop/src/components/checkout/verified-item-list.tsx` | 34-41 | "Have a coupon?" text is `<p role="button">` with no padding/touch sizing — just `text-xs font-bold`. |
+| H9 | `[x]` | `shop/src/components/checkout/verified-item-list.tsx` | 135-137 | Coupon remove button (CloseIcon) is `w-3 h-3` (12px) — extremely small for mobile. |
+| H10 | `[x]` | `shop/src/components/layouts/filter-bar.tsx` | 36 | Filter button uses `h-8` (32px) on mobile — below 44px minimum. |
 
 ### Fixed Elements Overlapping Content
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| H11 | `[ ]` | `shop/src/components/layouts/_home.tsx` | 31 | Main content area `flex-grow` has no `pb-14` to clear mobile bottom nav — content hidden behind nav bar. |
-| H12 | `[ ]` | `shop/src/components/layouts/layout.tsx` | 17 | Same issue — `min-h-screen` flex container has no bottom padding for mobile nav. |
-| H13 | `[ ]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 79 | Cart footer is `fixed bottom-0` — overlaps mobile bottom navigation (also `fixed bottom-0 z-10`). |
-| H14 | `[ ]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 41 | Cart header is `fixed top-0 z-10` — z-index mismatch with drawer `z-50`. |
+| H11 | `[x]` | `shop/src/components/layouts/_home.tsx` | 31 | Main content area `flex-grow` has no `pb-14` to clear mobile bottom nav — content hidden behind nav bar. |
+| H12 | `[x]` | `shop/src/components/layouts/layout.tsx` | 17 | Same issue — `min-h-screen` flex container has no bottom padding for mobile nav. |
+| H13 | `[x]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 79 | Cart footer is `fixed bottom-0` — overlaps mobile bottom navigation (also `fixed bottom-0 z-10`). |
+| H14 | `[x]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 41 | Cart header is `fixed top-0 z-10` — z-index mismatch with drawer `z-50`. |
 
 ### Mobile Broken Features
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| H15 | `[ ]` | `shop/src/components/banners/banner-with-search.tsx` | 44 | Hero banner uses `hidden lg:block` — completely invisible on mobile with no alternative. |
-| H16 | `[ ]` | `shop/src/components/banners/banner-without-slider.tsx` | 15 | Same issue: `hidden lg:block` hides entire banner on mobile. |
-| H17 | `[ ]` | `shop/src/components/layouts/header.tsx` | 217 | Search overlay close button is `hidden lg:inline-flex` — **no close button on mobile**. |
-| H18 | `[ ]` | `shop/src/components/ui/modal/modal.tsx` | 36 | Modal container has `p-0` on mobile — content touches screen edges with no breathing room. |
-| H19 | `[ ]` | `shop/src/components/layouts/mobile-navigation.tsx` | 69 | No safe-area-inset handling for iPhone notch/home indicator — content obscured on notched iPhones. |
+| H15 | `[x]` | `shop/src/components/banners/banner-with-search.tsx` | 44 | Hero banner uses `hidden lg:block` — completely invisible on mobile with no alternative. |
+| H16 | `[x]` | `shop/src/components/banners/banner-without-slider.tsx` | 15 | Same issue: `hidden lg:block` hides entire banner on mobile. |
+| H17 | `[x]` | `shop/src/components/layouts/header.tsx` | 217 | Search overlay close button is `hidden lg:inline-flex` — **no close button on mobile**. |
+| H18 | `[x]` | `shop/src/components/ui/modal/modal.tsx` | 36 | Modal container has `p-0` on mobile — content touches screen edges with no breathing room. |
+| H19 | `[x]` | `shop/src/components/layouts/mobile-navigation.tsx` | 69 | No safe-area-inset handling for iPhone notch/home indicator — content obscured on notched iPhones. |
 
 ---
 
@@ -153,9 +153,9 @@
 
 | Priority | Category | Count | Status |
 |----------|----------|-------|--------|
-| **HIGH** | Touch targets < 44px | 10 | All `[ ]` |
-| **HIGH** | Fixed elements overlapping | 4 | All `[ ]` |
-| **HIGH** | Mobile broken features | 5 | All `[ ]` |
+| **HIGH** | Touch targets < 44px | 10 | **10 fixed** |
+| **HIGH** | Fixed elements overlapping | 4 | **4 fixed** |
+| **HIGH** | Mobile broken features | 5 | **5 fixed** |
 | **MEDIUM** | Small text | 7 | All `[ ]` |
 | **MEDIUM** | Z-index conflicts | 5 | All `[ ]` |
 | **MEDIUM** | Spacing/layout issues | 9 | All `[ ]` |
@@ -164,7 +164,7 @@
 | **MEDIUM** | Touch target borderline | 2 | All `[ ]` |
 | **LOW** | Dead/commented-out code | 14 | All `[ ]` |
 | **LOW** | Deprecated/minor | 5 | All `[ ]` |
-| **TOTAL** | | **67** | **0 fixed** |
+| **TOTAL** | | **67** | **19 fixed, 48 remaining** |
 
 ---
 

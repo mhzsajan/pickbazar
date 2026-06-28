@@ -38,20 +38,20 @@ const AddressCard: React.FC<AddressProps> = ({
       <div className="absolute top-4 flex space-x-2 opacity-0 group-hover:opacity-100 ltr:right-4 rtl:left-4 rtl:space-x-reverse">
         {onEdit && (
           <button
-            className="flex h-5 w-5 items-center justify-center rounded-full bg-accent text-light"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-accent text-light"
             onClick={onEdit}
           >
             <span className="sr-only">{t('text-edit')}</span>
-            <PencilIcon className="h-3 w-3" />
+            <PencilIcon className="h-4 w-4" />
           </button>
         )}
         {onDelete && (
           <button
-            className="flex h-5 w-5 items-center justify-center rounded-full bg-red-600 text-light"
+            className="flex h-11 w-11 items-center justify-center rounded-full bg-red-600 text-light"
             onClick={onDelete}
           >
             <span className="sr-only">{t('text-delete')}</span>
-            <CloseIcon className="h-3 w-3" />
+            <CloseIcon className="h-4 w-4" />
           </button>
         )}
       </div>
