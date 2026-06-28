@@ -3,8 +3,8 @@
 <!-- !! FOR AI: Update this file after EVERY step completed. Move "Last completed" forward, update status table, and refresh "Next action". This is your memory — keep it current. !! -->
 
 ## Where We Stopped
-- **Last completed:** Session 14 — Completed all 67 mobile audit fixes (Phase 8 DONE)
-- **Current step:** Phase 8 complete, ready for Phase 1 (Customization)
+- **Last completed:** Session 15 — Fixed modal close button + back button for all screens
+- **Current step:** Phase 8 complete, modal UX fixed, ready for Phase 1 (Customization)
 - **Next action:** Phase 1 — Customization (logos, colors, branding) at `.deploy/PLAN.md`
 - **Master plan:** `.deploy/PLAN.md` — 104 tasks across 8 phases (Phase 8 = 67 mobile audit tasks ✅)
 
@@ -31,6 +31,7 @@
 - Footer: ✅ Fixed — visual spacing audit completed, all 8 issues resolved
 - Homepage: ✅ Footer shows, shops section positioned correctly, header cleaned up
 - Mobile: ✅ All 67 mobile audit issues fixed (touch targets, z-index, spacing, responsive, dead code)
+- Modal UX: ✅ Close button visible on all screens, back button/swipe-to-go-back works
 
 ## PM2 Commands
 ```bash

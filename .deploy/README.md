@@ -81,6 +81,7 @@ All four run under **PM2** with auto-start on boot via systemd.
 | Mobile audit completed | ✅ Done | .deploy/AUDIT.md — 67 issues documented |
 | Header/footer fixes | ✅ Done | Sessions 9-11, verified Session 12 |
 | Mobile audit fixes | ✅ Done | Phase 8 complete — all 67 issues fixed (Sessions 13-14) |
+| Modal UX fixes | ✅ Done | Close button visible all screens, back button/swipe works (Session 15) |
 
 ---
 

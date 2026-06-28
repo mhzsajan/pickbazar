@@ -312,3 +312,21 @@ npm install --legacy-peer-deps --ignore-workspaces  # Detects workspace root any
 | LOW | Dead/commented-out code | 14/14 ✅ |
 | LOW | Deprecated/minor | 5/5 ✅ |
 | **TOTAL** | | **67/67 ✅** |
+
+---
+
+## Session 15 (This Conversation)
+1. Fixed modal close button and back button for all screens:
+   - **Root cause:** Product popup had `z-[51]` but Dialog was `z-50` — popup covered the close button
+   - **Dialog z-index:** `z-50` → `z-[70]` — above product popup
+   - **Close button:** `fixed` + `z-[80]` + `shadow-lg` — always visible on top
+   - **Close button size:** `h-11 w-11` (44px touch target)
+   - **Close button position:** Mobile = top-left, Desktop = top-right
+   - **Escape key:** Added keyboard handler as backup
+   - **Backdrop click:** Added `onClick` on dark background
+   - **Back button/swipe:** Already works via history API (`popstate` event)
+2. Fixed spacing — close button no longer covers product image
+3. Rebuilt shop, restarted PM2, pushed to GitHub
+
+### Key Files
+- `shop/src/components/ui/modal/modal.tsx` — Dialog z-index, close button, keyboard handler
