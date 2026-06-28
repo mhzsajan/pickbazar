@@ -50,7 +50,7 @@ export default function Modal({
         onClose={onClose}
         dir={dir}
       >
-        <div className="min-h-full text-center px-4 pb-4 pt-16 md:px-5 md:pb-5 md:pt-20">
+        <div className="min-h-full text-center p-4 md:p-5">
           {showBackDrop ? (
             <Transition.Child
               as={Fragment}
@@ -93,7 +93,7 @@ export default function Modal({
                 ref={cancelButtonRef}
                 className={twMerge(
                   classNames(
-                    'fixed top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted shadow-lg transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:right-4 rtl:left-4',
+                    'fixed top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted shadow-lg transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:left-4 rtl:right-4 md:ltr:left-auto md:ltr:right-4 md:rtl:left-4 md:rtl:right-auto',
                     closeButtonClass,
                   ),
                 )}
