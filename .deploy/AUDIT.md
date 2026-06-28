@@ -72,10 +72,10 @@
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
 | M8 | `[x]` | `shop/src/components/ui/drawer/drawer-portal.tsx` | 46 | Uses `z-[999]` — significantly higher than `z-50` used everywhere else. Creates stacking mismatch. |
-| M9 | `[ ]` | `shop/src/components/ui/modal/modal.tsx` | 28, 76 | Modal is `z-50`, close button is `z-[60]`. Drawer is also `z-50`. Layering issues when both open. |
-| M10 | `[ ]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 41 | Cart header is `fixed top-0 z-10` inside drawer that is `z-50` — won't layer correctly. |
-| M11 | `[ ]` | `shop/src/components/review-popup/index.tsx` | 29 | Review popup is `fixed bottom-16 z-50` but mobile bottom nav is `z-10` — overlap possible. |
-| M12 | `[ ]` | `shop/src/components/cart/cart-counter-button.tsx` | 21 | Cart floating sidebar is `fixed top-1/2 z-40` — inconsistent with header `z-50`. |
+| M9 | `[x]` | `shop/src/components/ui/modal/modal.tsx` | 28, 76 | Modal is `z-50`, close button is `z-[60]`. Drawer is also `z-50`. Layering issues when both open. |
+| M10 | `[x]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 41 | Cart header is `fixed top-0 z-10` inside drawer that is `z-50` — won't layer correctly. |
+| M11 | `[x]` | `shop/src/components/review-popup/index.tsx` | 29 | Review popup is `fixed bottom-16 z-50` but mobile bottom nav is `z-10` — overlap possible. |
+| M12 | `[x]` | `shop/src/components/cart/cart-counter-button.tsx` | 21 | Cart floating sidebar is `fixed top-1/2 z-40` — inconsistent with header `z-50`. |
 
 ### Spacing / Layout Issues
 
@@ -83,19 +83,19 @@
 |---|--------|------|------|-------|
 | M13 | `[x]` | `shop/src/components/ui/counter.tsx` | 35-48 | Helium variant counter uses `w-7 h-18` on mobile — tall/narrow (72px tall, 28px wide), ergonomically poor. |
 | M14 | `[x]` | `shop/src/components/checkout/item/item-card.tsx` | 29 | Checkout item `{quantity} x {name} | {unit}` has no `truncate` — long names push unit off-screen. |
-| M15 | `[ ]` | `shop/src/components/checkout/item/unverified-item-list.tsx` | 20-24 | "Your Order" heading uses `flex flex-col items-center space-x-4` but `space-x-4` is useless in flex-col. |
-| M16 | `[ ]` | `shop/src/components/checkout/item/verified-item-list.tsx` | 161 | Payment grid has `p-5 mt-10 border` — `mt-10` (40px) wastes vertical space on mobile. |
-| M17 | `[ ]` | `shop/src/components/products/cards/helium.tsx` | 93 | Card header padding `p-3 md:p-5 md:py-6` — 12px is tight for product card on mobile. |
-| M18 | `[ ]` | `shop/src/components/products/cards/helium.tsx` | 131 | Strikethrough price uses `absolute -top-4 md:-top-5` — can overlap product name on small cards. |
-| M19 | `[ ]` | `shop/src/components/flash-sale/flash-sale-card.tsx` | 28 | Flash sale card image height `h-52` (208px) may be too tall for mobile list/grid. |
-| M20 | `[ ]` | `shop/src/components/products/cards/fluorine.tsx` | 163-173 | Fluorine card image uses fixed `width={1200} height={364}` with no mobile height constraint. |
-| M21 | `[ ]` | `shop/src/components/layouts/filter-bar.tsx` | 24-28 | Filter bar uses hardcoded `top-[58px]` and `top-[84px]` sticky offsets — may not match actual header height. |
+| M15 | `[x]` | `shop/src/components/checkout/item/unverified-item-list.tsx` | 20-24 | "Your Order" heading uses `flex flex-col items-center space-x-4` but `space-x-4` is useless in flex-col. |
+| M16 | `[x]` | `shop/src/components/checkout/item/verified-item-list.tsx` | 161 | Payment grid has `p-5 mt-10 border` — `mt-10` (40px) wastes vertical space on mobile. |
+| M17 | `[x]` | `shop/src/components/products/cards/helium.tsx` | 93 | Card header padding `p-3 md:p-5 md:py-6` — 12px is tight for product card on mobile. |
+| M18 | `[x]` | `shop/src/components/products/cards/helium.tsx` | 131 | Strikethrough price uses `absolute -top-4 md:-top-5` — can overlap product name on small cards. |
+| M19 | `[x]` | `shop/src/components/flash-sale/flash-sale-card.tsx` | 28 | Flash sale card image height `h-52` (208px) may be too tall for mobile list/grid. |
+| M20 | `[x]` | `shop/src/components/products/cards/fluorine.tsx` | 163-173 | Fluorine card image uses fixed `width={1200} height={364}` with no mobile height constraint. |
+| M21 | `[x]` | `shop/src/components/layouts/filter-bar.tsx` | 24-28 | Filter bar uses hardcoded `top-[58px]` and `top-[84px]` sticky offsets — may not match actual header height. |
 
 ### Missing Responsive Classes
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| M22 | `[ ]` | `shop/src/components/ui/search/search-box.tsx` | 85 | "Normal" variant search button has `min-w-[143px]` with `px-8` — can overflow on 320px screens. |
+| M22 | `[x]` | `shop/src/components/ui/search/search-box.tsx` | 85 | "Normal" variant search button has `min-w-[143px]` with `px-8` — can overflow on 320px screens. |
 | M23 | `[x]` | `shop/src/components/checkout/address-grid.tsx` | 64 | Uses `sm:grid-cols-2` but skips `xs` (490px) breakpoint — single-column when room for two. |
 | M24 | `[x]` | `shop/src/components/checkout/schedule/schedule-grid.tsx` | 48 | Same issue: `sm:grid-cols-2` skips `xs` breakpoint. |
 
@@ -103,8 +103,8 @@
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| M25 | `[ ]` | `shop/src/components/products/cards/argon.tsx` | 60 | Entire card has `onClick={handleProductQuickView}` with `role="button"` — conflicts with add-to-cart button inside. |
-| M26 | `[ ]` | `shop/src/components/products/cards/fluorine.tsx` | 175-181 | Favorite button uses `absolute top-5 right-5` — overlaps product image on small mobile cards. |
+| M25 | `[x]` | `shop/src/components/products/cards/argon.tsx` | 60 | Entire card has `onClick={handleProductQuickView}` with `role="button"` — conflicts with add-to-cart button inside. |
+| M26 | `[x]` | `shop/src/components/products/cards/fluorine.tsx` | 175-181 | Favorite button uses `absolute top-5 right-5` — overlaps product image on small mobile cards. |
 | M27 | `[x]` | `shop/src/components/products/cards/fluorine.tsx` | 264-271 | Eye icon button has no explicit sizing — relies on `text-xl` font size for tap area, likely below 44px. |
 
 ### Touch Target Borderline
@@ -112,7 +112,7 @@
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
 | M28 | `[x]` | `shop/src/components/layouts/mobile-navigation.tsx` | 37-89 | All four bottom nav buttons use `p-2` (8px) padding — total targets ~36-40px, borderline insufficient. |
-| M29 | `[ ]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 49-54 | Cart close button is `h-11 w-11` (44px) but CloseIcon inside is only `h-3 w-3` (12px) — visual touch target looks smaller than actual tappable area. |
+| M29 | `[x]` | `shop/src/components/cart/cart-sidebar-view.tsx` | 49-54 | Cart close button is `h-11 w-11` (44px) but CloseIcon inside is only `h-3 w-3` (12px) — visual touch target looks smaller than actual tappable area. |
 
 ---
 
@@ -141,10 +141,10 @@
 
 | # | Status | File | Line | Issue |
 |---|--------|------|------|-------|
-| L15 | `[ ]` | `shop/src/assets/css/custom-plugins.css` | 184-186 | `.os-viewport` uses deprecated `-webkit-overflow-scrolling: touch`. |
-| L16 | `[ ]` | `shop/src/components/checkout/contact/add-or-update.tsx` | 21 | Uses `min-h-screen` for modal container — can create double viewport height on mobile. |
-| L17 | `[ ]` | `shop/src/components/checkout/guest-name.tsx` | 22 | Guest name input has no `label` prop — relies on placeholder only. |
-| L18 | `[ ]` | `shop/src/components/layouts/header.tsx` | 162 | Location dropdown uses hardcoded `top-[60px]` — may not match mobile header height. |
+| L15 | `[x]` | `shop/src/assets/css/custom-plugins.css` | 184-186 | `.os-viewport` uses deprecated `-webkit-overflow-scrolling: touch`. |
+| L16 | `[x]` | `shop/src/components/checkout/contact/add-or-update.tsx` | 21 | Uses `min-h-screen` for modal container — can create double viewport height on mobile. |
+| L17 | `[x]` | `shop/src/components/checkout/guest-name.tsx` | 22 | Guest name input has no `label` prop — relies on placeholder only. |
+| L18 | `[x]` | `shop/src/components/layouts/header.tsx` | 162 | Location dropdown uses hardcoded `top-[60px]` — may not match mobile header height. |
 | L19 | `[ ]` | `shop/tailwind.config.js` | 21-23 | Custom `xs: 490px` breakpoint exists but is not used consistently across components. |
 
 ---

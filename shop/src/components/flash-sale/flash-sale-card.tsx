@@ -25,7 +25,7 @@ const FlashSaleCard: React.FC<FlashSaleCardProps> = ({
         classNames('relative block overflow-hidden', className)
       )}
     >
-      <div className="relative mb-4 h-52 overflow-hidden rounded-md bg-gray-300 md:mb-6 xl:h-60 2xl:h-[21.6875rem]">
+      <div className="relative mb-4 h-40 overflow-hidden rounded-md bg-gray-300 md:mb-6 md:h-52 xl:h-60 2xl:h-[21.6875rem]">
         {flashSale?.image?.original ? (
           <div
             className="blur- absolute top-0 left-0 h-full w-full bg-cover bg-center bg-no-repeat blur-sm"

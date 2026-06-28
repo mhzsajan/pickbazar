@@ -158,7 +158,7 @@ const Fluorine: React.FC<FluorineProps> = ({
         classNames('relative overflow-hidden rounded-xl bg-white', className)
       )}
     >
-      <div className="relative w-auto cursor-pointer md:h-[22.75rem]">
+      <div className="relative w-auto h-48 md:h-[22.75rem] cursor-pointer">
         <div onClick={handleProductQuickView} className="h-full w-full">
           <Image
             src={product?.image?.original ?? productPlaceholder}
@@ -170,7 +170,7 @@ const Fluorine: React.FC<FluorineProps> = ({
             className="block h-full w-full"
           />
         </div>
-        <div className="absolute top-5 right-5">
+        <div className="absolute top-2 right-2 md:top-5 md:right-5">
           <FavoriteButton
             productId={product?.id}
             className="z-50 mt-0 h-8 w-8 border-0 text-base"

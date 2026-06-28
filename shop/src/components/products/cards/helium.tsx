@@ -89,7 +89,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
       </div>
       {/* End of product image */}
 
-      <header className="relative p-3 md:p-5 md:py-6">
+      <header className="relative p-4 md:p-5 md:py-6">
         <h3
           onClick={handleProductQuickView}
           role="button"
@@ -127,7 +127,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
             <>
               <div className="relative">
                 {basePrice && (
-                  <del className="absolute text-xs italic text-opacity-75 -top-4 text-muted md:-top-5">
+                  <del className="absolute text-xs italic text-opacity-75 -top-3 text-muted md:-top-5">
                     {basePrice}
                   </del>
                 )}

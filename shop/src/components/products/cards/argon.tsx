@@ -58,7 +58,6 @@ const Argon: React.FC<ArgonProps> = ({ product, className }) => {
         className
       )}
       onClick={handleProductQuickView}
-      role="button"
     >
       <div
         className={cn(

@@ -73,7 +73,7 @@ export default function Modal({
                 ref={cancelButtonRef}
                 className={twMerge(
                   classNames(
-                    'absolute top-4 z-[60] inline-block outline-none focus:outline-0 ltr:right-4 rtl:left-4 lg:hidden',
+                    'absolute top-4 z-50 inline-block outline-none focus:outline-0 ltr:right-4 rtl:left-4 lg:hidden',
                     closeButtonClass,
                   ),
                 )}

@@ -20,6 +20,7 @@ function GuestName({ count, label }: { count: number; label: string }) {
 
                     value={name}
                     name="guestName"
+                    label={label}
                     onChange={(e) => setName(e.target.value)}
                     variant="outline"
                 />

@@ -256,7 +256,7 @@ const Header = ({ layout }: { layout?: string }) => {
                     </Button>
                     <LocationBasedShopForm
                       className={cn(
-                        'fixed inset-x-0 top-[60px] mx-auto bg-white lg:top-[82px]',
+                        'fixed inset-x-0 top-14 mx-auto bg-white lg:top-22',
                         openDropdown === true ? '' : 'hidden',
                       )}
                       closeLocation={closeLocation}

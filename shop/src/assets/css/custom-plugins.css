@@ -176,7 +176,6 @@
 Overlay Scrollbar - os-theme-thin-dark
 */
 .os-viewport {
-  -webkit-overflow-scrolling: touch;
 }
 .os-theme-thin-dark > .os-scrollbar-horizontal {
   right: 14px;
