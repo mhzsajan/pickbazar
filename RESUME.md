@@ -1,5 +1,14 @@
 # RESUME — Read This First
 
+## 🛟 Safety Net — Restore Point
+- **Tag:** `v1.0-20260629-0926` (created 2026-06-29 09:26 NPT, commit `bbbfc91`)
+- **Branch:** `backup-pre-customization` (pushed to origin)
+- **What's saved:** All 22 sessions complete — dark blue theme, dark mode toggle, mobile audit, Phase 10 UI fixes
+- **Restore command:** `git reset --hard v1.0-20260629-0926`
+- **Backup branch (safer):** `git checkout -b broken-work && git checkout -f v1.0-20260629-0926`
+
+---
+
 ## Where We Stopped
 - **Last completed:** Session 22 — Text visibility audit, hardcoded hex cleanup, banner overlays
 - **Current step:** Phase 10 dark mode visual fixes in progress

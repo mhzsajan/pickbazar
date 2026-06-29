@@ -143,7 +143,34 @@ NEXT_PUBLIC_VERSION=11.10.2
 
 ---
 
-## 8. Commands
+## 8. Backup & Restore
+
+### Restore Points
+| Tag | Date | Commit | What's Saved |
+|-----|------|--------|-------------|
+| `v1.0-20260629-0926` | 2026-06-29 | `bbbfc91` | All sessions 1-23, Phase 10 complete, pre-customization |
+
+### Restore Commands
+```bash
+# HARD restore — overwrites everything (use with caution)
+git fetch --tags
+git reset --hard v1.0-20260629-0926
+git push --force
+
+# SAFER restore — saves current work in a branch first
+git branch broken-experiment
+git checkout -f v1.0-20260629-0926
+```
+
+### Backup Branch
+`origin/backup-pre-customization` — exact copy of main at restore point. Can checkout as:
+```bash
+git checkout -b my-working-copy origin/backup-pre-customization
+```
+
+---
+
+## 9. Commands
 
 ```bash
 # PM2
@@ -164,4 +191,4 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 ---
 
 *Created: Session 2 — June 27, 2026*
-*Last updated: Session 22 — June 29, 2026*
+*Last updated: Session 23 — June 29, 2026*

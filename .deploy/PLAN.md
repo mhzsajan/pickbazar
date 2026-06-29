@@ -172,4 +172,12 @@
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 22 — June 29, 2026*
+*Last updated: Session 23 — June 29, 2026*
+
+---
+
+## Restore Point
+
+| Tag | Date | Commit | Description |
+|-----|------|--------|-------------|
+| `v1.0-20260629-0926` | 2026-06-29 09:26 NPT | `bbbfc91` | Pre-customization — Phase 10 complete, all 23 sessions done |

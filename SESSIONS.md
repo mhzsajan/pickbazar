@@ -26,6 +26,7 @@
 | 20 | Jun 28 | Dark mode visual audit: fixed search/subscribe borders/placeholders, promo popup text, modal backdrop inverted gray issue, SSR flash, transition flash |
 | 21 | Jun 29 | Bulk dark mode UI fixes: text-light→text-white on all colored bg (44 files), Alert dark overrides, spinner CSS vars, skeleton loaders, counter/add-to-cart hex colors, radio.module.css, notification hex colors |
 | 22 | Jun 29 | Text visibility audit: exterminated text-muted-black (6 files→text-heading), fixed page-banner bg-slate-200→bg-gray-100, added banner image overlays, fixed review-popup, converted all hardcoded hex text colors (#686D73, #666, #1F2937, #6B7280) to CSS variables |
+| 23 | Jun 29 | Tagged restore point `v1.0-20260629-0926`, created backup branch `backup-pre-customization`, updated context files |
 
 ---
 
