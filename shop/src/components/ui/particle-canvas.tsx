@@ -30,10 +30,10 @@ export default function ParticleCanvas() {
       canvas.width = window.innerWidth;
       canvas.height = window.innerHeight;
       const count = Math.min(
-        120,
+        200,
         Math.max(
-          40,
-          Math.floor((canvas.width * canvas.height) / 15000)
+          60,
+          Math.floor((canvas.width * canvas.height) / 10000)
         )
       );
       const particles: Particle[] = [];
@@ -43,10 +43,10 @@ export default function ParticleCanvas() {
         particles.push({
           x,
           y,
-          vx: (Math.random() - 0.5) * 0.3,
-          vy: (Math.random() - 0.5) * 0.3,
-          size: Math.random() * 2 + 0.5,
-          alpha: Math.random() * 0.3 + 0.05,
+          vx: (Math.random() - 0.5) * 0.6,
+          vy: (Math.random() - 0.5) * 0.6,
+          size: Math.random() * 2.5 + 0.8,
+          alpha: Math.random() * 0.5 + 0.2,
           baseX: x,
           baseY: y,
         });
@@ -67,31 +67,31 @@ export default function ParticleCanvas() {
         const dx = mouse.x - p.x;
         const dy = mouse.y - p.y;
         const dist = Math.sqrt(dx * dx + dy * dy);
-        const radius = 200;
+        const radius = 250;
         if (dist < radius && dist > 0) {
           const force = (radius - dist) / radius;
-          p.x -= (dx / dist) * force * 1.5;
-          p.y -= (dy / dist) * force * 1.5;
+          p.x -= (dx / dist) * force * 2;
+          p.y -= (dy / dist) * force * 2;
         }
-        p.x += (p.baseX - p.x) * 0.008 + p.vx;
-        p.y += (p.baseY - p.y) * 0.008 + p.vy;
+        p.x += (p.baseX - p.x) * 0.006 + p.vx;
+        p.y += (p.baseY - p.y) * 0.006 + p.vy;
         if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
         if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
       }
 
       const isDark = document.documentElement.classList.contains('dark');
-      const lineColor = isDark ? '120, 160, 255' : '80, 120, 220';
-      const dotColor = isDark ? '180, 210, 255' : '100, 140, 230';
+      const lineColor = isDark ? '140, 180, 255' : '70, 90, 180';
+      const dotColor = isDark ? '200, 220, 255' : '50, 70, 160';
 
       for (let i = 0; i < particles.length; i++) {
         for (let j = i + 1; j < particles.length; j++) {
           const dx = particles[i].x - particles[j].x;
           const dy = particles[i].y - particles[j].y;
           const dist = Math.sqrt(dx * dx + dy * dy);
-          if (dist < 180) {
-            const opacity = (1 - dist / 180) * 0.12;
+          if (dist < 200) {
+            const opacity = (1 - dist / 200) * 0.25;
             ctx.strokeStyle = `rgba(${lineColor}, ${opacity})`;
-            ctx.lineWidth = 0.5;
+            ctx.lineWidth = 0.6;
             ctx.beginPath();
             ctx.moveTo(particles[i].x, particles[i].y);
             ctx.lineTo(particles[j].x, particles[j].y);
@@ -141,7 +141,7 @@ export default function ParticleCanvas() {
   return (
     <canvas
       ref={canvasRef}
-      className="absolute inset-0 w-full h-full pointer-events-none"
+      className="fixed inset-0 w-full h-full pointer-events-none"
       aria-hidden="true"
     />
   );
