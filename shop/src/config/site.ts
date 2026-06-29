@@ -132,10 +132,6 @@ export const siteSettings = {
         title: 'text-explore',
         links: [
           {
-            name: 'Shops',
-            href: Routes.shops,
-          },
-          {
             name: 'Authors',
             href: Routes.authors,
           },

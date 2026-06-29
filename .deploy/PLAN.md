@@ -74,6 +74,7 @@
 | 5.3 | Add "back to top" button on long pages | `[ ]` |
 | 5.4 | Fix footer — ensure all links work, no dead ends | `[x]` |
 | 5.5 | Add loading skeletons instead of blank screens | `[ ]` |
+| 5.6 | Hide shops navigation (single-shop mode) — removed footer "Shops" link, homepage `/` redirects to `/grocery`. See `SHOPS_RESTORE.md` to restore. | `[x]` |
 
 ---
 
@@ -212,7 +213,7 @@
 | 2 — SEO | Google-friendly | 6 | 0 | 6 |
 | 3 — Security | Hacker-proof | 5 | 0 | 5 |
 | 4 — Mobile | Mobile-friendly | 5 | 1 | 4 |
-| 5 — Navigation | UI navigation | 5 | 2 | 3 |
+| 5 — Navigation | UI navigation | 5 | 3 | 2 |
 | 6 — Bugs | Bug fixes | 5 | 0 | 5 |
 | 7 — Performance | Speed | 3 | 0 | 3 |
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
@@ -226,7 +227,7 @@
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 30 — June 29, 2026*
+*Last updated: Session 31 — June 29, 2026*
 
 ---
 

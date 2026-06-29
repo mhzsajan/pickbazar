@@ -92,10 +92,17 @@ const ShopsHome = () => {
 const Home: NextPageWithLayout<
   InferGetStaticPropsType<typeof getStaticProps>
 > = ({ variables, layout }) => {
-  const { query } = useRouter();
+  const { query, replace } = useRouter();
   const { width } = useWindowSize();
   const { type } = useType(variables.types?.type);
   const { t } = useTranslation('common');
+
+  // Redirect homepage / to default type page (single-shop mode)
+  useEffect(() => {
+    if (layout === 'shops') {
+      replace('/grocery');
+    }
+  }, [layout]);
 
   useEffect(() => {
     if (query.text || query.category) {
@@ -106,7 +113,7 @@ const Home: NextPageWithLayout<
     }
   }, [query.text, query.category]);
 
-  // Shops homepage
+  // Shops homepage (redirects to /grocery — preserved for future multi-shop restore)
   if (layout === 'shops') {
     return (
       <>

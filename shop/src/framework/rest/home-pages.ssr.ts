@@ -55,7 +55,7 @@ export const getStaticProps: GetStaticProps<
 
   const { pages } = params!;
 
-  // Root "/" — show shops homepage
+  // Root "/" — show minimal page (client-side redirect in component)
   if (!pages) {
     await queryClient.prefetchInfiniteQuery(
       [API_ENDPOINTS.SHOPS, { limit: SHOPS_PER_PAGE, is_active: 1 }],
