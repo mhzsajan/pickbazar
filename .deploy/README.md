@@ -26,8 +26,9 @@ pickbazar/
 ├── api/rest/       # Backend API (NestJS, in-memory mock data) → port 9000
 ├── .deploy/        # This folder — scripts, plan, audit, context
 │   ├── README.md   # This file
-│   ├── PLAN.md     # Master plan (112 tasks across 9 phases)
+│   ├── PLAN.md     # Master plan (171 tasks across 13 phases)
 │   ├── AUDIT.md    # Mobile audit (67 issues, all fixed)
+│   ├── ANIMATIONS.md  # Particle canvas, scroll reveals, hover effects
 │   └── KNOWN_ISSUES.md  # Bugs, root causes, what NOT to try
 └── deployment/     # Original deployment docs (reference only)
 ```
@@ -70,6 +71,7 @@ All run under PM2 with auto-start on boot (systemd).
 | Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
 | Dark mode visual audit | ✅ Phase 10 complete — 37 UI fixes across 80+ files |
 | Theme infrastructure | ✅ SSR flash prevention, darkMode class config, theme toggle targeting `<html>` |
+| Animations | ✅ Seven-layer canvas (moon → orbs → sigils → gears → constellation → wisps → streaks), scroll reveals, card hover — see `.deploy/ANIMATIONS.md` |
 
 ---
 
@@ -133,9 +135,10 @@ NEXT_PUBLIC_VERSION=11.10.2
 
 1. Read `RESUME.md` first — where we stopped, rules, commands
 2. Read this file — full project context
-3. Read `.deploy/PLAN.md` — active work plan (149 tasks across 10 phases)
-4. Read `.deploy/KNOWN_ISSUES.md` — bugs and root causes
-5. Find first incomplete task in PLAN.md and continue
+3. Read `.deploy/PLAN.md` — active work plan (171 tasks across 13 phases)
+4. Read `.deploy/ANIMATIONS.md` — canvas, scroll reveals, hover effects
+5. Read `.deploy/KNOWN_ISSUES.md` — bugs and root causes
+6. Find first incomplete task in PLAN.md and continue
 6. **npm, not yarn** — always `npm install --legacy-peer-deps`
 7. After changes: `rm -rf .next` before rebuild
 8. Don't push until user approves on localhost
@@ -191,4 +194,4 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 ---
 
 *Created: Session 2 — June 27, 2026*
-*Last updated: Session 23 — June 29, 2026*
+*Last updated: Session 30 — June 29, 2026*

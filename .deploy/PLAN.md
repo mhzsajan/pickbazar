@@ -168,6 +168,40 @@
 
 **Status:** 6 done, 2 skipped (not needed). Complete ✅ (Session 24)
 
+**See:** `.deploy/ANIMATIONS.md` for full technical reference
+
+---
+
+## Phase 11b — Ambient Orbs + Shooting Stars (Expanded Canvas)
+
+| # | Task | Status |
+|---|------|--------|
+| 11.9 | Ambient glow orbs — 8 large drifting radial gradients (layer 1, alpha 0.08-0.20) | `[x]` |
+| 11.10 | Shooting stars — random streaks with fading trails, 10 vibrant colors (layer 3) | `[x]` |
+| 11.11 | Three-layer canvas architecture (orbs → constellation → streaks) | `[x]` |
+| 11.12 | Tune: slower jitter (0.04→0.025), more particles (max 200→300), more streaks (1-3s interval) | `[x]` |
+| 11.13 | Per-streak color palette (10 colors: red, orange, gold, lime, green, cyan, blue, violet, magenta, hot pink) | `[x]` |
+| 11.14 | Constellation volume reduction (max 180, divisor 12000, alpha 0.25-0.6, line opacity 0.15, width 0.5, dist 180) | `[x]` |
+| 11.15 | Streak frequency/visibility boost (0.5-1.5s spawns, 30% burst mode, thicker 3/2 trails, 2.5px head, decay 0.006) | `[x]` |
+
+**Status:** 7/7 done ✅ (Sessions 27-28)
+
+**See:** `.deploy/ANIMATIONS.md` for layer specs and config values
+---
+## Phase 11c — Universe-themed Layers (Gods, Devils, Witches, Time)
+
+| # | Task | Status |
+|---|------|--------|
+| 11.16 | Lunar cycle — waxing/waning moon, blood moon, subtleglow in top-right corner | `[x]` |
+| 11.17 | Sigil circles — 4 rotating occult symbols (pentagram, hexagram, eye, ouroboros) | `[x]` |
+| 11.18 | Clockwork gears — 3 brass-colored rotating mechanisms with teeth and spokes | `[x]` |
+| 11.19 | Spirit wisps — 12 floating firefly lights on Lissajous sine-wave paths | `[x]` |
+| 11.20 | 7-layer architecture (moon → orbs → sigils → gears → constellation → wisps → streaks) | `[x]` |
+| 11.21 | Volume boost: sigils 4→6, gears 3→5, wisps 12→24 | `[x]` |
+| 11.22 | Light mode visibility: 2-2.5x alpha boost on all layers, moon alpha 0.2/0.35 | `[x]` |
+
+**Status:** 7/7 done ✅ (Sessions 29-30)
+
 ---
 
 ## Summary
@@ -184,13 +218,15 @@
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
 | 10 — Dark Mode UI | Visual fixes | 37 | 37 | 0 |
-| 11 — Animations | Midjourney-style | 8 (2 skipped) | 6 | 2 (skipped, not needed) |
-| **Total** | | **157** | **114** | **43** |
+| 11 — Animations | Midjourney-style | 8 (2 skipped) | 6 | 2 (skipped) |
+| 11b — Canvas Expansion | Orbs + streaks | 7 | 7 | 0 |
+| 11c — Universe Layers | Moon, sigils, gears, wisps | 7 | 7 | 0 |
+| **Total** | | **171** | **128** | **43** |
 
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 24 — June 29, 2026*
+*Last updated: Session 30 — June 29, 2026*
 
 ---
 

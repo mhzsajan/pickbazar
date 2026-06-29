@@ -10,10 +10,10 @@
 ---
 
 ## Where We Stopped
-- **Last completed:** Session 24 — Midjourney-style animations (particle canvas + scroll reveals + card hover)
-- **Current step:** Phase 11 complete — hero particle constellation animation, scroll-triggered section reveals, enhanced card hover effects
-- **Next action:** Phase 1 remaining — replace logo, favicon, banner images, footer content at `.deploy/PLAN.md`
-- **Master plan:** `.deploy/PLAN.md` — tasks across 10 phases (Phase 8 = 67 mobile audit tasks done, Phase 10 = dark mode UI fixes)
+- **Last completed:** Session 30 — Volume boost (sigils 6, gears 5, wisps 24) + full light mode visibility (2-2.5x alpha boost on all layers)
+- **Current step:** Phase 11c complete — 7-layer canvas running on all non-shop pages
+- **Next action:** Tune newly added layers if needed, or try new effect from `.deploy/ANIMATIONS.md#6`
+- **Master plan:** `.deploy/PLAN.md` — tasks across 12 phases
 
 ## What Works Now
 | Service | Port | PM2 | Status | Domain |
@@ -37,7 +37,8 @@
 - Modal UX: Close button, back button, swipe-to-go-back — all working
 - Add-to-cart: ⚠️ Issues found, code reverted, root causes documented
 - Dark mode UI fixes: text-light→text-white on colored backgrounds (44 files), Alert/notification/spinner/skeleton/counter/radio fixes, text-muted-black eliminated (6 files), hardcoded hex colors converted to CSS variables, banner overlays added
-- Theme: Phase 10 dark mode visual fixes — 37 tasks in progress
+- Animations: Seven-layer canvas (moon → orbs → sigils → gears → constellation → wisps → streaks), scroll reveals, card hover — see `.deploy/ANIMATIONS.md`
+- Theme: Phase 10 dark mode visual fixes — 37 tasks completed
 
 ## Rules
 - **npm, NOT yarn** (yarn hangs). Always `npm install --legacy-peer-deps`

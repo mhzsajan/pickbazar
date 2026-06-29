@@ -28,6 +28,12 @@
 | 22 | Jun 29 | Text visibility audit: exterminated text-muted-black (6 files→text-heading), fixed page-banner bg-slate-200→bg-gray-100, added banner image overlays, fixed review-popup, converted all hardcoded hex text colors (#686D73, #666, #1F2937, #6B7280) to CSS variables |
 | 23 | Jun 29 | Tagged restore point `v1.0-20260629-0926`, created backup branch `backup-pre-customization`, updated context files |
 | 24 | Jun 29 | Midjourney-style animations: particle canvas constellation (hero), framer-motion scroll reveals (3 sections), card hover glow effects |
+| 25 | Jun 29 | Moved canvas to layout-level fixed bg, enabled on all pages via `_home.tsx`, `_general.tsx`, tuned visibility/speed |
+| 26 | Jun 29 | Continuous Brownian motion (never settles), added to `layout-with-footer.tsx`, excluded from `layout.tsx` (shop pages), wrap boundaries, created `.deploy/ANIMATIONS.md` |
+| 27 | Jun 29 | Ambient glow orbs (8 drifting radial gradients, alpha 0.08-0.20), shooting stars (10 vibrant colors, 0.5-1.5s spawns, 30% burst mode, thicker trails), three-layer canvas architecture |
+| 28 | Jun 29 | Optimization pass: constellation reduced (60-180 particles, slower jitter 0.02, fainter lines width 0.5/opacity 0.15/dist 180px), orbs boosted (8, alpha 0.08-0.20, radius 150-400px), streaks maxed (0.5-1.5s, 10 vibrant colors, burst mode) |
+| 29 | Jun 29 | Added 4 new universe-themed layers to canvas: lunar cycle (waxing/waning moon + blood moon), sigil circles (pentagram, hexagram, eye, ouroboros), clockwork gears (3 brass mechanisms), spirit wisps (12 sine-wave floating lights). 7-layer architecture complete. |
+| 30 | Jun 29 | Volume boost: sigils 4→6, gears 3→5, wisps 12→24. Full light mode visibility: 2-2.5x alpha boost on all theme layers, moon alpha 0.2 (dark) / 0.35 (light), constellation dots/lines boosted. |
 
 ---
 
@@ -48,5 +54,12 @@
 - **Banner text on images:** In dark mode, `text-heading` becomes white. Add `bg-black/20` overlay to ensure text readability on light image areas.
 - **SSR flash prevention:** Add inline `<script>` in `_document.tsx` that sets `dark`/`light` class on `<html>` before React hydrates. Set initial theme via `useState(() => localStorage.getItem(...))` in ThemeProvider.
 - **Dark mode class must be on `<html>`:** Tailwind's `darkMode: 'class'` checks `<html>` for the `dark` class. ThemeProvider must toggle `document.documentElement`, not `document.body`. CSS selectors must use `:root.dark` not `body.dark`.
-- **Particle canvas:** Pure Canvas 2D (no dependencies), detects dark mode via `document.documentElement.classList.contains('dark')`, auto-pauses via IntersectionObserver. Particle count scales with viewport: `min(120, max(40, area/15000))`.
+- **Particle canvas:** Pure Canvas 2D (no dependencies), detects dark mode via `document.documentElement.classList.contains('dark')`, auto-pauses via IntersectionObserver. Particle count scales with viewport: `min(200, max(60, area/10000))`.
+- **Continuous motion:** Brownian motion (random acceleration + speed cap) keeps particles moving forever. Wrap boundaries (re-enter from opposite edge) instead of bounce. See `.deploy/ANIMATIONS.md`.
+- **Layout-level background:** Canvas with `fixed` positioning in layout wrappers. Wrappers use `bg-transparent` so canvas shows through. Child components keep their own backgrounds.
+- **Excluding canvas from layouts:** Don't import ParticleCanvas — use original `bg-gray-100` or `bg-surface`. Currently excluded from `layout.tsx` (shop pages, checkout, orders, products).
 - **Scroll reveals:** `framer-motion` `whileInView` with `once: true` — sections fade in only once on first scroll.
+- **Three-layer canvas:** Ambient orbs (layer 1, radial gradients, drift + pulse), constellation particles (layer 2, Brownian motion), shooting stars (layer 3, random colors, fading trails). All share one `requestAnimationFrame` loop. See `.deploy/ANIMATIONS.md`.
+- **Per-streak colors:** Shooting stars pick from 10-vibrant-color palette (red, orange, gold, lime, green, cyan, blue, violet, magenta, hot pink) — `color` field per Streak object.
+- **Constellation tuning principle:** Particles should be sparse (60-180, divisor 12000), slow (jitter 0.02), and faint (alpha 0.25-0.6, line opacity 0.15) to serve as subtle ambient starfield, not a dense distracting web.
+- **7-layer canvas:** Draw order: moon → orbs → sigils → gears → constellation → wisps → streaks. All share one RAF loop, one context.
