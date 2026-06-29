@@ -25,28 +25,7 @@ When you're ready to enable multi-shop support, apply the changes below.
 },
 ```
 
-Insert as the first item in the `links` array of the `text-explore` menu section (before `{ name: 'Authors', ... }`).
-
----
-
-### 2. Homepage — Root `/` Now Redirects to `/grocery`
-
-**File:** `shop/src/pages/[[...pages]].tsx`
-
-**Change:** When `layout === 'shops'` (root `/`), the component now client-side redirects to `/grocery` via `useEffect` + `router.replace`.
-
-**To restore:** Remove the redirect `useEffect` block:
-
-```tsx
-  // Redirect homepage / to default type page (single-shop mode)
-  useEffect(() => {
-    if (layout === 'shops') {
-      router.replace('/grocery');
-    }
-  }, [layout]);
-```
-
-No other changes needed — the `ShopsHome` component and all imports remain intact.
+Insert as the first item in the `links` array of the `text-explore` menu section.
 
 ---
 

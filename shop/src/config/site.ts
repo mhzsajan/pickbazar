@@ -132,16 +132,16 @@ export const siteSettings = {
         title: 'text-explore',
         links: [
           {
-            name: 'Authors',
-            href: Routes.authors,
-          },
-          {
             name: 'Flash Deals',
             href: Routes?.flashSale,
           },
           {
             name: 'Coupon',
             href: Routes.coupons,
+          },
+          {
+            name: 'Manufacturers',
+            href: Routes?.manufacturers,
           },
         ],
       },
@@ -153,33 +153,29 @@ export const siteSettings = {
             href: Routes.help,
           },
           {
-            name: 'Vendor Refund Policies',
-            href: Routes.vendorRefundPolicies,
-          },
-          {
-            name: 'Customer Refund Policies',
-            href: Routes.customerRefundPolicies,
-          },
-        ],
-      },
-      {
-        title: 'text-our-information',
-        links: [
-          {
-            name: 'Manufacturers',
-            href: Routes?.manufacturers,
-          },
-          {
-            name: 'Privacy policies',
-            href: Routes.privacy,
+            name: 'text-contact-us',
+            href: Routes.contactUs,
           },
           {
             name: 'text-terms-condition',
             href: Routes.terms,
           },
+        ],
+      },
+      {
+        title: 'Policies',
+        links: [
           {
-            name: 'text-contact-us',
-            href: Routes.contactUs,
+            name: 'Customer Refund Policies',
+            href: Routes.customerRefundPolicies,
+          },
+          {
+            name: 'Vendor Refund Policies',
+            href: Routes.vendorRefundPolicies,
+          },
+          {
+            name: 'Privacy policies',
+            href: Routes.privacy,
           },
         ],
       },

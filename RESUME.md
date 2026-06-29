@@ -10,8 +10,8 @@
 ---
 
 ## Where We Stopped
-- **Last completed:** Session 31 — Hidden shops navigation for single-shop mode
-- **Current step:** Shops links removed from footer + homepage, `/` redirects to `/grocery`. See `SHOPS_RESTORE.md` to re-enable multi-shop later.
+- **Last completed:** Session 32 — Footer reorganization
+- **Current step:** Footer has Explore, Customer Service (FAQ/Contact/Terms), Policies (Refunds/Privacy). Shops hidden. See `SHOPS_RESTORE.md` to re-enable multi-shop later.
 - **Next action:** Tune newly added layers if needed, or try new effect from `.deploy/ANIMATIONS.md#6`
 - **Master plan:** `.deploy/PLAN.md` — tasks across 12 phases
 

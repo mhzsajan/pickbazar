@@ -73,6 +73,7 @@
 | 5.2 | Add breadcrumbs for deep pages (product, shop, category) | `[ ]` |
 | 5.3 | Add "back to top" button on long pages | `[ ]` |
 | 5.4 | Fix footer — ensure all links work, no dead ends | `[x]` |
+| 5.7 | Reorganize footer menus: new Policies section (Refunds/Privacy), moved Terms to Customer Service, removed Our Information, cleaned up Explore links | `[x]` |
 | 5.5 | Add loading skeletons instead of blank screens | `[ ]` |
 | 5.6 | Hide shops navigation (single-shop mode) — removed footer "Shops" link, homepage `/` redirects to `/grocery`. See `SHOPS_RESTORE.md` to restore. | `[x]` |
 
@@ -227,7 +228,7 @@
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 31 — June 29, 2026*
+*Last updated: Session 32 — June 29, 2026*
 
 ---
 

@@ -35,6 +35,7 @@
 | 29 | Jun 29 | Added 4 new universe-themed layers to canvas: lunar cycle (waxing/waning moon + blood moon), sigil circles (pentagram, hexagram, eye, ouroboros), clockwork gears (3 brass mechanisms), spirit wisps (12 sine-wave floating lights). 7-layer architecture complete. |
 | 30 | Jun 29 | Volume boost: sigils 4→6, gears 3→5, wisps 12→24. Full light mode visibility: 2-2.5x alpha boost on all theme layers, moon alpha 0.2 (dark) / 0.35 (light), constellation dots/lines boosted. |
 | 31 | Jun 29 | Hidden shops navigation for single-shop mode: removed "Shops" link from footer, redirected homepage `/` to `/grocery`. Created `SHOPS_RESTORE.md` for future multi-shop restoration. Minor text branding ("All Shops" → "Switch God!"). |
+| 32 | Jun 29 | Footer reorganization: created new "Policies" section (Customer/Vendor Refund, Privacy), reorganized Explore/Customer Service/Our Information, removed duplicate shops link. |
 
 ---
 
