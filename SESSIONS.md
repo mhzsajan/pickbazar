@@ -27,6 +27,7 @@
 | 21 | Jun 29 | Bulk dark mode UI fixes: text-light→text-white on all colored bg (44 files), Alert dark overrides, spinner CSS vars, skeleton loaders, counter/add-to-cart hex colors, radio.module.css, notification hex colors |
 | 22 | Jun 29 | Text visibility audit: exterminated text-muted-black (6 files→text-heading), fixed page-banner bg-slate-200→bg-gray-100, added banner image overlays, fixed review-popup, converted all hardcoded hex text colors (#686D73, #666, #1F2937, #6B7280) to CSS variables |
 | 23 | Jun 29 | Tagged restore point `v1.0-20260629-0926`, created backup branch `backup-pre-customization`, updated context files |
+| 24 | Jun 29 | Midjourney-style animations: particle canvas constellation (hero), framer-motion scroll reveals (3 sections), card hover glow effects |
 
 ---
 
@@ -47,3 +48,5 @@
 - **Banner text on images:** In dark mode, `text-heading` becomes white. Add `bg-black/20` overlay to ensure text readability on light image areas.
 - **SSR flash prevention:** Add inline `<script>` in `_document.tsx` that sets `dark`/`light` class on `<html>` before React hydrates. Set initial theme via `useState(() => localStorage.getItem(...))` in ThemeProvider.
 - **Dark mode class must be on `<html>`:** Tailwind's `darkMode: 'class'` checks `<html>` for the `dark` class. ThemeProvider must toggle `document.documentElement`, not `document.body`. CSS selectors must use `:root.dark` not `body.dark`.
+- **Particle canvas:** Pure Canvas 2D (no dependencies), detects dark mode via `document.documentElement.classList.contains('dark')`, auto-pauses via IntersectionObserver. Particle count scales with viewport: `min(120, max(40, area/15000))`.
+- **Scroll reveals:** `framer-motion` `whileInView` with `once: true` — sections fade in only once on first scroll.

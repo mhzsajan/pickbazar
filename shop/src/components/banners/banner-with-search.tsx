@@ -3,7 +3,6 @@ import { Swiper, SwiperSlide, Navigation } from '@/components/ui/slider';
 import { Image } from '@/components/ui/image';
 import { productPlaceholder } from '@/lib/placeholders';
 import Search from '@/components/ui/search/search';
-import ParticleCanvas from '@/components/ui/particle-canvas';
 import type { Banner } from '@/types';
 import { useHeaderSearch } from '@/layouts/headers/header-search-atom';
 import { useIntersection } from 'react-use';
@@ -47,7 +46,6 @@ const BannerWithSearch: React.FC<BannerProps> = ({ banners, layout }) => {
       })}
     >
       <div className="-z-1 overflow-hidden">
-        <ParticleCanvas />
         <div className="relative">
           <Swiper
             id="banner"

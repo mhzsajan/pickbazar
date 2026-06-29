@@ -10,8 +10,8 @@
 ---
 
 ## Where We Stopped
-- **Last completed:** Session 22 — Text visibility audit, hardcoded hex cleanup, banner overlays
-- **Current step:** Phase 10 dark mode visual fixes in progress
+- **Last completed:** Session 24 — Midjourney-style animations (particle canvas + scroll reveals + card hover)
+- **Current step:** Phase 11 complete — hero particle constellation animation, scroll-triggered section reveals, enhanced card hover effects
 - **Next action:** Phase 1 remaining — replace logo, favicon, banner images, footer content at `.deploy/PLAN.md`
 - **Master plan:** `.deploy/PLAN.md` — tasks across 10 phases (Phase 8 = 67 mobile audit tasks done, Phase 10 = dark mode UI fixes)
 
