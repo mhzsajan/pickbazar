@@ -50,7 +50,7 @@ const Confirmation: React.FC<ConfirmationCardProps> = ({
                 disabled={cancelBtnLoading}
                 variant="custom"
                 className={cn(
-                  'w-full rounded bg-accent py-2 px-4 text-center text-base font-semibold text-light shadow-md transition duration-200 ease-in hover:bg-accent-hover focus:bg-accent-hover focus:outline-none',
+                  'w-full rounded bg-accent py-2 px-4 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-accent-hover focus:bg-accent-hover focus:outline-none',
                   cancelBtnClassName
                 )}
               >
@@ -65,7 +65,7 @@ const Confirmation: React.FC<ConfirmationCardProps> = ({
                 disabled={deleteBtnLoading}
                 variant="custom"
                 className={cn(
-                  'w-full rounded bg-red-600 py-2 px-4 text-center text-base font-semibold text-light shadow-md transition duration-200 ease-in hover:bg-red-700 focus:bg-red-700 focus:outline-0',
+                  'w-full rounded bg-red-600 py-2 px-4 text-center text-base font-semibold text-white shadow-md transition duration-200 ease-in hover:bg-red-700 focus:bg-red-700 focus:outline-0',
                   deleteBtnClassName
                 )}
               >

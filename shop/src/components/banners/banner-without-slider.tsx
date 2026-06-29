@@ -31,7 +31,7 @@ const BannerWithoutSlider: React.FC<BannerProps> = ({ banners, layout }) => {
         />
         <div
           className={cn(
-            'absolute inset-0 flex w-full flex-col items-center justify-center p-5 text-center md:px-20 lg:space-y-10',
+            'absolute inset-0 flex w-full flex-col items-center justify-center p-5 text-center md:px-20 lg:space-y-10 bg-black/20',
             {
               'mt-24 space-y-5 md:mt-0 md:!space-y-8': layout === 'minimal',
             }

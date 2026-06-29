@@ -46,7 +46,7 @@ const FlashSaleCard: React.FC<FlashSaleCardProps> = ({
         />
       </div>
       {flashSale?.title ? (
-        <h2 className="mb-3 text-base font-semibold text-muted-black md:text-lg">
+        <h2 className="mb-3 text-base font-semibold text-heading md:text-lg">
           {flashSale?.title?.length > 50
             ? flashSale?.title?.substring(0, 50) + '...'
             : flashSale?.title}
@@ -54,7 +54,7 @@ const FlashSaleCard: React.FC<FlashSaleCardProps> = ({
       ) : (
         ''
       )}
-      <ul className="space-y-2 text-base [&>li>p]:font-normal [&>li>p]:text-[#666] [&>li>span]:font-semibold [&>li>span]:text-muted-black [&>li]:flex [&>li]:items-center [&>li]:gap-2">
+      <ul className="space-y-2 text-base [&>li>p]:font-normal [&>li>p]:text-muted [&>li>span]:font-semibold [&>li>span]:text-heading [&>li]:flex [&>li]:items-center [&>li]:gap-2">
         {flashSale?.start_date || flashSale?.end_date ? (
           <li>
             <span>Offer Till: </span>

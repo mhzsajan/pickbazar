@@ -38,5 +38,5 @@
 }
 
 .progress_wrapper.checked .status_wrapper {
-  @apply bg-accent text-light;
+  @apply bg-accent text-white;
 }

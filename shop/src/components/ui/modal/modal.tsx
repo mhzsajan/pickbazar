@@ -62,7 +62,7 @@ export default function Modal({
               leaveTo="opacity-0"
             >
               <div
-                className="fixed inset-0 h-full w-full bg-gray-900 bg-opacity-50"
+                className="fixed inset-0 h-full w-full bg-gray-900 bg-opacity-50 dark:bg-black dark:bg-opacity-60"
                 onClick={onClose}
               />
             </Transition.Child>
@@ -93,7 +93,7 @@ export default function Modal({
                 ref={cancelButtonRef}
                 className={twMerge(
                   classNames(
-                    'fixed top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted shadow-lg transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:left-4 rtl:right-4 md:ltr:left-auto md:ltr:right-4 md:rtl:left-4 md:rtl:right-auto',
+                    'fixed top-4 z-[80] flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted shadow-lg transition-all duration-200 hover:bg-accent hover:text-white focus:bg-accent focus:text-white focus:outline-0 ltr:left-4 rtl:right-4 md:ltr:left-auto md:ltr:right-4 md:rtl:left-4 md:rtl:right-auto dark:bg-gray-700 dark:text-body dark:hover:bg-accent dark:hover:text-white',
                     closeButtonClass,
                   ),
                 )}

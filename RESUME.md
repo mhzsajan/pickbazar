@@ -1,10 +1,10 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 19 — Dark mode toggle, surface color, removed banners, fixed search boxes
-- **Current step:** Dark mode toggle working. Phase 1 remaining — logo, favicon, content
+- **Last completed:** Session 22 — Text visibility audit, hardcoded hex cleanup, banner overlays
+- **Current step:** Phase 10 dark mode visual fixes in progress
 - **Next action:** Phase 1 remaining — replace logo, favicon, banner images, footer content at `.deploy/PLAN.md`
-- **Master plan:** `.deploy/PLAN.md` — 112 tasks across 9 phases (Phase 8 = 67 mobile audit tasks done)
+- **Master plan:** `.deploy/PLAN.md` — tasks across 10 phases (Phase 8 = 67 mobile audit tasks done, Phase 10 = dark mode UI fixes)
 
 ## What Works Now
 | Service | Port | PM2 | Status | Domain |
@@ -22,11 +22,13 @@
 - Public URLs: switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np
 - Font: Google Sans Code (SIL Open Font License)
 - Theme: Dark blue (Midjourney-style #06051d), green accent
-- Dark mode: Toggle in header, localStorage persistence, CSS variable switching
-- Surface color: Cards/sections blend with background (rgb(243,244,246) light / rgb(16,18,45) dark)
+- Dark mode: Toggle in header, localStorage persistence, CSS variable switching, SSR flash prevention
+- Surface color: Cards/sections blend with background (rgb(243,244,246) light / rgb(16,18,45) dark
 - Mobile: All 67 audit issues fixed (Phase 8)
 - Modal UX: Close button, back button, swipe-to-go-back — all working
 - Add-to-cart: ⚠️ Issues found, code reverted, root causes documented
+- Dark mode UI fixes: text-light→text-white on colored backgrounds (44 files), Alert/notification/spinner/skeleton/counter/radio fixes, text-muted-black eliminated (6 files), hardcoded hex colors converted to CSS variables, banner overlays added
+- Theme: Phase 10 dark mode visual fixes — 37 tasks in progress
 
 ## Rules
 - **npm, NOT yarn** (yarn hangs). Always `npm install --legacy-peer-deps`

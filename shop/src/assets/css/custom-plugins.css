@@ -45,11 +45,11 @@
 }
 
 .rc-pagination .rc-pagination-item.rc-pagination-item-active {
-  @apply border-accent bg-accent text-light;
+  @apply border-accent bg-accent text-white;
 }
 
 .rc-pagination .rc-pagination-item.rc-pagination-item-active a {
-  @apply text-light hover:text-light focus:text-light;
+  @apply text-white hover:text-white focus:text-white;
 }
 
 .rc-pagination .rc-pagination-options .rc-pagination-options-quick-jumper,
@@ -138,7 +138,7 @@
 
 /* RC Collapse */
 .rc-collapse {
-  background-color: #ffffff !important;
+  background-color: rgb(var(--color-light)) !important;
   border-radius: 0 !important;
   border: 0px solid #d9d9d9 !important;
 }
@@ -364,7 +364,7 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   padding: 10px 12px;
   padding-left: 0;
   border-bottom: 1px solid rgb(var(--color-gray-200));
-  background-color: white;
+  background-color: rgb(var(--color-light));
 
   -webkit-transition: box-shadow 150ms ease;
   transition: box-shadow 150ms ease;
@@ -445,13 +445,13 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   margin: 100px auto;
   width: 120px;
   height: 120px;
-  border: 16px solid #f3f3f3;
-  border-top: 16px solid #00d2a8;
+  border: 16px solid rgb(var(--color-gray-200));
+  border-top: 16px solid rgb(var(--color-accent));
   border-radius: 50%;
   animation:
     spin 2s linear infinite,
     heart-beat 2s linear infinite;
-  background-color: #fff;
+  background-color: rgb(var(--color-light));
   text-align: center;
   line-height: 120px;
 }
@@ -467,19 +467,19 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
 
 @keyframes heart-beat {
   55% {
-    background-color: #fff;
+    background-color: rgb(var(--color-light));
   }
   60% {
-    background-color: #00d2a8;
+    background-color: rgb(var(--color-accent));
   }
   65% {
-    background-color: #fff;
+    background-color: rgb(var(--color-light));
   }
   70% {
-    background-color: #00d2a8;
+    background-color: rgb(var(--color-accent));
   }
   100% {
-    background-color: #fff;
+    background-color: rgb(var(--color-light));
   }
 }
 
@@ -490,7 +490,7 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
 
 /* Header Menu */
 .headerMenu .menuItem > a::before {
-  @apply absolute -bottom-7 w-0 bg-white ltr:right-0 rtl:left-0;
+  @apply absolute -bottom-7 w-0 bg-light ltr:right-0 rtl:left-0;
   content: '';
   height: 3px;
   transition: all 0.3s ease-in-out 0s;
@@ -549,12 +549,12 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
 
 /* Mobile Drawer Menu */
 .mobileMenu .menu-item.active {
-  @apply font-semibold text-black;
+  @apply font-semibold text-heading;
 }
 .mobileMenu .menu-item.active::before {
   content: '';
   width: 3px;
-  @apply absolute top-0 bottom-0 flex h-full bg-white ltr:left-0 rtl:right-0;
+  @apply absolute top-0 bottom-0 flex h-full bg-accent ltr:left-0 rtl:right-0;
 }
 .mobileMenu li li {
   @apply text-sm text-body;
@@ -565,7 +565,7 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
 .mobileMenu li > ul > li > div > a:before {
   content: '';
   height: 1px;
-  @apply absolute top-1/2 flex w-1.5 bg-white ltr:left-1.5 rtl:right-1.5 md:w-2 ltr:md:left-3 rtl:md:right-3;
+  @apply absolute top-1/2 flex w-1.5 bg-accent ltr:left-1.5 rtl:right-1.5 md:w-2 ltr:md:left-3 rtl:md:right-3;
 }
 
 /* Radio */
@@ -590,7 +590,7 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   width: 18px;
   height: 18px;
   border-radius: 99999px;
-  background-color: #ffffff;
+  background-color: rgb(var(--color-light));
   @apply ltr:mr-2.5 rtl:ml-2.5;
 }
 
@@ -654,7 +654,7 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   width: 18px;
   height: 18px;
   border-radius: 3px;
-  background-color: #ffffff;
+  background-color: rgb(var(--color-light));
   @apply ltr:mr-2.5 rtl:ml-2.5;
 }
 
@@ -729,7 +729,7 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   font-weight: 600;
   padding: 7px 16px;
   border-radius: 3px;
-  color: rgb(var(--text-body));
+  color: rgb(var(--text-base));
   background-color: rgb(var(--color-gray-50));
   border: 2px solid rgb(var(--color-gray-100));
 }
@@ -739,14 +739,14 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
 }
 
 .boxed-checkbox:checked + label {
-  background-color: #fff;
+  background-color: rgb(var(--color-light));
   color: rgb(var(--color-accent));
   border-color: rgb(var(--color-accent));
   border-width: 2px;
 }
 
 .boxed-checkbox:disabled + label {
-  color: rgb(var(--text-body));
+  color: rgb(var(--text-base));
   cursor: auto;
   background: rgb(var(--color-gray-300));
 }
@@ -855,32 +855,32 @@ html[dir='rtl'] .react-tel-input .country-list .flag {
   border-collapse: unset;
 }
 .card-view-table .rc-table-thead tr th {
-  @apply border-b-0 bg-[#F7F7FA] py-4;
+  @apply border-b-0 bg-gray-100 py-4;
 }
 .card-view-table .rc-table-tbody tr td {
-  @apply border-0 border-b border-solid border-[#e1e7ec] py-5 transition-all duration-300;
+  @apply border-0 border-b border-solid border-border-200 py-5 transition-all duration-300;
 }
 .row-highlight .rc-table-cell {
-  @apply bg-[#f0f9f7];
+  @apply bg-accent-200 bg-opacity-30;
 }
 .rc-table-cell.rc-table-cell-row-hover .default-card-button,
 .rc-table-cell.rc-table-cell-row-hover .make-default-card {
   @apply opacity-100;
 }
 .row-highlight .rc-table-cell.rc-table-cell-row-hover {
-  @apply !bg-[#e9f6f3];
+  @apply !bg-accent-200 !bg-opacity-50;
 }
 
 /* Product video */
 .book-product-video #productGallery {
   padding-top: 24px;
-  background-color: #eee;
+  background-color: rgb(var(--color-gray-100));
   padding-bottom: 20px;
 }
 @media (min-width: 767px) {
   .book-product-video #productGallery {
     padding-top: 64px;
-    background-color: #eee;
+    background-color: rgb(var(--color-gray-100));
     padding-bottom: 32px;
   }
 }

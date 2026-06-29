@@ -26,7 +26,7 @@ const CartCounterIconButton = ({
     >
       <CartOutlinedIcon className="w-5 h-5" />
       {totalUniqueItems > 0 && (
-        <span className="min-w-[20px] h-5 flex items-center justify-center rounded-full bg-accent text-light text-xs absolute ltr:-right-1/2 rtl:-left-1/2 -top-1/2">
+        <span className="min-w-[20px] h-5 flex items-center justify-center rounded-full bg-accent text-white text-xs absolute ltr:-right-1/2 rtl:-left-1/2 -top-1/2">
           {totalUniqueItems}
         </span>
       )}

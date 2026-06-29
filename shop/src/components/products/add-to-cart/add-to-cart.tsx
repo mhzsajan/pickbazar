@@ -91,12 +91,12 @@ export const AddToCart = ({
             onClick={handleAddClick}
           />
         ) : (
-          <div className="flex w-24 items-center justify-between rounded-[0.25rem] border border-[#dbdbdb]">
+          <div className="flex w-24 items-center justify-between rounded-[0.25rem] border border-border-base">
             <button
               className={classNames(
                 'p-2 text-base',
                 disabledState || !isInCart(item?.id)
-                  ? 'cursor-not-allowed text-[#c1c1c1]'
+                  ? 'cursor-not-allowed text-muted'
                   : 'text-accent'
               )}
               disabled={disabledState || !isInCart(item?.id)}
@@ -105,12 +105,12 @@ export const AddToCart = ({
               <span className="sr-only">{t('text-minus')}</span>
               <MinusIconNew />
             </button>
-            <div className="text-sm uppercase text-[#666]">Add</div>
+            <div className="text-sm uppercase text-muted">Add</div>
             <button
               className={classNames(
                 'p-2 text-base',
                 disabledState
-                  ? 'cursor-not-allowed text-[#c1c1c1]'
+                  ? 'cursor-not-allowed text-muted'
                   : 'text-accent'
               )}
               disabled={disabledState}
@@ -125,7 +125,7 @@ export const AddToCart = ({
         <Link
           href={data?.external_product_url}
           target="_blank"
-          className="inline-flex h-10 !shrink items-center justify-center rounded border border-transparent bg-accent px-5 py-0 text-sm font-semibold leading-none text-light outline-none transition duration-300 ease-in-out hover:bg-accent-hover focus:shadow focus:outline-0 focus:ring-1 focus:ring-accent-700"
+          className="inline-flex h-10 !shrink items-center justify-center rounded border border-transparent bg-accent px-5 py-0 text-sm font-semibold leading-none text-white outline-none transition duration-300 ease-in-out hover:bg-accent-hover focus:shadow focus:outline-0 focus:ring-1 focus:ring-accent-700"
         >
           {data?.external_product_button_text}
         </Link>

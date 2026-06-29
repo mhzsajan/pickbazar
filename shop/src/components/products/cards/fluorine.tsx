@@ -181,7 +181,7 @@ const Fluorine: React.FC<FluorineProps> = ({
       <div className="p-4">
         <h2
           className={classNames(
-            'mb-2 gap-2 text-lg font-semibold text-muted-black',
+            'mb-2 gap-2 text-lg font-semibold text-heading',
             product?.is_external ? 'flex items-center' : 'truncate'
           )}
         >
@@ -208,13 +208,13 @@ const Fluorine: React.FC<FluorineProps> = ({
           <div className="flex flex-1 shrink-0 items-center gap-1 pr-2">
             {product?.product_type.toLowerCase() === 'variable' ? (
               <>
-                <p className="flex gap-1 text-base font-medium leading-none text-muted-black">
+                <p className="flex gap-1 text-base font-medium leading-none text-heading">
                   {renderPrice!}
                 </p>
               </>
             ) : (
               <>
-                <p className="text-base font-medium leading-none text-muted-black">
+                <p className="text-base font-medium leading-none text-heading">
                   {price!}
                 </p>
                 {sale_status ? (
@@ -266,10 +266,10 @@ const Fluorine: React.FC<FluorineProps> = ({
             </button>
           )}
         </div>
-        <p className="flex items-center gap-1 text-sm font-medium text-[#666]">
+        <p className="flex items-center gap-1 text-sm font-medium text-muted">
           <StarIcon className="text-[#FFE03A]" width={14} height={14} />
           {product?.ratings} ({product?.rating_count?.length}){' '}
-          <span className="text-muted-black">Reviews</span>
+          <span className="text-heading">Reviews</span>
         </p>
       </div>
     </div>

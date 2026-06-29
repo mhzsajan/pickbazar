@@ -48,13 +48,13 @@ const PromoPopup = () => {
           <div className="grid grid-cols-2 items-center">
             <div className="md:col-span-1 order-2 md:order-1 col-span-full p-6 md:p-12">
               {popupData?.title ? (
-                <h2 className="text-3xl font-bold mb-4">{popupData?.title}</h2>
+                <h2 className="text-3xl font-bold mb-4 text-heading">{popupData?.title}</h2>
               ) : (
                 ''
               )}
 
               {popupData?.description ? (
-                <p className="mb-10 text-muted-black text-lg leading-[150%">
+                <p className="mb-10 text-body text-lg leading-[150%">
                   {popupData?.description}
                 </p>
               ) : (

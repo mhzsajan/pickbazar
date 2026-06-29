@@ -68,6 +68,8 @@ All run under PM2 with auto-start on boot (systemd).
 | Modal UX | ✅ Close button, back button, swipe-to-go-back |
 | Dark theme | ✅ Applied across 100+ files, text visibility fixed |
 | Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
+| Dark mode visual audit | ✅ Phase 10 complete — 37 UI fixes across 80+ files |
+| Theme infrastructure | ✅ SSR flash prevention, darkMode class config, theme toggle targeting `<html>` |
 
 ---
 
@@ -131,7 +133,7 @@ NEXT_PUBLIC_VERSION=11.10.2
 
 1. Read `RESUME.md` first — where we stopped, rules, commands
 2. Read this file — full project context
-3. Read `.deploy/PLAN.md` — active work plan (112 tasks)
+3. Read `.deploy/PLAN.md` — active work plan (149 tasks across 10 phases)
 4. Read `.deploy/KNOWN_ISSUES.md` — bugs and root causes
 5. Find first incomplete task in PLAN.md and continue
 6. **npm, not yarn** — always `npm install --legacy-peer-deps`
@@ -162,4 +164,4 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 ---
 
 *Created: Session 2 — June 27, 2026*
-*Last updated: Session 17 — June 28, 2026*
+*Last updated: Session 22 — June 29, 2026*

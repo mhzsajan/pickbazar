@@ -259,7 +259,7 @@ function OrderView({ order, language, settings, loadingStatus }: any) {
                 <div>
                   <div className="mb-12 flex items-start rounded border border-gray-700 p-4">
                     <span className="mt-0.5 flex h-4 w-4 items-center justify-center rounded-sm bg-dark px-2 ltr:mr-3 rtl:ml-3">
-                      <CheckMark className="h-2 w-2 shrink-0 text-light" />
+                      <CheckMark className="h-2 w-2 shrink-0 text-white" />
                     </span>
                     <p className="text-sm text-heading">
                       <span className="font-bold">{t('text-note')}:</span>{' '}

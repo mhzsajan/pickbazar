@@ -40,7 +40,7 @@ const Oganesson: React.FC<OganessonProps> = ({ product, className }) => {
           className="product-image object-contain"
         />
         {discount && (
-          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-light ltr:right-3 rtl:left-3 md:top-[22px] md:px-2 ltr:md:right-4 rtl:md:left-4 lg:px-2.5">
+          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-white ltr:right-3 rtl:left-3 md:top-[22px] md:px-2 ltr:md:right-4 rtl:md:left-4 lg:px-2.5">
             {discount}
           </div>
         )}
@@ -48,7 +48,7 @@ const Oganesson: React.FC<OganessonProps> = ({ product, className }) => {
           {Number(quantity) > 0 ? (
             <AddToCart variant="oganesson" data={product} />
           ) : (
-            <div className="rounded bg-red-500 px-2 py-1 text-xs text-light">
+            <div className="rounded bg-red-500 px-2 py-1 text-xs text-white">
               {t('text-out-stock')}
             </div>
           )}

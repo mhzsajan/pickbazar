@@ -133,7 +133,7 @@ const Details: React.FC<Props> = ({
           <div className="mb-8 flex items-center justify-between lg:mb-10">
             {backBtn && <BackButton />}
             {discount && (
-              <div className="rounded-full bg-yellow-500 px-3 text-xs font-semibold leading-6 text-light ltr:ml-auto rtl:mr-auto">
+              <div className="rounded-full bg-yellow-500 px-3 text-xs font-semibold leading-6 text-white ltr:ml-auto rtl:mr-auto">
                 {discount}
               </div>
             )}

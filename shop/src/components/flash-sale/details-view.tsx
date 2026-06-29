@@ -42,7 +42,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
           />
         </div>
         <div
-          className={twMerge(classNames('bg-[#EAF9F0] py-7', containerClass))}
+          className={twMerge(classNames('bg-[#EAF9F0] py-7 dark:bg-gray-800', containerClass))}
         >
           <div className="flex flex-wrap items-center justify-center gap-3 sm:justify-start">
             <CountdownTimer
@@ -62,7 +62,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
       </>
       <div className={twMerge(classNames('bg-gray-100 py-10', containerClass))}>
         {flashSale?.title ? (
-          <h3 className="mb-4 text-xl font-semibold text-muted-black lg:text-2xl">
+          <h3 className="mb-4 text-xl font-semibold text-heading lg:text-2xl">
             {flashSale?.title}
           </h3>
         ) : (
@@ -71,7 +71,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
 
         {content ? (
           <div
-            className="mb-8 text-base leading-[180%] text-[#666] lg:text-lg react-editor-description"
+            className="mb-8 text-base leading-[180%] text-muted lg:text-lg react-editor-description"
             dangerouslySetInnerHTML={{
               __html: content,
             }}
@@ -80,7 +80,7 @@ const DetailsView: React.FC<DetailsViewProps> = ({
           ''
         )}
 
-        <ul className="space-y-2 text-base lg:space-y-3 [&>li>p]:font-normal [&>li>p]:text-base-dark [&>li>span]:font-semibold [&>li>span]:text-muted-black [&>li]:flex [&>li]:items-center [&>li]:gap-2">
+        <ul className="space-y-2 text-base lg:space-y-3 [&>li>p]:font-normal [&>li>p]:text-base-dark [&>li>span]:font-semibold [&>li>span]:text-heading [&>li]:flex [&>li]:items-center [&>li]:gap-2">
           <li>
             <span>Campaign status : </span>
             <p>{flashSale?.sale_status ? 'On going' : 'On hold'}</p>

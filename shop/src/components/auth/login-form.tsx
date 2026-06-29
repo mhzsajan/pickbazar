@@ -99,7 +99,7 @@ function LoginForm() {
       </div>
       <div className="grid grid-cols-1 gap-4 mt-2">
         <Button
-          className="!bg-social-google !text-light hover:!bg-social-google-hover"
+          className="!bg-social-google !text-white hover:!bg-social-google-hover"
           disabled={isLoading}
           onClick={() => {
             signIn('google');
@@ -110,21 +110,21 @@ function LoginForm() {
         </Button>
 
         <Button
-          className="h-11 w-full !bg-gray-500 !text-light hover:!bg-gray-600 sm:h-12"
+          className="h-11 w-full !bg-gray-500 !text-white hover:!bg-gray-600 sm:h-12"
           disabled={isLoading}
           onClick={() => openModal('OTP_LOGIN')}
         >
-          <MobileIcon className="h-5 text-light ltr:mr-2 rtl:ml-2" />
+          <MobileIcon className="h-5 text-white ltr:mr-2 rtl:ml-2" />
           {t('text-login-mobile')}
         </Button>
 
         {isCheckout && guestCheckout && (
           <Button
-            className="h-11 w-full !bg-pink-700 !text-light hover:!bg-pink-800 sm:h-12"
+            className="h-11 w-full !bg-pink-700 !text-white hover:!bg-pink-800 sm:h-12"
             disabled={isLoading}
             onClick={() => router.push(Routes.checkoutGuest)}
           >
-            <AnonymousIcon className="h-6 text-light ltr:mr-2 rtl:ml-2" />
+            <AnonymousIcon className="h-6 text-white ltr:mr-2 rtl:ml-2" />
             {t('text-guest-checkout')}
           </Button>
         )}

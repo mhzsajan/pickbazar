@@ -175,7 +175,7 @@ const ShortDetails: React.FC<ShortDetailsProps> = ({ product, isSticky }) => {
                   disabled={selectedVariation?.is_disable || !isSelected}
                 />
               ) : (
-                <div className="rounded bg-red-500 px-3 py-2 text-sm text-light">
+                <div className="rounded bg-red-500 px-3 py-2 text-sm text-white">
                   {t('text-out-stock')}
                 </div>
               )}

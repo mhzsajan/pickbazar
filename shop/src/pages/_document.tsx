@@ -15,11 +15,27 @@ export default class CustomDocument extends Document {
     // const dir = getDirection(locale);
     return (
       // <Html dir={dir}>
-      <Html>
+      <Html suppressHydrationWarning>
         <Head>
           <link
             href="https://cdn.jsdelivr.net/npm/@fontsource/google-sans-code@latest"
             rel="stylesheet"
+          />
+          <script
+            dangerouslySetInnerHTML={{
+              __html: `
+                (function() {
+                  try {
+                    var theme = localStorage.getItem('theme');
+                    if (theme === 'light') {
+                      document.documentElement.classList.add('light');
+                    } else {
+                      document.documentElement.classList.add('dark');
+                    }
+                  } catch(e) {}
+                })();
+              `,
+            }}
           />
         </Head>
         <body>

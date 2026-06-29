@@ -60,7 +60,7 @@ const NotificationLists: React.FC<NotificationListsProps> = ({
                 ? notification?.notify_text?.substring(0, character) + '...'
                 : notification?.notify_text}
             </h3>
-            <span className="mt-2 block text-xs font-medium text-[#666666]">
+            <span className="mt-2 block text-xs font-medium text-muted">
               {dayjs(notification?.created_at).format('MMM DD, YYYY')} at{' '}
               {dayjs(notification?.created_at).format('hh:mm A')}
             </span>
@@ -79,7 +79,7 @@ const NotificationLists: React.FC<NotificationListsProps> = ({
                 onClick: () => readingNotification({ id: notification?.id }),
               })}
             >
-              <CheckedIconWithCircle className="text-[#6B7280]" />
+              <CheckedIconWithCircle className="text-muted" />
               {!Boolean(notification?.is_read)
                 ? t('text-mark-as-read')
                 : t('text-marked-as-read')}

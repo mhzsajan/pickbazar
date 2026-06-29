@@ -82,7 +82,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
           className="block object-contain product-image"
         />
         {discount && (
-          <div className="absolute top-3 rounded-full bg-yellow-500 px-1.5 text-xs font-semibold leading-6 text-light ltr:right-3 rtl:left-3 sm:px-2 md:top-4 md:px-2.5 ltr:md:right-4 rtl:md:left-4">
+          <div className="absolute top-3 rounded-full bg-yellow-500 px-1.5 text-xs font-semibold leading-6 text-white ltr:right-3 rtl:left-3 sm:px-2 md:top-4 md:px-2.5 ltr:md:right-4 rtl:md:left-4">
             {discount}
           </div>
         )}
@@ -116,7 +116,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
               {Number(quantity) > 0 && (
                 <button
                   onClick={handleProductQuickView}
-                  className="flex items-center justify-center order-5 px-3 py-2 text-sm font-semibold transition-colors duration-300 border-2 rounded-full border-border-100 bg-light text-accent hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 sm:order-4 sm:justify-start sm:px-4"
+                  className="flex items-center justify-center order-5 px-3 py-2 text-sm font-semibold transition-colors duration-300 border-2 rounded-full border-border-100 bg-light text-accent hover:border-accent hover:bg-accent hover:text-white focus:border-accent focus:bg-accent focus:text-white focus:outline-0 sm:order-4 sm:justify-start sm:px-4"
                 >
                   <CartIcon className="w-4 h-4 ltr:mr-2 rtl:ml-2" />
                   <span>{t('text-cart')}</span>
@@ -143,7 +143,7 @@ const Helium: React.FC<HeliumProps> = ({ product, className }) => {
           )}
 
           {Number(quantity) <= 0 && (
-            <div className="px-2 py-1 text-xs bg-red-500 rounded text-light">
+            <div className="px-2 py-1 text-xs bg-red-500 rounded text-white">
               {t('text-out-stock')}
             </div>
           )}

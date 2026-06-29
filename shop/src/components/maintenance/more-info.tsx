@@ -49,7 +49,7 @@ const MoreInfo = ({
         <button
           onClick={() => closeSidebar({ display: false, view: '' })}
           aria-label="Close panel"
-          className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 text-muted transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0"
+          className="flex h-7 w-7 items-center justify-center rounded-full bg-gray-100 text-muted transition-all duration-200 hover:bg-accent hover:text-white focus:bg-accent focus:text-white focus:outline-0"
         >
           <span className="sr-only">{t('text-close')}</span>
           <CloseIcon className="h-4 w-4" />

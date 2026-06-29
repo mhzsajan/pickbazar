@@ -56,7 +56,7 @@ const Krypton: React.FC<KryptonProps> = ({ product, className }) => {
             className="product-image object-contain"
           />
           {discount && (
-            <div className="absolute top-3 rounded-full bg-yellow-500 px-2 text-xs font-semibold leading-6 text-light ltr:right-3 rtl:left-3 md:top-4 md:px-2.5 ltr:md:right-4 rtl:md:left-4">
+            <div className="absolute top-3 rounded-full bg-yellow-500 px-2 text-xs font-semibold leading-6 text-white ltr:right-3 rtl:left-3 md:top-4 md:px-2.5 ltr:md:right-4 rtl:md:left-4">
               {discount}
             </div>
           )}

@@ -26,8 +26,8 @@ const ReviewModal = () => {
     closeModal();
   }, []);
   return isOpen ? (
-    <div className="fixed lg:bottom-4 bottom-20 right-2 shadow-400 lg:right-4 rounded-xl lg:bg-gray-100 bg-slate-50 max-w-full z-50 sm:max-w-md sm:w-full">
-      <div className="flex justify-between relative px-4 py-5 border-b border-b-slate-100 lg:text-xl sm:text-lg text-base">
+    <div className="fixed lg:bottom-4 bottom-20 right-2 shadow-400 lg:right-4 rounded-xl bg-gray-100 max-w-full z-50 sm:max-w-md sm:w-full">
+      <div className="flex justify-between relative px-4 py-5 border-b border-border-100 lg:text-xl sm:text-lg text-base text-heading">
         <h2>
           You last order <span className="text-accent">{tracking_number}</span>{' '}
           is completed successfully!
@@ -43,7 +43,7 @@ const ReviewModal = () => {
       <div className="p-4">
         <Link
           href={Routes.order(tracking_number)}
-          className="hover:text-accent transition-colors lg:text-2xl text-xl mb-3 flex items-center gap-3"
+          className="hover:text-accent transition-colors lg:text-2xl text-xl mb-3 flex items-center gap-3 text-heading"
         >
           <span>Rate your experience here.</span>
           <div className="relative">

@@ -97,7 +97,7 @@ const SuperAdminContactForm: React.FC<SuperAdminContactFormProps> = ({
       <Checkbox
         label={t('text-checkbox')}
         {...register('isChecked')}
-        className="text-[#1F2937] text-base font-medium"
+        className="text-heading text-base font-medium"
         error={t(errors.isChecked?.message)}
       />
 

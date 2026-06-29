@@ -4,14 +4,14 @@ import { twMerge } from 'tailwind-merge';
 import { AlertProps } from '@/types';
 
 const variantClasses = {
-  info: 'bg-blue-100 text-blue-600',
-  warning: 'bg-yellow-100 text-yellow-600',
-  error: 'bg-red-100 text-red-500',
-  success: 'bg-green-100 text-accent',
-  infoOutline: 'border border-blue-200 text-blue-600',
-  warningOutline: 'border border-yellow-200 text-yellow-600',
-  errorOutline: 'border border-red-200 text-red-600',
-  successOutline: 'border border-green-200 text-green-600',
+  info: 'bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-300',
+  warning: 'bg-yellow-100 text-yellow-600 dark:bg-yellow-900/30 dark:text-yellow-300',
+  error: 'bg-red-100 text-red-500 dark:bg-red-900/30 dark:text-red-300',
+  success: 'bg-green-100 text-accent dark:bg-green-900/30 dark:text-green-300',
+  infoOutline: 'border border-blue-200 text-blue-600 dark:border-blue-700 dark:text-blue-300',
+  warningOutline: 'border border-yellow-200 text-yellow-600 dark:border-yellow-700 dark:text-yellow-300',
+  errorOutline: 'border border-red-200 text-red-600 dark:border-red-700 dark:text-red-300',
+  successOutline: 'border border-green-200 text-green-600 dark:border-green-700 dark:text-green-300',
 };
 
 const Alert: React.FC<AlertProps> = ({

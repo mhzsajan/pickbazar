@@ -108,7 +108,7 @@
     --color-gray-600: 75, 85, 99;
     --color-gray-700: 55, 65, 81;
     --color-gray-800: 31, 41, 55;
-    --color-gray-900: 31, 41, 55;
+    --color-gray-900: 17, 24, 39;
 
     /*
     * orange colors (light theme)
@@ -152,7 +152,7 @@
   * ===== DARK THEME (Midjourney-style) =====
   */
 
-  body.dark {
+  :root.dark {
     --color-light: 6, 5, 29;
     --color-dark: 255, 255, 255;
     --color-surface: 16, 18, 45;
@@ -167,17 +167,17 @@
     --text-bolder: 240, 245, 255;
 
     --color-border-50: 15, 20, 45;
-    --color-border-100: 20, 28, 55;
-    --color-border-200: 30, 40, 70;
-    --color-border-base: 40, 55, 85;
-    --color-border-400: 60, 75, 105;
+    --color-border-100: 28, 48, 90;
+    --color-border-200: 45, 68, 125;
+    --color-border-base: 60, 88, 145;
+    --color-border-400: 75, 100, 160;
 
     --color-gray-50: 8, 8, 30;
     --color-gray-100: 12, 14, 38;
     --color-gray-200: 18, 22, 48;
-    --color-gray-300: 25, 32, 60;
-    --color-gray-400: 35, 45, 75;
-    --color-gray-500: 50, 65, 100;
+    --color-gray-300: 28, 40, 75;
+    --color-gray-400: 45, 65, 115;
+    --color-gray-500: 70, 100, 160;
     --color-gray-600: 70, 90, 130;
     --color-gray-700: 100, 120, 160;
     --color-gray-800: 150, 165, 200;
@@ -205,6 +205,9 @@
     @apply font-body;
     background-color: rgb(var(--color-light));
     color: rgb(var(--text-base));
+  }
+
+  body.theme-ready {
     transition: background-color 0.3s, color 0.3s;
   }
 
@@ -221,12 +224,12 @@
     @apply no-underline;
   }
 
-  body.dark ::placeholder {
+  :root.dark ::placeholder {
     color: rgb(var(--color-gray-400));
   }
 
-  body.dark input,
-  body.dark textarea {
+  :root.dark input,
+  :root.dark textarea {
     color: rgb(var(--text-heading));
   }
 }

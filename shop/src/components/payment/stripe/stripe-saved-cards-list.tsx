@@ -107,7 +107,7 @@ const StripeSavedCardsList = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-company')}</span>
+        <span className="text-sm text-muted">{t('text-company')}</span>
       ),
       dataIndex: 'network',
       key: 'network',
@@ -137,7 +137,7 @@ const StripeSavedCardsList = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-card-number')}</span>
+        <span className="text-sm text-muted">{t('text-card-number')}</span>
       ),
       dataIndex: 'last4',
       key: 'last4',
@@ -151,7 +151,7 @@ const StripeSavedCardsList = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">
+        <span className="text-sm text-muted">
           {t('text-card-owner-name')}
         </span>
       ),
@@ -165,7 +165,7 @@ const StripeSavedCardsList = ({
     },
     {
       title: (
-        <span className="text-sm text-[#686D73]">{t('text-card-expire')}</span>
+        <span className="text-sm text-muted">{t('text-card-expire')}</span>
       ),
       dataIndex: 'expires',
       key: 'expires',

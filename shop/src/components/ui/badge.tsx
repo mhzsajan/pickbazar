@@ -25,7 +25,7 @@ const Badge: React.FC<BadgeProps> = ({
     root: 'px-3 py-1 rounded-full text-sm',
     default: 'bg-accent',
     animate: 'animate-pulse',
-    text: 'text-light',
+    text: 'text-white',
   };
 
   return (

@@ -79,7 +79,7 @@ const Argon: React.FC<ArgonProps> = ({ product, className }) => {
         />
 
         {discount && (
-          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-light ltr:left-3 rtl:right-3 sm:px-2 md:top-[22px] md:px-2.5 ltr:md:left-4 rtl:md:right-4">
+          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-white ltr:left-3 rtl:right-3 sm:px-2 md:top-[22px] md:px-2.5 ltr:md:left-4 rtl:md:right-4">
             {discount}
           </div>
         )}
@@ -90,7 +90,7 @@ const Argon: React.FC<ArgonProps> = ({ product, className }) => {
               {Number(quantity) > 0 && (
                 <button
                   onClick={handleProductQuickView}
-                  className="flex h-11 w-11 items-center justify-center rounded border border-border-200 bg-light text-sm text-heading transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9"
+                  className="flex h-11 w-11 items-center justify-center rounded border border-border-200 bg-light text-sm text-heading transition-colors hover:border-accent hover:bg-accent hover:text-white focus:border-accent focus:bg-accent focus:text-white focus:outline-0 md:h-9 md:w-9"
                 >
                   {is_external ? (
                     <ExternalIcon className="h-5 w-5 stroke-2" />
@@ -109,7 +109,7 @@ const Argon: React.FC<ArgonProps> = ({ product, className }) => {
           )}
 
           {Number(quantity) <= 0 && (
-            <div className="rounded bg-red-500 px-2 py-1 text-xs text-light">
+            <div className="rounded bg-red-500 px-2 py-1 text-xs text-white">
               {t('text-out-stock')}
             </div>
           )}

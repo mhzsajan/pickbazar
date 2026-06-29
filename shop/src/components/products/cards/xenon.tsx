@@ -76,7 +76,7 @@ const Xenon: React.FC<XenonProps> = ({ product, className }) => {
           className="product-image object-contain"
         />
         {discount && (
-          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-light ltr:left-3 rtl:right-3 md:top-4 md:px-2 ltr:md:left-4 rtl:md:right-4 lg:px-2.5">
+          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-white ltr:left-3 rtl:right-3 md:top-4 md:px-2 ltr:md:left-4 rtl:md:right-4 lg:px-2.5">
             {discount}
           </div>
         )}
@@ -109,7 +109,7 @@ const Xenon: React.FC<XenonProps> = ({ product, className }) => {
               {Number(quantity) > 0 && (
                 <button
                   onClick={handleProductQuickView}
-                  className="flex h-11 w-11 items-center justify-center rounded border border-border-200 bg-light text-sm text-accent transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:w-9"
+                  className="flex h-11 w-11 items-center justify-center rounded border border-border-200 bg-light text-sm text-accent transition-colors hover:border-accent hover:bg-accent hover:text-white focus:border-accent focus:bg-accent focus:text-white focus:outline-0 md:h-9 md:w-9"
                 >
                   <span className="sr-only">plus</span>
                   {is_external ? (
@@ -144,7 +144,7 @@ const Xenon: React.FC<XenonProps> = ({ product, className }) => {
           )}
 
           {Number(quantity) <= 0 && (
-            <div className="truncate rounded bg-red-500 px-1 py-1 text-xs text-light">
+            <div className="truncate rounded bg-red-500 px-1 py-1 text-xs text-white">
               {t('text-out-stock')}
             </div>
           )}

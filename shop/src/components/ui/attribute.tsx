@@ -50,7 +50,7 @@ function Attribute({
           className={cn(
             'cursor-pointer whitespace-nowrap rounded border-border-200 bg-gray-200 px-4 py-3 text-sm text-heading transition-colors',
             {
-              '!border-accent !bg-accent !text-light':
+              '!border-accent !bg-accent !text-white':
                 isActive && variant === 'normal',
               '!border-accent !text-accent': isActive && variant === 'outline',
               'border-2 font-semibold': variant === 'outline',
@@ -74,7 +74,7 @@ function Attribute({
 //     {
 //       'px-4 py-3 text-sm border rounded text-heading bg-gray-50 border-border-200':
 //         className !== 'color',
-//       '!text-light !bg-accent !border-accent': active && className !== 'color',
+//       '!text-white !bg-accent !border-accent': active && className !== 'color',
 //       'h-11 w-11 p-0.5 flex items-center justify-center border-2 rounded-full border-transparent':
 //         className === 'color',
 //       '!border-accent': active && className === 'color',

@@ -11,10 +11,10 @@ type PageBannerProps = {
 
 const PageBanner = ({ title, breadcrumbTitle }: PageBannerProps) => {
   return (
-    <div className="flex w-full justify-center bg-slate-200 py-20 md:min-h-[250px] lg:min-h-[288px]">
+    <div className="flex w-full justify-center bg-gray-100 py-20 md:min-h-[250px] lg:min-h-[288px]">
       <div className="relative flex w-full flex-col items-center justify-center">
         {title ? (
-          <h1 className="text-brand-dark text-center text-xl font-bold md:text-2xl lg:text-3xl 2xl:text-[40px]">
+          <h1 className="text-heading text-center text-xl font-bold md:text-2xl lg:text-3xl 2xl:text-[40px]">
             <span className="font-manrope mb-3 block font-bold md:mb-4 lg:mb-5 2xl:mb-7 ">
               {title}
             </span>

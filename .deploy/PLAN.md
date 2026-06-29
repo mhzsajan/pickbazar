@@ -124,6 +124,35 @@
 
 ---
 
+## Phase 10 — Dark Mode Visual Fixes
+
+| # | Task | Status |
+|---|------|--------|
+| 10.1 | Fix `text-light` on colored backgrounds → `text-white` (44 files) | `[x]` |
+| 10.2 | Fix Alert component dark mode | `[x]` |
+| 10.3 | Fix Spinner CSS (use CSS vars instead of static colors) | `[x]` |
+| 10.4 | Fix Skeleton loaders dark mode | `[x]` |
+| 10.5 | Fix Counter/add-to-cart hex colors (`#666`, `#c1c1c1`) | `[x]` |
+| 10.6 | Fix radio button dark mode (`radio.module.css`) | `[x]` |
+| 10.7 | Fix notification hex colors (`#686D73`, `#1F2937`, `#6B7280`) | `[x]` |
+| 10.8 | Eliminate `text-muted-black` entirely (6 files, invisible in dark mode) | `[x]` |
+| 10.9 | Fix page-banner `bg-slate-200` → `bg-gray-100` | `[x]` |
+| 10.10 | Add banner image overlays for text readability | `[x]` |
+| 10.11 | Fix review-popup text colors | `[x]` |
+| 10.12 | Fix modal backdrop + close button dark mode | `[x]` |
+| 10.13 | Fix promo popup text visibility | `[x]` |
+| 10.14 | Fix search bar border + placeholder contrast in dark mode | `[x]` |
+| 10.15 | Add `darkMode: 'class'` to tailwind config | `[x]` |
+| 10.16 | Fix theme SSR flash (inline script in `_document.tsx`) | `[x]` |
+| 10.17 | Fix theme transition flash (transition-none on load) | `[x]` |
+| 10.18 | Convert gray-100 background on modals/backdrop (inverted gray) | `[x]` |
+| 10.19 | Fix promo-bottom popup widget dark mode | `[x]` |
+| 10.20 | Fix footer category heading/subscribe-section borders | `[x]` |
+
+**Status:** 37 total fixes (20 listed + 17 minor component fixes). All complete ✅ (Sessions 20-22)
+
+---
+
 ## Summary
 
 | Phase | Focus | Tasks | Done | Remaining |
@@ -137,9 +166,10 @@
 | 7 — Performance | Speed | 3 | 0 | 3 |
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
-| **Total** | | **112** | **71** | **41** |
+| 10 — Dark Mode UI | Visual fixes | 37 | 37 | 0 |
+| **Total** | | **149** | **108** | **41** |
 
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 19 — June 28, 2026*
+*Last updated: Session 22 — June 29, 2026*

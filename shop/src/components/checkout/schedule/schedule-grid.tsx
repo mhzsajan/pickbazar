@@ -34,7 +34,7 @@ export const ScheduleGrid: React.FC<ScheduleProps> = ({
       <div className="mb-5 flex items-center justify-between md:mb-8">
         <div className="flex items-center space-x-3 rtl:space-x-reverse md:space-x-4">
           {count && (
-            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-light lg:text-xl">
+            <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-base text-white lg:text-xl">
               {count}
             </span>
           )}

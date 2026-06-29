@@ -68,7 +68,7 @@ const Neon: React.FC<NeonProps> = ({ product, className }) => {
           className="product-image object-contain"
         />
         {discount && (
-          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-light ltr:right-3 rtl:left-3 sm:px-2 md:top-4 md:px-2.5 ltr:md:right-4 rtl:md:left-4">
+          <div className="absolute top-3 rounded bg-accent px-1.5 text-xs font-semibold leading-6 text-white ltr:right-3 rtl:left-3 sm:px-2 md:top-4 md:px-2.5 ltr:md:right-4 rtl:md:left-4">
             {discount}
           </div>
         )}
@@ -113,7 +113,7 @@ const Neon: React.FC<NeonProps> = ({ product, className }) => {
             {Number(quantity) > 0 && (
               <button
                 onClick={handleProductQuickView}
-                className="group flex h-11 w-full items-center justify-between rounded bg-gray-100 text-xs text-body-dark transition-colors hover:border-accent hover:bg-accent hover:text-light focus:border-accent focus:bg-accent focus:text-light focus:outline-0 md:h-9 md:text-sm"
+                className="group flex h-11 w-full items-center justify-between rounded bg-gray-100 text-xs text-body-dark transition-colors hover:border-accent hover:bg-accent hover:text-white focus:border-accent focus:bg-accent focus:text-white focus:outline-0 md:h-9 md:text-sm"
               >
                 <span className="flex-1">{t('text-add')}</span>
                 <span className="grid h-11 w-11 place-items-center bg-gray-200 transition-colors duration-200 group-hover:bg-accent-600 group-focus:bg-accent-600 ltr:rounded-tr ltr:rounded-br rtl:rounded-tl rtl:rounded-bl md:h-9 md:w-9">
@@ -131,7 +131,7 @@ const Neon: React.FC<NeonProps> = ({ product, className }) => {
         )}
 
         {Number(quantity) <= 0 && (
-          <div className="rounded bg-red-500 px-2 py-1.5 text-center text-xs text-light sm:py-2.5">
+          <div className="rounded bg-red-500 px-2 py-1.5 text-center text-xs text-white sm:py-2.5">
             {t('text-out-stock')}
           </div>
         )}

@@ -47,7 +47,7 @@ const CartSidebarView = () => {
         </div>
         <button
           onClick={() => closeSidebar({ display: false, view: '' })}
-          className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted transition-all duration-200 hover:bg-accent hover:text-light focus:bg-accent focus:text-light focus:outline-0 ltr:ml-3 ltr:-mr-2 rtl:mr-3 rtl:-ml-2"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-gray-100 text-muted transition-all duration-200 hover:bg-accent hover:text-white focus:bg-accent focus:text-white focus:outline-0 ltr:ml-3 ltr:-mr-2 rtl:mr-3 rtl:-ml-2"
         >
           <span className="sr-only">{t('text-close')}</span>
           <CloseIcon className="h-4 w-4" />
@@ -81,7 +81,7 @@ const CartSidebarView = () => {
           className="flex h-12 w-full justify-between rounded-full bg-accent p-1 text-sm font-bold shadow-700 transition-colors hover:bg-accent-hover focus:bg-accent-hover focus:outline-0 md:h-14"
           onClick={handleCheckout}
         >
-          <span className="flex h-full flex-1 items-center px-5 text-light">
+          <span className="flex h-full flex-1 items-center px-5 text-white">
             {t('text-checkout')}
           </span>
           <span className="flex h-full shrink-0 items-center rounded-full bg-light px-5 text-accent">
