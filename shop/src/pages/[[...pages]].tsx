@@ -63,7 +63,7 @@ const ShopsHome = () => {
             {t('text-all-shops')}
           </h1>
           <p className="text-base text-body">
-            Browse our shops and discover what we offer
+            Our Services &amp; Products.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
