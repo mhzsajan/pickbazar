@@ -153,6 +153,23 @@
 
 ---
 
+## Phase 11 — Midjourney-style Animations
+
+| # | Task | Status |
+|---|------|--------|
+| 11.1 | Create ParticleCanvas component (Canvas 2D, 80-120 particles, constellation lines, mouse interaction) | `[x]` |
+| 11.2 | Integrate ParticleCanvas into BannerWithSearch as hero background | `[x]` |
+| 11.3 | Create AnimatedSection wrapper (framer-motion `whileInView` fade-up) | `[x]` |
+| 11.4 | Apply scroll reveals to Classic layout (promotions, filter bar, product grid) | `[x]` |
+| 11.5 | Enhance product card hover effects (glow ring, smoother scale) | `[x]` |
+| 11.6 | Add animation keyframes to tailwind config | `[-]` |
+| 11.7 | Add CSS variables for particle colors in main.css | `[-]` |
+| 11.8 | Performance: pause canvas when not in viewport | `[x]` |
+
+**Status:** 6 done, 2 skipped (not needed). Complete ✅ (Session 24)
+
+---
+
 ## Summary
 
 | Phase | Focus | Tasks | Done | Remaining |
@@ -167,12 +184,13 @@
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
 | 10 — Dark Mode UI | Visual fixes | 37 | 37 | 0 |
-| **Total** | | **149** | **108** | **41** |
+| 11 — Animations | Midjourney-style | 8 (2 skipped) | 6 | 2 (skipped, not needed) |
+| **Total** | | **157** | **114** | **43** |
 
 ---
 
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 23 — June 29, 2026*
+*Last updated: Session 24 — June 29, 2026*
 
 ---
 

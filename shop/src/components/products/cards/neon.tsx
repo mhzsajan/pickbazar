@@ -44,7 +44,7 @@ const Neon: React.FC<NeonProps> = ({ product, className }) => {
   return (
     <article
       className={cn(
-        'product-card cart-type-neon h-full transform overflow-hidden rounded border border-border-200 bg-light shadow-sm transition-all duration-200 hover:-translate-y-0.5 hover:shadow',
+        'product-card cart-type-neon h-full transform overflow-hidden rounded border border-border-200 bg-light shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-lg hover:shadow-accent/10',
         className
       )}
     >
