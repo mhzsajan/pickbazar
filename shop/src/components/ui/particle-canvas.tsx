@@ -7,8 +7,6 @@ interface Particle {
   vy: number;
   size: number;
   alpha: number;
-  baseX: number;
-  baseY: number;
 }
 
 export default function ParticleCanvas() {
@@ -38,30 +36,26 @@ export default function ParticleCanvas() {
       );
       const particles: Particle[] = [];
       for (let i = 0; i < count; i++) {
-        const x = Math.random() * canvas.width;
-        const y = Math.random() * canvas.height;
         particles.push({
-          x,
-          y,
+          x: Math.random() * canvas.width,
+          y: Math.random() * canvas.height,
           vx: (Math.random() - 0.5) * 0.6,
           vy: (Math.random() - 0.5) * 0.6,
           size: Math.random() * 2.5 + 0.8,
           alpha: Math.random() * 0.5 + 0.2,
-          baseX: x,
-          baseY: y,
         });
       }
       particlesRef.current = particles;
     };
 
     const animate = () => {
-      if (!isVisible) {
-        frameRef.current = requestAnimationFrame(animate);
-        return;
-      }
+      frameRef.current = requestAnimationFrame(animate);
+      if (!isVisible) return;
+
       ctx.clearRect(0, 0, canvas.width, canvas.height);
       const particles = particlesRef.current;
       const mouse = mouseRef.current;
+      const maxSpeed = 1.2;
 
       for (const p of particles) {
         const dx = mouse.x - p.x;
@@ -73,10 +67,23 @@ export default function ParticleCanvas() {
           p.x -= (dx / dist) * force * 2;
           p.y -= (dy / dist) * force * 2;
         }
-        p.x += (p.baseX - p.x) * 0.006 + p.vx;
-        p.y += (p.baseY - p.y) * 0.006 + p.vy;
-        if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
-        if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+        p.vx += (Math.random() - 0.5) * 0.04;
+        p.vy += (Math.random() - 0.5) * 0.04;
+
+        const speed = Math.sqrt(p.vx * p.vx + p.vy * p.vy);
+        if (speed > maxSpeed) {
+          p.vx = (p.vx / speed) * maxSpeed;
+          p.vy = (p.vy / speed) * maxSpeed;
+        }
+
+        p.x += p.vx;
+        p.y += p.vy;
+
+        if (p.x < -50) { p.x = canvas.width + 50; }
+        if (p.x > canvas.width + 50) { p.x = -50; }
+        if (p.y < -50) { p.y = canvas.height + 50; }
+        if (p.y > canvas.height + 50) { p.y = -50; }
       }
 
       const isDark = document.documentElement.classList.contains('dark');
@@ -106,8 +113,6 @@ export default function ParticleCanvas() {
         ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
         ctx.fill();
       }
-
-      frameRef.current = requestAnimationFrame(animate);
     };
 
     resize();
