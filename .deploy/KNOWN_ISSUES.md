@@ -35,6 +35,59 @@ All add-to-cart code was reverted to original. Here are the root causes found:
 
 ---
 
+---
+
+## Shop Product Filtering Bug (Session 35, FIXED)
+
+### Symptom
+Visiting any shop page (e.g., Clothing Shop) shows products from ALL shops — clothes, gadgets, books, makeup mixed together. Products do not match the shop.
+
+### Root Cause
+In `api/rest/src/products/products.service.ts:65-75`, the exact `shop_id` filter was applied **before** the fuzzy `fuse.search()`. The fuzzy search operates on the **global** product list (all 1200+ products), so it overwrote the shop-filtered result:
+
+```typescript
+// OLD (broken) — step order:
+// 1. Filter to shop_id=2 → 64 products ✅
+// 2. fuse.search() on ALL 1200+ products → 1199 products ❌ overwrites!
+if (exactFilters.shop_id) {
+  data = data.filter((product) => product.shop.id === exactFilters.shop_id);
+}
+if (fuzzyFilters.length) {
+  data = fuse.search({ $and: fuzzyFilters })?.map(({ item }) => item);
+}
+```
+
+### The Fix
+Swap the order — apply fuzzy search first (narrows by status/visibility), then exact `shop_id` filter on the result:
+
+```typescript
+// FIXED — step order:
+// 1. fuse.search({status:'publish', visibility:'visibility_public'}) → 1199 products
+// 2. Filter to shop_id=2 → 64 products ✅
+if (fuzzyFilters.length) {
+  data = fuse.search({ $and: fuzzyFilters })?.map(({ item }) => item);
+}
+if (exactFilters.shop_id) {
+  data = data.filter((product) => product.shop.id === exactFilters.shop_id);
+}
+```
+
+### Key Files
+- `api/rest/src/products/products.service.ts` — REST API products service (the bug + fix)
+- `api/graphql/src/products/products.service.ts` — GraphQL has the same pattern (not fixed yet — not in use)
+
+### Verification
+| Shop | Expected products | Actual |
+|------|------------------|--------|
+| Clothing Shop (id=2) | 64 | ✅ |
+| Gadget Shop (id=9) | 44 | ✅ |
+
+### What NOT to Do
+- Do NOT add `shop_id` as a filter to the Fuse instance options — it's an exact match, not fuzzy
+- Do NOT try to create separate Fuse instances per shop — the global instance is fine when filters are applied in the right order
+
+---
+
 ## Other Known Issues
 
 | Issue | Status | Notes |

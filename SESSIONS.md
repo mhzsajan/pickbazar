@@ -28,6 +28,7 @@
 | 32 | Jul 9 | Footer reorganization — new Policies section, cleaner menu layout |
 | 33 | Jul 9 | Color scheme consistency audit — fixed bg-gray-100/200→bg-surface/light across ~45 files, hardcoded hex borders → CSS var classes, color-scheme meta |
 | **34** | **Jul 9** | **FULL DARK MODE REVERT** — Hard reset to `ace8c18` (pre-dark-theme light PickBazar). Tagged current state as `v2.0-dark-mode-full`, backup branch `backup-dark-mode-full`. All Sessions 18-33 code removed. Sessions 1-17 preserved. |
+| **35** | **Jul 9** | **Shop product filter fix** — Reordered fuzzy search before exact `shop_id` filter in API service. All shops now show correct products. Restored canvas animation on homepage only. |
 
 ---
 
@@ -39,3 +40,4 @@
 - **PM2 auto-start:** `pm2 startup` + `pm2 save` after changes
 - **Modal z-index:** Dialog `z-[70]`, close button `z-[80]` with `fixed` positioning
 - **Add-to-cart:** Intersection observer `threshold: 1` triggers sticky bar on mobile (content taller than viewport)
+- **API filter order matters:** Apply fuzzy search (`fuse.search`) BEFORE exact filters (`shop_id`). Doing it in reverse causes fuzzy search on ALL products to overwrite the filtered set.
