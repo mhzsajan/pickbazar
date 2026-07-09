@@ -1,10 +1,10 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 17 — Add-to-cart issues found, all changes reverted, root causes documented
-- **Current step:** Add-to-cart code reverted to original. Root causes documented in `.deploy/KNOWN_ISSUES.md`
-- **Next action:** Phase 1 — Customization (logos, colors, branding) at `.deploy/PLAN.md`, OR fix add-to-cart with proper approach
-- **Master plan:** `.deploy/PLAN.md` — 112 tasks across 9 phases (Phase 8 = 67 mobile audit tasks done)
+- **Last completed:** Session 34 — Full dark mode reversion (hard reset to pre-dark-theme)
+- **Current step:** Original light PickBazar theme restored. All Sessions 18-33 code removed.
+- **Next action:** TBD — no active plan
+- **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 
 ## What Works Now
 | Service | Port | PM2 | Status | Domain |
@@ -18,12 +18,14 @@
 - Prerequisites: Node 18, npm, git, PM2, cloudflared, gh CLI
 - Build: All 3 services built and running via PM2
 - PM2 auto-start: Configured via systemd
-- Git: mhzsajan/pickbazar (private)
+- Git: mhzsajan/pickbazar (private) — `main` reset to `ace8c18` (force pushed)
 - Public URLs: switchgod.com.np, admin.switchgod.com.np, api.switchgod.com.np
 - Font: Google Sans Code (SIL Open Font License)
 - Mobile: All 67 audit issues fixed (Phase 8)
 - Modal UX: Close button, back button, swipe-to-go-back — all working
 - Add-to-cart: ⚠️ Issues found, code reverted, root causes documented
+- Theme: Pure light mode only — NO dark mode, NO dark toggle, NO canvas animations
+- Dark mode backup: `git checkout v2.0-dark-mode-full` to restore full dark mode state
 
 ## Rules
 - **npm, NOT yarn** (yarn hangs). Always `npm install --legacy-peer-deps`

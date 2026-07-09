@@ -21,6 +21,13 @@
 | 15 | Jun 28 | Fixed modal close button (z-[70]/z-[80]), back button, swipe-to-go-back |
 | 16 | Jun 28 | Attempted add-to-cart redesign (quantity popup), NOT pushed |
 | 17 | Jun 28 | Reverted add-to-cart changes, documented root causes in KNOWN_ISSUES.md |
+| 18-22 | Jun 28-29 | Dark blue theme (Midjourney-style #06051d), dark mode toggle, surface colors, Phase 10 visual fixes (SSR flash prevention, text-light→text-white, 37 UI fixes across 80+ files) |
+| 23 | Jun 29 | Tagged restore point `v1.0-20260629-0926`, backup branch `backup-pre-customization` |
+| 24-30 | Jun 29-Jul 9 | 7-layer particle canvas animations (orbs/constellation/streaks), scroll reveals, card hover effects |
+| 31 | Jul 9 | Hide shops nav for single-shop mode, redirect / to /grocery |
+| 32 | Jul 9 | Footer reorganization — new Policies section, cleaner menu layout |
+| 33 | Jul 9 | Color scheme consistency audit — fixed bg-gray-100/200→bg-surface/light across ~45 files, hardcoded hex borders → CSS var classes, color-scheme meta |
+| **34** | **Jul 9** | **FULL DARK MODE REVERT** — Hard reset to `ace8c18` (pre-dark-theme light PickBazar). Tagged current state as `v2.0-dark-mode-full`, backup branch `backup-dark-mode-full`. All Sessions 18-33 code removed. Sessions 1-17 preserved. |
 
 ---
 

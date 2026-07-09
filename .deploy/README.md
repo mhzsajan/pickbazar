@@ -59,13 +59,15 @@ All run under PM2 with auto-start on boot (systemd).
 | Services built | ✅ API, Shop, Admin |
 | PM2 running | ✅ api, shop, admin, tunnel |
 | PM2 auto-start | ✅ systemd + pm2 save |
-| Git pushed | ✅ mhzsajan/pickbazar (private) |
+| Git pushed | ✅ mhzsajan/pickbazar (private) — **force pushed to ace8c18** |
 | Cloudflare Tunnel | ✅ switchgod-tunnel, 3 DNS routes |
 | Public URLs | ✅ switchgod.com.np, admin.*, api.* |
 | Font | ✅ Google Sans Code (SIL Open Font License) |
 | Mobile audit | ✅ 67/67 issues fixed (Phase 8) |
 | Modal UX | ✅ Close button, back button, swipe-to-go-back |
 | Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
+| Theme | ✅ **Pure light mode** — no dark mode, no dark toggle |
+| Dark mode backup | 🔄 Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` |
 
 ---
 
@@ -160,4 +162,4 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 ---
 
 *Created: Session 2 — June 27, 2026*
-*Last updated: Session 17 — June 28, 2026*
+*Last updated: Session 34 — July 9, 2026*
