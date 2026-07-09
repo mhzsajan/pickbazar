@@ -62,16 +62,16 @@ export class ProductsService {
         fuzzyFilters.push({ [key]: value });
       }
     }
-    if (exactFilters.shop_id) {
-      data = data.filter((product) => product.shop.id === exactFilters.shop_id);
-    }
-
     if (fuzzyFilters.length) {
       data = fuse
         .search({
           $and: fuzzyFilters,
         })
         ?.map(({ item }) => item);
+    }
+
+    if (exactFilters.shop_id) {
+      data = data.filter((product) => product.shop.id === exactFilters.shop_id);
     }
 
     const results = data.slice(startIndex, endIndex);
