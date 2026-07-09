@@ -4,6 +4,7 @@ import { useAtom } from 'jotai';
 import Header from './header';
 import HeaderMinimal from './header-minimal';
 import Footer from '@/components/layouts/footer';
+import ParticleCanvas from '@/components/ui/particle-canvas';
 import { SearchIcon } from '@/components/icons/search-icon';
 import { displayMobileHeaderSearchAtom } from '@/store/display-mobile-header-search-atom';
 
@@ -22,7 +23,8 @@ export default function HomeLayout({
     displayMobileHeaderSearchAtom,
   );
   return (
-    <div className="flex min-h-screen flex-col bg-gray-100 transition-colors duration-150">
+    <div className="relative flex min-h-screen flex-col bg-transparent transition-colors duration-150">
+      <ParticleCanvas />
       {['minimal', 'compact'].includes(layout) ? (
         <HeaderMinimal layout={layout} />
       ) : (
