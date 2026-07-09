@@ -46,11 +46,11 @@ const PriceFilter = () => {
         onChange={(value: any) => handleChange(value)}
       />
       <div className="grid grid-cols-2 gap-3 mt-4">
-        <div className="flex flex-col items-start p-2 bg-gray-100 border border-border-100 rounded">
+        <div className="flex flex-col items-start p-2 bg-surface border border-border-100 rounded">
           <label className="text-sm font-semibold text-gray-700">Min</label>
           <span className="text-sm font-bold text-heading">{state[0]}</span>
         </div>
-        <div className="flex flex-col p-2 bg-gray-100 border border-border-100 rounded">
+        <div className="flex flex-col p-2 bg-surface border border-border-100 rounded">
           <label className="text-sm font-semibold text-gray-700">Max</label>
           <span className="text-sm font-bold text-heading">{state[1]}</span>
         </div>

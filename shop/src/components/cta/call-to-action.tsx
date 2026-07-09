@@ -12,7 +12,7 @@ const CallToAction = () => {
 
   return (
     <SectionBlock className="last:pb-0">
-      <div className="relative flex w-full overflow-hidden rounded-xl bg-gray-100 px-6 py-12 md:px-10 xl:px-32 xl:py-32">
+      <div className="relative flex w-full overflow-hidden rounded-xl bg-surface px-6 py-12 md:px-10 xl:px-32 xl:py-32">
         <Image
           src={PatternImg}
           fill

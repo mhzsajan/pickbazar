@@ -61,7 +61,7 @@ const CartItem = ({ item }: CartItemProps) => {
         />
       </div>
 
-      <div className="relative mx-4 flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden bg-gray-100 sm:h-16 sm:w-16">
+      <div className="relative mx-4 flex h-10 w-10 shrink-0 items-center justify-center overflow-hidden bg-surface sm:h-16 sm:w-16">
         <Image
           src={item?.image ?? siteSettings?.product?.placeholderImage}
           alt={item.name}
@@ -81,7 +81,7 @@ const CartItem = ({ item }: CartItemProps) => {
         {itemPrice}
       </span>
       <button
-        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-muted transition-all duration-200 hover:bg-gray-100 hover:text-red-600 focus:bg-gray-100 focus:text-red-600 focus:outline-0 ltr:ml-3 ltr:-mr-2 rtl:mr-3 rtl:-ml-2"
+        className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full text-muted transition-all duration-200 hover:bg-surface hover:text-red-600 focus:bg-surface focus:text-red-600 focus:outline-0 ltr:ml-3 ltr:-mr-2 rtl:mr-3 rtl:-ml-2"
         onClick={() => clearItemFromCart(item.id)}
       >
         <span className="sr-only">{t('text-close')}</span>

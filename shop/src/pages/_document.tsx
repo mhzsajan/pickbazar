@@ -17,6 +17,7 @@ export default class CustomDocument extends Document {
       // <Html dir={dir}>
       <Html suppressHydrationWarning>
         <Head>
+          <meta name="color-scheme" content="dark light" />
           <link
             href="https://cdn.jsdelivr.net/npm/@fontsource/google-sans-code@latest"
             rel="stylesheet"

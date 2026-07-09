@@ -38,7 +38,7 @@ const MenuBox = ({
       >
         <Menu.Items
           as="div"
-          className="absolute top-16 z-30 w-80 rounded-lg border border-border-100 bg-gray-100 shadow-box end-2 origin-top-end focus:outline-none sm:top-12 sm:mt-0.5 sm:end-0 lg:top-14 lg:mt-0"
+          className="absolute top-16 z-30 w-80 rounded-lg border border-border-100 bg-surface shadow-box end-2 origin-top-end focus:outline-none sm:top-12 sm:mt-0.5 sm:end-0 lg:top-14 lg:mt-0"
         >
           <Menu.Item>{children}</Menu.Item>
         </Menu.Items>

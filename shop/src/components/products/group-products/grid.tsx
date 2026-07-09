@@ -12,7 +12,7 @@ const GroupProductsGrid = ({ products }: { products: Product[] }) => {
         return (
           <Link
             href={Routes.product(product?.slug)}
-            className="relative grid w-full bg-gray-100 lg:even:col-span-2"
+            className="relative grid w-full bg-surface lg:even:col-span-2"
             key={product?.id}
           >
             <Image

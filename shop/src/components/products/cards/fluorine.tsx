@@ -155,7 +155,7 @@ const Fluorine: React.FC<FluorineProps> = ({
   return (
     <div
       className={twMerge(
-        classNames('relative overflow-hidden rounded-xl bg-gray-100', className)
+        classNames('relative overflow-hidden rounded-xl bg-surface', className)
       )}
     >
       <div className="relative w-auto h-48 md:h-[22.75rem] cursor-pointer">

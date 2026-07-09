@@ -64,7 +64,7 @@ export default function GooglePlacesAutocomplete({
           value={inputValue}
           onChange={(e) => setInputValue(e.target.value)}
           className={`line-clamp-1 flex h-12 w-full appearance-none items-center rounded border border-border-base p-4 pr-9 text-sm font-medium text-heading transition duration-300 ease-in-out invalid:border-red-500 focus:border-accent focus:outline-0 focus:ring-0 ${
-            disabled ? 'cursor-not-allowed border-[#D4D8DD] bg-[#EEF1F4]' : ''
+            disabled ? 'cursor-not-allowed border-border-base bg-surface' : ''
           }`}
           disabled={disabled}
         />

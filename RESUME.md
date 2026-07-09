@@ -10,9 +10,8 @@
 ---
 
 ## Where We Stopped
-- **Last completed:** Session 32 — Footer reorganization
-- **Current step:** Footer has Explore, Customer Service (FAQ/Contact/Terms), Policies (Refunds/Privacy). Shops hidden. See `SHOPS_RESTORE.md` to re-enable multi-shop later.
-- **Next action:** Tune newly added layers if needed, or try new effect from `.deploy/ANIMATIONS.md#6`
+- **Last completed:** Session 33 — Color scheme consistency audit
+- **Current step:** Fixed `bg-gray-100`/`bg-gray-200` → `bg-surface`/`bg-light` across ~45 files for consistent dark mode backgrounds. Replaced hardcoded hex borders and bg colors with CSS var classes. Added `<meta name="color-scheme">`. All 3 services running.
 - **Master plan:** `.deploy/PLAN.md` — tasks across 12 phases
 
 ## What Works Now
@@ -39,6 +38,7 @@
 - Dark mode UI fixes: text-light→text-white on colored backgrounds (44 files), Alert/notification/spinner/skeleton/counter/radio fixes, text-muted-black eliminated (6 files), hardcoded hex colors converted to CSS variables, banner overlays added
 - Animations: Seven-layer canvas (moon → orbs → sigils → gears → constellation → wisps → streaks), scroll reveals, card hover — see `.deploy/ANIMATIONS.md`
 - Theme: Phase 10 dark mode visual fixes — 37 tasks completed
+- Color scheme consistency: Fixed `bg-gray-100`/`bg-gray-200` → `bg-surface`/`bg-light` across ~45 files, replaced hardcoded hex borders (`border-[#D4D8DD]` → `border-border-base`) and bg colors (`bg-[#e6e5eb]`, `bg-[#F1F1F1]`, `bg-slate-*`), added `<meta name="color-scheme">` to `_document.tsx`
 
 ## Rules
 - **npm, NOT yarn** (yarn hangs). Always `npm install --legacy-peer-deps`

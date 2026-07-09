@@ -28,7 +28,7 @@ const ListMenu = ({ dept, data, hasSubMenu, menuIndex }: any) => {
 const SubMenu: React.FC<any> = ({ dept, data, menuIndex }) => {
   dept = dept + 1;
   return (
-    <ul className="subMenuChild border border-border-100 bg-gray-100 absolute z-0 ltr:right-full rtl:left-full ltr:2xl:right-auto rtl:2xl:left-auto ltr:2xl:left-full rtl:2xl:right-full opacity-0 invisible top-4 w-56 py-3 shadow-md">
+    <ul className="subMenuChild border border-border-100 bg-surface absolute z-0 ltr:right-full rtl:left-full ltr:2xl:right-auto rtl:2xl:left-auto ltr:2xl:left-full rtl:2xl:right-full opacity-0 invisible top-4 w-56 py-3 shadow-md">
       {data?.map((menu: any, index: number) => {
         const menuName: string = `sidebar-submenu-${dept}-${menuIndex}-${index}`;
 

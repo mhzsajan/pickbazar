@@ -22,7 +22,7 @@ const AuthorDetails: React.FC<Props> = ({ author }) => {
   return (
     <article className="flex flex-col space-y-8 pb-8 rtl:space-x-reverse md:flex-row md:space-y-0 md:space-x-10 lg:space-x-14 lg:pb-20">
       <div className="md:w-1/2">
-        <div className="product-gallery h-full rounded bg-gray-100 p-6 md:p-10 xl:p-14">
+        <div className="product-gallery h-full rounded bg-surface p-6 md:p-10 xl:p-14">
           <div className="flex h-full w-full items-center justify-center">
             <Image
               src={image?.original ?? avatarPlaceholder}

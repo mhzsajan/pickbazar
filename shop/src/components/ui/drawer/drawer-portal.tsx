@@ -81,7 +81,7 @@ export function DrawerPortal({
         >
           <div
             className={cn(
-              'fixed h-full w-full break-words bg-gray-100 shadow-xl',
+              'fixed h-full w-full break-words bg-light shadow-xl',
               placement === 'top' && 'top-0',
               placement === 'right' && 'inset-y-0 right-0',
               placement === 'bottom' && 'bottom-0',

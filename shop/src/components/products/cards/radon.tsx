@@ -48,7 +48,7 @@ const Radon: React.FC<RadonProps> = ({ product, className }) => {
     >
       <Link
         href={Routes.product(slug)}
-        className={`cursor-pointer relative rounded-lg flex bg-gray-100 w-full justify-center items-center overflow-hidden ${
+        className={        `cursor-pointer relative rounded-lg flex bg-surface w-full justify-center items-center overflow-hidden ${
           product?.type?.settings?.layoutType === 'compact'
             ? 'aspect-[2/3]'
             : 'aspect-square'

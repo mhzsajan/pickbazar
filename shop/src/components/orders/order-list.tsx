@@ -32,7 +32,7 @@ export default function OrderList({
 
   return (
     <div className="h-[80vh] min-h-[670px] w-full ltr:pr-5 rtl:pl-5 md:w-1/3 md:shrink-0 ltr:lg:pr-8 rtl:lg:pl-8">
-      <div className="flex h-full flex-col bg-gray-100 pb-5 md:border md:border-border-200">
+      <div className="flex h-full flex-col bg-light pb-5 md:border md:border-border-200">
         <h3 className="py-5 px-5 text-xl font-semibold text-heading">
           {t('profile-sidebar-orders')}
         </h3>

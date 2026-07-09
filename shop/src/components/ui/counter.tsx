@@ -43,7 +43,7 @@ const variantClasses = {
   details:
     'order-5 sm:order-4 w-full sm:w-24 h-10 bg-accent text-white rounded-full',
   pillVertical:
-    'flex-col-reverse items-center w-8 h-24 bg-gray-200 text-heading rounded-full',
+    'flex-col-reverse items-center w-8 h-24 bg-surface text-heading rounded-full',
   big: 'w-full h-14 rounded text-white bg-accent inline-flex justify-between',
   text: 'w-7 h-18 sm:w-20 sm:h-7 md:h-9 md:w-24 bg-accent flex-col-reverse sm:flex-row text-white rounded',
   bordered:
@@ -83,7 +83,7 @@ const Counter: React.FC<CounterProps> = ({
                   'px-5': variant === 'big',
                   'border border-border-200 px-5 hover:border-accent hover:!bg-transparent ltr:rounded-l rtl:rounded-r':
                     variant === 'bordered',
-                  'hover:!bg-gray-200': variant === 'pillVertical',
+                  'hover:!bg-surface': variant === 'pillVertical',
                 }
               )
             : cn('p-2 text-base', disabled ? 'text-muted' : 'text-accent')
@@ -118,7 +118,7 @@ const Counter: React.FC<CounterProps> = ({
                   'px-5': variant === 'big',
                   'border border-border-200 px-5 hover:border-accent hover:!bg-transparent hover:!text-accent ltr:rounded-r rtl:rounded-l':
                     variant === 'bordered',
-                  'hover:!bg-gray-200': variant === 'pillVertical',
+                  'hover:!bg-surface': variant === 'pillVertical',
                 }
               )
             : cn('p-2 text-base', disabled ? 'text-muted' : 'text-accent')

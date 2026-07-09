@@ -26,7 +26,7 @@ const ManufacturersGrid: React.FC<ManufacturersGridProps> = ({
 
   if (!isLoading && !manufacturers.length) {
     return (
-      <div className="min-h-full px-4 pt-6 pb-8 bg-gray-100 lg:p-8">
+      <div className="min-h-full px-4 pt-6 pb-8 bg-surface lg:p-8">
         <NotFound text="text-no-manufacturers" />
       </div>
     );

@@ -71,6 +71,7 @@ All run under PM2 with auto-start on boot (systemd).
 | Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
 | Dark mode visual audit | ✅ Phase 10 complete — 37 UI fixes across 80+ files |
 | Theme infrastructure | ✅ SSR flash prevention, darkMode class config, theme toggle targeting `<html>` |
+| Color scheme consistency | ✅ Fixed `bg-gray-100`/`bg-gray-200` → `bg-surface`/`bg-light` across ~45 files, replaced hardcoded hex borders/backgrounds with CSS var classes, added `color-scheme` meta tag |
 | Animations | ✅ Seven-layer canvas (moon → orbs → sigils → gears → constellation → wisps → streaks), scroll reveals, card hover — see `.deploy/ANIMATIONS.md` |
 
 ---
@@ -194,4 +195,4 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 ---
 
 *Created: Session 2 — June 27, 2026*
-*Last updated: Session 30 — June 29, 2026*
+*Last updated: Session 33 — July 9, 2026*

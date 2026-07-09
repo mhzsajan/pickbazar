@@ -12,11 +12,11 @@ import { useAtom } from 'jotai';
 export default function Modern({ variables }: HomePageProps) {
   const [underMaintenanceIsComing] = useAtom(checkIsMaintenanceModeComing);
   return (
-    <div className="flex flex-1 bg-gray-100">
+    <div className="flex flex-1 bg-light">
       <div
         className={twMerge(
           classNames(
-            'sticky hidden h-full bg-gray-100 lg:w-[380px] xl:block',
+            'sticky hidden h-full bg-surface lg:w-[380px] xl:block',
             underMaintenanceIsComing
               ? 'xl:top-32 2xl:top-36'
               : 'top-32 xl:top-24 2xl:top-22',

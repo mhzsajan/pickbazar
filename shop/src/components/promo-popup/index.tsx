@@ -35,11 +35,11 @@ const PromoPopup = () => {
 
   return (
     <Modal
-      closeButtonClass="lg:block bg-gray-200 h-10 w-10 rounded-full text-center [&>svg]:m-auto"
+      closeButtonClass="lg:block bg-surface h-10 w-10 rounded-full text-center [&>svg]:m-auto"
       open={isOpen}
       onClose={closeModalAction}
     >
-      <div className="w-full overflow-hidden max-w-4xl rounded-xl bg-gray-100">
+      <div className="w-full overflow-hidden max-w-4xl rounded-xl bg-light">
         {isLoading ? (
           <div className="p-6 md:p-12">
             <Spinner className="!h-auto" />

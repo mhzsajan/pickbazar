@@ -25,7 +25,7 @@ const OrderCard: React.FC<OrderCardProps> = ({ onClick, order, isActive }) => {
       onClick={onClick}
       role="button"
       className={cn(
-        'mb-4 flex w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded border-2 border-transparent bg-gray-100 last:mb-0',
+        'mb-4 flex w-full shrink-0 cursor-pointer flex-col overflow-hidden rounded border-2 border-transparent bg-light last:mb-0',
         isActive === true && '!border-accent',
       )}
     >

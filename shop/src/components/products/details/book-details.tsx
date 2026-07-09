@@ -107,7 +107,7 @@ const BookDetails: React.FC<Props> = ({ product, isModal = false }) => {
       <div className="flex flex-col border-b border-border-200 border-opacity-70 pb-14 lg:flex-row">
         <div className="lg:w-1/2">
           <div
-            className={`product-gallery h-full bg-gray-100  ${
+            className={`product-gallery h-full bg-surface  ${
               video?.length
                 ? 'book-product-video pb-6 md:pb-14'
                 : 'py-6 md:py-16'

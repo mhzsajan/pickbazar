@@ -86,7 +86,7 @@ const StripeBaseForm: React.FC<Props> = ({
                 name="owner_name"
                 placeholder={t('text-name')}
                 required
-                inputClassName="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300 focus:shadow-none"
+                inputClassName="h-auto rounded border border-solid border-border-base bg-surface py-[14px] px-4 text-heading transition-all duration-300 focus:shadow-none"
               />
             </label>
           </div>
@@ -101,7 +101,7 @@ const StripeBaseForm: React.FC<Props> = ({
                   style: cardInputStyle,
                   placeholder: t('text-card-number'),
                 }}
-                className="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300"
+                className="h-auto rounded border border-solid border-border-base bg-surface py-[14px] px-4 text-heading transition-all duration-300"
               />
             </Label>
           </div>
@@ -116,7 +116,7 @@ const StripeBaseForm: React.FC<Props> = ({
                   style: cardInputStyle,
                   placeholder: t('text-expire-date-placeholder'),
                 }}
-                className="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300"
+                className="h-auto rounded border border-solid border-border-base bg-surface py-[14px] px-4 text-heading transition-all duration-300"
               />
             </Label>
 
@@ -129,7 +129,7 @@ const StripeBaseForm: React.FC<Props> = ({
                   style: cardInputStyle,
                   placeholder: t('text-card-cvc'),
                 }}
-                className="h-auto rounded border border-solid border-[#D4D8DD] bg-gray-100 py-[14px] px-4 text-heading transition-all duration-300"
+                className="h-auto rounded border border-solid border-border-base bg-surface py-[14px] px-4 text-heading transition-all duration-300"
               />
             </Label>
           </div>

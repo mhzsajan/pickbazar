@@ -65,11 +65,11 @@ const SidebarFilter: React.FC<{
   return (
     <div
       className={classNames(
-        'flex h-full w-full flex-col rounded-xl border-border-100 bg-gray-100 lg:h-auto lg:border',
+        'flex h-full w-full flex-col rounded-xl border-border-100 bg-light lg:h-auto lg:border',
         className
       )}
     >
-      <div className="sticky top-0 z-10 flex items-center justify-between rounded-tl-xl rounded-tr-xl border-b border-border-100 bg-gray-100 px-5 py-6 lg:static">
+      <div className="sticky top-0 z-10 flex items-center justify-between rounded-tl-xl rounded-tr-xl border-b border-border-100 bg-light px-5 py-6 lg:static">
         <div className="flex items-center space-x-3 rtl:space-x-reverse lg:space-x-0">
           <button
             className="text-body focus:outline-0 lg:hidden"
@@ -121,7 +121,7 @@ const SidebarFilter: React.FC<{
           </FieldWrapper>
         )}
       </div>
-      <div className="sticky bottom-0 z-10 mt-auto border-t border-border-100 bg-gray-100 p-5 lg:hidden">
+      <div className="sticky bottom-0 z-10 mt-auto border-t border-border-100 bg-light p-5 lg:hidden">
         <Button
           className="w-full"
           onClick={() => closeSidebar({ display: false, view: '' })}

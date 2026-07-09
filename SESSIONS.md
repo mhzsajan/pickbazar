@@ -36,6 +36,7 @@
 | 30 | Jun 29 | Volume boost: sigils 4→6, gears 3→5, wisps 12→24. Full light mode visibility: 2-2.5x alpha boost on all theme layers, moon alpha 0.2 (dark) / 0.35 (light), constellation dots/lines boosted. |
 | 31 | Jun 29 | Hidden shops navigation for single-shop mode: removed "Shops" link from footer, redirected homepage `/` to `/grocery`. Created `SHOPS_RESTORE.md` for future multi-shop restoration. Minor text branding ("All Shops" → "Switch God!"). |
 | 32 | Jun 29 | Footer reorganization: created new "Policies" section (Customer/Vendor Refund, Privacy), reorganized Explore/Customer Service/Our Information, removed duplicate shops link. |
+| 33 | Jul 9 | Color scheme consistency audit: fixed `bg-gray-100`/`bg-gray-200` → `bg-surface`/`bg-light` across ~45 files, replaced hardcoded hex borders (`border-[#D4D8DD]` → `border-border-base`) in 3 files, replaced hardcoded bg colors (`bg-[#e6e5eb]`, `bg-[#F1F1F1]`, `bg-[#EEF1F4]`) with CSS var classes, replaced `bg-slate-200`/`text-slate-700` with themed grays, added `<meta name="color-scheme">` to `_document.tsx`, fixed layout containers (`modern.tsx`, `compact.tsx`, `layout.tsx`) for consistent page bg. |
 
 ---
 
@@ -65,3 +66,8 @@
 - **Per-streak colors:** Shooting stars pick from 10-vibrant-color palette (red, orange, gold, lime, green, cyan, blue, violet, magenta, hot pink) — `color` field per Streak object.
 - **Constellation tuning principle:** Particles should be sparse (60-180, divisor 12000), slow (jitter 0.02), and faint (alpha 0.25-0.6, line opacity 0.15) to serve as subtle ambient starfield, not a dense distracting web.
 - **7-layer canvas:** Draw order: moon → orbs → sigils → gears → constellation → wisps → streaks. All share one RAF loop, one context.
+- **bg-gray-100 vs bg-surface vs bg-light in dark mode:** All three are identical in light mode (`rgb(243,244,246)` for `bg-gray-100`/`bg-surface`, `white` for `bg-light`), but DIFFERENT in dark mode: `bg-light` = `rgb(6,5,29)`, `bg-gray-100` = `rgb(12,14,38)`, `bg-surface` = `rgb(16,18,45)`. Components mixing these create visible shade mismatches in dark mode. Fix: use `bg-light` for page backgrounds, `bg-surface` for cards/containers/surfaces, never `bg-gray-100`/`bg-gray-200` for backgrounds.
+- **bg-gray-200 in form inputs:** Fix: `bg-surface` gives consistent dark backgrounds in dark mode.
+- **Hardcoded hex borders break dark mode:** `border-[#D4D8DD]` (Stripe forms), `border-[#D1D5DB]` (notifications) stay light gray in dark mode. Always use `border-border-base` or `border-border-200` for theme-adaptive borders.
+- **Missing `<meta name="color-scheme">`:** Without this, browser chrome (scrollbars, form elements) uses light mode even when site is in dark mode. Add to `_document.tsx` `<Head>`.
+- **Tailwind built-in colors bypass theme:** `bg-slate-200`, `text-slate-700` etc. never adapt. Convert to CSS var-based grays (`bg-gray-300`, `text-heading`).

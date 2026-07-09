@@ -97,7 +97,7 @@ const MaintenanceMode = ({
     <div
       className={twMerge(
         classNames(
-          'relative h-screen min-h-[43.75rem] w-full bg-[#e6e5eb] text-center',
+          'relative h-screen min-h-[43.75rem] w-full bg-surface text-center',
           className,
         ),
       )}
@@ -145,10 +145,10 @@ const MaintenanceMode = ({
                 {data?.buttonTitleTwo ? (
                   <Button
                     onClick={() => handleSidebar('MAINTENANCE_MORE_INFO')}
-                    className="info-button group h-auto rounded-full bg-gray-100 py-2.5 text-sm text-slate-700 hover:bg-slate-300 hover:text-slate-600 md:text-base"
+                    className="info-button group h-auto rounded-full bg-gray-100 py-2.5 text-sm text-heading hover:bg-gray-200 md:text-base"
                   >
                     {data?.buttonTitleTwo}
-                    <span className="info-button-icon flex h-9 w-9 rounded-full bg-slate-300 text-heading duration-500 group-hover:bg-slate-400 group-hover:text-white ltr:ml-3 rtl:mr-3 rtl:rotate-180 rtl:transform">
+                    <span className="info-button-icon flex h-9 w-9 rounded-full bg-gray-200 text-heading duration-500 group-hover:bg-accent group-hover:text-white ltr:ml-3 rtl:mr-3 rtl:rotate-180 rtl:transform">
                       <LongArrowIcon className="m-auto text-3xl" />
                     </span>
                   </Button>
@@ -188,8 +188,8 @@ const MaintenanceMode = ({
       {isMultiLangEnable && !isEmpty(filterItem) ? (
         <div className="fixed bottom-5 right-5 z-50">
           {langOnClick ? (
-            <div className="absolute bottom-16 right-1 max-w-md overflow-hidden rounded-2xl bg-gray-100 shadow-lg md:bottom-24">
-              <div className="bg-[#f0f4f8] px-4 py-5 text-left text-lg font-bold leading-none text-heading md:px-8">
+            <div className="absolute bottom-16 right-1 max-w-md overflow-hidden rounded-2xl bg-light shadow-lg md:bottom-24">
+              <div className="bg-surface px-4 py-5 text-left text-lg font-bold leading-none text-heading md:px-8">
                 <h3>{t('text-title-change-language')}</h3>
               </div>
               <div className="flex gap-2 px-4 pt-5 pb-2 md:px-8">

@@ -69,7 +69,7 @@ const NotificationLists: React.FC<NotificationListsProps> = ({
             <div
               className={twMerge(
                 classNames(
-                  'cursor-pointer border text-heading border-[#D1D5DB] rounded-lg flex items-center gap-2 px-4 py-3 transition-colors duration-300',
+                  'cursor-pointer border text-heading border-border-base rounded-lg flex items-center gap-2 px-4 py-3 transition-colors duration-300',
                   !Boolean(notification?.is_read) || currentButtonLoading
                     ? 'hover:bg-gray-200'
                     : 'cursor-not-allowed select-none',

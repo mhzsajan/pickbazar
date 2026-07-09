@@ -216,7 +216,7 @@ const Header = ({ layout }: { layout?: string }) => {
                       onClick={() =>
                         setDisplayMobileHeaderSearch((prev) => !prev)
                       }
-                      className="inline-flex border border-accent-400 bg-gray-100 !px-4 text-accent lg:inline-flex"
+                      className="inline-flex border border-accent-400 bg-surface !px-4 text-accent lg:inline-flex"
                     >
                       <CloseIcon className="h-5 w-5" />
                     </Button>
@@ -258,7 +258,7 @@ const Header = ({ layout }: { layout?: string }) => {
                     </Button>
                     <LocationBasedShopForm
                       className={cn(
-                        'fixed inset-x-0 top-14 mx-auto bg-gray-100 lg:top-22',
+                        'fixed inset-x-0 top-14 mx-auto bg-surface lg:top-22',
                         openDropdown === true ? '' : 'hidden',
                       )}
                       closeLocation={closeLocation}
