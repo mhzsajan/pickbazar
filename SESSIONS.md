@@ -34,6 +34,7 @@
 | **38** | **Jul 17** | **Shops + Products persistence fixes** — `create()`/`update()`/`remove()` all persist to JSON files. Rebuilt + API restarted. |
 | **39** | **Jul 17** | **Orders persistence fix** — `create()` now builds new order instead of mutating `orders[0]`, pushes to array, persists. `update()`/`remove()`/`stripePay()`/`paypalPay()`/`changeOrderPaymentStatus()` all persist to `orders.json`. Order statuses also fixed. |
 | **40** | **Jul 17** | **Coupons, Users, Auth persistence fixes** — coupons create/update/approve/disapprove/remove persist. Users create/update/ban/active/makeAdmin/remove persist. Auth registration now writes new users to `users.json` (was in-memory only). |
+| **41** | **Jul 17** | **Categories, Types, Tags persistence fixes** — all three now persist create/update/remove to their respective JSON files. |
 
 ---
 
