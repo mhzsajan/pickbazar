@@ -1,9 +1,9 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 38 — Shops + Products persistence fixes
-- **Current step:** Shops and products can now be created/updated/deleted via admin. Data persists to JSON files.
-- **Next action:** Continue Phase 10 — fix Orders, Coupons, Users, Auth, then remaining services
+- **Last completed:** Session 42 — Phase 10 complete (all API services persist to JSON)
+- **Current step:** All admin CRUD operations now persist — shops, products, orders, coupons, users, categories, types, tags, reviews, questions, wishlists, shipping, taxes, attributes, manufacturers, authors, flash sales, store notices.
+- **Next action:** TBD — 43 tasks remaining in Phases 1-7, 9 (branding, SEO, security, mobile, navigation, bugs, performance, add-to-cart)
 - **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 
 ## What Works Now
@@ -26,9 +26,7 @@
 - Add-to-cart: ⚠️ Issues found, code reverted, root causes documented
 - Settings persistence: ✅ API now persists settings changes to `settings.json` (Session 36 fix)
 - Currency: ✅ Set to NPR via Admin Dashboard (Nepalese Rupee)
-- **API persistence (shops):** ✅ Shops — create/update/approve/disapprove/remove all persist to `shops.json`
-- **API persistence (products):** ✅ Products — create/update/remove all persist to `products.json`
-- **API persistence (other):** ❌ Orders, coupons, users, auth, categories, etc. still broken — Phase 10 ongoing
+- **API persistence:** ✅ **Phase 10 complete** (Sessions 36-42) — all 30+ services persist create/update/delete to JSON files
 - Theme: Pure light mode only — NO dark mode, NO dark toggle, NO canvas animations
 - Dark mode backup: `git checkout v2.0-dark-mode-full` to restore full dark mode state
 
