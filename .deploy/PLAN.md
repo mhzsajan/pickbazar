@@ -149,19 +149,6 @@
 
 ---
 
-> All changes reverted. Root causes documented in `.deploy/KNOWN_ISSUES.md`.
-
-| # | Task | Status | Priority |
-|---|------|--------|----------|
-| 9.1 | 2 "+ Cart" buttons in product popup | `[ ]` | HIGH |
-| 9.2 | Counter position after adding (appears at bottom) | `[ ]` | HIGH |
-| 9.3 | Popup scroll position when switching products | `[ ]` | MEDIUM |
-| 9.4-9.8 | Other add-to-cart issues (REVERTED) | `[ ]` | — |
-
-**Key files:** `add-to-cart.tsx`, `add-to-cart-btn.tsx`, `popup.tsx`, `details.tsx`, `short-details.tsx`
-
----
-
 ## Summary
 
 | Phase | Focus | Tasks | Done | Remaining |
@@ -180,4 +167,4 @@
 
 ---
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 37 — July 17, 2026*
+*Last updated: Session 38 — July 17, 2026*
