@@ -307,7 +307,7 @@ Two issues combined:
 
 ---
 
-## Fake Authentication — No Password Validation (CRITICAL, NOT YET FIXED)
+## Fake Authentication — No Password Validation (CRITICAL, FIXED in Session 45)
 
 ### Symptom
 Anyone who knows an email address (`admin@demo.com`, `store_owner@demo.com`) can log in as that user with **any password**. There is no real authentication.
@@ -343,16 +343,18 @@ Additionally:
 | No real token validation | **HIGH** — no session security |
 | Passwords stored in plaintext | **HIGH** — credential theft if DB leaked |
 
-### The Fix
-See `.deploy/PLAN.md` Phase 11. Requires:
+### The Fix (Implemented in Session 45)
+1. ✅ Install bcrypt + @nestjs/jwt + passport-jwt
+2. ✅ Hash passwords on register/create with bcrypt
+3. ✅ Validate passwords on login (removed hardcoded email checks)
+4. ✅ Create real JWT strategy with secret key
+5. ✅ Create JwtAuthGuard and protect `/me` endpoint
+6. ✅ Setup script created initial super admin (`mhzsajan@gmail.com`)
+7. ⬜ Not yet: Remove default demo users (user must confirm login works first)
 
-1. Install bcrypt + @nestjs/jwt + passport-jwt
-2. Hash passwords on register/create
-3. Validate passwords on login (remove hardcoded email checks)
-4. Create real JWT strategy with secret key
-5. Create JwtAuthGuard and protect admin endpoints
-6. Add setup script for initial super admin creation
-7. Remove default demo users
+### What still needs doing
+- Remove demo users from `users.json` (after user confirms login works)
+- Add JWT guards to more admin endpoints (Phase 3 task)
 
 ### Key Files
 - `api/rest/src/auth/auth.service.ts` — login/register (stub)

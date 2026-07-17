@@ -4,6 +4,7 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { GetUsersDto, UserPaginator } from './dto/get-users.dto';
 import { UpdateUserDto } from './dto/update-user.dto';
 import Fuse from 'fuse.js';
+import * as bcrypt from 'bcryptjs';
 import { User } from './entities/user.entity';
 import usersJson from '@db/users.json';
 import { paginate } from 'src/common/pagination/paginate';
@@ -26,8 +27,13 @@ export class UsersService {
     const newId = this.users.length > 0
       ? Math.max(...this.users.map((u) => u.id)) + 1
       : 1;
+    const userData: any = { ...createUserDto };
+    if (userData.password) {
+      const salt = bcrypt.genSaltSync(10);
+      userData.password = bcrypt.hashSync(userData.password, salt);
+    }
     const newUser: User = {
-      ...createUserDto,
+      ...userData,
       id: newId,
       is_active: true,
       created_at: new Date(),

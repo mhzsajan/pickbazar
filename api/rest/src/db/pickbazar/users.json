@@ -732,7 +732,9 @@
           "rating_count": [],
           "my_review": null,
           "in_wishlist": false,
-          "translated_languages": ["en"],
+          "translated_languages": [
+            "en"
+          ],
           "pivot": {
             "order_id": 48,
             "product_id": 206,
@@ -792,7 +794,9 @@
           "rating_count": [],
           "my_review": null,
           "in_wishlist": false,
-          "translated_languages": ["en"],
+          "translated_languages": [
+            "en"
+          ],
           "pivot": {
             "order_id": 48,
             "product_id": 207,
@@ -852,7 +856,9 @@
           "rating_count": [],
           "my_review": null,
           "in_wishlist": false,
-          "translated_languages": ["en"],
+          "translated_languages": [
+            "en"
+          ],
           "pivot": {
             "order_id": 48,
             "product_id": 203,
@@ -912,7 +918,9 @@
           "rating_count": [],
           "my_review": null,
           "in_wishlist": false,
-          "translated_languages": ["en"],
+          "translated_languages": [
+            "en"
+          ],
           "pivot": {
             "order_id": 48,
             "product_id": 204,
@@ -972,7 +980,9 @@
           "rating_count": [],
           "my_review": null,
           "in_wishlist": false,
-          "translated_languages": ["en"],
+          "translated_languages": [
+            "en"
+          ],
           "pivot": {
             "order_id": 48,
             "product_id": 205,
@@ -1032,7 +1042,9 @@
           "rating_count": [],
           "my_review": null,
           "in_wishlist": false,
-          "translated_languages": ["en"],
+          "translated_languages": [
+            "en"
+          ],
           "pivot": {
             "order_id": 48,
             "product_id": 208,
@@ -1792,5 +1804,47 @@
         }
       }
     ]
+  },
+  {
+    "id": 4,
+    "name": "Sajan Maharjan",
+    "email": "mhzsajan@gmail.com",
+    "password": "$2b$10$TBZQOQOD1cWeqmW5bQuLR.UyasxfRpMVxT5Hiz./QyMC963mkyOy6",
+    "email_verified_at": "2026-07-17T07:49:25.801Z",
+    "created_at": "2026-07-17T07:49:25.801Z",
+    "updated_at": "2026-07-17T07:49:25.801Z",
+    "is_active": 1,
+    "shop_id": null,
+    "email_verified": true,
+    "profile": {
+      "id": 4,
+      "avatar": null,
+      "bio": null,
+      "socials": null,
+      "contact": null,
+      "notifications": null,
+      "customer_id": 4,
+      "created_at": "2026-07-17T07:49:25.801Z",
+      "updated_at": "2026-07-17T07:49:25.801Z"
+    },
+    "permissions": [
+      {
+        "id": 1,
+        "name": "super_admin",
+        "guard_name": "api"
+      },
+      {
+        "id": 2,
+        "name": "customer",
+        "guard_name": "api"
+      },
+      {
+        "id": 3,
+        "name": "store_owner",
+        "guard_name": "api"
+      }
+    ],
+    "wallet": null,
+    "address": []
   }
 ]
