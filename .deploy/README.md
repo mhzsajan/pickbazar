@@ -14,6 +14,32 @@
 | **Host** | Ubuntu 24.04 desktop, hostname `switchserver` |
 | **Path** | `/home/switchgod/Desktop/pickbazar/` |
 | **Goal** | Self-hosted, exposed via Cloudflare Tunnel |
+| **Actual Use** | Single-company multi-department store (NOT multi-vendor marketplace) |
+
+## 1a. Important — How We Use This Platform
+
+> **AI NOTE:** PickBazar is designed as a multi-vendor marketplace (many vendors each have their own shop). We use it differently.
+
+**Our setup (Option A):** We are **one company** with multiple departments. Each department is created as a "Shop" in the system:
+
+| Department (Shop name in system) | Products |
+|---|---|
+| Auto Parts Shop | Car batteries, tires, engine oil |
+| Gaming Shop | Consoles, controllers, games |
+| Electronics Shop | Laptops, phones, chargers |
+| Computer IT Shop | Monitors, keyboards, cables |
+| Music Shop | Guitars, headphones, speakers |
+
+**Key implications for AI agents:**
+
+- We are the ONLY vendor. No external sellers. No "Become a Seller" flow needed.
+- "Shop" = department. "Shops page" = department listing page.
+- The homepage grid of shops shows our departments — this is correct behavior for our use case.
+- Frontend modifications should preserve this mental model. Don't remove the shop grid unless explicitly asked.
+- The `is_active` filter fix (Session 43) is critical — new departments must be approved before appearing.
+- We use **NPR** (Nepalese Rupee) as currency, set via Admin Dashboard (Session 36 fix).
+- All prices are in NPR.
+- See `.deploy/EMPLOYEE_MANUAL.md` for beginner instructions given to staff.
 
 ---
 
