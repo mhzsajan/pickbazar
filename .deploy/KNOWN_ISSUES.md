@@ -155,4 +155,72 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 
 ---
 
-*Created: Session 17 — June 28, 2026*
+## Widespread API Persistence Bug (Session 37, NOT YET FIXED)
+
+### Summary
+A full audit of all 46 API services revealed that **only Settings** has working persistence (fixed in Session 36). Every other service that exposes `create()` or `update()` silently ignores the input data and returns a static record from the in-memory JSON file.
+
+### What This Means
+| Action in Admin | What the user sees | What actually happens |
+|----------------|-------------------|---------------------|
+| Create a new shop | Form submits successfully | API returns `shops[0]` — your shop is lost |
+| Create a new product | Form submits successfully | API returns `products[0]` — your product is lost |
+| Register a new user | Success message | API pushes to in-memory array but never writes to file — lost on restart |
+| Create a coupon | Form submits successfully | API returns `coupons[0]` — your coupon is lost |
+| Approve/ban a shop | UI toggles | In-memory only — resets on restart |
+| Create any entity | Success notification | **Nothing is saved** |
+
+### Root Cause
+Every service follows this pattern — load JSON once at module startup, store in memory, but never write back:
+
+```typescript
+// Common pattern across ALL services (broken):
+const data = plainToClass(Model, jsonData);
+
+@Injectable()
+export class SomeService {
+  private items = data;  // in-memory copy
+
+  create(dto: CreateDto) {
+    return this.items[0];   // ← ignores dto, returns first dummy record
+  }
+
+  update(id: number, dto: UpdateDto) {
+    return this.items[0];   // ← ignores dto and id, returns first dummy record
+  }
+}
+```
+
+### Affected Services (30+)
+All services under `api/rest/src/` that load from `@db/*.json`:
+- **Shops** — `shops.service.ts`
+- **Products** — `products.service.ts`
+- **Categories** — `categories.service.ts`
+- **Orders** — `orders.service.ts`
+- **Coupons** — `coupons.service.ts`
+- **Users** — `users.service.ts`
+- **Types, Tags, Brands, Attributes, Taxes, Shippings**
+- **Reviews, Questions, Wishlists**
+- **Refunds, Refund Policies, Refund Reasons**
+- **Terms & Conditions, Flash Sales, Store Notices**
+- **Conversations, Messages, FAQs, Become Seller, Ownership Transfer**
+- **Withdraws, Manufacturers, Authors**
+- **Auth register** (pushes to array but no file write)
+
+### The Fix Pattern
+Each service needs the same treatment as Settings:
+1. Merge the DTO into the in-memory data (push to arrays for `create`, update fields for `update`)
+2. Add a `saveToFile()` private method using `fs.writeFileSync`
+3. Call it after every mutation
+
+### Priority Order (Recommended)
+1. **HIGH** — Shops, Products, Orders, Coupons, Users, Auth (register)
+2. **MEDIUM** — Categories, Types, Tags, Reviews, Questions, Wishlists
+3. **LOW** — Everything else (shipping, taxes, flash sales, etc.)
+
+See `.deploy/PLAN.md` Phase 10 for the full task breakdown.
+
+---
+
+*Created: Session 17 — June 28, 2026*<br>
+*Updated: Session 37 — July 17, 2026*

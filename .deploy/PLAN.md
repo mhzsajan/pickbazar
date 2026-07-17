@@ -123,6 +123,45 @@
 
 ---
 
+## Phase 10 — API Persistence (Data Actually Saves)
+
+> **HIGH PRIORITY** — Without this, creating/editing anything in the admin does nothing. All 30+ API services ignore input data and return static mock records.
+
+| # | Task | Status | Priority |
+|---|------|--------|----------|
+| 10.1 | Fix **shops** service — create/update/approve persist to `shops.json` | `[x]` | **HIGH** |
+| 10.2 | Fix **products** service — create/update persist to `products.json` | `[x]` | **HIGH** |
+| 10.3 | Fix **orders** service — create/update/payment status persist to `orders.json` | `[ ]` | **HIGH** |
+| 10.4 | Fix **coupons** service — create/update/approve persist to `coupons.json` | `[ ]` | **HIGH** |
+| 10.5 | Fix **users** service — create/update/ban persist to `users.json` | `[ ]` | **HIGH** |
+| 10.6 | Fix **auth registration** — new users persist to `users.json` (not just in-memory) | `[ ]` | **HIGH** |
+| 10.7 | Fix **categories, types, tags** services | `[ ]` | MEDIUM |
+| 10.8 | Fix **reviews, questions, wishlists** services | `[ ]` | MEDIUM |
+| 10.9 | Fix **remaining services** (shipping, taxes, flash sales, attributes, manufacturers, authors, withdraws, refunds, etc.) | `[ ]` | LOW |
+| 10.10 | Fix **admin UI bugs** (commented-out image validation, yup type mismatches, `console.log` in shop form) | `[ ]` | LOW |
+
+**Key files:** All files under `api/rest/src/*/`. See `.deploy/KNOWN_ISSUES.md` → "Widespread API Persistence Bug" for full details.
+
+**Fix pattern** (same as Settings in Session 36):
+1. After mutating in-memory data, call `saveToFile()` that writes to the corresponding `src/db/pickbazar/*.json`
+2. `create()` should push new items to arrays, `update()` should merge into existing items
+3. After each fix: `npx nest build && pm2 restart api`
+
+---
+
+> All changes reverted. Root causes documented in `.deploy/KNOWN_ISSUES.md`.
+
+| # | Task | Status | Priority |
+|---|------|--------|----------|
+| 9.1 | 2 "+ Cart" buttons in product popup | `[ ]` | HIGH |
+| 9.2 | Counter position after adding (appears at bottom) | `[ ]` | HIGH |
+| 9.3 | Popup scroll position when switching products | `[ ]` | MEDIUM |
+| 9.4-9.8 | Other add-to-cart issues (REVERTED) | `[ ]` | — |
+
+**Key files:** `add-to-cart.tsx`, `add-to-cart-btn.tsx`, `popup.tsx`, `details.tsx`, `short-details.tsx`
+
+---
+
 ## Summary
 
 | Phase | Focus | Tasks | Done | Remaining |
@@ -136,9 +175,9 @@
 | 7 — Performance | Speed | 3 | 0 | 3 |
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
-| **Total** | | **112** | **69** | **43** |
+| **10 — API Persistence** | **Data actually saves** | **10** | **2** | **8** |
+| **Total** | | **122** | **71** | **51** |
 
 ---
-
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 17 — June 28, 2026*
+*Last updated: Session 37 — July 17, 2026*

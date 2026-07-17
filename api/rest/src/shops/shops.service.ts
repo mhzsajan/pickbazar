@@ -9,6 +9,8 @@ import Fuse from 'fuse.js';
 import { GetShopsDto } from './dto/get-shops.dto';
 import { paginate } from 'src/common/pagination/paginate';
 import { GetStaffsDto } from './dto/get-staffs.dto';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const shops = plainToClass(Shop, shopsJson);
 const nearShops = plainToClass(Shop, nearShopJson);
@@ -24,7 +26,24 @@ export class ShopsService {
   private nearShops: Shop[] = shops;
 
   create(createShopDto: CreateShopDto) {
-    return this.shops[0];
+    const newId = this.shops.length > 0
+      ? Math.max(...this.shops.map((s) => s.id)) + 1
+      : 1;
+    const newShop: Shop = {
+      ...createShopDto,
+      id: newId,
+      slug: createShopDto.name.toLowerCase().replace(/\s+/g, '-'),
+      is_active: false,
+      orders_count: 0,
+      products_count: 0,
+      owner: null,
+      owner_id: 1,
+      created_at: new Date(),
+      updated_at: new Date(),
+    } as Shop;
+    this.shops.push(newShop);
+    this.saveToFile();
+    return newShop;
   }
 
   getShops({ search, limit, page }: GetShopsDto) {
@@ -103,28 +122,54 @@ export class ShopsService {
   }
 
   update(id: number, updateShopDto: UpdateShopDto) {
-    return this.shops[0];
+    const index = this.shops.findIndex((s) => s.id === Number(id));
+    if (index === -1) return null;
+    this.shops[index] = {
+      ...this.shops[index],
+      ...updateShopDto,
+      updated_at: new Date(),
+    };
+    this.saveToFile();
+    return this.shops[index];
   }
 
   approve(id: number) {
-    return `This action removes a #${id} shop`;
+    const shop = this.shops.find((s) => s.id === Number(id));
+    if (!shop) return null;
+    shop.is_active = true;
+    shop.updated_at = new Date();
+    this.saveToFile();
+    return shop;
   }
 
   remove(id: number) {
-    return `This action removes a #${id} shop`;
+    const index = this.shops.findIndex((s) => s.id === Number(id));
+    if (index === -1) return null;
+    const removed = this.shops.splice(index, 1)[0];
+    this.saveToFile();
+    return removed;
   }
 
   disapproveShop(id: number) {
     const shop = this.shops.find((s) => s.id === Number(id));
+    if (!shop) return null;
     shop.is_active = false;
-
+    shop.updated_at = new Date();
+    this.saveToFile();
     return shop;
   }
 
   approveShop(id: number) {
     const shop = this.shops.find((s) => s.id === Number(id));
+    if (!shop) return null;
     shop.is_active = true;
-
+    shop.updated_at = new Date();
+    this.saveToFile();
     return shop;
+  }
+
+  private saveToFile() {
+    const filePath = path.join(process.cwd(), 'src', 'db', 'pickbazar', 'shops.json');
+    fs.writeFileSync(filePath, JSON.stringify(this.shops, null, 2));
   }
 }
