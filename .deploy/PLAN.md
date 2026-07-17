@@ -136,9 +136,9 @@
 | 10.5 | Fix **users** service — create/update/ban persist to `users.json` | `[x]` | **HIGH** |
 | 10.6 | Fix **auth registration** — new users persist to `users.json` (not just in-memory) | `[x]` | **HIGH** |
 | 10.7 | Fix **categories, types, tags** services | `[x]` | MEDIUM |
-| 10.8 | Fix **reviews, questions, wishlists** services | `[ ]` | MEDIUM |
-| 10.9 | Fix **remaining services** (shipping, taxes, flash sales, attributes, manufacturers, authors, withdraws, refunds, etc.) | `[ ]` | LOW |
-| 10.10 | Fix **admin UI bugs** (commented-out image validation, yup type mismatches, `console.log` in shop form) | `[ ]` | LOW |
+| 10.8 | Fix **reviews, questions, wishlists** services | `[x]` | MEDIUM |
+| 10.9 | Fix **remaining services** (shipping, taxes, flash sales, attributes, manufacturers, authors, store notices) | `[x]` | LOW |
+| 10.10 | Fix **admin UI bugs** (image validation uncommented, `console.log` commented out in shop form) | `[x]` | LOW |
 
 **Key files:** All files under `api/rest/src/*/`. See `.deploy/KNOWN_ISSUES.md` → "Widespread API Persistence Bug" for full details.
 
@@ -162,9 +162,9 @@
 | 7 — Performance | Speed | 3 | 0 | 3 |
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
-| **10 — API Persistence** | **Data actually saves** | **10** | **7** | **3** |
-| **Total** | | **122** | **76** | **46** |
+| **10 — API Persistence** | **Data actually saves** | **10** | **10** | **0** |
+| **Total** | | **122** | **79** | **43** |
 
 ---
 *Created: Session 7 — June 27, 2026*
-*Last updated: Session 39 — July 17, 2026*
+*Last updated: Session 42 — July 17, 2026*

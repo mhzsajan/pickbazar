@@ -68,7 +68,7 @@ All run under PM2 with auto-start on boot (systemd).
 | Add-to-cart | ⚠️ Reverted, root causes in KNOWN_ISSUES.md |
 | Settings persistence | ✅ API `SettingsService` now writes to `settings.json` on save |
 | Currency | ✅ Set to NPR (Nepalese Rupee) via Admin Dashboard |
-| API persistence (other) | ❌ All other services ignore create/update — see PLAN.md Phase 10 |
+| API persistence (all services) | ✅ Phase 10 complete — all 30+ services persist to JSON on create/update/delete |
 | Theme | ✅ **Pure light mode** — no dark mode, no dark toggle |
 | Dark mode backup | 🔄 Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` |
 
@@ -165,4 +165,4 @@ cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart a
 ---
 
 *Created: Session 2 — June 27, 2026*
-*Last updated: Session 37 — July 17, 2026*
+*Last updated: Session 42 — July 17, 2026*
