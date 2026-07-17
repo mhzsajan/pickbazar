@@ -35,8 +35,8 @@
       "socials": []
     },
     "notifications": null,
-    "created_at": "2023-10-02T17:42:55.000000Z",
-    "updated_at": "2023-10-19T07:02:38.000000Z",
+    "created_at": "2023-10-02T17:42:55.000Z",
+    "updated_at": "2023-10-19T07:02:38.000Z",
     "orders_count": 3,
     "products_count": 26,
     "owner": {
@@ -102,8 +102,8 @@
       "socials": []
     },
     "notifications": null,
-    "created_at": "2023-10-02T08:38:16.000000Z",
-    "updated_at": "2023-10-19T06:54:37.000000Z",
+    "created_at": "2023-10-02T08:38:16.000Z",
+    "updated_at": "2023-10-19T06:54:37.000Z",
     "orders_count": 0,
     "products_count": 44,
     "owner": {
@@ -167,8 +167,8 @@
       "socials": []
     },
     "notifications": null,
-    "created_at": "2021-12-07T16:47:07.000000Z",
-    "updated_at": "2023-10-25T03:30:21.000000Z",
+    "created_at": "2021-12-07T16:47:07.000Z",
+    "updated_at": "2023-10-25T03:30:21.000Z",
     "orders_count": 6,
     "products_count": 67,
     "owner": {
@@ -252,8 +252,8 @@
       }
     },
     "notifications": null,
-    "created_at": "2021-06-27T03:48:23.000000Z",
-    "updated_at": "2023-10-19T07:05:23.000000Z",
+    "created_at": "2021-06-27T03:48:23.000Z",
+    "updated_at": "2023-10-19T07:05:23.000Z",
     "orders_count": 4,
     "products_count": 584,
     "owner": {
@@ -330,8 +330,8 @@
       }
     },
     "notifications": null,
-    "created_at": "2021-06-27T03:48:11.000000Z",
-    "updated_at": "2023-10-12T04:44:06.000000Z",
+    "created_at": "2021-06-27T03:48:11.000Z",
+    "updated_at": "2023-10-12T04:44:06.000Z",
     "orders_count": 0,
     "products_count": 72,
     "owner": {
@@ -410,8 +410,8 @@
       }
     },
     "notifications": null,
-    "created_at": "2021-06-27T03:47:49.000000Z",
-    "updated_at": "2023-10-19T07:04:43.000000Z",
+    "created_at": "2021-06-27T03:47:49.000Z",
+    "updated_at": "2023-10-19T07:04:43.000Z",
     "orders_count": 2,
     "products_count": 81,
     "owner": {
@@ -492,8 +492,8 @@
       }
     },
     "notifications": null,
-    "created_at": "2021-06-27T03:47:23.000000Z",
-    "updated_at": "2023-10-19T06:52:14.000000Z",
+    "created_at": "2021-06-27T03:47:23.000Z",
+    "updated_at": "2023-10-19T06:52:14.000Z",
     "orders_count": 2,
     "products_count": 15,
     "owner": {
@@ -569,8 +569,8 @@
       }
     },
     "notifications": null,
-    "created_at": "2021-06-27T03:47:10.000000Z",
-    "updated_at": "2023-10-19T06:51:41.000000Z",
+    "created_at": "2021-06-27T03:47:10.000Z",
+    "updated_at": "2023-10-19T06:51:41.000Z",
     "orders_count": 0,
     "products_count": 64,
     "owner": {
@@ -643,8 +643,8 @@
       }
     },
     "notifications": null,
-    "created_at": "2021-06-27T03:46:14.000000Z",
-    "updated_at": "2023-10-12T04:40:13.000000Z",
+    "created_at": "2021-06-27T03:46:14.000Z",
+    "updated_at": "2023-10-12T04:40:13.000Z",
     "orders_count": 2,
     "products_count": 55,
     "owner": {
@@ -673,5 +673,42 @@
         "updated_at": "2021-06-30T14:13:53.000000Z"
       }
     }
+  },
+  {
+    "settings": {
+      "notifications": {},
+      "contact": "9779808474123",
+      "website": "www.switchgod.com",
+      "socials": [],
+      "location": {}
+    },
+    "balance": {
+      "payment_info": {
+        "name": "Manju Maharjan",
+        "email": "mhzmannzu@gmail.com",
+        "bank": "NIC Asia Bank",
+        "account": 234658599837
+      }
+    },
+    "name": "Gaming",
+    "description": "abcdefghijklmnopqrstuvwxyz",
+    "address": {
+      "country": "Nepal",
+      "city": "Kathmandu",
+      "state": "Bagmati",
+      "zip": "44600",
+      "street_address": ""
+    },
+    "id": 12,
+    "slug": "gaming",
+    "is_active": true,
+    "orders_count": 0,
+    "products_count": 0,
+    "owner": null,
+    "owner_id": 1,
+    "created_at": "2026-07-17T06:42:38.869Z",
+    "updated_at": "2026-07-17T07:05:08.111Z",
+    "logo": null,
+    "cover_image": null
   }
 ]

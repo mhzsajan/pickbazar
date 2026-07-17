@@ -277,5 +277,35 @@ See `.deploy/PLAN.md` Phase 10 for the full task breakdown.
 
 ---
 
+---
+
+## Orphaned Products from Deleted Shop (Session 44, FIXED)
+
+### Symptom
+After creating a new "Gaming" shop, it showed 188 products from a different shop ("noaw" — previously deleted). The products were not related to Gaming.
+
+### Root Cause
+Two issues combined:
+
+1. **Orphaned data:** A shop named "noaw" (ID 12) previously existed and had 188 products. When "noaw" was deleted from `shops.json`, its products stayed in `products.json` with `shop.id = 12`. The new "Gaming" shop was assigned the same ID (12) via auto-increment, inheriting all of noaw's orphaned products.
+
+2. **dist/DB desync:** The API runs from `dist/main.js` and reads JSON from `dist/db/pickbazar/`, NOT from `src/db/pickbazar/`. Editing `src/db/pickbazar/products.json` alone had no effect — the file in `dist/db/` still contained the old data. The API restart appeared to pick up nothing because it was reading the stale dist copy.
+
+### The Fix
+1. Filtered out 188 products with `shop.id === 12` from `products.json`
+2. Copied the updated file to `dist/db/pickbazar/products.json`
+3. Restarted API: `pm2 restart api`
+
+### Key Files
+- `api/rest/src/db/pickbazar/products.json` — primary data
+- `api/rest/dist/db/pickbazar/products.json` — runtime copy (the one the API actually reads)
+
+### What NOT to Do
+- Do NOT edit `dist/db/` directly — always edit `src/db/` then copy to `dist/db/`
+- Do NOT assume `pm2 restart api` picks up `src/` edits — the `dist/` copy is what matters at runtime
+- Do NOT reuse shop IDs that previously belonged to deleted shops — orphaned products may persist
+
+---
+
 *Created: Session 17 — June 28, 2026*<br>
-*Updated: Session 37 — July 17, 2026*
+*Updated: Session 44 — July 17, 2026*

@@ -37,6 +37,7 @@
 | **41** | **Jul 17** | **Categories, Types, Tags persistence fixes** — all three now persist create/update/remove to their respective JSON files. |
 | **42** | **Jul 17** | **Reviews, Questions, Wishlists persistence fixes** — all persist to JSON. **Remaining services fixed** — shipping, taxes, attributes, manufacturers, authors, flash sales, store notices. **Admin UI bugs** — removed debug console.log, uncommented image validation error message. Phase 10 complete (10/10). |
 | **43** | **Jul 17** | **Shop visibility fix** — `getShops()` `is_active` filter was broken: the proper `data.filter()` was commented out and replaced with `fuse.search("1")` (fuzzy text search for string "1"). Fixed to separate exact filters from fuzzy filters. Approved shops now appear on frontend. |
+| **44** | **Jul 17** | **Orphaned products cleanup** — New "Gaming" shop (ID 12) showed 188 phantom products from old deleted "noaw" shop that also had ID 12. Removed from `products.json`. Also discovered API reads JSON from `dist/db/pickbazar/` — `src/db/` edits must be synced to `dist/db/` before restart. |
 
 ---
 
@@ -50,3 +51,4 @@
 - **Add-to-cart:** Intersection observer `threshold: 1` triggers sticky bar on mobile (content taller than viewport)
 - **API filter order matters:** Apply fuzzy search (`fuse.search`) BEFORE exact filters (`shop_id`). Doing it in reverse causes fuzzy search on ALL products to overwrite the filtered set.
 - **Settings persistence:** API's `SettingsService` initially returned in-memory copy without merging DTO or writing to JSON. Admin UI appeared to save (local React state updated on "success") but data was lost. To fix: merge DTO into in-memory object + `fs.writeFileSync` to `settings.json`. API rebuild + restart required after change.
+- **API dist/DB sync:** The API runs from `dist/main.js` and reads DB JSON files from `dist/db/pickbazar/`, NOT `src/db/pickbazar/`. Editing DB files in `src/` requires copying them to `dist/db/` before restart. Rebuilding with `npx nest build` auto-copies them.

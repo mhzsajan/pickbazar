@@ -141,6 +141,7 @@ NEXT_PUBLIC_VERSION=11.10.2
 7. After changes: `rm -rf .next` before rebuild
 8. Don't push until user approves on localhost
 9. User is beginner — explain commands before running
+10. **⚠️ API reads JSON from `dist/db/pickbazar/`, NOT `src/db/pickbazar/`** — after editing DB files in `src/`, copy them to `dist/db/` before restart
 
 ---
 
@@ -160,6 +161,9 @@ cd /home/switchgod/Desktop/pickbazar/admin/rest && rm -rf .next && npx next buil
 
 # Rebuild API
 cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart api
+
+# Quick DB edit (no rebuild) — copy updated JSON to dist/
+cp api/rest/src/db/pickbazar/*.json api/rest/dist/db/pickbazar/ && pm2 restart api
 ```
 
 ---
