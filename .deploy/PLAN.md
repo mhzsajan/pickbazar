@@ -132,9 +132,9 @@
 | 10.1 | Fix **shops** service — create/update/approve persist to `shops.json` | `[x]` | **HIGH** |
 | 10.2 | Fix **products** service — create/update persist to `products.json` | `[x]` | **HIGH** |
 | 10.3 | Fix **orders** service — create/update/payment status persist to `orders.json` | `[x]` | **HIGH** |
-| 10.4 | Fix **coupons** service — create/update/approve persist to `coupons.json` | `[ ]` | **HIGH** |
-| 10.5 | Fix **users** service — create/update/ban persist to `users.json` | `[ ]` | **HIGH** |
-| 10.6 | Fix **auth registration** — new users persist to `users.json` (not just in-memory) | `[ ]` | **HIGH** |
+| 10.4 | Fix **coupons** service — create/update/approve persist to `coupons.json` | `[x]` | **HIGH** |
+| 10.5 | Fix **users** service — create/update/ban persist to `users.json` | `[x]` | **HIGH** |
+| 10.6 | Fix **auth registration** — new users persist to `users.json` (not just in-memory) | `[x]` | **HIGH** |
 | 10.7 | Fix **categories, types, tags** services | `[ ]` | MEDIUM |
 | 10.8 | Fix **reviews, questions, wishlists** services | `[ ]` | MEDIUM |
 | 10.9 | Fix **remaining services** (shipping, taxes, flash sales, attributes, manufacturers, authors, withdraws, refunds, etc.) | `[ ]` | LOW |
@@ -162,8 +162,8 @@
 | 7 — Performance | Speed | 3 | 0 | 3 |
 | 8 — Mobile Audit | Visual/UX fixes | 67 | 67 | 0 |
 | 9 — Add-to-Cart | Flow redesign | 8 | 0 | 8 |
-| **10 — API Persistence** | **Data actually saves** | **10** | **3** | **7** |
-| **Total** | | **122** | **72** | **50** |
+| **10 — API Persistence** | **Data actually saves** | **10** | **6** | **4** |
+| **Total** | | **122** | **75** | **47** |
 
 ---
 *Created: Session 7 — June 27, 2026*

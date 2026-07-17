@@ -7,6 +7,8 @@ import Fuse from 'fuse.js';
 import { User } from './entities/user.entity';
 import usersJson from '@db/users.json';
 import { paginate } from 'src/common/pagination/paginate';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const users = plainToClass(User, usersJson);
 
@@ -21,7 +23,19 @@ export class UsersService {
   private users: User[] = users;
 
   create(createUserDto: CreateUserDto) {
-    return this.users[0];
+    const newId = this.users.length > 0
+      ? Math.max(...this.users.map((u) => u.id)) + 1
+      : 1;
+    const newUser: User = {
+      ...createUserDto,
+      id: newId,
+      is_active: true,
+      created_at: new Date(),
+      updated_at: new Date(),
+    } as unknown as User;
+    this.users.push(newUser);
+    this.saveToFile();
+    return newUser;
   }
 
   async getUsers({
@@ -78,31 +92,55 @@ export class UsersService {
   }
 
   update(id: number, updateUserDto: UpdateUserDto) {
-    return this.users[0];
+    const index = this.users.findIndex((u) => u.id === Number(id));
+    if (index === -1) return null;
+    const { profile, address, ...rest } = updateUserDto;
+    this.users[index] = {
+      ...this.users[index],
+      ...rest,
+      updated_at: new Date(),
+    };
+    this.saveToFile();
+    return this.users[index];
   }
 
   remove(id: number) {
-    return `This action removes a #${id} user`;
+    const index = this.users.findIndex((u) => u.id === Number(id));
+    if (index === -1) return null;
+    const removed = this.users.splice(index, 1)[0];
+    this.saveToFile();
+    return removed;
   }
 
   makeAdmin(user_id: string) {
-    return this.users.find((u) => u.id === Number(user_id));
+    const user = this.users.find((u) => u.id === Number(user_id));
+    if (!user) return null;
+    user.updated_at = new Date();
+    this.saveToFile();
+    return user;
   }
 
   banUser(id: number) {
     const user = this.users.find((u) => u.id === Number(id));
-
+    if (!user) return null;
     user.is_active = !user.is_active;
-
+    user.updated_at = new Date();
+    this.saveToFile();
     return user;
   }
 
   activeUser(id: number) {
     const user = this.users.find((u) => u.id === Number(id));
-
+    if (!user) return null;
     user.is_active = !user.is_active;
-
+    user.updated_at = new Date();
+    this.saveToFile();
     return user;
+  }
+
+  private saveToFile() {
+    const filePath = path.join(process.cwd(), 'src', 'db', 'pickbazar', 'users.json');
+    fs.writeFileSync(filePath, JSON.stringify(this.users, null, 2));
   }
 
   async getAdmin({

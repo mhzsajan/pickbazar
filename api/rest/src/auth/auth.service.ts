@@ -18,6 +18,8 @@ import { v4 as uuidv4 } from 'uuid';
 import { plainToClass } from 'class-transformer';
 import { User } from 'src/users/entities/user.entity';
 import usersJson from '@db/users.json';
+import * as fs from 'fs';
+import * as path from 'path';
 const users = plainToClass(User, usersJson);
 
 @Injectable()
@@ -33,6 +35,7 @@ export class AuthService {
     };
 
     this.users.push(user);
+    this.saveToFile();
     return {
       token: 'jwt token',
       permissions: ['super_admin', 'customer'],
@@ -155,7 +158,8 @@ export class AuthService {
     return this.users[0];
   }
 
-  // updateUser(id: number, updateUserInput: UpdateUserInput) {
-  //   return `This action updates a #${id} user`;
-  // }
+  private saveToFile() {
+    const filePath = path.join(process.cwd(), 'src', 'db', 'pickbazar', 'users.json');
+    fs.writeFileSync(filePath, JSON.stringify(this.users, null, 2));
+  }
 }
