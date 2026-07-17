@@ -31,7 +31,8 @@
 | **35** | **Jul 9** | **Shop product filter fix** — Reordered fuzzy search before exact `shop_id` filter in API service. All shops now show correct products. Restored canvas animation on homepage only. |
 | **36** | **Jul 17** | **Settings persistence fix** — API's `SettingsService.create()/update()` silently ignored all input data. Fixed to merge + write to `settings.json` on save. Currency change (USD→NPR) now persists to JSON and reflects in shop frontend. |
 | **37** | **Jul 17** | **Full API persistence audit** — Audited all 46 API services. Found same bug in 30+ services (shops, products, orders, users, coupons, etc.). Documented in `KNOWN_ISSUES.md`, added Phase 10 to `PLAN.md`. Next: fix shops & products. |
-| **38** | **Jul 17** | **Shops persistence fix** — `create()` now pushes new shop with auto-ID, `update()` merges DTO by ID, `approve/disapprove/remove` all work + persist to `shops.json`. **Products persistence fix** — same pattern. Both rebuilt + API restarted. |
+| **38** | **Jul 17** | **Shops + Products persistence fixes** — `create()`/`update()`/`remove()` all persist to JSON files. Rebuilt + API restarted. |
+| **39** | **Jul 17** | **Orders persistence fix** — `create()` now builds new order instead of mutating `orders[0]`, pushes to array, persists. `update()`/`remove()`/`stripePay()`/`paypalPay()`/`changeOrderPaymentStatus()` all persist to `orders.json`. Order statuses also fixed. |
 
 ---
 
