@@ -36,6 +36,7 @@
 | **40** | **Jul 17** | **Coupons, Users, Auth persistence fixes** — coupons create/update/approve/disapprove/remove persist. Users create/update/ban/active/makeAdmin/remove persist. Auth registration now writes new users to `users.json` (was in-memory only). |
 | **41** | **Jul 17** | **Categories, Types, Tags persistence fixes** — all three now persist create/update/remove to their respective JSON files. |
 | **42** | **Jul 17** | **Reviews, Questions, Wishlists persistence fixes** — all persist to JSON. **Remaining services fixed** — shipping, taxes, attributes, manufacturers, authors, flash sales, store notices. **Admin UI bugs** — removed debug console.log, uncommented image validation error message. Phase 10 complete (10/10). |
+| **43** | **Jul 17** | **Shop visibility fix** — `getShops()` `is_active` filter was broken: the proper `data.filter()` was commented out and replaced with `fuse.search("1")` (fuzzy text search for string "1"). Fixed to separate exact filters from fuzzy filters. Approved shops now appear on frontend. |
 
 ---
 

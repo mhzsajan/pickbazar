@@ -88,6 +88,61 @@ if (exactFilters.shop_id) {
 
 ---
 
+## Shop `is_active` Filter Bug (Session 43, FIXED)
+
+### Symptom
+After approving a shop in the admin, the shop does not appear on the storefront homepage or the `/shops` listing page. The shop is correctly saved with `is_active: true` in `shops.json`, but the frontend never shows it.
+
+### Root Cause
+In `shops.service.ts` `getShops()` method, the `is_active` filter was completely broken:
+
+```typescript
+// OLD (broken):
+if (search) {
+  const parseSearchParams = search.split(';');
+  for (const searchParam of parseSearchParams) {
+    const [key, value] = searchParam.split(':');
+    // data = data.filter((item) => item[key] === value);  ← COMMENTED OUT
+    data = fuse.search(value)?.map(({ item }) => item);    ← FUZZY SEARCH FOR "1"
+  }
+}
+```
+
+The frontend sends `search=is_active%3A1` (which parses to `is_active:1`). Instead of filtering shops where `is_active === true`, the code ran `fuse.search("1")` — a fuzzy text search for the string "1" across shop names, slugs, and `is_active` values. This accidentally worked for old shops because their `is_active` was the number `1` (which Fuse can match), but failed for newly approved shops with `is_active: true` (boolean — Fuse cannot match "1" against "true").
+
+### The Fix
+Separate exact filters (`is_active`) from fuzzy filters in the search param parsing, same pattern as products service:
+
+```typescript
+// FIXED:
+if (search) {
+  const parseSearchParams = search.split(';');
+  const fuzzyFilters: any[] = [];
+  for (const searchParam of parseSearchParams) {
+    const [key, value] = searchParam.split(':');
+    if (key === 'is_active') {
+      data = data.filter((item) => Boolean(item.is_active) === (value === '1'));
+    } else {
+      fuzzyFilters.push({ [key]: value });
+    }
+  }
+  if (fuzzyFilters.length) {
+    data = fuse.search({ $and: fuzzyFilters })?.map(({ item }) => item);
+  }
+}
+```
+
+Also handles the `is_active` query param directly from `GetShopsDto` when no `search` string is present.
+
+### Key Files
+- `api/rest/src/shops/shops.service.ts` — `getShops()` and `getNewShops()` methods (the bug + fix)
+
+### What NOT to Do
+- Do NOT use `fuse.search()` for structured/exact filters like `is_active` — use `data.filter()` instead
+- Do NOT compare `is_active` with `===` against a string like `"1"` — use `Boolean()` conversion for type-safe comparison
+
+---
+
 ## Other Known Issues
 
 | Issue | Status | Notes |

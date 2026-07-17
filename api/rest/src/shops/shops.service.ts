@@ -46,23 +46,31 @@ export class ShopsService {
     return newShop;
   }
 
-  getShops({ search, limit, page }: GetShopsDto) {
+  getShops({ search, limit, page, is_active }: GetShopsDto) {
     if (!page) page = 1;
 
     const startIndex = (page - 1) * limit;
     const endIndex = page * limit;
     let data: Shop[] = this.shops;
+
     if (search) {
       const parseSearchParams = search.split(';');
+      const fuzzyFilters: any[] = [];
       for (const searchParam of parseSearchParams) {
         const [key, value] = searchParam.split(':');
-        // data = data.filter((item) => item[key] === value);
-        data = fuse.search(value)?.map(({ item }) => item);
+        if (key === 'is_active') {
+          data = data.filter((item) => Boolean(item.is_active) === (value === '1'));
+        } else {
+          fuzzyFilters.push({ [key]: value });
+        }
       }
+      if (fuzzyFilters.length) {
+        data = fuse.search({ $and: fuzzyFilters })?.map(({ item }) => item);
+      }
+    } else if (is_active !== undefined) {
+      data = data.filter((item) => Boolean(item.is_active) === is_active);
     }
-    // if (text?.replace(/%/g, '')) {
-    //   data = fuse.search(text)?.map(({ item }) => item);
-    // }
+
     const results = data.slice(startIndex, endIndex);
     const url = `/shops?search=${search}&limit=${limit}`;
 
@@ -83,9 +91,17 @@ export class ShopsService {
 
     if (search) {
       const parseSearchParams = search.split(';');
+      const fuzzyFilters: any[] = [];
       for (const searchParam of parseSearchParams) {
         const [key, value] = searchParam.split(':');
-        data = fuse.search(value)?.map(({ item }) => item);
+        if (key === 'is_active') {
+          data = data.filter((item) => Boolean(item.is_active) === (value === '1'));
+        } else {
+          fuzzyFilters.push({ [key]: value });
+        }
+      }
+      if (fuzzyFilters.length) {
+        data = fuse.search({ $and: fuzzyFilters })?.map(({ item }) => item);
       }
     }
     const results = data.slice(startIndex, endIndex);

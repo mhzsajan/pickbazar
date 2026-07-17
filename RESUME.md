@@ -1,8 +1,8 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 42 — Phase 10 complete (all API services persist to JSON)
-- **Current step:** All admin CRUD operations now persist — shops, products, orders, coupons, users, categories, types, tags, reviews, questions, wishlists, shipping, taxes, attributes, manufacturers, authors, flash sales, store notices.
+- **Last completed:** Session 43 — Shop `is_active` filter fixed (approved shops now visible on frontend)
+- **Current step:** All admin CRUD operations persist. Shop approval flow fully works — approve from admin → appears on frontend.
 - **Next action:** TBD — 43 tasks remaining in Phases 1-7, 9 (branding, SEO, security, mobile, navigation, bugs, performance, add-to-cart)
 - **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 
