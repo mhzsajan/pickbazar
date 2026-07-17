@@ -1,9 +1,10 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 45 — Auth security fix complete (Phase 11 done). Demo users removed. Only `mhzsajan@gmail.com` exists.
-- **Current step:** Login requires valid email + bcrypt password. Real JWT tokens. `/me` endpoint protected.
-- **Next action:** TBD — 43 tasks remaining in Phases 1-7, 9 (branding, SEO, security, mobile, navigation, bugs, performance, add-to-cart)
+- **Last completed:** Session 46 — Clean slate. All demo data removed. 5 department shops set up with Types & Categories.
+- **Current step:** Your site is clean — shops are Auto Parts, Gaming, Electronics, Computer IT, Music. Gaming is set as homepage type. No products yet.
+- **Next action:** Add sample products or proceed to branding/SEO tasks. 43 remaining tasks in Phases 1-7, 9.
+- **Restore point:** `git checkout v2.1-pre-cleanup` to revert all cleanup.
 - **New:** Created `.deploy/EMPLOYEE_MANUAL.md` — beginner-friendly admin manual for employees
 - **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 - **⚠️ IMPORTANT:** API reads JSON from `dist/db/pickbazar/`, NOT `src/db/pickbazar/`. After editing DB files in `src/`, copy them to `dist/db/` before `pm2 restart api`.

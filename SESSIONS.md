@@ -39,6 +39,7 @@
 | **43** | **Jul 17** | **Shop visibility fix** — `getShops()` `is_active` filter was broken: the proper `data.filter()` was commented out and replaced with `fuse.search("1")` (fuzzy text search for string "1"). Fixed to separate exact filters from fuzzy filters. Approved shops now appear on frontend. |
 | **44** | **Jul 17** | **Orphaned products cleanup** — New "Gaming" shop (ID 12) showed 188 phantom products from old deleted "noaw" shop that also had ID 12. Removed from `products.json`. Also discovered API reads JSON from `dist/db/pickbazar/` — `src/db/` edits must be synced to `dist/db/` before restart. |
 | **45** | **Jul 17** | **Auth security fix implemented** — Replaced fake login with real bcrypt password hashing + JWT. `AuthService.login()` now validates email + bcrypt password (no more hardcoded email checks). Demo users can't log in (no password hash). `AuthService.register()` and `UsersService.create()` hash passwords. `/me` endpoint protected with JWT guard. Phase 11 tasks 11.1-11.10 complete (10/10). Demo users (`admin@demo.com`, etc.) removed from `users.json`. Only `mhzsajan@gmail.com` remains. |
+| **46** | **Jul 17** | **Clean slate setup** — Deleted all demo data (1000+ products, 9 shops, 10 types, 198 categories, 20 orders, 85 reviews, etc.). Created 5 department shops (Auto Parts, Gaming, Electronics, Computer IT, Music), 5 Types, 34 Categories. Tagged `v2.1-pre-cleanup` as restore point. Also fixed 2 pre-existing TS build errors. |
 
 ---
 

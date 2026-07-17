@@ -307,7 +307,7 @@ export class OrdersService {
   }
 
   async exportOrder(shop_id: string) {
-    return exportOrderJson.url;
+    return (exportOrderJson as any).url;
   }
 
   async downloadInvoiceUrl(shop_id: string) {
