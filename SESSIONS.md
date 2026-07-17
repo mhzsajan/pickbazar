@@ -38,6 +38,7 @@
 | **42** | **Jul 17** | **Reviews, Questions, Wishlists persistence fixes** — all persist to JSON. **Remaining services fixed** — shipping, taxes, attributes, manufacturers, authors, flash sales, store notices. **Admin UI bugs** — removed debug console.log, uncommented image validation error message. Phase 10 complete (10/10). |
 | **43** | **Jul 17** | **Shop visibility fix** — `getShops()` `is_active` filter was broken: the proper `data.filter()` was commented out and replaced with `fuse.search("1")` (fuzzy text search for string "1"). Fixed to separate exact filters from fuzzy filters. Approved shops now appear on frontend. |
 | **44** | **Jul 17** | **Orphaned products cleanup** — New "Gaming" shop (ID 12) showed 188 phantom products from old deleted "noaw" shop that also had ID 12. Removed from `products.json`. Also discovered API reads JSON from `dist/db/pickbazar/` — `src/db/` edits must be synced to `dist/db/` before restart. |
+| **45** | **Jul 17** | **Planned auth security fix** — Documented the fake auth vulnerability (no password check, fake JWT, no guards). Added Phase 11 to PLAN.md (10 tasks). Not yet implemented. |
 
 ---
 

@@ -2,8 +2,8 @@
 
 ## Where We Stopped
 - **Last completed:** Session 44 — Removed 188 orphaned products for old deleted shop (ID 12) from `products.json`
-- **Current step:** All admin CRUD operations persist. Shop approval flow fully works. Gaming shop shows 0 products (correct).
-- **Next action:** TBD — 43 tasks remaining in Phases 1-7, 9 (branding, SEO, security, mobile, navigation, bugs, performance, add-to-cart)
+- **Current step:** Auth security fix planned (Phase 11) but NOT yet implemented. Current auth is completely fake.
+- **Next action:** ⚠️ Implement Phase 11 — real auth with bcrypt + JWT (10 tasks). Then 43 remaining tasks in Phases 1-7, 9.
 - **New:** Created `.deploy/EMPLOYEE_MANUAL.md` — beginner-friendly admin manual for employees
 - **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 - **⚠️ IMPORTANT:** API reads JSON from `dist/db/pickbazar/`, NOT `src/db/pickbazar/`. After editing DB files in `src/`, copy them to `dist/db/` before `pm2 restart api`.

@@ -95,6 +95,7 @@ All run under PM2 with auto-start on boot (systemd).
 | Settings persistence | ✅ API `SettingsService` now writes to `settings.json` on save |
 | Currency | ✅ Set to NPR (Nepalese Rupee) via Admin Dashboard |
 | API persistence (all services) | ✅ Phase 10 complete — all 30+ services persist to JSON on create/update/delete |
+| Auth security | ⚠️ **NOT YET FIXED** — fake auth, any password works, no API guards. See Phase 11 |
 | Theme | ✅ **Pure light mode** — no dark mode, no dark toggle |
 | Dark mode backup | 🔄 Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` |
 

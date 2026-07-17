@@ -307,5 +307,63 @@ Two issues combined:
 
 ---
 
+## Fake Authentication — No Password Validation (CRITICAL, NOT YET FIXED)
+
+### Symptom
+Anyone who knows an email address (`admin@demo.com`, `store_owner@demo.com`) can log in as that user with **any password**. There is no real authentication.
+
+### Root Cause
+`api/rest/src/auth/auth.service.ts` `login()` method uses hardcoded email checks and ignores the password entirely:
+
+```typescript
+// Current code — completely fake:
+async login(loginInput: LoginDto): Promise<AuthResponse> {
+    if (loginInput.email === 'admin@demo.com') {
+      return {
+        token: 'jwt token',              // ← literal string, not a real JWT
+        permissions: ['store_owner', 'super_admin'],
+        role: 'super_admin',
+      };
+    }
+    // ... more hardcoded email checks
+}
+```
+
+Additionally:
+- No bcrypt or password hashing anywhere — passwords stored in plain text
+- No JWT implementation — the "token" is the literal string `"jwt token"`
+- No auth guards on any API endpoint — all endpoints are publicly accessible
+- No JWT secret or signing key
+
+### Impact
+| Vulnerability | Risk |
+|---|---|
+| Anyone can login as admin | **CRITICAL** — full site takeover |
+| API endpoints unprotected | **CRITICAL** — data can be read/modified by anyone |
+| No real token validation | **HIGH** — no session security |
+| Passwords stored in plaintext | **HIGH** — credential theft if DB leaked |
+
+### The Fix
+See `.deploy/PLAN.md` Phase 11. Requires:
+
+1. Install bcrypt + @nestjs/jwt + passport-jwt
+2. Hash passwords on register/create
+3. Validate passwords on login (remove hardcoded email checks)
+4. Create real JWT strategy with secret key
+5. Create JwtAuthGuard and protect admin endpoints
+6. Add setup script for initial super admin creation
+7. Remove default demo users
+
+### Key Files
+- `api/rest/src/auth/auth.service.ts` — login/register (stub)
+- `api/rest/src/auth/auth.module.ts` — needs JWT module
+- `api/rest/src/users/users.service.ts` — create() needs hashing
+
+### What NOT to Do
+- Do NOT just edit the hardcoded email list as a "quick fix" — the auth is still fake
+- Do NOT remove demo users without having a way to create new ones first
+
+---
+
 *Created: Session 17 — June 28, 2026*<br>
 *Updated: Session 44 — July 17, 2026*
