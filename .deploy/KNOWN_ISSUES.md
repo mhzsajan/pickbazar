@@ -101,4 +101,58 @@ if (exactFilters.shop_id) {
 
 ---
 
+---
+
+## Settings Persistence Bug (Session 36, FIXED)
+
+### Symptom
+Changing currency (or any setting) in Admin Dashboard → Settings → General Settings appears to save successfully, but the change is not reflected on the shop frontend. On API restart, the old value returns.
+
+### Root Cause
+`api/rest/src/settings/settings.service.ts` — `create()` and `update()` methods ignored the incoming DTO and returned the original in-memory object loaded once from `@db/settings.json` at module load. No write-back to the JSON file occurred.
+
+```typescript
+// OLD (broken) — ignores input, returns original
+create(createSettingDto: CreateSettingDto) {
+  return this.settings;  // ← always USD, never updates
+}
+```
+
+The admin UI's `onSuccess` handler updates its own React context, creating an **illusion of persistence**. The shop frontend fetches `GET /settings` from the API and always gets the stale in-memory copy.
+
+### The Fix
+Merge the incoming DTO into the in-memory object and write back to `settings.json`:
+
+```typescript
+// FIXED — merge + persist
+create(createSettingDto: CreateSettingDto) {
+  this.settings = {
+    ...this.settings,
+    ...createSettingDto,
+    options: { ...this.settings.options, ...createSettingDto.options },
+    updated_at: new Date(),
+  };
+  this.saveToFile();
+  return this.settings;
+}
+```
+
+Added a `private saveToFile()` method that writes `this.settings` back to `src/db/pickbazar/settings.json` using `fs.writeFileSync`.
+
+### Key Files
+- `api/rest/src/settings/settings.service.ts` — the bug + fix
+- `api/rest/src/db/pickbazar/settings.json` — now actually updated on save
+
+### Rebuild Required
+After editing, run:
+```bash
+cd /home/switchgod/Desktop/pickbazar/api/rest && npx nest build && pm2 restart api
+```
+
+### What NOT to Do
+- Do NOT create a new admin account — this is not an auth/permission issue
+- Do NOT edit `settings.json` manually as a workaround — the fix properly persists via the API endpoint
+
+---
+
 *Created: Session 17 — June 28, 2026*

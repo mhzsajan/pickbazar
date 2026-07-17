@@ -1,8 +1,8 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 34 — Full dark mode reversion (hard reset to pre-dark-theme)
-- **Current step:** Original light PickBazar theme restored. All Sessions 18-33 code removed.
+- **Last completed:** Session 36 — Settings persistence fix (API now saves to `settings.json`)
+- **Current step:** Currency set to NPR via Admin Dashboard. API settings `create()`/`update()` now properly persist.
 - **Next action:** TBD — no active plan
 - **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 
@@ -24,6 +24,8 @@
 - Mobile: All 67 audit issues fixed (Phase 8)
 - Modal UX: Close button, back button, swipe-to-go-back — all working
 - Add-to-cart: ⚠️ Issues found, code reverted, root causes documented
+- Settings persistence: ✅ API now persists settings changes to `settings.json` (Session 36 fix)
+- Currency: ✅ Set to NPR via Admin Dashboard (Nepalese Rupee)
 - Theme: Pure light mode only — NO dark mode, NO dark toggle, NO canvas animations
 - Dark mode backup: `git checkout v2.0-dark-mode-full` to restore full dark mode state
 

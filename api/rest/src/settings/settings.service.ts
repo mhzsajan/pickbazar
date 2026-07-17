@@ -4,6 +4,8 @@ import { CreateSettingDto } from './dto/create-setting.dto';
 import { UpdateSettingDto } from './dto/update-setting.dto';
 import { Setting } from './entities/setting.entity';
 import settingsJson from '@db/settings.json';
+import * as fs from 'fs';
+import * as path from 'path';
 
 const settings = plainToClass(Setting, settingsJson);
 
@@ -12,6 +14,16 @@ export class SettingsService {
   private settings: Setting = settings;
 
   create(createSettingDto: CreateSettingDto) {
+    this.settings = {
+      ...this.settings,
+      ...createSettingDto,
+      options: {
+        ...this.settings.options,
+        ...createSettingDto.options,
+      },
+      updated_at: new Date(),
+    };
+    this.saveToFile();
     return this.settings;
   }
 
@@ -24,10 +36,25 @@ export class SettingsService {
   }
 
   update(id: number, updateSettingDto: UpdateSettingDto) {
+    this.settings = {
+      ...this.settings,
+      ...updateSettingDto,
+      options: {
+        ...this.settings.options,
+        ...updateSettingDto.options,
+      },
+      updated_at: new Date(),
+    };
+    this.saveToFile();
     return this.settings;
   }
 
   remove(id: number) {
     return `This action removes a #${id} setting`;
+  }
+
+  private saveToFile() {
+    const filePath = path.join(process.cwd(), 'src', 'db', 'pickbazar', 'settings.json');
+    fs.writeFileSync(filePath, JSON.stringify(this.settings, null, 2));
   }
 }

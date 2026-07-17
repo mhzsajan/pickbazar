@@ -29,6 +29,7 @@
 | 33 | Jul 9 | Color scheme consistency audit — fixed bg-gray-100/200→bg-surface/light across ~45 files, hardcoded hex borders → CSS var classes, color-scheme meta |
 | **34** | **Jul 9** | **FULL DARK MODE REVERT** — Hard reset to `ace8c18` (pre-dark-theme light PickBazar). Tagged current state as `v2.0-dark-mode-full`, backup branch `backup-dark-mode-full`. All Sessions 18-33 code removed. Sessions 1-17 preserved. |
 | **35** | **Jul 9** | **Shop product filter fix** — Reordered fuzzy search before exact `shop_id` filter in API service. All shops now show correct products. Restored canvas animation on homepage only. |
+| **36** | **Jul 17** | **Settings persistence fix** — API's `SettingsService.create()/update()` silently ignored all input data. Fixed to merge + write to `settings.json` on save. Currency change (USD→NPR) now persists to JSON and reflects in shop frontend. |
 
 ---
 
@@ -41,3 +42,4 @@
 - **Modal z-index:** Dialog `z-[70]`, close button `z-[80]` with `fixed` positioning
 - **Add-to-cart:** Intersection observer `threshold: 1` triggers sticky bar on mobile (content taller than viewport)
 - **API filter order matters:** Apply fuzzy search (`fuse.search`) BEFORE exact filters (`shop_id`). Doing it in reverse causes fuzzy search on ALL products to overwrite the filtered set.
+- **Settings persistence:** API's `SettingsService` initially returned in-memory copy without merging DTO or writing to JSON. Admin UI appeared to save (local React state updated on "success") but data was lost. To fix: merge DTO into in-memory object + `fs.writeFileSync` to `settings.json`. API rebuild + restart required after change.
