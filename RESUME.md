@@ -1,9 +1,9 @@
 # RESUME — Read This First
 
 ## Where We Stopped
-- **Last completed:** Session 45 — Auth security fix implemented (bcrypt + JWT). Login now requires valid email+password. Phase 11: 9/10 done.
-- **Current step:** Your admin account `mhzsajan@gmail.com` works. Demo users still exist but can't log in (no password hash).
-- **Next action:** ⚠️ You need to verify login works at admin.switchgod.com.np. Then we remove demo users. After that, 44 remaining tasks in Phases 1-7, 9, 11.
+- **Last completed:** Session 45 — Auth security fix complete (Phase 11 done). Demo users removed. Only `mhzsajan@gmail.com` exists.
+- **Current step:** Login requires valid email + bcrypt password. Real JWT tokens. `/me` endpoint protected.
+- **Next action:** TBD — 43 tasks remaining in Phases 1-7, 9 (branding, SEO, security, mobile, navigation, bugs, performance, add-to-cart)
 - **New:** Created `.deploy/EMPLOYEE_MANUAL.md` — beginner-friendly admin manual for employees
 - **Dark mode backup:** Tag `v2.0-dark-mode-full`, branch `backup-dark-mode-full` (pushed to origin)
 - **⚠️ IMPORTANT:** API reads JSON from `dist/db/pickbazar/`, NOT `src/db/pickbazar/`. After editing DB files in `src/`, copy them to `dist/db/` before `pm2 restart api`.

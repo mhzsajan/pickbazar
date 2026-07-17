@@ -350,11 +350,10 @@ Additionally:
 4. ✅ Create real JWT strategy with secret key
 5. ✅ Create JwtAuthGuard and protect `/me` endpoint
 6. ✅ Setup script created initial super admin (`mhzsajan@gmail.com`)
-7. ⬜ Not yet: Remove default demo users (user must confirm login works first)
+7. ✅ Remove default demo users from `users.json`
 
 ### What still needs doing
-- Remove demo users from `users.json` (after user confirms login works)
-- Add JWT guards to more admin endpoints (Phase 3 task)
+- Add JWT guards to more admin endpoints (Phase 3 task — Security headers)
 
 ### Key Files
 - `api/rest/src/auth/auth.service.ts` — login/register (stub)
